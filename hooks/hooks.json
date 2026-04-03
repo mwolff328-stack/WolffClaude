@@ -110,6 +110,18 @@
           }
         ],
         "description": "Pull latest WolffClaude config at session start"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/scripts/hooks/sync-desktop-skills.js",
+            "async": true,
+            "timeout": 10
+          }
+        ],
+        "description": "Sync personal skills from Claude Desktop app to ~/.claude/skills/"
       }
     ],
     "PostToolUse": [

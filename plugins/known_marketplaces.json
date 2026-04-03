@@ -13,7 +13,7 @@
       "repo": "obra/superpowers-marketplace"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\superpowers-marketplace",
-    "lastUpdated": "2026-02-22T19:25:59.719Z"
+    "lastUpdated": "2026-04-03T17:57:50.171Z"
   },
   "anthropic-agent-skills": {
     "source": {
@@ -29,7 +29,7 @@
       "repo": "JoelLewis/finance_skills"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\finance-skills",
-    "lastUpdated": "2026-03-13T16:05:14.555Z"
+    "lastUpdated": "2026-04-03T17:57:52.849Z"
   },
   "everything-claude-code": {
     "source": {
