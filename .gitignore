@@ -63,5 +63,13 @@ plugins/repos/
 # Todos (session-specific)
 todos/
 
-# Git repo metadata
-.git/
+# Statsig telemetry
+statsig/
+
+# Tasks (session-specific lock files)
+tasks/
+
+# Plugin config (regenerated)
+plugins/blocklist.json
+plugins/config.json
+plugins/install-counts-cache.json
