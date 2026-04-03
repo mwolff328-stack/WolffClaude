@@ -1,0 +1,12 @@
+Pre-Publish Gate: Fix CI Annotation Errors
+The pre-publish GitHub Actions workflow is reporting 20 errors and 1 warning as annotations, but the gate is passing. Before fixing individual errors, first confirm whether these failures are actually blocking the gate or just noise — if they're not blocking, that's the first thing to fix.
+The errors fall into these buckets. Work through them in this order:
+1. Integration test seeding failures (highest impact)
+Tests are failing with foreign key constraint violations on games_home_team_id_teams_id_fk and "need at least N teams/rows in DB" errors. The test setup isn't seeding prerequisite data before tests run. Fix test seed ordering so FK dependencies are satisfied.
+2. Unit test network calls
+auth-error-codes.test.ts is making real fetch calls to localhost:1122 in CI. These need to be mocked — unit tests should never hit live endpoints.
+3. Missing env variable in CI
+REPLIT_DOMAINS not provided is causing replitAuth-related tests to fail. Add this to the GitHub Actions environment config.
+4. Node.js deprecation warning
+actions/checkout and actions/setup-node are running on deprecated Node 20. Update to current versions.
+Before changing anything: inspect the current test setup files, the GitHub Actions workflow YAML, and the failing test files. Understand the full blast radius before touching seeds or mocks. Use Plan mode first.

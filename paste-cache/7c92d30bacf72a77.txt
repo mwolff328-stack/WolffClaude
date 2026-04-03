@@ -1,0 +1,12 @@
+Still 403 on portfolio/week. Let me try a few more body variations — the field name might be wrong:
+
+Every variation — different body fields, query params, empty body, different paths — all return 403 before the route handler even sees the request. This confirms it's an auth middleware issue, not a body format problem. The rejection happens at the middleware layer, not inside the handler itself.
+
+The three public endpoints (pool config, entries, games) are working perfectly. But portfolio/week — and anything under /portfolio on that pool — is still hitting an auth gate that returns 403 for all unauthenticated requests.
+
+Your backend team needs to look specifically at the middleware stack for the portfolio router (not just the pool router). It's likely registered something like:
+
+router.use('/pools/:poolId/portfolio', requireAuth, portfolioRouter)
+That requireAuth middleware needs to be removed or bypassed for this route. Making the pool-level routes public didn't touch this nested router registration.
+
+The prototype continues to work fully with mock data for Path B in the meantime — nothing is broken from the user's perspective.

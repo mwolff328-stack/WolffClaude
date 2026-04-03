@@ -1,0 +1,259 @@
+Read specs/active/004-ca1-reframe-chalk-collapse.md in full before proceeding.
+
+Phase B2 objective: Expand CA1 event detection from single-team chalk collapse to all high-elimination weeks. Surface full game results for all ownership-tracked teams. Produce three new outputs: tables.gameResults, tables.weeklyElimination, and HighEliminationWeek events. Complete a threshold review before finishing.
+
+---
+
+CONTEXT
+
+Phase B1 (complete) implemented ChalkCollapseEvent detection and populated the events block with the Week 14 TB event. Phase B2 replaces and expands that work.
+
+Key facts confirmed in prior analysis:
+- sortedFixture.weeks[].games[].result is 'W' | 'L' on every game record
+- weeklyFieldConcentration has ~544 rows (all ownership-tracked teams, all 18 weeks)
+- gameResultsByTeamWeek is already built in run-ca1-core.ts from sortedFixture — but currently only used for chalk collapse detection, not surfaced in artifact output
+- Phase B1 files: phase4/core/chalk-collapse-detection.ts, phase4/tests/chalk-collapse-detection.test.ts
+
+---
+
+STEP 1 — Update type contracts in phase1/contracts/response.dto.ts
+
+1a. Enrich Phase1WeeklyFieldRow — add two fields:
+  result: 'W' | 'L'
+  eliminationContribution: number  // pickPct if result=L, else 0
+
+1b. Add GameResultRow interface:
+  interface GameResultRow {
+    week: number
+    team: TeamKey
+    opponent: TeamKey
+    result: 'W' | 'L'
+    impliedWinProb: number
+    ownership: number
+    eliminationContribution: number  // ownership if result=L, else 0
+  }
+
+1c. Add WeeklyEliminationRow interface:
+  interface WeeklyEliminationRow {
+    week: number
+    team: TeamKey
+    ownership: number
+    result: 'W' | 'L'
+    eliminationContribution: number
+    cumulativeEliminationContribution: number  // running sum within week, desc order
+    weekEliminationRate: number                // same for all rows in a given week
+    fieldSizeEnteringWeek: number
+    fieldSizeAfterWeek: number
+  }
+
+1d. Add HighEliminationWeek interface (replaces ChalkCollapseEvent on the events block):
+  interface HighEliminationWeekContributor {
+    team: TeamKey
+    ownership: number
+    result: 'L'
+    eliminationContribution: number
+  }
+
+  interface HighEliminationWeekChalkDetail {
+    team: TeamKey
+    ownershipAtPickDeadline: number
+    impliedWinProb: number
+    independentPathPicks: ChalkCollapseEventPick[]  // reuse existing type from Phase B1
+  }
+
+  interface HighEliminationWeek {
+    week: number
+    weekEliminationRate: number
+    fieldSizeEnteringWeek: number
+    fieldSizeAfterWeek: number
+    collapseType: 'CHALK_CONCENTRATION' | 'FRAGMENTED' | 'MIXED'
+    topContributors: HighEliminationWeekContributor[]  // all losers, sorted by eliminationContribution desc
+    explainedEliminationRate: number    // sum of eliminationContribution across all losers
+    unexplainedEliminationRate: number  // weekEliminationRate - explainedEliminationRate
+    chalkDetail?: HighEliminationWeekChalkDetail  // only present for CHALK_CONCENTRATION
+  }
+
+1e. Update Phase1TablesBlock — add:
+  gameResults: GameResultRow[]
+  weeklyElimination: WeeklyEliminationRow[]
+
+1f. Update Phase1ScenarioResponseDTO events field:
+  events: HighEliminationWeek[] | null
+
+1g. Update ArtifactJsonWithCoverage in run-ca1-core.ts to match.
+
+Do NOT modify phase0/contracts/response.dto.ts.
+
+---
+
+STEP 2 — Surface result on weeklyFieldConcentration rows
+
+In phase1/engine/deterministic-engine.ts, when building weeklyFieldConcentration rows, add result and eliminationContribution to each row.
+
+Source: the fixture game record for that team and week already has result: 'W' | 'L'. The engine already processes these records. Add the fields — do not change any existing logic.
+
+Verify: after this change, every row in tables.weeklyFieldConcentration must have result and eliminationContribution populated. No row may have result undefined.
+
+---
+
+STEP 3 — Create phase4/core/high-elimination-detection.ts
+
+Pure function. No I/O. No DB imports.
+
+Replace phase4/core/chalk-collapse-detection.ts with this file (or rename and rewrite).
+
+The function signature:
+
+  export function detectHighEliminationWeeks(
+    weeklyFieldConcentration: Phase1WeeklyFieldRow[],  // now includes result and eliminationContribution
+    independentPathRows: Phase1IndependentPathRow[],
+    remainingFieldSeries: Phase1ChartPoint[],
+  ): HighEliminationWeek[]
+
+Logic:
+
+1. Build fieldByWeek map from remainingFieldSeries (week 0 = poolSize from meta, week N = survivors after week N)
+
+2. Build weekEliminationRate for each week:
+   rate = (fieldByWeek[week-1] - fieldByWeek[week]) / fieldByWeek[week-1]
+   Week 1: entering = fieldByWeek[0]
+
+3. For each week where weekEliminationRate > HIGH_ELIMINATION_THRESHOLD (provisional: 0.25):
+   a. Collect all weeklyFieldConcentration rows for that week where result = 'L'
+      These are the topContributors — sort by eliminationContribution descending
+   b. Compute explainedEliminationRate = sum of eliminationContribution for all losers
+   c. Compute unexplainedEliminationRate = weekEliminationRate - explainedEliminationRate
+   d. Assign collapseType (PROVISIONAL thresholds):
+      - CHALK_CONCENTRATION: any single loser has ownership >= 0.40 AND eliminationContribution >= 0.35
+      - FRAGMENTED: no single loser has ownership >= 0.40
+      - MIXED: multiple losers, at least one has ownership >= 0.30 but none crosses both chalk thresholds
+   e. Build chalkDetail only for CHALK_CONCENTRATION:
+      - team, ownershipAtPickDeadline, impliedWinProb from the chalk loser row
+      - independentPathPicks: independentPathRows filtered to this week, this team, alive=true
+
+4. Sort events by week ascending (deterministic)
+5. Return events
+
+Export HIGH_ELIMINATION_THRESHOLD = 0.25 as a named constant.
+
+---
+
+STEP 4 — Build tables.gameResults and tables.weeklyElimination in run-ca1-core.ts
+
+After phase1Response is available:
+
+4a. Build tables.gameResults:
+  - One row per row in phase1Response.tables.weeklyFieldConcentration
+  - Fields: week, team, opponent, result, impliedWinProb, ownership (= pickPct), eliminationContribution
+  - opponent: get from fixture game record for that team and week
+  - Order: week ascending, then team alphabetically within week
+
+  Note: opponent must come from sortedFixture.weeks[].games[] — build a teamWeekOpponentMap alongside gameResultsByTeamWeek.
+
+4b. Build tables.weeklyElimination:
+  - Group gameResults by week
+  - Within each week, sort rows by eliminationContribution descending
+  - Compute cumulativeEliminationContribution as running sum within each week
+  - Add weekEliminationRate, fieldSizeEnteringWeek, fieldSizeAfterWeek to each row (same values for all rows in a week)
+  - Order: week ascending, then eliminationContribution descending
+
+4c. Replace ChalkCollapseEvent detection call with detectHighEliminationWeeks:
+  const highEliminationWeeks = detectHighEliminationWeeks(
+    phase1Response.tables.weeklyFieldConcentration,
+    phase1Response.tables.independentPath,
+    phase1Response.chartSeries.remainingField,
+  )
+
+4d. Update artifact assembly:
+  tables: {
+    ...existing tables,
+    gameResults: gameResultsTable,
+    weeklyElimination: weeklyEliminationTable,
+  },
+  events: highEliminationWeeks.length > 0 ? highEliminationWeeks : null,
+
+---
+
+STEP 5 — Tests in phase4/tests/high-elimination-detection.test.ts
+
+Minimum 8 tests. All pure unit tests against detectHighEliminationWeeks() with hand-crafted minimal fixtures. Do not test against the real golden artifact in this file.
+
+Required tests:
+1. Week 14 TB detected as CHALK_CONCENTRATION — ownership 0.5695, eliminationContribution 0.5695 >= 0.35, weekEliminationRate 0.80
+2. FRAGMENTED event detected — week with no team >= 40% owned but combined losses drive weekEliminationRate > 0.25
+3. MIXED event detected — week with losers including one >= 0.30 owned but below chalk thresholds
+4. Week below threshold (weekEliminationRate <= 0.25) does NOT produce an event
+5. cumulativeEliminationContribution sums correctly within a week — verify running total is accurate
+6. explainedEliminationRate + unexplainedEliminationRate = weekEliminationRate (within floating point tolerance)
+7. chalkDetail present only on CHALK_CONCENTRATION events — FRAGMENTED and MIXED events have no chalkDetail
+8. Events sorted by week ascending — multi-week fixture returns events in week order
+
+---
+
+STEP 6 — Architecture tripwire
+
+Verify phase4/tests/architecture tests still pass:
+- high-elimination-detection.ts must have zero DB imports
+- If chalk-collapse-detection.ts is renamed or replaced, update any architecture test that references the old filename
+
+---
+
+STEP 7 — Threshold review (required before completing Phase B2)
+
+After implementation, run npm run ca1:generate and inspect the output.
+
+Produce a threshold review report:
+- Full 18-week table: week, weekEliminationRate, collapseType (or N/A), topContributors with ownership and eliminationContribution
+- Count of qualifying events at threshold 0.25
+- The natural break in the weekEliminationRate distribution — identify where noise ends and signal begins
+- Recommended locked threshold with rationale
+- Recommended locked collapseType classification thresholds with rationale
+
+Do NOT lock the thresholds in code during this phase — keep HIGH_ELIMINATION_THRESHOLD = 0.25 as the provisional value. The threshold review report is the deliverable. Threshold locking happens after human review.
+
+---
+
+STEP 8 — Regenerate snapshot baselines
+
+Run: SKIP_DB_GUARD=1 node_modules/.bin/tsx scripts/regenerate-baselines.ts
+
+Verify both baselines updated:
+- phase6/artifacts/ca1.example.json
+- phase8/artifacts/ca1.phase8.golden.json
+
+---
+
+VERIFICATION
+
+Run in order:
+1. node_modules/.bin/tsc --noEmit — confirm no new TypeScript errors in changed files (pre-existing errors are acceptable)
+2. node scripts/check-imports.js — confirm no boundary violations
+3. bash -c "NODE_ENV=test TEST_DISABLE_NETWORK=1 TEST_FAST_OPTIMIZER=1 node_modules/.bin/vitest run --config vitest.config.ts phase4/tests/high-elimination-detection.test.ts" — all 8+ new tests pass
+4. bash -c "NODE_ENV=test TEST_DISABLE_NETWORK=1 TEST_FAST_OPTIMIZER=1 node_modules/.bin/vitest run --config vitest.config.ts" — 2107 existing tests pass; no new failures in phase4/phase6/phase8 test files
+5. Confirm events block in ca1.example.json contains HighEliminationWeek entries including week 14 with collapseType CHALK_CONCENTRATION and chalkDetail present
+
+---
+
+INVARIANTS — DO NOT VIOLATE
+
+- CORR_DELTA_SCOPE = ACTIVE_ONLY
+- PORTFOLIO_ALLOCATION_RULE = WEEKLY_OPTIMAL_ASSIGNMENT
+- FUTURE_VALUE_SCOPE = EXCLUDED
+- INDEPENDENT_SELECTION_RULE = HIGHEST_WP_NO_WEEKLY_OVERLAP
+- maxSameTeamPerWeek = 1
+- All 2107 currently passing tests must continue to pass
+- Determinism: identical inputs produce byte-identical outputs
+- No DB imports in phase4/core/ or phase6/
+
+---
+
+DELIVERABLE
+
+Return a Phase B2 summary report containing:
+1. Files changed (list)
+2. New test count and pass/fail status
+3. tables.gameResults row count
+4. tables.weeklyElimination row count
+5. events block: list of all HighEliminationWeek entries with week, weekEliminationRate, collapseType
+6. Threshold review report (full 18-week table + recommendation)
+7. Snapshot baseline status

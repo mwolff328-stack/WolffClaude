@@ -1,0 +1,46 @@
+I want to make all of the endpoints for survivor-optimizer publicly available so other apps, such as CMEA Prototype app, can use the API.
+
+Let me look at where those CORS headers are already set up and how the routes are structured around the survivor-optimizer endpoints.
+
+Let me check what auth middleware is currently on those routes and see the full list of survivor-optimizer endpoints:
+
+Let me check the beginning of routes.ts and look at the other relevant endpoints:
+
+Let me check how the Express app and CORS are configured in the server entry point:
+
+Let me check a few more routes to understand what needs auth:
+
+Let me check the canAccessPool helper:
+
+Now I have a complete picture. Here's what needs to happen:
+
+Add CORS headers so cross-origin requests from CMEA and other apps are allowed
+Remove requireUnifiedAuth from two endpoints that currently block unauthenticated access: /api/pools/:id and the per-entry pool-dynamics route
+Exempt POST survivor-optimizer endpoints from the CSRF header requirement so they're callable without special setup
+Let me implement all three changes:
+
+Now I'll make all three changes in one go:
+
+Now update the CSRF middleware to support pattern exemptions for the survivor-optimizer POST endpoints:
+
+Now let me remove requireUnifiedAuth from the two routes that block unauthenticated access. First, the pool-dynamics entry route:
+
+Now I'll update both routes. For /api/pools/:id, I'll remove the auth middleware and allow unauthenticated public reads while keeping the access check for authenticated users:
+
+Now remove auth from the per-entry pool-dynamics route:
+
+Good. Now let me restart the app to verify the changes compile and run cleanly:
+
+The server is running cleanly. Here's a summary of what was changed to make all survivor-optimizer endpoints publicly accessible:
+
+Three changes were made:
+
+CORS headers (server/index.ts) — Added a middleware that sets Access-Control-Allow-Origin: * on every /api/ route and handles preflight OPTIONS requests. This is what browsers require to allow cross-origin calls from the CMEA Prototype or any other domain.
+
+CSRF exemption (server/middleware/customAuth.ts) — Added pattern-based exemptions so the POST /api/pools/:poolId/picks/estimate endpoint (and any future survivor-optimizer POST routes added to the pattern list) can be called from external apps without including the x-sp-request header.
+
+Auth removed from two routes (server/routes.ts):
+
+GET /api/pools/:id — Unauthenticated callers can now read pool details. Authenticated users are still subject to the ownership check, so logged-in users can only see their own pools as before.
+GET /api/pools/:poolId/entries/:entryId/pool-dynamics — The per-entry playoff analytics endpoint is now open.
+The other analytics endpoints (/dynamics/comprehensive, /dynamics/field-survival-baseline, etc., and /playoff-recommendation) were already unauthenticated — they just needed the CORS headers, which are now in place globally.

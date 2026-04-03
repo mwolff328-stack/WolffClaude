@@ -1,0 +1,67 @@
+# Sensitive — contains tokens and credentials
+settings.json
+settings.local.json
+.credentials.json
+
+# Plugin caches — re-downloaded on install
+plugins/cache/
+plugins/marketplaces/
+
+# Local backups
+backups/
+
+# Session state files
+sessions/
+
+# ECC install state
+ecc/
+
+# Stale artifacts
+.agents/files.zip
+
+# Logs and temp
+*.log
+cache/
+
+# IDE-specific
+ide/
+
+# Chrome extension data
+chrome/
+
+# History (large, local-only)
+history.jsonl
+file-history/
+
+# Debug output
+debug/
+
+# Plans (session-specific)
+plans/
+
+# Homunculus
+homunculus/
+
+# Projects memory (per-machine)
+projects/
+
+# Paste cache (transient clipboard data)
+paste-cache/
+
+# Shell snapshots (session-specific)
+shell-snapshots/
+
+# Metrics (local telemetry)
+metrics/
+
+# Stats cache
+stats-cache.json
+
+# Plugin repos (large, cloned on install)
+plugins/repos/
+
+# Todos (session-specific)
+todos/
+
+# Git repo metadata
+.git/

@@ -1,0 +1,56 @@
+Read specs/active/004-ca1-reframe-chalk-collapse.md in full before proceeding.
+
+Phase B objective: Implement CHALK_COLLAPSE_EVENT detection and populate the events block, which is currently hardcoded null in both Phase 0 and Phase 1 response DTOs.
+
+Phase A confirmed values for Week 14:
+- TB pickPct: 0.5695, impliedWinProb: 0.8176
+- Field size entering Week 14: 45, field size after: 9, elimination rate: 80.0%
+- I2 picked TB in Week 14, result L
+
+Do the following:
+
+1. DEFINE THE TYPE
+   Add ChalkCollapseEvent type to the Phase 1 response contract. Fields:
+   - week: number
+   - team: TeamKey
+   - ownershipAtPickDeadline: number
+   - impliedWinProb: number
+   - singleWeekEliminationRate: number
+   - fieldSizeEnteringWeek: number
+   - fieldSizeAfterWeek: number
+   - independentPathPicks: array of { entryId, team, winProbability, ownership, result }
+     (alive entries only; only entries that picked the chalk team)
+
+2. IMPLEMENT DETECTION
+   Create detectChalkCollapseEvents(weeklyFieldConcentration, independentPathRows, remainingFieldSeries).
+   Logic: for each week, find the top-ownership team. If pickPct >= 0.40 AND result is a loss AND singleWeekEliminationRate > 0.25, emit a ChalkCollapseEvent. Attach alive independent path picks for that team/week.
+
+3. WIRE INTO ENGINE
+   Replace hardcoded events: null in both Phase 0 and Phase 1 ScenarioResponseDTO.
+   Wire detectChalkCollapseEvents() into runCredibilityAsset1Core() after path computation.
+
+4. VALIDATE Week 14 detection:
+   - ChalkCollapseEvent emitted for Week 14 (TB)
+   - ownershipAtPickDeadline = 0.5695
+   - singleWeekEliminationRate = 0.800
+   - I2 in independentPathPicks
+
+5. WRITE TESTS (minimum 6):
+   - Week 14 (TB) detected as chalk collapse event
+   - Week with ownership >= 40% but elimination rate <= 25% does NOT trigger
+   - Week with elimination rate > 25% but ownership < 40% does NOT trigger
+   - Week where high-ownership team WINS does NOT trigger
+   - independentPathPicks contains only alive entries that picked the chalk team
+   - events array ordered by week ascending (deterministic)
+
+6. UPDATE SNAPSHOT BASELINES
+   Run full snapshot suite. Update all affected snapshots.
+   Confirm all 271 existing tests pass plus 6 new tests.
+
+7. PRODUCE A SUMMARY REPORT:
+   - All detected ChalkCollapseEvents for 2025: week, team, ownership, elimination rate
+   - Total event count
+   - Test results: existing passing, new passing, any failures
+   - Snapshot baseline status
+
+Do not merge until all existing tests pass and all 6 new tests pass.

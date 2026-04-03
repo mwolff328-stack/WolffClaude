@@ -1,0 +1,14 @@
+Read specs/active/004-ca1-reframe-chalk-collapse.md in full before proceeding.
+
+Phase A objective: Validate that the existing engine output for the 2025 season supports the CA1 case study claim. This is read-only -- no code changes.
+
+Do the following:
+1. Call POST /api/postmortems/single-entry-mimicry/run with seasonYear: 2025, weeks: 1-18, poolSize: 1000
+2. Extract tables.weeklyFieldConcentration for Week 14
+3. Identify the Tampa Bay entry (team key: TB or equivalent). Record: ownershipAtPickDeadline, impliedWinProb
+4. Calculate the single-week field elimination rate for Week 14: (fieldSizeEnteringWeek14 - fieldSizeAfterWeek14) / fieldSizeEnteringWeek14
+5. Extract tables.independentPath for Week 14 -- identify which entries (I1/I2/I3) picked TB
+6. Check whether TB ownership >= 0.40 and elimination rate > 0.25
+7. Produce a structured summary report with all extracted values, pass/fail against thresholds, and a one-line verdict: "Phase A: CONFIRMED" or "Phase A: FAILED -- [reason]"
+
+Do not modify any files. Report findings only.

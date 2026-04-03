@@ -1,0 +1,14 @@
+The backend has made progress — pool config and entries are now public — but the portfolio/week endpoint specifically still has an auth check that's blocking it. The entries are there (3 of them), but the portfolio calculation endpoint has its own middleware layer that's still requiring authentication.
+
+Here's the current state:
+
+Endpoint    Status
+GET /api/pools/{poolId}    ✅ 200 — now public
+GET /api/pools/{poolId}/entries    ✅ 200 — now public
+GET /api/games?season=2025&scheduleType=regular    ✅ 200 — now public
+POST /api/pools/{poolId}/portfolio/week    ❌ 403 — still auth-gated
+The portfolio/week endpoint is the critical one that drives the whole replay view. On the survivorpulse.com backend, whoever owns that route needs to specifically remove the auth check (or mark it as publicly accessible) for this endpoint — it has its own middleware separate from the pool config endpoints.
+
+While you're sorting that out, the prototype is in good shape: Path B immediately shows the mock season data so the UI is fully functional. The moment that endpoint starts returning 200, the prototype will automatically switch to real data with no code changes needed on this side — the proxy and fallback logic are all wired up correctly.
+
+Can you check with your backend team which middleware is guarding POST /api/pools/:poolId/portfolio/week and have them exempt it from auth for this pool (or all pools) ?

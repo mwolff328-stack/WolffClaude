@@ -1,0 +1,39 @@
+CONTEXT
+You are building the CMEA Prototype — a separate React + Vite Replit app that calls SurvivorPulse APIs to validate the coordinated multi-entry allocation value proposition with real users. 
+
+Read these two specs in full before doing anything else. Do not begin implementation until you have read both.
+
+Frontend spec: https://www.notion.so/32e29ce5833d81b985f0c6161e5fb278
+Backend spec (for full API context): https://www.notion.so/32d29ce5833d81c18fd3f931e29001f7
+
+This is a throwaway validation prototype. Do not add polish, features, or scope beyond what the spec defines.
+
+---
+
+WORKSTREAM A — BACKEND ADDITION (main SurvivorPulse app)
+
+Before touching the prototype frontend, add a feedback endpoint to the main SurvivorPulse backend.
+
+Endpoint: POST /api/prototype/feedback
+
+Request body:
+{
+  "q1": "Yes" | "Partially" | "No",
+  "q2": string,
+  "q3": "Yes" | "Maybe" | "No",
+  "path": "A" | "B",
+  "entryCount": number,
+  "weeksViewed": number,
+  "sessionTimestamp": string (ISO),
+  "poolId": string
+}
+
+Storage: Write each submission as a row to a new DB table `prototype_feedback` with columns matching the request body fields plus an auto-increment `id` and `created_at` timestamp. Use the existing Drizzle/Neon DB pattern already in the codebase — do not introduce a new DB pattern.
+
+Auth: No auth required on this endpoint. Accept requests from any origin (add CORS header for the Replit prototype domain).
+
+Validation: All fields required except q2 (open text, allow empty string). Return 400 with a clear error message if required fields are missing.
+
+Done criteria: Endpoint accepts POST, writes to DB, returns 200 { success: true }. Add a brief integration test.
+
+---
