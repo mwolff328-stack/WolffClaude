@@ -176,6 +176,18 @@
           }
         ],
         "description": "Capture tool use results for continuous learning"
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/scripts/hooks/auto-commit-wolffclaude.js",
+            "async": true,
+            "timeout": 20
+          }
+        ],
+        "description": "Auto-commit ~/.claude changes to WolffClaude repo"
       }
     ],
     "Stop": [
