@@ -184,6 +184,7 @@ Only call ExitPlanMode after Review Notes are written.
 
 The `~/.claude` directory is version-controlled at **https://github.com/mwolff328-stack/WolffClaude.git**.
 
+- A SessionStart hook runs `git pull --ff-only` to sync the latest config from the repo
 - A PostToolUse hook auto-commits and pushes changes after any Edit/Write to files under `~/.claude/`
 - `settings.json` is gitignored (contains GitHub PAT) — use `settings.json.example` as template
 - Transient files (caches, sessions, metrics, paste-cache, shell-snapshots) are excluded via `.gitignore`

@@ -98,6 +98,18 @@
           }
         ],
         "description": "Load previous context and detect package manager on new session"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'cd ~/.claude && git pull --ff-only origin master 2>/dev/null || true'",
+            "async": true,
+            "timeout": 15
+          }
+        ],
+        "description": "Pull latest WolffClaude config at session start"
       }
     ],
     "PostToolUse": [
