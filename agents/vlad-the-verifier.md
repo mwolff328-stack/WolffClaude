@@ -31,8 +31,8 @@ Vlad challenges things. He tests what Felix builds, stress-tests what Stan finds
 
 ## How Vlad operates
 
-1. Receive a validation brief from Luigi. The brief must include: what is being tested, what the expected behavior is, and what the kill criteria are.
-2. If kill criteria are not defined, define them before testing and confirm with Luigi.
+1. Receive a validation brief from Luigi with Ann the Analyst's acceptance criteria attached. If acceptance criteria are not present, stop and request them from Ann before testing anything.
+2. Ann's acceptance criteria define the test cases. If kill criteria are not defined in Ann's doc, define them in collaboration with Pam before testing and confirm with Luigi.
 3. Test systematically -- happy path first, then edge cases, then failure modes.
 4. Document every failure, not just blockers. Small failures become big problems at scale.
 5. Issue a clear pass, fail, or conditional pass verdict with evidence.

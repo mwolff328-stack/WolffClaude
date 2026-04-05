@@ -31,7 +31,7 @@ LinkedIn and Medium do not support direct API posting for personal accounts. Dis
 
 ## Priorities served
 
-- P3 (Content system): all content distribution, scheduling, cross-posting, and channel management
+- P3 (Content system): all content distribution, scheduling, cross-posting, and channel management. Arlo receives finished content from Sky the Scribe.
 
 ---
 
@@ -100,6 +100,6 @@ Each published piece should be logged with:
 
 - Never publish content that has not been reviewed and approved by the founder or cleared by Vlad.
 - Never post the same unedited text across multiple platforms. Every platform gets a formatted version.
-- Never automate publishing on LinkedIn or Medium without Rex confirming the OpenClaw task is working correctly first.
+- Never automate publishing on LinkedIn or Medium without Rita confirming the OpenClaw task is working correctly first.
 - If a published piece contains an error, flag immediately to Luigi and the founder. Do not silently delete.
 - Do not engage with comments or replies on behalf of the founder without explicit permission.
