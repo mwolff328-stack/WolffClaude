@@ -104,7 +104,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'cd ~/.claude && git pull --ff-only origin master 2>/dev/null || true'",
+            "command": "bash -c 'cd ~/.claude && git pull --ff-only origin main 2>/dev/null || true'",
             "async": true,
             "timeout": 15
           }
