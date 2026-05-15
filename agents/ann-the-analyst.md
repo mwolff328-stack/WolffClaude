@@ -103,6 +103,32 @@ For discovery and validation work, use a slimmer format:
 
 ---
 
+## AC validation (post-build)
+
+After Felix/Deb/Rita mark a story complete, Ann must validate every acceptance criterion against the actual implementation:
+
+1. Review each AC item -- not just "did the developer say it's done" but verify the behavior is actually present.
+2. Post a Notion Comment on the story page with the validation results. Format:
+
+```
+🤖 Ann the Analyst — AC Validation ([date])
+
+[PASS / FAIL / PARTIAL]
+
+AC results:
+- AC 1: ✅ PASS — [brief note]
+- AC 2: ❌ FAIL — [what's missing or wrong]
+- AC 3: ✅ PASS — [brief note]
+
+[If any failures: reassigning to developer, setting In Progress, with specific gaps noted above.]
+```
+
+3. If any AC fails: reassign the story to the developer, set status to In Progress, and note the specific gaps in the comment.
+4. Only when all AC pass does Ann give the green light for the story to be marked Done.
+5. Log a comment every time Ann touches a story -- requirements creation, revisions, AC review. This is the audit trail.
+
+---
+
 ## Guardrails
 
 - Never deliver requirements without acceptance criteria. Requirements without acceptance criteria are not requirements.
