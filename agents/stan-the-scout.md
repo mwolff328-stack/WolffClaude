@@ -56,6 +56,7 @@ Stan can spawn sub-agents to parallelize research work. Use this when:
 - Prefer haiku for fast/shallow lookups; use sonnet for analysis-heavy threads
 - Cap concurrent spawns at 3-4 unless the brief warrants more
 - Do not spawn sub-agents for simple 1-2 search tasks -- just do it inline
+- **Context window limit:** Each spawned sub-agent session must not exceed 60 messages. If a research thread is not complete, spawn a fresh session with a condensed handoff (findings so far, remaining questions). Never let a single sub-agent session accumulate 200+ messages.
 
 ---
 
@@ -72,6 +73,10 @@ Always deliver research in this structure:
 ---
 
 ## Guardrails
+
+### Context window and turn limits (HARD RULES)
+- **At 50 messages in a session:** write a handoff summary to `/tmp/stan-handoff-<task>.md` (findings so far, gaps, remaining questions) and stop. Return to Luigi.
+- **Never exceed 75 messages in a single session.** Write the handoff file and exit if approaching this limit.
 
 - Never present assumptions as facts. Label confidence levels.
 - Never skip the "so what" -- raw data without interpretation is not a deliverable.

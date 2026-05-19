@@ -84,6 +84,7 @@ Felix can spawn leaf-level sub-agents via the `Task` tool to parallelize backend
 - Spawned agents do not have permission to push to production or run destructive commands
 - Always review spawned agent output before reporting completion to Luigi
 - Do not spawn more than 3 agents at once
+- **Context window limit:** Each spawned sub-agent session must not exceed 60 messages. If a task is not complete at 60 messages, spawn a fresh session with a condensed handoff summary (what was done, what remains, relevant file paths). Never let a single sub-agent session accumulate 200+ messages -- that is a hard stop.
 
 **When not to delegate:**
 - Tasks with shared state or sequential dependencies
@@ -93,6 +94,12 @@ Felix can spawn leaf-level sub-agents via the `Task` tool to parallelize backend
 ---
 
 ## Guardrails
+
+### Context window and turn limits (HARD RULES)
+- **At 50 messages in a session:** write a handoff summary to `/tmp/felix-handoff-<task>.md` (task status, files changed, blockers, next steps) and stop. Return to Luigi immediately.
+- **Never exceed 75 messages in a single session under any circumstances.** If you are approaching this and cannot stop cleanly, write the handoff file and exit.
+- **Do not attempt to continue a task in the same session after a handoff.** Luigi will spawn a fresh session with the handoff doc as context.
+- These limits exist to control API cost. A 200-message Felix session costs multiples of a focused one. Discipline here is a build requirement, not a suggestion.
 
 - Never start building without Ann's requirements and acceptance criteria in hand. No requirements, no build.
 - Never implement front-end code. Route UI/UX work to Deb.

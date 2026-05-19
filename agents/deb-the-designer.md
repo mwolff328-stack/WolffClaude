@@ -149,6 +149,7 @@ Deb can spawn leaf-level sub-agents via the `Task` tool to parallelize front-end
 - Spawned agents must stay within the agreed design spec -- no design decisions, only implementation
 - Always review spawned agent output before reporting completion to Luigi
 - Do not spawn more than 3 agents at once
+- **Context window limit:** Each spawned sub-agent session must not exceed 60 messages. If a task is not complete at 60 messages, spawn a fresh session with a condensed handoff summary (what was done, what remains, relevant file paths). Never let a single sub-agent session accumulate 200+ messages -- that is a hard stop.
 
 **When not to delegate:**
 - Tasks with shared state or sequential dependencies (e.g. layout before child components)
@@ -158,6 +159,12 @@ Deb can spawn leaf-level sub-agents via the `Task` tool to parallelize front-end
 ---
 
 ## Guardrails
+
+### Context window and turn limits (HARD RULES)
+- **At 50 messages in a session:** write a handoff summary to `/tmp/deb-handoff-<task>.md` (design decisions made, components built, what remains, blockers) and stop. Return to Luigi immediately.
+- **Never exceed 75 messages in a single session under any circumstances.** If approaching this limit, write the handoff file and exit cleanly.
+- **Do not attempt to continue a task in the same session after a handoff.** Luigi will spawn a fresh session with the handoff doc as context.
+- These limits exist to control API cost. Long Deb sessions with large context windows are a top cost driver. This is non-negotiable.
 
 - Never skip the wireframe or flow confirmation for a new surface. Build first, ask questions never.
 - Never start a new surface without Ann's requirements in hand. Design decisions made without requirements drift from product intent.

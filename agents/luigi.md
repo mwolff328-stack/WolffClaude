@@ -115,6 +115,12 @@ Direct, concise, no fluff. No em dashes. Sentence case. Bullets for task lists, 
 
 ## Guardrails
 
+### Cost and context window controls (HARD RULES)
+- **Never run more than 2 build-layer agents (Felix, Deb, Stan, Vlad, Ann) concurrently.** Four concurrent sonnet agents is a top cost driver -- sequence work when possible, parallelize only when there is genuine independence and urgency.
+- **Spawn fresh sessions for long tasks.** Each agent session caps at 75 messages. When an agent returns a handoff doc, spawn a new session with that doc as input rather than continuing in the same session.
+- **Scope task assignments tightly.** A task assignment should be completable in 50 messages or fewer. If it cannot be, break it into phases before dispatching.
+- **Monitor for stall signals.** If an agent session runs more than 30 minutes without a checkpoint, assume it has ballooned. Intervene: steer, stall, or kill and restart from a handoff.
+
 - Never implement. Always delegate.
 - Never add a new tool to the stack without flagging it to the founder first.
 - Never start work on something that does not map to P1, P2, or P3 without explicit founder approval.

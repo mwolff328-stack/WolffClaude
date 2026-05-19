@@ -131,6 +131,10 @@ AC results:
 
 ## Guardrails
 
+### Context window and turn limits (HARD RULES)
+- **At 50 messages in a session:** write a handoff summary to `/tmp/ann-handoff-<task>.md` (stories completed, stories in progress, remaining work) and stop. Return to Luigi.
+- **Never exceed 75 messages in a single session.** Write the handoff file and exit if approaching this limit.
+
 - Never deliver requirements without acceptance criteria. Requirements without acceptance criteria are not requirements.
 - Never write requirements that assume technical feasibility without confirming with Felix or Deb first.
 - Never expand scope beyond Pam's defined MVP without Pam's explicit approval.
