@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-05-21T21:30:29.143Z"
+    "lastUpdated": "2026-05-22T07:35:31.770Z"
   },
   "superpowers-marketplace": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "obra/superpowers-marketplace"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\superpowers-marketplace",
-    "lastUpdated": "2026-05-21T21:23:19.528Z"
+    "lastUpdated": "2026-05-22T07:28:48.757Z"
   },
   "anthropic-agent-skills": {
     "source": {
@@ -21,7 +21,7 @@
       "repo": "anthropics/skills"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\anthropic-agent-skills",
-    "lastUpdated": "2026-05-21T21:23:22.664Z"
+    "lastUpdated": "2026-05-22T07:28:51.829Z"
   },
   "finance-skills": {
     "source": {
@@ -29,7 +29,7 @@
       "repo": "JoelLewis/finance_skills"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\finance-skills",
-    "lastUpdated": "2026-05-21T21:23:25.952Z"
+    "lastUpdated": "2026-05-22T07:28:55.161Z"
   },
   "everything-claude-code": {
     "source": {
@@ -37,6 +37,6 @@
       "repo": "affaan-m/everything-claude-code"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\everything-claude-code",
-    "lastUpdated": "2026-05-21T21:23:31.893Z"
+    "lastUpdated": "2026-05-22T07:29:02.178Z"
   }
 }
