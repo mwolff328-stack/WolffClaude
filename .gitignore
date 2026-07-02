@@ -2,6 +2,7 @@
 settings.json
 settings.local.json
 .credentials.json
+.credentials.json.tmp*
 
 # Plugin caches — re-downloaded on install
 plugins/cache/
