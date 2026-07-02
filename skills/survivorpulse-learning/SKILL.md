@@ -1,68 +1,100 @@
 ---
 name: survivorpulse-learning
 description: >
-  Knowledge capture and lesson extraction for SurvivorPulse. Use when working in or posting to the
-  #learning Discord channel (1493965556817334313). Covers: documenting lessons learned from builds,
-  research, and ops; capturing reusable patterns; extracting insights from failures and successes;
-  updating MEMORY.md and learned skills; and synthesizing cross-channel knowledge. Trigger on:
-  "lesson learned", "TIL", "pattern", "what we learned", "knowledge capture", "retrospective",
-  or any post-mortem discussion.
+  Systematic knowledge capture for SurvivorPulse. Governs the mandatory 🎓 Learning: line in
+  Done transition comments, Luigi's weekly synthesis process, and the flow from Notion story
+  comments into learned/ skill files and Discord #learning (1493965556817334313). Use when:
+  writing a Done transition comment, running Luigi's weekly synthesis, posting to #learning,
+  updating learned/ skill files or MEMORY.md, or extracting patterns from completed work.
+  Trigger on: "Done comment", "🎓", "learning", "TIL", "pattern", "retrospective",
+  "weekly synthesis", "what we learned", "#learning".
 triggers:
+  - "Done comment"
+  - "🎓"
   - "#learning"
   - "lesson learned"
   - "TIL"
   - "retrospective"
+  - "weekly synthesis"
   - "what we learned"
   - "pattern"
 ---
 
 # SurvivorPulse Learning & Knowledge Capture
 
-You are operating in the SurvivorPulse #learning channel context. This channel captures lessons, patterns, and reusable knowledge from across all SurvivorPulse work streams.
+Every Done transition is a mandatory learning moment. Weekly synthesis turns individual moments into institutional knowledge. This is systematic — baked into the Kanban flow, not ad-hoc.
 
-## Purpose
+## When learning is captured
 
-Turn experience into durable knowledge. Every significant failure, success, or surprising finding should produce a learning artifact that prevents repeat mistakes and accelerates future work.
+**Mandatory:** Every persona's Done transition comment must include a `🎓 Learning:` line. N/A is acceptable; silence is not.
 
-## What belongs here
+**Encouraged (not required):** At In Review or In Progress touch points, if a reviewer or builder discovers something worth preserving, they add a `🎓 Learning:` line to that touch comment.
 
-- **Build lessons:** patterns, anti-patterns, tooling discoveries from Felix/Deb work
-- **Research insights:** meta-findings about research methodology from Stan's work
-- **Ops lessons:** CI/CD gotchas, deployment patterns, automation design from Rita/infra
-- **Product lessons:** ICP validation findings, positioning insights from Pam/Ann
-- **Strategy lessons:** what worked and what did not in market approach from Hank
+## The 🎓 Learning line format
+
+Every Done transition comment ends with:
+
+```
+[PersonaName] — [what was done / verdict]
+🎓 Learning: [CATEGORY] [learning statement]
+```
+
+Or, if nothing new was learned:
+
+```
+🎓 Learning: N/A
+```
+
+Example:
+```
+[Felix] — Implemented picks history table via field_picks_history migration; all 3 slices merged and tests green.
+🎓 Learning: [BUILD] field_picks_history.eliminated_week is NULL until an entry is eliminated — guard all queries or you get silent 0s. See survivorpulse-data-field-traps.md.
+```
+
+## Category tags
+
+| Tag | Use | Primary personas |
+|-----|-----|-----------------|
+| `[BUILD]` | Code pattern, schema gotcha, tool discovery, architectural lesson | Felix, Rita |
+| `[QA]` | Test gap, reproducibility pattern, coverage miss, what slipped through | Vlad |
+| `[PRODUCT]` | Domain model clarification, AC ambiguity resolved, scope insight | Ann, Pam, Sky |
+| `[DESIGN]` | UX pattern, component reuse, spec gap found | Deb |
+| `[RESEARCH]` | Analytical insight, data quality finding, model assumption | Stan |
+| `[PROCESS]` | Workflow improvement, orchestration bottleneck, coordination lesson | Luigi |
+
+## Luigi's weekly synthesis
+
+Every week, Luigi:
+
+1. Reads all Done story and bug comments from the past 7 days.
+2. Identifies every substantive `🎓 Learning:` line (not N/A).
+3. Promotes any learning that surfaces across **2+ stories** to a `learned/` skill file.
+4. Posts standout learnings and new `learned/` entries to Discord `#learning` (channel `1493965556817334313`).
+5. Posts a brief weekly synthesis summary to `#learning` — even if no new learnings emerged.
+6. Assesses each substantive learning against the operating model: if a learning reveals a process gap, an unclear rule, or a missing convention, Luigi drafts the proposed improvement and presents it to the founder for review and approval before making any edit to the Operating Model.
+
+If a learning changes how an agent should operate, update the relevant agent spec or `CLAUDE.md`/`.claude/rules/` entry. Commit and push to WolffClaude after any skill/config update.
+
+## Where learnings are stored
+
+1. **Notion story/bug comment** — immediate, in-context capture when work is freshest
+2. **`SurvivorPulse/.claude/skills/learned/`** — durable project-level patterns
+3. **`~/.claude/skills/learned/`** — cross-project patterns (only if learning generalizes beyond SP)
+4. **Discord `#learning`** — broadcast for team visibility
 
 ## Learning artifact format
 
-When capturing a lesson:
+When capturing a lesson in `#learning` or a `learned/` file:
 
 **What happened:** one-sentence description of the event or discovery
-**Context:** which channel/agent/work stream produced this
+**Context:** which story/agent/work stream produced this
 **The lesson:** what we now know that we did not before
-**Action taken:** what was updated (skill file, MEMORY.md, AGENTS.md, code, process)
+**Action taken:** what was updated (skill file, MEMORY.md, agent spec, code, process)
 **Reusable pattern:** if applicable, a generalized rule others can apply
-
-## Where lessons are stored
-
-1. **Quick capture:** post to #learning channel
-2. **Durable storage:** update one or more of:
-   - `~/.claude/skills/learned/*.md` (technical/tactical patterns)
-   - `MEMORY.md` "Lessons learned" section (strategic/operational insights)
-   - Agent spec files in `~/.claude/agents/` (if the lesson changes how an agent should operate)
-   - `CLAUDE.md` or `.claude/rules/` (if the lesson changes dev workflow)
-3. **Commit and push** to WolffClaude repo after any skill/config update
-
-## Existing learned skills
-
-Check `~/.claude/skills/learned/` before creating a new one. Current entries:
-- `github-repo-discovery.md` - layered GitHub search for tools/libraries
-- `npm-env-var-override.md` - npm scripts silently override shell env vars
-- `replit-bashrc-permission-denied.md` - shell alias workaround for Replit
-- `vitest-fake-timers-hook-testing.md` - testing time-based React hooks
 
 ## Learned skill format
 
-When creating a new learned skill file:
+When creating a new `learned/` file:
 
 ```markdown
 # [Title]
@@ -80,14 +112,22 @@ When creating a new learned skill file:
 [Conditions that should trigger recall of this lesson]
 ```
 
-## Channel formatting
+## Existing learned skills
+
+Check before creating a new one.
+
+**Project-level (`SurvivorPulse/.claude/skills/learned/`):**
+- `survivorpulse-data-field-traps.md` — canonical spread field, stale field warnings
+
+**Global (`~/.claude/skills/learned/`):**
+- `github-repo-discovery.md` — layered GitHub search for tools/libraries
+- `npm-env-var-override.md` — npm scripts silently override shell env vars
+- `replit-bashrc-permission-denied.md` — shell alias workaround for Replit
+- `vitest-fake-timers-hook-testing.md` — testing time-based React hooks
+
+## Channel formatting (Discord #learning)
 
 - Bullet lists only (no markdown tables)
 - Keep initial posts concise (3-5 bullets)
 - Link to full artifacts for deep context
-- Use emoji prefixes for quick scanning:
-  - `[BUILD]` technical/code lesson
-  - `[OPS]` infrastructure/CI lesson
-  - `[RESEARCH]` methodology/analysis lesson
-  - `[PRODUCT]` ICP/positioning/strategy lesson
-  - `[PROCESS]` workflow/coordination lesson
+- Use the category tags as prefixes for quick scanning

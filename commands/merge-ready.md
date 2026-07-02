@@ -54,6 +54,11 @@ Delegate to `doc-updater` agent:
 - [ ] Responsive behavior
 - [ ] User feedback for actions (toasts, indicators)
 
+## Gate 8: Push to Remote (runs only if Gates 0–7 all pass)
+- [ ] `git push origin 2026-v1` succeeds
+- [ ] Confirm remote tip matches local HEAD (`git log origin/2026-v1 -1` == local HEAD)
+- If push fails (non-fast-forward): STOP — do NOT force push. Report blocker and ask founder to resolve.
+
 ## Output Format
 
 ```
@@ -69,8 +74,10 @@ Delegate to `doc-updater` agent:
 | E2E Tests | PASS/FAIL/N/A | |
 | Documentation Accuracy | PASS/FAIL | |
 | UI/UX | PASS/FAIL/N/A | |
+| Push to Remote | PASS/FAIL/SKIPPED | Skipped if any earlier gate failed |
 
 **Overall: MERGE READY / NOT MERGE READY**
+**Remote:** pushed to `origin/2026-v1` / not pushed (gates failed)
 ```
 
 If any gate FAILS: list specific fixes needed with file paths and priority.

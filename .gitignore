@@ -74,3 +74,28 @@ tasks/
 plugins/blocklist.json
 plugins/config.json
 plugins/install-counts-cache.json
+plugins/plugin-catalog-cache.json
+plugins/.last_inuse_sweep
+
+# Daemon runtime state (worker roster + local IPC key — never commit)
+daemon/
+
+# Background job/session runtime state (transient)
+jobs/
+
+# Telemetry (actual directory name; metrics/ above was stale)
+telemetry/
+
+# Scheduled task lock (the scheduled-tasks/ skill content itself is real, keep that)
+scheduled_tasks.lock
+
+# MCP server node_modules (regenerate via npm install)
+mcp-servers/**/node_modules/
+
+# Misc local state markers
+.last-cleanup
+.last-update-result.json
+mcp-needs-auth-cache.json
+
+# Personal backup files made during editing sessions
+*.bak

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pools-hub-cards-mockup",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "4321", "C:\\Users\\wolff\\Projects\\SurvivorPulse\\docs\\mockups\\pools-hub-cards"],
+      "port": 4321
+    },
+    {
+      "name": "survivorpulse-dev",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/SurvivorPulse && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development npx tsx watch server/index.ts"],
+      "port": 5000
+    }
+  ]
+}
