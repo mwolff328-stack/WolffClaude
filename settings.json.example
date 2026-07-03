@@ -30,5 +30,47 @@
       }
     }
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'cd ~/.claude && git pull --ff-only origin main 2>/dev/null || true'",
+            "async": true,
+            "timeout": 15
+          }
+        ],
+        "description": "Pull latest WolffClaude config at session start"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/scripts/hooks/sync-desktop-skills.js",
+            "async": true,
+            "timeout": 10
+          }
+        ],
+        "description": "Sync personal skills from Claude Desktop app to ~/.claude/skills/"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/scripts/hooks/auto-commit-wolffclaude.js",
+            "async": true,
+            "timeout": 20
+          }
+        ],
+        "description": "Auto-commit ~/.claude changes to WolffClaude repo"
+      }
+    ]
+  }
 }
