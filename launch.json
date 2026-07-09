@@ -13,6 +13,13 @@
       "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/SurvivorPulse && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development npx tsx watch server/index.ts"],
       "port": 5000,
       "autoPort": true
+    },
+    {
+      "name": "sst762-smoke-worktree",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/sp-wt-762smoke && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development PORT=5055 npx tsx watch server/index.ts"],
+      "port": 5055,
+      "autoPort": true
     }
   ]
 }
