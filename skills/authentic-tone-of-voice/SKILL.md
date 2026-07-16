@@ -1,6 +1,6 @@
 ---
 name: authentic-tone-of-voice
-description: Teach Claude your writing voice so every output sounds like you. Calibrated to Michael Wolff's voice from the Craig Eulogy corpus. Includes vocabulary rules, banned patterns, rhythm preferences, and quality checks. Use when setting up a new project or when AI output doesn't sound right.
+description: Teach Claude your writing voice so every output sounds like you. Calibrated to Michael Wolff's voice from the Craig Eulogy plus a corpus of his sent emails. Includes vocabulary rules, banned patterns, rhythm preferences, and quality checks. Use when setting up a new project or when AI output doesn't sound right.
 ---
 
 # Authentic Tone of Voice
