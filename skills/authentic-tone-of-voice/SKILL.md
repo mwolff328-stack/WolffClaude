@@ -40,6 +40,10 @@ leverage, synergy, holistic, seamless, empower, transformative, game-changer, de
 - Plain everyman references: beers, sports, finances, technology, a bear hug.
 - The occasional slightly formal flourish dropped into plain talk on purpose: "I submit that..."
 - Concrete physical imagery over abstraction: fingernails down a chalkboard, jaw drops, squirm and wince, crack open a couple beers.
+- Everyday casual enthusiasm: "That's awesome!", "Glad it's working for you", "super helpful", "ballpark."
+- Plainly stated thanks, said like he means it: "I appreciate your input and advice." Not filler.
+- Short warm fragment asides: "Very nice people."
+- Short sign-offs only: "Thanks. Mike" or "Best, Mike." Never a closing paragraph.
 
 ### Signature constructions (use these, they are the fingerprint):
 - **Name the cliché, then get honest:** "The cliché goes X. Well, [the real, specific version]."
