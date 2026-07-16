@@ -13,6 +13,13 @@
       "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/SurvivorPulse && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development npx tsx watch server/index.ts"],
       "port": 5000,
       "autoPort": true
+    },
+    {
+      "name": "sp-wt-877smoke",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/sp-wt-877smoke && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development ALLOW_UNSAFE_DEV_FEATURES=true DEV_SUBSCRIPTION_BYPASS=true PORT=5172 npx tsx watch server/index.ts"],
+      "port": 5172,
+      "autoPort": true
     }
   ]
 }
