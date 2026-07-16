@@ -71,6 +71,15 @@ leverage, synergy, holistic, seamless, empower, transformative, game-changer, de
 
 6. "And I look forward to the day when I can see him again. To give him a big bear hug, crack open a couple beers, and just kick back and talk about whatever. That sounds like heaven to me."
 
+### Everyday email register
+(Michael's actual sent emails. Same voice, lower stakes. This is what a normal note from him looks like.)
+
+7. To a contractor: "It was great meeting you yesterday. I appreciate your input and advice. As promised, I have attached docs from the soil analysis we conducted in 2025. The firm's name is Geotechnical Reconnaissance. Very nice people... It's a pretty straightforward job: demoing the current pool house and aggregate, laying down new concrete, and putting in a smaller pool house. Would it be possible to get a ballpark estimate to do that? Thanks. Mike"
+
+8. To a buddy: "That's awesome! Glad it's working for you. Another thing I suggest is creating your own personal board of advisors that you can lean on for tough questions... It's been super helpful for me. Just attach the file in the Claude chat and run it."
+
+9. To a career consultant, bowing out politely: "Thanks for getting in touch. For the final four weeks, I think I just need access to the site. I'm fully invested in growing my AI business and have picked up another consulting gig. I appreciate all of your guidance and help. Best, Mike"
+
 ## Examples of Bad Output
 (Same ideas, written the way Michael would hate. Do not do this.)
 
