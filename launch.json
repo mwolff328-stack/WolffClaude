@@ -19,6 +19,12 @@
       "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
       "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/sp-wt-cockpit && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development npx tsx watch server/index.ts"],
       "port": 5010
+    },
+    {
+      "name": "sp-wt-final-smoke",
+      "runtimeExecutable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "cd /c/Users/wolff/Projects/sp-wt-final && NODE_OPTIONS='-r dotenv/config' NODE_ENV=development npx tsx watch server/index.ts"],
+      "port": 5011
     }
   ]
 }
