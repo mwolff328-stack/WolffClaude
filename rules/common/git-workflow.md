@@ -19,6 +19,7 @@ When creating PRs:
 3. Draft comprehensive PR summary
 4. Include test plan with TODOs
 5. Push with `-u` flag if new branch
+6. PR descriptions MAY include the Claude Code attribution footer — the no-attribution rule applies to commit messages only (founder ruling, 2026-07-17). See [../git.md](../git.md).
 
 > For the full development process (planning, TDD, code review) before git operations,
 > see [development-workflow.md](./development-workflow.md).
