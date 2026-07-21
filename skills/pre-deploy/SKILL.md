@@ -70,6 +70,19 @@ SHIP requires BOTH: every test suite passed AND the Manual Pre-Publish Gate belo
 🚫  DO NOT SHIP — any suite failed, OR a pending prod DB migration/backfill is unapplied
 ```
 
+## Manual Pre-Publish Gate — Pending Prod DB Migrations & Backfills
+
+The automated suites above do NOT cover data that must be migrated or backfilled on the **production** database — a green suite says nothing about whether prod's existing rows are correct. Before issuing 🚢 SHIP, confirm every pending prod DB change below has been applied to production.
+
+Rules for each item:
+- Dev-first is already done for each; this gate is specifically the **prod** application.
+- Follow `docs/DB_OPERATIONS.md` and the wrong-host rule: confirm `DATABASE_URL` targets **prod** (Replit PROD SQL console / Shell) and apply only on an explicit founder "ready to publish."
+- Check each item off once applied-and-verified on prod, or explicitly defer it with a reason. An unapplied, undeferred item is a **DO NOT SHIP**.
+
+Pending items:
+
+- [ ] **SST-941 — `picks.period` backfill.** Pre-fix `batchUpsertPicks` writes carried `period='week:1'` regardless of real week/round. Dev/helium backfilled + verified 2026-07-21; **prod not yet done.** On prod, run: `npx tsx scripts/backfill-batch-picks-period.ts --audit-only` → review any collision groups (founder decision) → `--live` → re-audit until `Mismatched period: 0`. Then check this off (or delete the item). Ticket: SST-941.
+
 ## Rules
 
 - Do not skip any suite
