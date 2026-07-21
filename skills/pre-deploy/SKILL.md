@@ -63,9 +63,11 @@ For each failure, list:
 
 ### Final Verdict
 
+SHIP requires BOTH: every test suite passed AND the Manual Pre-Publish Gate below is cleared.
+
 ```
-🚢  SHIP     — all suites passed
-🚫  DO NOT SHIP — one or more suites failed
+🚢  SHIP     — all suites passed AND all pending prod DB migrations/backfills applied
+🚫  DO NOT SHIP — any suite failed, OR a pending prod DB migration/backfill is unapplied
 ```
 
 ## Rules
