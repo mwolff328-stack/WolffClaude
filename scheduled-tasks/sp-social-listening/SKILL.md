@@ -8,22 +8,28 @@ You are producing the daily SurvivorPulse social listening report. SurvivorPulse
 ## Objective
 Check Reddit, X (Twitter), and YouTube for anything posted or newly notable in the last 24 hours that's relevant to SurvivorPulse or NFL survivor/knockout/suicide pools generally — competitor mentions, ICP pain points, pricing chatter, potential leads, or useful market signal. Produce one summary and deliver it three ways (Notion, email draft, chat output). Discord is explicitly OUT of scope for this task (no API connection exists yet) — do not attempt to scrape or check it.
 
+Seasonality: NFL survivor-pool chatter is naturally near-zero during the off-season (roughly February–August) and ramps up fast from late August through January. Don't treat a quiet off-season day as a problem — say so plainly and move on.
+
 ## Step 1: Determine the time window
 Get today's date (run `date` via Bash/PowerShell if you need to confirm). Your window is the last 24 hours ending now.
 
 ## Step 2: Gather from each platform via Apify
-Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-dataset-items). For each actor, call fetch-actor-details first if you're unsure of current input field names — these schemas drift over time.
+Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-dataset-items). For each actor, call fetch-actor-details first if you're unsure of current input field names — these schemas drift over time. When reading dataset items back, always pass a narrow `fields` list (e.g. title, postUrl/url, communityName/channelName, createdAt/date, upVotes/viewCount) — do NOT pull the full item including body/text/media fields, that blows past output limits.
 
 **Reddit** — actor `harshmaur/reddit-scraper`:
-- Run 1: `searchTerms`: ["survivor pool", "survivor pick", "knockout pool", "suicide pool", "PoolGenius", "survivorgrid", "multi-entry survivor", "SurvivorPulse"], `searchPosts`: true, `postedAfter`: (24h ago, ISO date), `maxPostsCount`: 50.
-- Run 2: `subredditUrls`: ["https://www.reddit.com/r/survivorpool/", "https://www.reddit.com/r/sportsbook/"], `postedAfter`: (24h ago), `maxPostsCount`: 30.
+- Run 1 (targeted subreddits — most reliable signal): `subredditUrls`: ["r/survivorpool", "r/sportsbook"], `postedAfter`: (24h ago, ISO date), `maxPostsCount`: 30.
+- Run 2 (broad keyword sweep — noisy by nature): `searchTerms`: ["survivor pool", "knockout pool", "suicide pool", "PoolGenius", "survivorgrid"], `searchPosts`: true, `postedAfter`: (24h ago), `maxPostsCount`: 40.
+  - **Known failure mode (confirmed via test run 2026-07-22): do NOT include "SurvivorPulse" as a bare search term** — Reddit's keyword search treats it as a loose/stemmed match and returns unrelated results (e.g. random "survivors" game posts). Rely on the subreddit scrape and X/YouTube for direct brand mentions instead.
+  - The keyword sweep WILL return heavy false-positive noise: Dead by Daylight (a game with a "Survivor" role), reality-TV Survivor fan communities, cancer-survivor subreddits, zombie/survival video games, and generic "pool" (swimming pool, prize pool) hits. This is expected. Silently discard anything that isn't genuinely about NFL/football survivor, knockout, or suicide pools — never list an irrelevant keyword match in the report just because it technically matched.
 - Skip comment crawling (keep cost down) unless a post looks highly relevant, then you may fetch its top comments.
 
 **X/Twitter** — actor `apidojo/tweet-scraper`:
 - `twitterHandles`: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive"], plus `searchTerms`: ["survivor pool", "#NFLSurvivor", "suicide pool", "knockout pool", "PoolGenius", "survivorgrid", "SurvivorPulse"]. Filter/sort for the last 24 hours, `maxItems` ~50.
+- **Known issue (confirmed via test run 2026-07-22): this actor returned 0 items on its first test**, possibly due to free-tier rate limiting rather than genuine silence. If you get 0 results, report it as "no results captured (possible scraper limitation)" — never phrase a 0 as confirmed silence on X specifically. If this keeps happening for more than ~5 consecutive days, say so explicitly so it can be swapped for a different actor.
 
 **YouTube** — actor `streamers/youtube-scraper`:
-- `searchQueries`: ["NFL survivor pool picks", "survivor pool strategy", "knockout pool picks", "best survivor pick this week", "PoolGenius survivor"], recent-first sort, `dateFilter` constrained to the last day if the field allows it (otherwise pull recent-sorted results and manually filter by published date), `maxResults` ~15.
+- `searchQueries`: ["NFL survivor pool picks", "survivor pool strategy", "knockout pool picks", "best survivor pick this week", "PoolGenius survivor"], `sortingOrder`: "date", `dateFilter`: "today", `maxResults`: 3-5 per query.
+- This platform worked well in testing and surfaces real signal (competitor channels like PoolGenius, sports-media channels like VSiN). Note: some channels run templated/boilerplate video series (e.g. team-by-team preview videos that all generically mention "survivor pool strategy" in the description) — treat these as low-signal padding, don't list each one individually, just note the pattern once if a channel is doing high volume of it.
 
 If any actor run fails or returns nothing, note that plainly in the summary rather than failing the whole task — still produce a report for the platforms that worked.
 
@@ -34,7 +40,7 @@ Classify the day with one flag: "Nothing notable", "Worth a look", "Competitor m
 
 ## Step 4: Deliver
 
-1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `7bba5cf1-808c-404c-b11e-234283aef418` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `Date` = today, `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only include platforms that actually returned data). Page content = the full summary.
+1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `7bba5cf1-808c-404c-b11e-234283aef418` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date in YYYY-MM-DD (this is a Notion date property — it MUST be passed as the expanded key `date:Date:start`, NOT as a bare `Date` key, or the create call fails validation), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only include platforms that actually returned data). Page content = the full summary.
 
 2. **Email draft** — use the Gmail `create_draft` tool (never send/auto-send — draft only). `to`: ["mwolff328@gmail.com"], `subject`: "SurvivorPulse Social Listening — <YYYY-MM-DD>", `body`: the same summary in plain text.
 
@@ -42,6 +48,6 @@ Classify the day with one flag: "Nothing notable", "Worth a look", "Competitor m
 
 ## Constraints
 - Keep Apify usage lean (the maxItems/maxPostsCount/maxResults limits above are deliberate cost controls) — this runs daily and should stay cheap (roughly $0.25–0.50/run in Apify costs).
-- Never fabricate activity — if a platform returns nothing relevant, say so plainly.
+- Never fabricate activity — if a platform returns nothing relevant, say so plainly, and distinguish "confirmed quiet" (e.g. off-season, no posts in a targeted subreddit) from "inconclusive" (e.g. X returning 0, possible scraper issue).
 - Do not attempt Discord. If you want to flag that Discord monitoring is still pending setup, you may note it once as a one-line aside, not as a recurring complaint.
 - Do not send email — draft only, every time.
