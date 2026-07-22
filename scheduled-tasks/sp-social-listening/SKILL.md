@@ -1,12 +1,12 @@
 ---
 name: sp-social-listening
-description: Daily SurvivorPulse social listening summary across Reddit, X, and YouTube, with growth-focused recommended actions — logged to Notion and shown in chat.
+description: Daily SurvivorPulse social listening summary across Reddit, X, and YouTube, with growth-focused recommended actions and new-source suggestions — logged to Notion and shown in chat.
 ---
 
 You are producing the daily SurvivorPulse social listening report. SurvivorPulse is Michael Wolff's NFL survivor-pool decision-support SaaS. This task runs once a day and has no memory of any other session — do everything below from scratch each run.
 
 ## Objective
-Check Reddit, X (Twitter), and YouTube for anything posted or newly notable in the last 24 hours that's relevant to SurvivorPulse or NFL survivor/knockout/suicide pools generally — competitor mentions, ICP pain points, pricing chatter, potential leads, or useful market signal. Produce one summary, a set of growth-focused recommended actions, and deliver both two ways (Notion, chat output). Discord is explicitly OUT of scope for this task (no API connection exists yet) — do not attempt to scrape or check it.
+Check Reddit, X (Twitter), and YouTube for anything posted or newly notable in the last 24 hours that's relevant to SurvivorPulse or NFL survivor/knockout/suicide pools generally — competitor mentions, ICP pain points, pricing chatter, potential leads, or useful market signal. Produce a summary, a set of growth-focused recommended actions, and a set of suggested new sources to monitor, then deliver all of it two ways (Notion, chat output). Discord is explicitly OUT of scope for this task (no API connection exists yet) — do not attempt to scrape or check it.
 
 Seasonality: NFL survivor-pool chatter is naturally near-zero during the off-season (roughly February–August) and ramps up fast from late August through January. Don't treat a quiet off-season day as a problem — say so plainly and move on.
 
@@ -21,15 +21,16 @@ Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-
 - Run 2 (broad keyword sweep — noisy by nature): `searchTerms`: ["survivor pool", "knockout pool", "suicide pool", "PoolGenius", "survivorgrid"], `searchPosts`: true, `postedAfter`: (24h ago), `maxPostsCount`: 40.
   - **Known failure mode (confirmed via test run 2026-07-22): do NOT include "SurvivorPulse" as a bare search term** — Reddit's keyword search treats it as a loose/stemmed match and returns unrelated results (e.g. random "survivors" game posts). Rely on the subreddit scrape and X/YouTube for direct brand mentions instead.
   - The keyword sweep WILL return heavy false-positive noise: Dead by Daylight (a game with a "Survivor" role), reality-TV Survivor fan communities, cancer-survivor subreddits, zombie/survival video games, and generic "pool" (swimming pool, prize pool) hits. This is expected. Silently discard anything that isn't genuinely about NFL/football survivor, knockout, or suicide pools — never list an irrelevant keyword match in the report just because it technically matched.
+  - This sweep occasionally surfaces genuinely on-topic posts from subreddits NOT in the targeted list above (e.g. r/XSportsbook surfaced a real "NFL Survivor Pickem" post during testing on 2026-07-22) — when this happens, note the subreddit as a candidate in Step 5 below.
 - Skip comment crawling (keep cost down) unless a post looks highly relevant, then you may fetch its top comments.
 
 **X/Twitter** — actor `apidojo/tweet-scraper`:
-- `twitterHandles`: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive"], plus `searchTerms`: ["survivor pool", "#NFLSurvivor", "suicide pool", "knockout pool", "PoolGenius", "survivorgrid", "SurvivorPulse"]. Filter/sort for the last 24 hours, `maxItems` ~50.
-- **Known issue (confirmed via test run 2026-07-22): this actor returned 0 items on its first test**, possibly due to free-tier rate limiting rather than genuine silence. If you get 0 results, report it as "no results captured (possible scraper limitation)" — never phrase a 0 as confirmed silence on X specifically. If this keeps happening for more than ~5 consecutive days, say so explicitly so it can be swapped for a different actor.
+- `twitterHandles`: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive"] (this list may grow over time as Michael approves additions — always read the CURRENT list from this file, don't assume it's frozen at these four), plus `searchTerms`: ["survivor pool", "#NFLSurvivor", "suicide pool", "knockout pool", "PoolGenius", "survivorgrid", "SurvivorPulse"]. Filter/sort for the last 24 hours, `maxItems` ~50.
+- **Known issue (confirmed via test runs 2026-07-22, two consecutive days): this actor returned 0 items both times**, possibly due to free-tier rate limiting rather than genuine silence. If you get 0 results, report it as "no results captured (possible scraper limitation)" — never phrase a 0 as confirmed silence on X specifically. If this keeps happening for more than ~5 consecutive days, say so explicitly so it can be swapped for a different actor.
 
 **YouTube** — actor `streamers/youtube-scraper`:
 - `searchQueries`: ["NFL survivor pool picks", "survivor pool strategy", "knockout pool picks", "best survivor pick this week", "PoolGenius survivor"], `sortingOrder`: "date", `dateFilter`: "today", `maxResults`: 3-5 per query.
-- This platform worked well in testing and surfaces real signal (competitor channels like PoolGenius, sports-media channels like VSiN). Note: some channels run templated/boilerplate video series (e.g. team-by-team preview videos that all generically mention "survivor pool strategy" in the description) — treat these as low-signal padding, don't list each one individually, just note the pattern once if a channel is doing high volume of it.
+- This platform worked well in testing and surfaces real signal (competitor channels like PoolGenius, sports-media channels like VSiN, and a channel called "THE Pipeline EDGE" running a templated team-by-team preview series that boilerplate-mentions "survivor pool strategy"). Note: templated/boilerplate video series like that one are low-signal padding — don't list each video individually, just note the pattern once if a channel is doing high volume of it, and consider it a candidate for Step 5 if it's consistently relevant.
 
 If any actor run fails or returns nothing, note that plainly in the summary rather than failing the whole task — still produce a report for the platforms that worked.
 
@@ -41,15 +42,18 @@ Classify the day with one flag: "Nothing notable", "Worth a look", "Competitor m
 ## Step 4: Recommend actions
 Add a "Recommended Actions" section: 1-5 concrete, growth-focused next steps, each grounded in something you actually observed this run — never generic evergreen advice ("post more on social") disconnected from a finding. For each action give: the action itself, which finding it responds to, and why it drives growth (acquisition — e.g. a lead or a thread worth engaging; positioning/differentiation — e.g. a response to a competitor move; distribution/content — e.g. a pain point or phrase worth turning into copy or a post; retention/product — e.g. a recurring complaint worth flagging to product). Order by impact, most important first. If nothing observed this run warrants action, write "No action needed today" — do not manufacture busywork on quiet days.
 
-## Step 5: Deliver
+## Step 5: Suggest new sources to monitor
+Add a "Suggested New Sources" section. Based on what you encountered this run, flag any X accounts, subreddits, or YouTube channels NOT currently on the standing watch list (see the lists in Step 2 above) that appear genuinely relevant — i.e. they're actually posting real NFL/survivor-pool content, not just a coincidental keyword match. For each: name it, say what you saw that makes it relevant, and suggest a category (competitor / media amplifier / community / content creator). If nothing new surfaced, write "No new sources to suggest today." These are suggestions only — never add anything to the watch lists yourself; Michael reviews and approves additions in a follow-up conversation, at which point this file gets updated.
 
-1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `7bba5cf1-808c-404c-b11e-234283aef418` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date in YYYY-MM-DD (this is a Notion date property — it MUST be passed as the expanded key `date:Date:start`, NOT as a bare `Date` key, or the create call fails validation), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only include platforms that actually returned data). Page content = the full summary, ending with the Recommended Actions section from Step 4.
+## Step 6: Deliver
 
-2. **Chat output** — end your run by outputting the full summary (including Recommended Actions) as your final message, so it's visible in the task's completion notification.
+1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `7bba5cf1-808c-404c-b11e-234283aef418` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date in YYYY-MM-DD (this is a Notion date property — it MUST be passed as the expanded key `date:Date:start`, NOT as a bare `Date` key, or the create call fails validation), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only include platforms that actually returned data). Page content = the full summary, ending with Recommended Actions (Step 4) then Suggested New Sources (Step 5).
+
+2. **Chat output** — end your run by outputting the full summary (including both sections) as your final message, so it's visible in the task's completion notification.
 
 ## Constraints
-- Keep Apify usage lean (the maxItems/maxPostsCount/maxResults limits above are deliberate cost controls) — this runs daily and should stay cheap (roughly $0.25–0.50/run in Apify costs).
+- Keep Apify usage lean (the maxItems/maxPostsCount/maxResults limits above are deliberate cost controls) — this runs daily and should stay cheap (roughly $0.25–0.50/run in Apify costs, more if the watch lists grow).
 - Never fabricate activity — if a platform returns nothing relevant, say so plainly, and distinguish "confirmed quiet" (e.g. off-season, no posts in a targeted subreddit) from "inconclusive" (e.g. X returning 0, possible scraper issue).
 - Do not attempt Discord. If you want to flag that Discord monitoring is still pending setup, you may note it once as a one-line aside, not as a recurring complaint.
 - Do not touch Gmail or create any email drafts — Notion and chat output are the only delivery channels for this task.
-- Recommended Actions are suggestions for Michael to review and act on himself — do not take any of the actions autonomously (no replying to posts, no DMs, no content publishing) even if they seem low-risk.
+- Recommended Actions and Suggested New Sources are for Michael to review — do not take any action autonomously (no replying to posts, no DMs, no publishing, no editing the watch lists) even if it seems low-risk.
