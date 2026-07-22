@@ -25,7 +25,8 @@ Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-
 - Skip comment crawling (keep cost down) unless a post looks highly relevant, then you may fetch its top comments.
 
 **X/Twitter** — actor `apidojo/tweet-scraper`:
-- `twitterHandles`: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive"] (this list may grow over time as Michael approves additions — always read the CURRENT list from this file, don't assume it's frozen at these four), plus `searchTerms`: ["survivor pool", "#NFLSurvivor", "suicide pool", "knockout pool", "PoolGenius", "survivorgrid", "SurvivorPulse"]. Filter/sort for the last 24 hours, `maxItems` ~50.
+- `twitterHandles`: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive", "SurvivorAtlas", "PoolCrunch", "OFPSports", "RunYourPool_", "splashsports", "SurvivorSweat", "JD_Sully", "CircaSurvivorTV"] — this list was expanded on 2026-07-22 by curating Michael's actual X following list down to genuinely survivor-pool-relevant accounts (competitors: SurvivorAtlas, PoolCrunch, OFPSports, RunYourPool_, splashsports; Circa Survivor ecosystem: SurvivorSweat, JD_Sully, CircaSurvivorTV). It may grow further over time as Michael approves additions from Step 5 — always read the CURRENT list from this file, don't assume it's frozen at whatever count is written here.
+- Plus `searchTerms`: ["survivor pool", "#NFLSurvivor", "suicide pool", "knockout pool", "PoolGenius", "survivorgrid", "SurvivorPulse"]. Filter/sort for the last 24 hours, `maxItems` ~60 (raised slightly since the handle list grew).
 - **Known issue (confirmed via test runs 2026-07-22, two consecutive days): this actor returned 0 items both times**, possibly due to free-tier rate limiting rather than genuine silence. If you get 0 results, report it as "no results captured (possible scraper limitation)" — never phrase a 0 as confirmed silence on X specifically. If this keeps happening for more than ~5 consecutive days, say so explicitly so it can be swapped for a different actor.
 
 **YouTube** — actor `streamers/youtube-scraper`:
@@ -35,7 +36,7 @@ Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-
 If any actor run fails or returns nothing, note that plainly in the summary rather than failing the whole task — still produce a report for the platforms that worked.
 
 ## Step 3: Synthesize
-Write one tight summary (under ~500 words), organized by platform, each with a few bullets: what happened, why it matters, and a link. Call out explicitly, in a top "Flags" line: any competitor moves (PoolGenius, survivorgrid, RotoBaller, or new entrants), any recurring ICP pain point or feature request worth reusing in copy, and any concrete lead (someone asking for exactly what SurvivorPulse does). If nothing meaningful surfaced, say so directly in one line — do not pad or invent signal.
+Write one tight summary (under ~500 words), organized by platform, each with a few bullets: what happened, why it matters, and a link. Call out explicitly, in a top "Flags" line: any competitor moves (PoolGenius, survivorgrid, PoolCrunch, OFPSports/RunYourPool/splashsports, SurvivorAtlas, the Circa Survivor ecosystem, RotoBaller, or new entrants), any recurring ICP pain point or feature request worth reusing in copy, and any concrete lead (someone asking for exactly what SurvivorPulse does). If nothing meaningful surfaced, say so directly in one line — do not pad or invent signal.
 
 Classify the day with one flag: "Nothing notable", "Worth a look", "Competitor move", "Lead or opportunity", or "Urgent" (use "Urgent" only for something a founder would want same-day, e.g. a competitor outage/PR crisis or a hot inbound lead).
 
@@ -52,7 +53,7 @@ Add a "Suggested New Sources" section. Based on what you encountered this run, f
 2. **Chat output** — end your run by outputting the full summary (including both sections) as your final message, so it's visible in the task's completion notification.
 
 ## Constraints
-- Keep Apify usage lean (the maxItems/maxPostsCount/maxResults limits above are deliberate cost controls) — this runs daily and should stay cheap (roughly $0.25–0.50/run in Apify costs, more if the watch lists grow).
+- Keep Apify usage lean (the maxItems/maxPostsCount/maxResults limits above are deliberate cost controls) — this runs daily and should stay cheap, though cost will run a bit higher than the original ~$0.25–0.50/run estimate now that the X handle list has grown to 12.
 - Never fabricate activity — if a platform returns nothing relevant, say so plainly, and distinguish "confirmed quiet" (e.g. off-season, no posts in a targeted subreddit) from "inconclusive" (e.g. X returning 0, possible scraper issue).
 - Do not attempt Discord. If you want to flag that Discord monitoring is still pending setup, you may note it once as a one-line aside, not as a recurring complaint.
 - Do not touch Gmail or create any email drafts — Notion and chat output are the only delivery channels for this task.
