@@ -55,14 +55,13 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [r/XSportsbook](https://www.reddit.com/r/XSportsbook/) — community — seen: 2026-07-22
 - [X] [SundaySurvivorX](https://x.com/SundaySurvivorX) — competitor — seen: 2026-07-23
 - [X] [spgsurvivorpool](https://x.com/spgsurvivorpool) — content creator — seen: 2026-07-23
-- [Reddit] [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) — community — seen: 2026-07-23 (surfaced a genuine lead-quality post same day: "what's the best website for NFL survivor pools?")
 - [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy, still expanding daily — one more distinct day from auto-promotion)
 - [YouTube] [VSiN](https://www.youtube.com/@VSiNLive) — media amplifier — seen: 2026-07-23 (dedicated "Circa Survivor" show, Season 3 Episode 1 posted; VSiN is already tracked on X but not YouTube)
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
 ```
-CURRENT_REDDIT_SUBREDDITS: ["r/survivorpool", "r/sportsbook"]
+CURRENT_REDDIT_SUBREDDITS: ["r/survivorpool", "r/sportsbook", "r/NFLSurvivor"] # r/NFLSurvivor added 2026-07-23 — Michael manually confirmed (already a member), skipped the 3-day auto-promotion threshold
 CURRENT_X_HANDLES: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive", "SurvivorAtlas", "PoolCrunch", "OFPSports", "RunYourPool_", "splashsports", "SurvivorSweat", "JD_Sully", "CircaSurvivorTV"]
 CURRENT_YOUTUBE_CHANNELS: []
 ```
