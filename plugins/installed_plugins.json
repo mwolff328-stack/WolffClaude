@@ -30,6 +30,16 @@
         "lastUpdated": "2026-03-26T17:12:27.062Z",
         "gitCommitSha": "4bdbf57d981fec151554e5a23109906fe8c7eebf"
       }
+    ],
+    "neon@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-07-24T00:53:40.252Z",
+        "lastUpdated": "2026-07-24T00:53:40.252Z",
+        "gitCommitSha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
+      }
     ]
   }
 }

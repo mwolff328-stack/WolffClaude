@@ -1,0 +1,15 @@
+{
+  "pluginId": "neon@claude-plugins-official",
+  "createdAt": "2026-07-24T00:53:44.685Z",
+  "files": {
+    ".claude-plugin\\plugin.json": "70d8adb097121d1b475c779a9bb8a85f48f23457801ff65804676b6d4e994d26",
+    ".cursor-plugin\\plugin.json": "b26f6b701b7424e3cf70e7b6631eb1b3a435eb5a510b8c79479e07a9c7025453",
+    ".in_use\\59900": "392b61374b44dec3a3fdf92d70d03c215cd30df6a5f5b7de4364ff7bc955a7b0",
+    ".in_use\\62968": "c1fab144e94d28268dfa8314d0358de3a26ff62db296d00a46d9d3bb4444e409",
+    "assets\\logo.svg": "3b7b98889a50e108d888604e958361748c181d067c96a93b592877172bd7e799",
+    "mcp.json": "e372f078f4b4d377ac5291b6029754b8bc264a4fe5b19062243bb4b70c9a7054",
+    "skills\\neon": "232a399e683bd5b3e184a4e0a7a2bd4e7588844f279cfea9b52d5231f3ea34e9",
+    "skills\\neon-postgres": "41e38546f9f0116133e27bcf3009ee5e0f3db5e884e0e8dfa02b25b876384ad5",
+    "skills\\neon-postgres-branches": "c420fad396d893207b8a74880074ea096031ac70718a7596eb0865e4a85cf06d"
+  }
+}
