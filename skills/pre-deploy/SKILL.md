@@ -63,10 +63,12 @@ For each failure, list:
 
 ### Final Verdict
 
-SHIP requires BOTH: every test suite passed AND the Manual Pre-Publish Gate below is cleared.
+SHIP requires ALL of: every test suite passed AND the Manual Pre-Publish Gate below is cleared AND the publisher will delete the `ALLOW_UNSAFE_DEV_FEATURES` deployment secret as part of publishing (see "After the Gate Passes" below).
 
 ```
 🚢  SHIP     — all suites passed AND all pending prod DB migrations/backfills applied
+              (publish is not complete until the ALLOW_UNSAFE_DEV_FEATURES deployment
+               secret is deleted — see "After the Gate Passes" below)
 🚫  DO NOT SHIP — any suite failed, OR a pending prod DB migration/backfill is unapplied
 ```
 
