@@ -85,6 +85,12 @@ If nothing new surfaced this run, still check whether any existing pending candi
 
 2. **Chat output** — end your run by outputting the full summary (including both sections) as your final message, same linked formatting.
 
+3. **Push notification** — call the `PushNotification` tool (status: "proactive") every run, regardless of findings. This runs unattended at 5am PDT / 7am CT, so the chat-output and the scheduled-tasks system's own "notifyOnCompletion" have no live session to reach — a background run with no explicit push is effectively silent until Michael happens to check Notion. The push is the only delivery channel that reliably reaches him. Keep it under 200 characters, one line, no Markdown, no links (plain text only — the tool strips/ignores links anyway). Lead with the Flag classification, then the single most important finding in a few words, then point to Notion for detail. Examples:
+   - `SP Social Listening: Lead or opportunity — r/NFLSurvivor commissioner asking for pool site recs. Notion updated.`
+   - `SP Social Listening: Nothing notable today (off-season, quiet). Notion updated.`
+   - `SP Social Listening: Competitor move — 3 new NFL survivor contests opened registration today. Notion updated.`
+   Send this even on quiet "Nothing notable" days — the point isn't just surfacing exciting findings, it's confirming to Michael that the job actually ran, since he has no other reliable way to know that from a background run.
+
 ## Constraints
 - Keep Apify usage lean — this runs daily and should stay reasonably cheap even as the watch lists grow over time via promotion.
 - Never fabricate activity — if a platform returns nothing relevant, say so plainly.
