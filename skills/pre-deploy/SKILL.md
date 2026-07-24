@@ -85,6 +85,19 @@ Pending items:
 
 - [ ] **SST-941 — `picks.period` backfill.** Pre-fix `batchUpsertPicks` writes carried `period='week:1'` regardless of real week/round. Dev/helium backfilled + verified 2026-07-21; **prod not yet done.** On prod, run: `npx tsx scripts/backfill-batch-picks-period.ts --audit-only` → review any collision groups (founder decision) → `--live` → re-audit until `Mismatched period: 0`. Then check this off (or delete the item). Ticket: SST-941.
 
+## After the Gate Passes — Delete the `ALLOW_UNSAFE_DEV_FEATURES` Deployment Secret (REQUIRED before Publish)
+
+The Replit **Deployment** has its own `ALLOW_UNSAFE_DEV_FEATURES` secret, set in **Replit → Deployments → Secrets** (the deployment's own env — SEPARATE from, and unrelated to, the workspace `.replit` `[userenv.development]` copy). `server/envValidation.ts` is a FATAL boot guard: if the production process starts with `ALLOW_UNSAFE_DEV_FEATURES=true`, it `process.exit(1)` **before the app is created**, so the Repl publish comes up broken (or refuses to boot).
+
+So, after the Pre-Publish Gate has completed successfully and **before clicking Publish**:
+
+1. In Replit → **Deployments → Secrets** (the deployment's own env, NOT the workspace Secrets pane), **delete** the `ALLOW_UNSAFE_DEV_FEATURES` secret. (Setting it to a non-`true` value also works, but deleting is cleaner and unambiguous.)
+2. Then click **Publish**. The prod boot guard now passes and the deployment comes up.
+
+⚠️ Do NOT touch the `.replit` file's `[userenv.development]` `ALLOW_UNSAFE_DEV_FEATURES = "true"` line — that copy is dev-only (the deployment runs `npm run start` / `NODE_ENV=production` and does not read `[userenv.development]`), and removing it would disable the deployed dev app's auto-login. This step is ONLY about the **Deployment secret** (founder ruling, 2026-07-24). The `.replit` line and the Deployment secret are two different things; leave the former, delete the latter.
+
+Publish is not complete — and 🚢 SHIP is not truly cleared — until this deletion has been done for this publish.
+
 ## Rules
 
 - Do not skip any suite
