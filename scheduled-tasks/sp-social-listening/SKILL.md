@@ -67,7 +67,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
 ```
 CURRENT_REDDIT_SUBREDDITS: ["r/survivorpool", "r/sportsbook", "r/NFLSurvivor"] # r/NFLSurvivor added 2026-07-23 — Michael manually confirmed (already a member), skipped the 3-day auto-promotion threshold
-CURRENT_X_HANDLES: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive", "SurvivorAtlas", "PoolCrunch", "OFPSports", "RunYourPool_", "splashsports", "SurvivorSweat", "JD_Sully", "CircaSurvivorTV"]
+CURRENT_X_HANDLES: ["PoolGenius", "survivorgrid", "RotoBallerNFL", "VSiNLive", "SurvivorAtlas", "PoolCrunch", "OFPSports", "RunYourPool_", "splashsports", "SurvivorSweat", "JD_Sully", "CircaSurvivorTV", "SundaySurvivorX", "spgsurvivorpool"] # SundaySurvivorX + spgsurvivorpool auto-promoted 2026-07-25 (3 distinct seen-dates: 07-23, 07-24, 07-25)
 CURRENT_YOUTUBE_CHANNELS: []
 ```
 
