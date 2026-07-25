@@ -53,13 +53,15 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 **PENDING CANDIDATES (you maintain this list — read it, update it, then edit this file to save changes; keep each entry linked per the linking rule)**
 ```
 - [Reddit] [r/XSportsbook](https://www.reddit.com/r/XSportsbook/) — community — seen: 2026-07-22
-- [X] [SundaySurvivorX](https://x.com/SundaySurvivorX) — competitor — seen: 2026-07-23, 2026-07-24
-- [X] [spgsurvivorpool](https://x.com/spgsurvivorpool) — content creator — seen: 2026-07-23, 2026-07-24
+- [Reddit] [r/findaleague](https://www.reddit.com/r/findaleague/) — community (survivor pool/league recruitment; commissioners posting paid pools) — seen: 2026-07-25
 - [X] [DaveMasonBOL](https://x.com/DaveMasonBOL) — competitor (BetOnline; $500K no-rake NFL Survivor contest operator) — seen: 2026-07-24
 - [X] [SpookyExpress](https://x.com/SpookyExpress) — competitor (Splash Sports NFL Survivor contest operator, $5K/$10K) — seen: 2026-07-24
 - [X] [586SportsS](https://x.com/586SportsS) — competitor (small CFB/NFL survivor pool operator, launching August) — seen: 2026-07-24
-- [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy; did NOT surface 2026-07-24 — YouTube scrape returned no relevant survivor content today)
+- [X] [puntr_app](https://x.com/puntr_app) — competitor (Australian free NFL Survivor pool, $500 prize, positions explicitly against US pools' "up to a grand an entry") — seen: 2026-07-25
+- [X] [Tonysmarkettips](https://x.com/Tonysmarkettips) — competitor/affiliate (recruits for Circa Survivor $1K entry, $20M guaranteed; posts winning-path breakdowns) — seen: 2026-07-25
+- [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy; did NOT surface 2026-07-24 or 2026-07-25)
 - [YouTube] [VSiN](https://www.youtube.com/@VSiNLive) — media amplifier — seen: 2026-07-23, 2026-07-24 (dedicated "Circa Survivor" show; 2026-07-24 sighting via X amplification by [@only1scratch](https://x.com/only1scratch) of the "Quest for 18.7 Million" video)
+- [YouTube] [BettorDie](https://www.youtube.com/@BettorDIE) — content creator (posted "NFL Survivor Model", the only genuine survivor video in the 2026-07-25 sweep) — seen: 2026-07-25
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
