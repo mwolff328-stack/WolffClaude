@@ -57,11 +57,16 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [DaveMasonBOL](https://x.com/DaveMasonBOL) — competitor (BetOnline; $500K no-rake NFL Survivor contest operator) — seen: 2026-07-24
 - [X] [SpookyExpress](https://x.com/SpookyExpress) — competitor (Splash Sports NFL Survivor contest operator, $5K/$10K) — seen: 2026-07-24
 - [X] [586SportsS](https://x.com/586SportsS) — competitor (small CFB/NFL survivor pool operator, launching August) — seen: 2026-07-24
-- [X] [puntr_app](https://x.com/puntr_app) — competitor (Australian free NFL Survivor pool, $500 prize, positions explicitly against US pools' "up to a grand an entry") — seen: 2026-07-25
-- [X] [Tonysmarkettips](https://x.com/Tonysmarkettips) — competitor/affiliate (recruits for Circa Survivor $1K entry, $20M guaranteed; posts winning-path breakdowns) — seen: 2026-07-25
-- [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy; did NOT surface 2026-07-24 or 2026-07-25)
+- [Reddit] [r/FFCommish](https://www.reddit.com/r/FFCommish/) — community (commissioners asking which pool platform to use; purchase-intent chatter, crosspost target of the 2026-07-26 CFB survivor-site thread) — seen: 2026-07-26
+- [Reddit] [u/Sunday_Survivor](https://www.reddit.com/user/Sunday_Survivor/) — competitor operator (Sunday Survivor founder, replies in r/NFLSurvivor, ships features same-day; = [@SundaySurvivorX](https://x.com/SundaySurvivorX) already in standing X list) — seen: 2026-07-26
+- [X] [puntr_app](https://x.com/puntr_app) — competitor (Australian free NFL Survivor pool, $500 prize, positions explicitly against US pools' "up to a grand an entry") — seen: 2026-07-25, 2026-07-26
+- [X] [Tonysmarkettips](https://x.com/Tonysmarkettips) — competitor/affiliate (recruits for Circa Survivor $1K entry, $20M guaranteed; posts winning-path breakdowns) — seen: 2026-07-25, 2026-07-26
+- [X] [JConnSports](https://x.com/JConnSports) — commissioner / ICP voice (runs his own $50 Yahoo NFL survivor pool with a charity split, recruits entrants by DM on X) — seen: 2026-07-26
+- [X] [Spicy_NBA_Chili](https://x.com/Spicy_NBA_Chili) — amplifier (reposts survivor pick videos with a promo code funneling into his own pool) — seen: 2026-07-26
+- [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy; did NOT surface 2026-07-24, 07-25 or 07-26)
 - [YouTube] [VSiN](https://www.youtube.com/@VSiNLive) — media amplifier — seen: 2026-07-23, 2026-07-24 (dedicated "Circa Survivor" show; 2026-07-24 sighting via X amplification by [@only1scratch](https://x.com/only1scratch) of the "Quest for 18.7 Million" video)
 - [YouTube] [BettorDie](https://www.youtube.com/@BettorDIE) — content creator (posted "NFL Survivor Model", the only genuine survivor video in the 2026-07-25 sweep) — seen: 2026-07-25
+- [YouTube] [The Jay All Day NFL Show](https://www.youtube.com/@JayAllDayNFLShow) — content creator (posted "NFL WEEK 1 PICKS & PREDICTIONS FOR SURVIVOR POOL 2026", the only genuine survivor video in the 2026-07-26 sweep; funnels viewers into his own pool via promo code) — seen: 2026-07-26
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
