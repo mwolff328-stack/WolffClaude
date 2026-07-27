@@ -56,7 +56,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [r/findaleague](https://www.reddit.com/r/findaleague/) — community (survivor pool/league recruitment; commissioners posting paid pools) — seen: 2026-07-25
 - [X] [DaveMasonBOL](https://x.com/DaveMasonBOL) — competitor (BetOnline; $500K no-rake NFL Survivor contest operator) — seen: 2026-07-24
 - [X] [SpookyExpress](https://x.com/SpookyExpress) — competitor (Splash Sports NFL Survivor contest operator, $5K/$10K) — seen: 2026-07-24
-- [X] [586SportsS](https://x.com/586SportsS) — competitor (small CFB/NFL survivor pool operator, launching August) — seen: 2026-07-24
+- [X] [586SportsS](https://x.com/586SportsS) — competitor (small CFB/NFL survivor pool operator, launching August; 2026-07-27 promoting a "586 CFB Survivor Bowl" Power-4 breakdown series on Splash Sports) — seen: 2026-07-24, 2026-07-27
 - [Reddit] [u/Sunday_Survivor](https://www.reddit.com/user/Sunday_Survivor/) — competitor operator (Sunday Survivor founder, replies in r/NFLSurvivor, ships features same-day; = [@SundaySurvivorX](https://x.com/SundaySurvivorX) already in standing X list) — seen: 2026-07-26
 - [X] [puntr_app](https://x.com/puntr_app) — competitor (Australian free NFL Survivor pool, $500 prize, positions explicitly against US pools' "up to a grand an entry") — seen: 2026-07-25, 2026-07-26
 - [X] [Tonysmarkettips](https://x.com/Tonysmarkettips) — competitor/affiliate (recruits for Circa Survivor $1K entry, $20M guaranteed; posts winning-path breakdowns) — seen: 2026-07-25, 2026-07-26
