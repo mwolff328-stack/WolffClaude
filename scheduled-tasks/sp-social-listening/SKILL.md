@@ -53,7 +53,6 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 **PENDING CANDIDATES (you maintain this list — read it, update it, then edit this file to save changes; keep each entry linked per the linking rule)**
 ```
 - [Reddit] [r/XSportsbook](https://www.reddit.com/r/XSportsbook/) — community — seen: 2026-07-22
-- [Reddit] [r/findaleague](https://www.reddit.com/r/findaleague/) — community (survivor pool/league recruitment; commissioners posting paid pools) — seen: 2026-07-25
 - [X] [DaveMasonBOL](https://x.com/DaveMasonBOL) — competitor (BetOnline; $500K no-rake NFL Survivor contest operator) — seen: 2026-07-24
 - [X] [SpookyExpress](https://x.com/SpookyExpress) — competitor (Splash Sports NFL Survivor contest operator, $5K/$10K) — seen: 2026-07-24
 - [X] [586SportsS](https://x.com/586SportsS) — competitor (small CFB/NFL survivor pool operator, launching August; 2026-07-27 promoting a "586 CFB Survivor Bowl" Power-4 breakdown series on Splash Sports) — seen: 2026-07-24, 2026-07-27
