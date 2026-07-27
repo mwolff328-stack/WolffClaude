@@ -68,7 +68,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [YouTube] [THE Pipeline EDGE](https://www.youtube.com/@ThePipelineEdge) — content creator — seen: 2026-07-22, 2026-07-23 (templated team-by-team preview series, boilerplate-mentions survivor pool strategy; did NOT surface 2026-07-24, 07-25 or 07-26)
 - [YouTube] [VSiN](https://www.youtube.com/@VSiNLive) — media amplifier — seen: 2026-07-23, 2026-07-24 (dedicated "Circa Survivor" show; 2026-07-24 sighting via X amplification by [@only1scratch](https://x.com/only1scratch) of the "Quest for 18.7 Million" video)
 - [YouTube] [BettorDie](https://www.youtube.com/@BettorDIE) — content creator (posted "NFL Survivor Model", the only genuine survivor video in the 2026-07-25 sweep) — seen: 2026-07-25
-- [YouTube] [The Jay All Day NFL Show](https://www.youtube.com/@JayAllDayNFLShow) — content creator (posted "NFL WEEK 1 PICKS & PREDICTIONS FOR SURVIVOR POOL 2026", the only genuine survivor video in the 2026-07-26 sweep; funnels viewers into his own pool via promo code) — seen: 2026-07-26
+- [YouTube] [The Jay All Day NFL Show](https://www.youtube.com/@JayAllDayNFLShow) — content creator (posted "NFL WEEK 1 PICKS & PREDICTIONS FOR SURVIVOR POOL 2026", the only genuine survivor video in the 2026-07-26 sweep; funnels viewers into his own pool via promo code) — seen: 2026-07-26, 2026-07-27 (2026-07-27 sighting = "NFL Week 1 Picks By ChatGPT", same Week-1 picks series feeding the same pool funnel)
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
