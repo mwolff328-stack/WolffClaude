@@ -89,7 +89,17 @@ Pending items:
 
 **Resolved 2026-07-24 — do not re-add** (both were verified against the named prod host and recorded on their tickets): SST-941 `picks.period` backfill (prod audit: 152 rows scanned, 0 mismatched, nothing to apply) and SST-997 `maxEntriesPerUser` 1→100 (APPLIED to prod, 31 rows — dev was a no-op and did not predict prod).
 
-⚠️ **Coverage caveat for the automated suites above (SST-945, Backlog):** the gate's Stage 2a runs integration in reduced FAST mode, hiding roughly 224 integration tests. The founder deferred SST-945 with the instruction to do it "shortly BEFORE the next production publish." Until that lands, a green gate does **not** validate those tests — state that qualification explicitly rather than reporting an unqualified 🚢 SHIP.
+⚠️ **Coverage caveat for the automated suites above — UPDATED 2026-07-28, the mechanism is not what this note used to say.**
+
+SST-945's FAST-mode fix **has landed**: the workflow now sets `TEST_INTEGRATION_FAST: 0` and Stage 2a is labelled "core — full mode". That part is done.
+
+But a **second, independent gate** still hides a comparable number of tests, and turning off the first did nothing to it. On gate run `30385908570` (all stages green), **Stage 2a reported `633 passed | 241 skipped (874)` across `53 passed | 26 skipped (79)` files** — 27.6% of the stage's assertions never executed on a run reporting SUCCESS.
+
+Cause: those 26 files gate themselves on `const SKIP_INTEGRATION = process.env['TEST_DISABLE_NETWORK'] === '1';`, and `npm run test:integration:core:full` hardcodes `TEST_DISABLE_NETWORK=1` in the script itself. (This also contradicts the Environment table at the top of this skill, which specifies `TEST_DISABLE_NETWORK=0`.) The skipped set is the Game Plan / cockpit / pick-write core — `gameplanApply*`, `gameplanResetToAuto*`, `cockpitEntries.sst789`, `cockpitSelfPoisoning.sst881`, `strategyRecommendation.ss4` (69 tests alone), `pickWriteAtomicity.tripwire`, `putPicksScheduleTypeGate`, `pnlRoutes`, and others — including several **tripwire** guards that have therefore never fired in this gate.
+
+**So: a green gate still does NOT validate those 241 tests.** State that qualification explicitly rather than reporting an unqualified 🚢 SHIP. Full detail and the 26-file list are on the SST-945 ticket (`3a429ce5-833d-81ae-ba6a-eede3a003c66`).
+
+To re-measure on any run: `gh run view <id> --log | grep -E "Stage 2a.*(Test Files|Tests )" | tail -2`.
 
 ## After the Gate Passes — Delete the `ALLOW_UNSAFE_DEV_FEATURES` Deployment Secret (REQUIRED before Publish)
 
