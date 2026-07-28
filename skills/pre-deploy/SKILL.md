@@ -83,11 +83,15 @@ Rules for each item:
 
 Pending items:
 
-- [ ] **SST-1079 — `user_preferences` table.** Per-user store for the two pick-distinctness preferences (`within_pool_distinct`, `spread_across_pools`), which replaced the per-device localStorage model. Applied to helium 2026-07-28 and to the CI DB by the gate's schema push; **production still pending.** On prod, after confirming the console targets production, run `docs/pools-dashboard-redesign/migrations/SST-1079-user-preferences.sql` (idempotent `CREATE TABLE IF NOT EXISTS`) then its verification queries. Low urgency if missed: reads fail open to the pre-story defaults, so recommendations still work — but any user who flips either toggle gets a save error until it exists. Ticket: SST-1079.
+*(none currently — the list below is the resolved history. Add new items here as stories introduce prod schema changes.)*
 
-- [ ] **SST-1037 — `pools.pool_classification` column.** Admin-only Real/Test marker. Applied to helium/dev before the code deploy (commit `bb358d00`); **production is still pending.** ~~CI/test DB pending~~ — **corrected 2026-07-28: the CI DB is NOT pending and never needed manual action.** The gate provisions an ephemeral Postgres (`localhost:5432/ci_test`) and pushes the schema fresh on every run, so any column present in `shared/schema.ts` exists there automatically. Proven, not assumed: `tests/poolClassification.integration.test.ts` ran and passed **8/8** in run `30385908570`. The same reasoning applies to SST-1079's `user_preferences` table. Do not chase either as a CI blocker. On prod, after confirming the console targets production, run `docs/pools-dashboard-redesign/migrations/SST-1037-pool-classification.sql` (idempotent `ADD COLUMN IF NOT EXISTS`) and then its verification queries. `docs/DB_OPERATIONS.md` notes it is NOT verified whether Replit's publish auto-applies additive changes — apply explicitly, don't assume. Ticket: SST-1037.
+**Resolved 2026-07-28 — do not re-add** (both applied to production by the founder at the 2026-07-28 publish; prod verified reachable and serving afterwards, which it would not be under schema drift):
+- **SST-1079 — `user_preferences` table.** Per-user store for the two pick-distinctness preferences (`within_pool_distinct`, `spread_across_pools`). File: `docs/pools-dashboard-redesign/migrations/SST-1079-user-preferences.sql`.
+- **SST-1037 — `pools.pool_classification` column.** Admin-only Real/Test marker. File: `docs/pools-dashboard-redesign/migrations/SST-1037-pool-classification.sql`.
 
 **Resolved 2026-07-24 — do not re-add** (both were verified against the named prod host and recorded on their tickets): SST-941 `picks.period` backfill (prod audit: 152 rows scanned, 0 mismatched, nothing to apply) and SST-997 `maxEntriesPerUser` 1→100 (APPLIED to prod, 31 rows — dev was a no-op and did not predict prod).
+
+**Standing rule, proven 2026-07-28:** the **CI/test DB is never a pending item.** The gate provisions an ephemeral Postgres (`localhost:5432/ci_test`) and pushes the schema fresh on every run, so anything in `shared/schema.ts` exists there automatically — `tests/poolClassification.integration.test.ts` passed 8/8 while SST-1037 was still listed as "CI pending". Only **production** is ever pending. Do not chase phantom CI-DB migrations.
 
 ⚠️ **Coverage caveat for the automated suites above — UPDATED 2026-07-28, the mechanism is not what this note used to say.**
 
