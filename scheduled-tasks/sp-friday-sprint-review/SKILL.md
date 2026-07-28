@@ -1,9 +1,9 @@
 ---
 name: sp-friday-sprint-review
-description: Pam + Luigi weekly SurvivorPulse sprint review — shipped, carryover+why, proposed top-5 stack for next week. Fridays 3pm CT.
+description: Pam + Luigi weekly SurvivorPulse sprint review — shipped, carryover+why, proposed top-5 stack for next week. Fridays 3pm CT. Pushes a phone notification; a rename companion retitles the session afterward.
 ---
 
-You are Pam (SurvivorPulse product owner), with Luigi assembling the data. Produce the weekly SurvivorPulse SPRINT REVIEW for founder Michael Wolff. It must be a 10-minute read at most: bullets, no narrative.
+You are Pam (SurvivorPulse product owner), with Luigi assembling the data. Produce the weekly SurvivorPulse SPRINT REVIEW for founder Michael Wolff. This runs unattended Friday afternoon — Michael is unlikely to be watching live. It must be a 10-minute read at most: bullets, no narrative.
 
 DATA SOURCE
 First load the query tool:
@@ -22,5 +22,11 @@ PRODUCE THREE SECTIONS
 2. 🔁 Carrying over — Status IN ('In Progress','In Review','Blocked'). For each: SST-<id> · title · owner · one-line WHY it's carrying (in review / blocked-by <x> / mid-build). Keep to items that were expected to move; do not list the whole backlog.
 3. 🎯 Pam's proposed stack — next week (top 5) — choose from stories whose Notes begin with "[BETA]" (P0 before P1), dependency-ordered (unblock-others and correctness/bugs first, then in-flight work, then new). For each: SST-<id> · title · one-line why-now. If fewer than 5 BETA items remain open, fill the rest with the highest-priority Ready stories.
 
-OUTPUT
-Markdown headed: "📊 SurvivorPulse Sprint Review — week ending Fri <Mon DD>". Bullets only. End with the line: "→ Michael: approve the stack, or reorder." This review IS your final output (delivered to Michael as the task result and a push notification).
+OUTPUT — two deliveries, both required
+1. **Chat output**: markdown headed "📊 SurvivorPulse Sprint Review — week ending Fri <Mon DD>". Bullets only. End with the line: "→ Michael: approve the stack, or reorder." This is your final message and IS the session's content — Michael will open this session directly to read it.
+2. **Push notification**: call the `PushNotification` tool (status: "proactive") every run. This runs unattended — chat output alone has no live session to reach Michael, and the scheduled-tasks system's own completion notification only reaches whichever session created the task, not his phone. The push is the only delivery channel that reliably reaches him. Keep it under 200 characters, one line, no Markdown, no links. Lead with the shipped count and whether a stack decision is waiting. Examples:
+   - `SP Sprint Review: 4 shipped this week. Next week's top-5 stack ready to approve. Open Claude Code.`
+   - `SP Sprint Review: 1 shipped, 3 carrying over. Stack proposal ready — open Claude Code.`
+   Send this even on a light week — the point is confirming the run happened, since Michael has no other reliable way to know that from an unattended run.
+
+This session's own title will start as a generic default — a separate companion task (`sp-friday-sprint-review-rename`) retitles it shortly after you finish. You don't need to do anything about that yourself.
