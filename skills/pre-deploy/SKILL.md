@@ -83,7 +83,11 @@ Rules for each item:
 
 Pending items:
 
-- [ ] **SST-941 — `picks.period` backfill.** Pre-fix `batchUpsertPicks` writes carried `period='week:1'` regardless of real week/round. Dev/helium backfilled + verified 2026-07-21; **prod not yet done.** On prod, run: `npx tsx scripts/backfill-batch-picks-period.ts --audit-only` → review any collision groups (founder decision) → `--live` → re-audit until `Mismatched period: 0`. Then check this off (or delete the item). Ticket: SST-941.
+- [ ] **SST-1037 — `pools.pool_classification` column.** Admin-only Real/Test marker. Applied to helium/dev before the code deploy (commit `bb358d00`); **prod and the CI/test DB are still pending.** Until the CI DB has it, `tests/poolClassification.integration.test.ts` cannot run. On prod, after confirming the console targets production, run `docs/pools-dashboard-redesign/migrations/SST-1037-pool-classification.sql` (idempotent `ADD COLUMN IF NOT EXISTS`) and then its verification queries. `docs/DB_OPERATIONS.md` notes it is NOT verified whether Replit's publish auto-applies additive changes — apply explicitly, don't assume. Ticket: SST-1037.
+
+**Resolved 2026-07-24 — do not re-add** (both were verified against the named prod host and recorded on their tickets): SST-941 `picks.period` backfill (prod audit: 152 rows scanned, 0 mismatched, nothing to apply) and SST-997 `maxEntriesPerUser` 1→100 (APPLIED to prod, 31 rows — dev was a no-op and did not predict prod).
+
+⚠️ **Coverage caveat for the automated suites above (SST-945, Backlog):** the gate's Stage 2a runs integration in reduced FAST mode, hiding roughly 224 integration tests. The founder deferred SST-945 with the instruction to do it "shortly BEFORE the next production publish." Until that lands, a green gate does **not** validate those tests — state that qualification explicitly rather than reporting an unqualified 🚢 SHIP.
 
 ## After the Gate Passes — Delete the `ALLOW_UNSAFE_DEV_FEATURES` Deployment Secret (REQUIRED before Publish)
 
