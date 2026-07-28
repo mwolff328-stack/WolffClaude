@@ -83,6 +83,8 @@ Rules for each item:
 
 Pending items:
 
+- [ ] **SST-1079 — `user_preferences` table.** Per-user store for the two pick-distinctness preferences (`within_pool_distinct`, `spread_across_pools`), which replaced the per-device localStorage model. Applied to helium 2026-07-28 and to the CI DB by the gate's schema push; **production still pending.** On prod, after confirming the console targets production, run `docs/pools-dashboard-redesign/migrations/SST-1079-user-preferences.sql` (idempotent `CREATE TABLE IF NOT EXISTS`) then its verification queries. Low urgency if missed: reads fail open to the pre-story defaults, so recommendations still work — but any user who flips either toggle gets a save error until it exists. Ticket: SST-1079.
+
 - [ ] **SST-1037 — `pools.pool_classification` column.** Admin-only Real/Test marker. Applied to helium/dev before the code deploy (commit `bb358d00`); **prod and the CI/test DB are still pending.** Until the CI DB has it, `tests/poolClassification.integration.test.ts` cannot run. On prod, after confirming the console targets production, run `docs/pools-dashboard-redesign/migrations/SST-1037-pool-classification.sql` (idempotent `ADD COLUMN IF NOT EXISTS`) and then its verification queries. `docs/DB_OPERATIONS.md` notes it is NOT verified whether Replit's publish auto-applies additive changes — apply explicitly, don't assume. Ticket: SST-1037.
 
 **Resolved 2026-07-24 — do not re-add** (both were verified against the named prod host and recorded on their tickets): SST-941 `picks.period` backfill (prod audit: 152 rows scanned, 0 mismatched, nothing to apply) and SST-997 `maxEntriesPerUser` 1→100 (APPLIED to prod, 31 rows — dev was a no-op and did not predict prod).
