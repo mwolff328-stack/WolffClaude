@@ -18,6 +18,8 @@ Do this:
    - A direct Markdown link to the full Notion entry, e.g. `[Full report in Notion](<page url>)`.
    - Keep it tight — this should read like a good notification digest, not a re-run of the full report. If today was genuinely quiet ("Nothing notable"), say that plainly in one line plus the Notion link — don't pad it out.
 
-4. Do not write to Notion, do not call PushNotification (the main task already sends the phone push), and do not touch the Reddit/X/YouTube watch-list tracker — this task only reads and summarizes what the main task already produced.
+4. Call the `PushNotification` tool (status: "proactive") after writing your summary. This is the actual fix for a real gap: this session sits correctly in Michael's Claude Code session list every day, but nothing was ever pulling his attention to it — the main task's phone push is a content digest and never mentions that a readable session exists here. Keep the push under 200 characters, one line, no Markdown/links. It should point at the session specifically, not restate the finding, e.g.: `SurvivorPulse Social Listening: new session ready in Claude Code with today's brief.` or, if nothing was found yet: `SurvivorPulse Social Listening: notify session found no report yet — check if the main job ran.`
+
+5. Do not write to Notion, and do not touch the Reddit/X/YouTube watch-list tracker — this task only reads and summarizes what the main task already produced.
 
 This session's own title will start as a generic default — a separate companion task (`sp-social-listening-notify-rename`) retitles it shortly after you finish. You don't need to do anything about that yourself.
