@@ -115,13 +115,23 @@ Then act — **do not block waiting for a reply.** Resolution order:
 
 ## Step 6 — Choose isolation mode
 
+Judge by **overlap with the source files you intend to touch**, not by whether the tree is dirty.
+`.claude/launch.json` and `.claude/scratchpad.md` are dirty in the main worktree almost all the
+time — they are another session's config and scratch, they are never your source, and explicit-path
+staging already keeps them out of your commits. **Dirty `.claude/*` alone is not a reason to
+isolate.** Over-isolating is its own problem: the repo has accumulated ~19 stale worktrees.
+
 **Isolate in a dedicated worktree if any of these hold** — otherwise work directly in the main
 worktree on `2026-v1`:
 
-- Another session is running with `cwd` in the main worktree
-- The main worktree has uncommitted WIP that isn't yours
+- Another running session's scope **overlaps the source paths you will edit** (their WIP files, their
+  claim ledger entry, or their ticket's scope intersect yours)
 - Your item is large, long-running, or touches broadly-shared files
 - You are running several items and want each to land as an independent, revertible unit
+- You need a clean local typecheck/test signal and a co-resident session's WIP is breaking it
+
+Otherwise the main worktree is fine. Explicit-path staging is what keeps you honest there, not
+isolation.
 
 ```bash
 cd "C:/Users/wolff/Projects/SurvivorPulse"
