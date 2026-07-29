@@ -182,6 +182,16 @@ git push origin HEAD:refs/heads/2026-v1
 Pushing from the worktree straight to `2026-v1` means you never check out or disturb the main
 worktree, where another session may be working. Because you rebased, it is a fast-forward.
 
+> ⚠️ **This push triggers no CI e2e run at all** (SST-1114). `playwright-ci.yml` only fires on
+> `pull_request` into `2026-v1` or `push` to `ci/e2e-ephemeral` — a direct push to `2026-v1` matches
+> neither. The commit gets zero automated e2e coverage until the next manual `pre-publish.yml`
+> dispatch, which is late and batched across every change since the last publish. Concretely: this
+> is how SST-1108 (a mobile wizard bug, pre-existing on `2026-v1`) sat undetected until an unrelated
+> PR happened to touch its test shard — a PR-based landing gets *some* signal this push does not.
+> Until SST-1114 lands, **Phase 3's local Playwright run against the deployed dev app is the only
+> e2e coverage this commit will ever get before a real publish.** Do not skip it, do not narrow it
+> to only the story's own new flows, and do not treat a green typecheck/unit run as a substitute.
+
 **Record your own commit range the moment the push succeeds** — you need it for every "what did I
 change" claim from here on:
 
