@@ -20,7 +20,7 @@ Before running any command, confirm these env vars are set for the process:
 |---|---|---|
 | `RUN_HTTP_INTEGRATION_TESTS` | `1` | Enable HTTP integration tests |
 | `RUN_DB_REGRESSION_TESTS` | `1` | Run regression tests against live database |
-| `TEST_DISABLE_NETWORK` | `0` | Allow network access during tests |
+| `TEST_DISABLE_NETWORK` | `0` | Allow network access during tests. The CI workflow sets `1` instead — that is deliberate, not drift, and since SST-1088 it no longer affects which suites run. It now means only "no outbound internet"; DB-integration suites gate on whether a disposable database is reachable (`tests/guards/dbIntegrationGate.ts`). |
 | `RUN_SIGNUP_EDGE_CASES` | `0` | Skip signup edge case tests |
 
 These are injected automatically by `scripts/pre-publish-check.sh`.
