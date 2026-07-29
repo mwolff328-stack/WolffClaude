@@ -182,6 +182,13 @@ git push origin HEAD:refs/heads/2026-v1
 Pushing from the worktree straight to `2026-v1` means you never check out or disturb the main
 worktree, where another session may be working. Because you rebased, it is a fast-forward.
 
+**Record your own commit range the moment the push succeeds** — you need it for every "what did I
+change" claim from here on:
+
+```bash
+MY_BASE=$(git rev-parse HEAD~<number-of-your-commits>)   # the commit your first slice sits on
+```
+
 **Read the push output's destination ref before moving on.** If it says anything other than what you
 intended, stop and fix it immediately — remote `2026-v1` is live to the dev app.
 
