@@ -162,6 +162,11 @@ Cloudflare-blocked from `.replit.dev`):
 BASE_URL=<deployed-dev-url> npx playwright test
 ```
 
+**This is load-bearing, not a formality.** Because Phase 2's push goes straight to `2026-v1` with
+no PR, `playwright-ci.yml` never triggers for it (SST-1114) — this local run is the only e2e
+coverage the commit gets before a real publish. Run the full suite, not just the story's own new
+flows; a targeted run cannot catch a regression this story introduced elsewhere (see SST-1108).
+
 Sign-offs, each a verdict comment:
 
 | Reviewer | Scope | When |
