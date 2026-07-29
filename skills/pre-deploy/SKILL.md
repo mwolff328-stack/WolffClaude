@@ -93,17 +93,31 @@ Pending items:
 
 **Standing rule, proven 2026-07-28:** the **CI/test DB is never a pending item.** The gate provisions an ephemeral Postgres (`localhost:5432/ci_test`) and pushes the schema fresh on every run, so anything in `shared/schema.ts` exists there automatically — `tests/poolClassification.integration.test.ts` passed 8/8 while SST-1037 was still listed as "CI pending". Only **production** is ever pending. Do not chase phantom CI-DB migrations.
 
-⚠️ **Coverage caveat for the automated suites above — UPDATED 2026-07-28, the mechanism is not what this note used to say.**
+✅ **Coverage note for the automated suites above — RESOLVED 2026-07-28 (SST-1088). The old caveat here is obsolete; do not reinstate it.**
 
-SST-945's FAST-mode fix **has landed**: the workflow now sets `TEST_INTEGRATION_FAST: 0` and Stage 2a is labelled "core — full mode". That part is done.
+This section used to instruct you to report a **qualified** 🚢 SHIP on the grounds that ~241 Stage 2a tests — including several `*.tripwire` guards — never executed, citing run `30385908570`. **That is no longer true, and stating it now understates the gate's real coverage.**
 
-But a **second, independent gate** still hides a comparable number of tests, and turning off the first did nothing to it. On gate run `30385908570` (all stages green), **Stage 2a reported `633 passed | 241 skipped (874)` across `53 passed | 26 skipped (79)` files** — 27.6% of the stage's assertions never executed on a run reporting SUCCESS.
+Both causes are fixed and merged to `2026-v1`:
+- SST-945 landed the FAST-mode fix (`TEST_INTEGRATION_FAST: 0`, Stage 2a "core — full mode").
+- **SST-1088** fixed the second, independent gate. 24 suites self-skipped on `TEST_DISABLE_NETWORK`, which they used as a *proxy* for "no database here" — true on a laptop, false in CI, where the gate disables outbound internet **and** provisions a Postgres. They now gate on real DB availability (`tests/guards/dbIntegrationGate.ts`). Two files that ran in no stage at all were also fixed: `pnlRoutes` (needs only a DB → Stage 2a) and `strategies` (needs a live server → Stage 2c).
 
-Cause: those 26 files gate themselves on `const SKIP_INTEGRATION = process.env['TEST_DISABLE_NETWORK'] === '1';`, and `npm run test:integration:core:full` hardcodes `TEST_DISABLE_NETWORK=1` in the script itself. (This also contradicts the Environment table at the top of this skill, which specifies `TEST_DISABLE_NETWORK=0`.) The skipped set is the Game Plan / cockpit / pick-write core — `gameplanApply*`, `gameplanResetToAuto*`, `cockpitEntries.sst789`, `cockpitSelfPoisoning.sst881`, `strategyRecommendation.ss4` (69 tests alone), `pickWriteAtomicity.tripwire`, `putPicksScheduleTypeGate`, `pnlRoutes`, and others — including several **tripwire** guards that have therefore never fired in this gate.
+| Stage 2a | before | after |
+|---|---|---|
+| passed | 633 | **864** |
+| skipped | **241** | **10** |
+| failed | 0 | 0 |
 
-**So: a green gate still does NOT validate those 241 tests.** State that qualification explicitly rather than reporting an unqualified 🚢 SHIP. Full detail and the 26-file list are on the SST-945 ticket (`3a429ce5-833d-81ae-ba6a-eede3a003c66`).
+Confirmed on two independent runs against different code: `30416680520` (SST-1088 merge SHA) and `30422100361` (SST-1093, a later unrelated story).
+
+**So: report an unqualified 🚢 SHIP when the gate is green.** The old qualification is now the inaccurate answer.
+
+**Still state the residual skip count** — a green gate is not "everything ran". The gate's own summary block now enumerates each residual skip with a true reason rather than lumping them, so quote it rather than re-deriving. As of the runs above the 10 are: 5 `strategies` (needs a live server, runs in Stage 2c), 3 `strategyApply.ss6` + 1 `strategyRecommendation.ss4` (pre-existing manual/unreachable cases), and 1 `gameplanApplyFutureUsedTeamCollision` (**quarantined** — a real apply-ordering defect surfaced by SST-1088, tracked as **SST-1094**). None are outbound-call suites; that claim was part of the same false premise.
+
+If the printed count and that list ever disagree, **the list is stale — re-derive before trusting the verdict.**
 
 To re-measure on any run: `gh run view <id> --log | grep -E "Stage 2a.*(Test Files|Tests )" | tail -2`.
+
+Known adjacent gap (does NOT qualify a SHIP, but do not treat "864 passed" as 864 verified behaviours): **SST-1095** — 8 remaining tests can pass without asserting anything, via an early `return` before any `expect()`. Those report as *passed*, so no skip count can show them. The 8 fail-open `*.tripwire` guards in that set are already fixed; the rest are open.
 
 ## After the Gate Passes — Delete the `ALLOW_UNSAFE_DEV_FEATURES` Deployment Secret (REQUIRED before Publish)
 
