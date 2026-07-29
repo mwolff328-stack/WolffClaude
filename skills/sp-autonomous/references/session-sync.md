@@ -195,6 +195,36 @@ intended, stop and fix it immediately — remote `2026-v1` is live to the dev ap
 If the rebase conflicts, the other session landed in your files. Resolve in your worktree only,
 re-run the tests, and tell them via `send_message` what you changed.
 
+### After a rebase, the branch diff is NOT your changes
+
+A rebase interleaves the neighbouring session's commits into your branch's history. From that moment
+`git diff origin/2026-v1...HEAD` and "files changed on this branch" include **their** work as well as
+yours, and every claim built on them is wrong.
+
+This has already produced a false statement in a review record: a run reported "the three protected
+files are unedited" when one had gained ~50 lines from a neighbour's commit that the rebase pulled in.
+The claim survived because it read the branch diff instead of its own commits. A reviewer caught it;
+the procedure did not.
+
+So scope every "what I changed" claim to **your own commits**, never the branch:
+
+```bash
+git diff --name-only $MY_BASE..HEAD            # your changed files
+git diff --stat      $MY_BASE..HEAD            # your diffstat
+git diff --name-only $MY_BASE..HEAD -- <protected-path>   # must be EMPTY
+```
+
+Use this for the read-only/protected-file verification, the build summary's file list, and anything
+you tell a reviewer. When a protected file *has* changed but not by you, say exactly that, name the
+commit that did it, and prove your range is clean — do not report the blanket "unedited".
+
+**Post or update the build summary AFTER the push, citing the pushed SHAs.** A summary written
+pre-rebase cites commits that no longer exist on `2026-v1` — the reader follows them and finds
+nothing. Include every slice that actually shipped, not the count you planned.
+
+**Tell the next session what rode along.** If a rebase interleaved commits that aren't yours, name
+them in the RELEASE comment so nobody attributes them to your ticket.
+
 ### Cleanup
 
 ```bash
