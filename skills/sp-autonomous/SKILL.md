@@ -297,3 +297,18 @@ everything else, and surface it in the final report** — do not idle.
   only inside the Replit container. Never declare a dev-app blocker from a local query alone.
 - Report faithfully. If tests fail, say so with the output. If you skipped something, say so. A
   clean report that hides a skipped suite is worse than a messy honest one.
+- **Never end a turn with unprotected state — this has already happened twice.** One run stopped
+  mid-CI-gate-wait with a story's status not yet resolved; another stopped right after saying "the
+  suite is still running... queued to run the moment it finishes," and nobody was watching either
+  run land. A worse instance: a worktree was found hours later holding a committed-but-unpushed fix
+  *and* further uncommitted changes on top of it, with no claim, no comment, and no record anywhere
+  that the work existed. Before you stop — whether you finished, hit a hard stop, or are simply out
+  of runway — checkpoint:
+  1. **Commit or explicitly flag every worktree change.** An untracked or uncommitted diff that
+     nobody knows exists is one accidental `git worktree remove` away from being lost.
+  2. **If you triggered an async check that hasn't reported** (a CI gate, a dev server boot, a long
+     test run), either wait for it or post a comment naming the run/PID and what the next session
+     needs to check.
+  3. **If the board claims something that isn't true yet** (`Done`, an active claim), fix the board
+     before you stop, not after. A session that ends by honestly saying "not done, here's exactly
+     where it stands" is worth more than one that goes quiet mid-verification.
