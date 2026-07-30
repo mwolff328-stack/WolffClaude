@@ -251,10 +251,23 @@ git branch -D auto/sst-1234
    `{"ts":"…","session":"…","ticket":"SST-1234","status":"released"}`
 2. Post on each ticket: `[Claude/sp-autonomous] — RELEASED · <files> free · landed <sha> on 2026-v1`
 3. `send_message` any session you negotiated with that the files are free.
-4. Remove the worktree.
+4. Remove the worktree — **only once every commit in it is pushed and every claim on it is
+   released.** A worktree that still holds a committed-but-unpushed fix, or uncommitted changes,
+   must not be removed and must not be reported as released; fix state first (see the
+   never-end-with-unprotected-state rule in `SKILL.md`), then release.
 
 An unreleased claim blocks the next run for 24h. Release even when the item was deferred or failed —
 especially then.
+
+**If you keep working in the same worktree after releasing a ticket's claim** — investigating a
+live bug report, filing follow-on tickets, starting a fix that doesn't need a founder ruling —
+**that is new scope and needs its own Phase 0 claim**, even though you're not creating a new
+worktree. This has already gone wrong: a session released its original tickets' claims, then spent
+another two hours investigating and filing five new tickets and partially building two of them, all
+inside the same worktree, with no claim entry covering any of it. Nothing collided this time, but
+nothing would have stopped a second session from claiming the same files in the meantime either. A
+claim tracks *what you're touching right now*, not *which worktree you happen to be in* — reclaim
+before you read the next file, same as Phase 0 always required.
 
 ---
 
