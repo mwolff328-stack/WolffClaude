@@ -279,9 +279,14 @@ everything else, and surface it in the final report** — do not idle.
 3. **PRs to `main`.** Never open one. All work targets `2026-v1`.
 4. **Expansion beyond NFL Survivor**, or anything that weakens a Constitution invariant
    (determinism, architectural separation, golden-source rules).
-5. **Destructive or irreversible operations** — history rewrites, force pushes, data deletion,
+5. **Reversing a prior, documented founder ruling or product decision** — e.g. a board-recorded
+   call like "ties must be surfaced, not auto-resolved." Building a fix is fine; building a fix
+   that quietly contradicts a standing decision is not, even if it's the obvious-looking answer.
+   Name the conflict and ask — and if you already wrote the code before you noticed the conflict,
+   hold it unpushed and say so; don't ship it staged and unmentioned.
+6. **Destructive or irreversible operations** — history rewrites, force pushes, data deletion,
    dropping columns, anything outward-facing.
-6. **Genuine ambiguity where every reading leads somewhere materially different** and guessing wrong
+7. **Genuine ambiguity where every reading leads somewhere materially different** and guessing wrong
    would make the work useless. Rare. State the assumption and build if you can.
 
 ## Standing rules
