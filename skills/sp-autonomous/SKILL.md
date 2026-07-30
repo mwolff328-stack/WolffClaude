@@ -192,6 +192,23 @@ bug-triage skill; don't scope-creep the story.
 Exit checklist, all required: AC verified (Ann) · QA/E2E green (Vlad) · code review approved ·
 security clear if applicable · conditional sign-offs complete · **property fields clean**.
 
+**A story whose Test Cases include a CI-only test (the SST-1088 self-skip class — blocked
+locally by the DB host guard) cannot reach `Done` on the promise that CI will pass.** Trigger a
+targeted gate run for that story's actual commit and see it go green before posting Done — not
+after. This has already failed once: a story was marked Done on the reasoning "it runs on CI,
+that gate run is the proof," the gate then failed on a bug in that exact test, and Done had to be
+publicly retracted with a `⛔ GATE FAILED — Done was premature` comment. The fix is sequencing:
+run the check before the claim, never after. If waiting for a full gate run is too slow to do per
+story, that is a real cost of shipping something whose proof only exists in CI — accept the wait,
+don't skip the proof.
+
+**Every reviewer sign-off named in the process must exist as an actual posted comment before you
+rely on it — never tell a persona agent to skip posting "for speed."** This has produced a real
+failure: an orchestrator instructed review agents not to post, then a required AC (an explicit
+"Sky must sign off and Vlad must confirm the comment exists" gate) failed QA outright because the
+comment never existed. Posting is not overhead on top of the review — it *is* the artifact the
+gate checks for.
+
 Then: post the summary comment, set Status → `Done`, set `Date Completed`, and **clear
 `Assigned To Agent`**.
 
