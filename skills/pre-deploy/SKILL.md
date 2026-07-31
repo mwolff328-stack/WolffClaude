@@ -72,8 +72,26 @@ SHIP requires ALL of: every test suite passed AND the Manual Pre-Publish Gate be
 🚢  SHIP     — all suites passed AND all pending prod DB migrations/backfills applied
               (publish is not complete until the ALLOW_UNSAFE_DEV_FEATURES deployment
                secret is deleted — see "After the Gate Passes" below)
+              BROWSER COVERAGE IS NOT INCLUDED — state the Playwright status separately.
 🚫  DO NOT SHIP — any suite failed, OR a pending prod DB migration/backfill is unapplied
 ```
+
+### Browser coverage must be stated separately (SST-1129)
+
+A green Pre-Publish Gate says nothing about the browser suite. Every SHIP verdict must carry one of these, explicitly:
+
+```
+Browser (Playwright): ✅ green — run <id>, <ref/SHA>, N shards, executed=N did-not-run=0
+Browser (Playwright): ⚠️ NOT RUN against this commit — browser regressions would not have been caught
+```
+
+Get one before recommending a publish:
+
+```bash
+gh workflow run playwright-ci.yml --ref 2026-v1
+```
+
+This matters most for commits pushed **directly** to `2026-v1`: `playwright-ci.yml` triggers only on `workflow_dispatch` or a `pull_request` into `2026-v1`, so a direct push matches neither and gets zero browser coverage (SST-1114). Never let "the gate is green" stand in for a browser run that did not happen.
 
 ## Manual Pre-Publish Gate — Pending Prod DB Migrations & Backfills
 
