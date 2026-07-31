@@ -49,7 +49,7 @@ SurvivorPulse validates that "different teams can still be the same bet." Backte
 
 ## CA1 credibility asset
 
-- Artifact: `CA1_Rewrite_Final.md` + full JSON output in Google Drive
+- Artifact: `CA1_Rewrite_Final.md` (OneDrive: `SurvivorPulse/Product & Engineering/Product/credibility-asset-1/`, not in the git repo) + full JSON output in Google Drive
 - Headline: portfolio approach outlasted independent entries by +1.04 weeks avg
 - Week 14 chalk collapse: Tampa Bay 57% ownership, Loss = 80% field eliminated
 - Season results: 78.9% wipeout probability (all entries), 21.1% chance 1+ survives to end
