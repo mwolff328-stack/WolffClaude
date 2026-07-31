@@ -149,6 +149,13 @@ the tree.
 > remote `2026-v1` with whatever you have. Remote `2026-v1` auto-syncs to the Replit dev app.
 > `git branch --unset-upstream` immediately after creating the worktree, always.
 
+> ⚠️ **The dot-path trap, if you live-verify from here.** This directory is `.claude/worktrees/…` —
+> a dot-segment in the path. If you later serve a local static build to measure your work (per the
+> `sp-live-verify` skill), every non-root route 404s from this exact location, because `send`'s
+> default `dotfiles: 'ignore'` applies to the whole absolute path. It is not your code; it is where
+> this isolation step put you. `sp-live-verify` §2 has the workarounds — cheapest is running the
+> Vite dev server if it comes up, since it never reaches the code path that checks dotfiles.
+
 ---
 
 ## Integration — committing and pushing without collateral damage
