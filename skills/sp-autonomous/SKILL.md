@@ -115,7 +115,22 @@ the code, by the implementer, describing what the code *does*, certifies the def
 - **Test names state the requirement, not the mechanism.**
 - **Characterization tests must be labeled** as such. Implementer-added tests trace to an AC.
 - **Assert where the truth lives** — query the DB/real layer for anything invisible in the UI.
-  "The operation happened" is not "the state it produced is correct".
+  "The operation happened" is not "the state it produced is correct". This extends to geometry:
+  a wrapper element measuring "99% width" does not mean the content inside it does — a story
+  shipped a layout bug three times over because each check measured the outer element instead of
+  the one that actually mattered. A className/prop assertion cannot prove a CSS layout property
+  took effect (`justify-content`, `sticky`, `flex-grow`); only a real measurement at a viewport
+  wide enough to expose the defect can. If a check would pass identically whether the property
+  fired or not, it isn't checking the property.
+- **A claim that hinges on a specific word's technical meaning must hold for every related word
+  used in the same sentence, not just the one you checked.** Two sessions independently lost a
+  night to this: "the cost is near-zero because it captures the failing attempt instead of tracing
+  every passing run" is true of *retention* and false of *recording* — the flag recorded every
+  test regardless of outcome, and only retention was scoped to failures. A guard reasoned to be
+  safe because `current_database()` would catch a wrong target — true only if the databases don't
+  share a name, which these did. Before trusting a "this can't happen" or "cost is near-zero"
+  argument, restate it with each key term's actual technical behavior substituted in, not the verb
+  that sounds closest to correct.
 
 ### Commands (Windows — read this, the obvious ones are booby-trapped)
 
