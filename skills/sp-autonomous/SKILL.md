@@ -189,6 +189,20 @@ no PR, `playwright-ci.yml` never triggers for it (SST-1114) — this local run i
 coverage the commit gets before a real publish. Run the full suite, not just the story's own new
 flows; a targeted run cannot catch a regression this story introduced elsewhere (see SST-1108).
 
+**Before you run any of this, read the `sp-live-verify` skill — don't rediscover its traps by
+hand.** Two are structural collisions with this skill's own design, not generic advice:
+- **`npm run dev` hangs in this environment**; the workaround is a static-build server, and under
+  it every non-root route 404s **specifically because your worktree path contains a dot-segment**
+  (`.claude/worktrees/…`) — the exact isolation this skill's own Phase 0 mandates. A route 404ing
+  under `CI_STATIC` from your worktree says nothing about your change; it's the path, not the code.
+- **A cleared browser context is not anonymous.** Dev auto-login authenticates any cookieless
+  request by default — an anonymous-branch test written against it fails while the implementation
+  is correct. `?publicview=1` is the only thing that actually withholds it.
+That skill also covers §0 (deployed app vs. local — some things a local build structurally cannot
+show you), fresh-worktree `.env` handling, and the full Playwright-specific trap list (`--timeout`
+vs. `expect` timeout, `--reporter=list` bypassing the executed-count guard, the mandatory baseline
+control before blaming your own change). Don't re-derive any of it here.
+
 Sign-offs, each a verdict comment:
 
 | Reviewer | Scope | When |
