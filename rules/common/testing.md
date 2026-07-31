@@ -19,7 +19,7 @@ MANDATORY workflow:
 
 ## Tests Specify, They Don't Describe
 
-A test written AFTER the code, by the implementer, describing what the code DOES rather than what the requirement SAYS, is a snapshot — not a specification — and is structurally incapable of catching the bug it was written next to. Such a test is worse than none: it certifies the defect and gives false confidence. This failure mode has recurred repeatedly — see `learned/survivorpulse-tests-that-encode-bugs.md` for the full case file — and every real defect was caught by a live smoke or by reading code, never by a green suite.
+A test written AFTER the code, by the implementer, describing what the code DOES rather than what the requirement SAYS, is a snapshot — not a specification — and is structurally incapable of catching the bug it was written next to. Such a test is worse than none: it certifies the defect and gives false confidence. This recurred three times in one SurvivorPulse effort, then five more times in the RED-proof step itself — see that project's `.claude/skills/learned/survivorpulse-tests-that-encode-bugs.md` for the full case file — and every real defect was caught by a live smoke or by reading code, never by a green suite.
 
 Enforce these to prevent it:
 
