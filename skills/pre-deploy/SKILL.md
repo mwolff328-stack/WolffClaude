@@ -12,34 +12,81 @@ triggers:
 
 You are running the SurvivorPulse pre-deployment gate. Follow every step exactly. No skipping. No parallelism.
 
-## Environment
+## Execution — the gate is a CI workflow, not a local command
 
-Before running any command, confirm these env vars are set for the process:
-
-| Variable | Value | Purpose |
-|---|---|---|
-| `RUN_HTTP_INTEGRATION_TESTS` | `1` | Enable HTTP integration tests |
-| `RUN_DB_REGRESSION_TESTS` | `1` | Run regression tests against live database |
-| `TEST_DISABLE_NETWORK` | `0` | Allow network access during tests. The CI workflow sets `1` instead — that is deliberate, not drift, and since SST-1088 it no longer affects which suites run. It now means only "no outbound internet"; DB-integration suites gate on whether a disposable database is reachable (`tests/guards/dbIntegrationGate.ts`). |
-| `RUN_SIGNUP_EDGE_CASES` | `0` | Skip signup edge case tests |
-
-These are injected automatically by `scripts/pre-publish-check.sh`.
-
-## Execution
-
-Run this single command. It handles all env vars and sequencing internally:
+**Run the gate on GitHub Actions. Do not try to run it locally.**
 
 ```bash
-npm run test:prepublish
+gh workflow run pre-publish.yml --ref 2026-v1
 ```
 
-This executes in order:
-1. `npm run test:unit`
-2. `npm run test:integration`
-3. `npm run test:e2e:project`
-4. `npm run test:regression:project`
+Then capture the run id and watch it. The run takes ~15 minutes, which exceeds the 10-minute Bash tool timeout — start the watch **in the background** rather than blocking:
 
-**If any suite fails, the script stops immediately. Do not proceed.**
+```bash
+gh run list --workflow=pre-publish.yml --limit 1 --json databaseId --jq '.[0].databaseId'
+```
+
+```bash
+gh run watch <id> --exit-status
+```
+
+On failure, the workflow records which stage died in `FAILED_STAGE`, and the failing test comes out of:
+
+```bash
+gh run view <id> --log-failed
+```
+
+### Why not `npm run test:prepublish`
+
+That script (`scripts/pre-publish-check.sh`) is the POSIX/CI-parity entry point, and it **cannot run on the Windows dev box**:
+
+- The npm scripts use POSIX inline env syntax (`NODE_ENV=test … vitest`). npm hands that to `cmd.exe`, which fails with `'NODE_ENV' is not recognized`.
+- The DB-dependent stages need a live database with network. The `dbHostGuard` (SST-1006) correctly refuses to run them against the shared dev database — which you must never pollute with an unattended test run anyway.
+
+The workflow's own `on:` block includes `workflow_dispatch` for exactly this reason; its comment says so explicitly.
+
+### What the gate actually runs, in order
+
+Each stage is a separate step with no `continue-on-error`, so **the job stops at the first failing stage** — you get one failing stage per run, not a full picture.
+
+| Stage | What it runs |
+|---|---|
+| DB setup | Provisions ephemeral Postgres, pushes `shared/schema.ts` fresh, seeds teams |
+| **Stage 1** | Unit tests — the FULL unit suite, sharded `--shard=N/8` |
+| **Stage 2a** | Integration — core, full mode (`test:integration:core:full`) |
+| **Stage 2b** | Integration — slow, full mode, 0 skips |
+| **Stage 2c** | HTTP integration (auth endpoints), against a server it starts and stops |
+| **Stage 3** | `npm run test:e2e:project` — vitest in node, **no browser** (see SST-1129 below) |
+| **Stage 4a/b/c** | Regression — module boundary check, scoped test-data cleanup, verify no test pools remain |
+| Summary | Per-stage totals + the residual-skip inventory |
+
+Unlike the other stages, Stage 1 runs **all 8 shards even when one fails** (it accumulates `STATUS` and exits at the end), so a Stage 1 failure shows you every shard.
+
+### Reading the printed totals — two traps
+
+1. **The Summary prints `integ-core` and `integ-slow` lines only. There is no Stage 1 line.** A unit-test change moves a number the summary never shows. The **869 passed / 9 skipped** baseline quoted throughout this file is **Stage 2a alone**, not the whole suite.
+2. **Which stage a test lands in is decided by its FILENAME.** `vitest.integration.core.config.ts` (Stage 2a) matches only `tests/**/*.integration.test.ts(x)` — the `.integration.` infix is what routes it. A file under `tests/` *without* that infix is a Stage 1 **unit** test, and `client/**/*.test.tsx` are Stage 1 too. Never map a test-count delta onto the Stage 2a baseline without first checking whether your changed files are even in that config.
+
+### What you CAN run locally
+
+- **Unit/component suites**, via Git Bash (they are `dbHostGuard`-exempt per SST-1006's scoping):
+  ```bash
+  NODE_ENV=test TEST_DISABLE_NETWORK=1 TEST_FAST_OPTIMIZER=1 npx vitest run <file> --config vitest.config.ts --no-file-parallelism
+  ```
+- **Pure `readFileSync` source-scan e2e tests** with `SKIP_DB_GUARD=1` — safe, they touch no DB.
+
+⚠️ `npm run test:unit` exits 0 on Windows **without running anything** (same POSIX env syntax problem). Never quote it as a green result.
+
+## Environment
+
+These are set by the workflow; you do not set them yourself. Listed so you can tell deliberate config from drift.
+
+| Variable | Gate value | Purpose |
+|---|---|---|
+| `RUN_HTTP_INTEGRATION_TESTS` | `1` | Enable HTTP integration tests |
+| `RUN_DB_REGRESSION_TESTS` | `1` | Run regression tests against the live test database. **Set in `pre-publish.yml` and nowhere else** — suites gated on it are `describe.skip` locally and execute only on the gate, so a local green run says nothing about them. |
+| `TEST_DISABLE_NETWORK` | `1` in CI | Deliberate, not drift. Since SST-1088 it no longer affects which suites run — it now means only "no outbound internet". DB-integration suites gate on whether a disposable database is reachable (`tests/guards/dbIntegrationGate.ts`). |
+| `RUN_SIGNUP_EDGE_CASES` | `0` | Skip signup edge case tests |
 
 ## Reporting
 
