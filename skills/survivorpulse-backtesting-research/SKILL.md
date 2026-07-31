@@ -37,7 +37,7 @@ SurvivorPulse validates that "different teams can still be the same bet." Backte
   - n=10: SP Production 70%EV+30%FV wins (7 strategies beat 70/30 Blend)
   - n=20: Mixed Portfolio wins (4 strategies beat 70/30 Blend)
   - n=50: 70/30 Blend reclaims #1 (team exhaustion makes sophistication backfire)
-- Full results: `memory/stan-entry-scale-research.md`
+- Full results: `docs/research/backtesting/stan-entry-scale-research.md`
 
 ## Key metrics
 
