@@ -51,8 +51,11 @@ After the run completes (or fails), report back with:
 |---|---|---|---|
 | Unit Tests | ✅ PASS / ❌ FAIL | N | |
 | Integration Tests | ✅ PASS / ❌ FAIL | N | |
-| E2E Tests | ✅ PASS / ❌ FAIL | N | |
+| Vitest e2e-project suites | ✅ PASS / ❌ FAIL | N | node, no browser |
 | Regression Tests | ✅ PASS / ❌ FAIL | N | |
+| **Browser (Playwright)** | **NOT RUN BY THIS GATE** | — | separate workflow — see below |
+
+**SST-1129 — do not report the third row as "E2E Tests".** It is `npm run test:e2e:project`, which is vitest over `tests/` in node; it never launches a browser. The stage was named "E2E tests" until 2026-07-31 and that name was itself the misleading claim. The Playwright browser suite lives in `playwright-ci.yml` and has **never** been part of the Pre-Publish Gate.
 
 ### Failures (if any)
 
