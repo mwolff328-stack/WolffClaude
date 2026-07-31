@@ -28,7 +28,7 @@ SurvivorPulse validates that "different teams can still be the same bet." Backte
 ### Rounds 1-5 (general strategy comparison)
 - 5 entries, 3 seasons evaluated
 - **Winner:** 70/30 Blend (70% EV + 30% Future Value) in every round
-- Full results: `memory/stan-backtesting-research.md`
+- Full results: `docs/research/backtesting/stan-backtesting-research.md`
 
 ### Round 6 (entry scaling)
 - 14 strategies x 4 entry counts (3, 10, 20, 50) x 3 seasons
