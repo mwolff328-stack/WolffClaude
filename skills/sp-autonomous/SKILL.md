@@ -330,9 +330,18 @@ production publish is founder-gated regardless. Everything up to them is yours.
 1. Release your claims (ledger + a release comment on each ticket) — see the reference.
 2. Message any session you negotiated with that the files are free.
 3. Remove the isolation worktree if you created one.
-4. If something bit you that would bite the next run, write it down: a `learned/` skill file for
-   durable patterns, `MEMORY.md` for cross-session facts. This is Phase 6, not an afterthought —
-   an autonomous run that learns nothing repeats itself.
+4. If something bit you that would bite the next run and it's a **general SurvivorPulse fact** —
+   a code pattern, a data gotcha, a product decision — write it down: a `learned/` skill file for
+   durable patterns, `MEMORY.md` for cross-session facts.
+5. If what bit you reveals a gap in **this skill's own instructions** — SKILL.md or
+   session-sync.md, not the codebase — log it rather than hand-editing the files yourself. See
+   [`references/self-learning.md`](references/self-learning.md). Normal severity queues for the
+   weekly review (`sp-autonomous-weekly-review`, Sundays); urgent severity — a live SHIP-blocking
+   gap, a trap the next concurrent session will hit before a week is up — gets drafted and
+   surfaced in your own final report immediately, never silently applied, never left to wait.
+
+This is Phase 6, not an afterthought — an autonomous run that learns nothing repeats itself, for
+the codebase and for its own instructions alike.
 
 ---
 
