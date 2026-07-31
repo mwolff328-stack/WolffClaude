@@ -132,7 +132,9 @@ Confirmed on two independent runs against different code: `30416680520` (SST-108
 
 **So: report an unqualified 🚢 SHIP when the gate is green.** The old qualification is now the inaccurate answer.
 
-**Still state the residual skip count** — a green gate is not "everything ran". The gate's own summary block now enumerates each residual skip with a true reason rather than lumping them, so quote it rather than re-deriving. As of the runs above the 10 are: 5 `strategies` (needs a live server, runs in Stage 2c), 3 `strategyApply.ss6` + 1 `strategyRecommendation.ss4` (pre-existing manual/unreachable cases), and 1 `gameplanApplyFutureUsedTeamCollision` (**quarantined** — a real apply-ordering defect surfaced by SST-1088, tracked as **SST-1094**). None are outbound-call suites; that claim was part of the same false premise.
+**Still state the residual skip count** — a green gate is not "everything ran". The gate's own summary block now enumerates each residual skip with a true reason rather than lumping them, so quote it rather than re-deriving. The count is **9**: 5 `strategies` (needs a live server, runs in Stage 2c) and 3 `strategyApply.ss6` + 1 `strategyRecommendation.ss4` (pre-existing manual/unreachable cases). None are outbound-call suites; that claim was part of the same false premise.
+
+> **Updated 2026-07-31.** This said 10 and included `gameplanApplyFutureUsedTeamCollision` as quarantined under SST-1094. That test was un-quarantined and is passing — **SST-1141** — so the count dropped 10 → 9. Confirmed against gate runs `30612638012` and `30614204169`, both printing `integ-core: Tests 869 passed | 9 skipped (878)`. The workflow's own summary comment already recorded the drop; this file had not caught up, which is exactly the "if the printed count and the list disagree, the list is stale" case below.
 
 If the printed count and that list ever disagree, **the list is stale — re-derive before trusting the verdict.**
 
