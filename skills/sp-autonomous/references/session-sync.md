@@ -271,6 +271,103 @@ before you read the next file, same as Phase 0 always required.
 
 ---
 
+## SHIP Aggregation — one founder-facing verdict, not N
+
+When multiple sp-autonomous sessions converge on the same `2026-v1` tip, the founder's stated
+preference is explicit: **one consolidated SHIP REPORT, produced by its own dedicated session** —
+not "whoever finishes last owns it," which still means hunting through transcripts to find the
+owner.
+
+### Detect a multi-session batch, before Phase 5
+
+```bash
+git -C "C:/Users/wolff/Projects/SurvivorPulse" log --oneline $MY_BASE..origin/2026-v1
+```
+
+If this shows commits carrying ticket prefixes you never claimed, someone else landed work in your
+window. Cross-check with `mcp__ccd_session_mgmt__list_sessions` for any other `isRunning` session
+with a worktree in this repo. Either signal alone is enough to call it multi-session.
+
+**Solo** (no other signal): run Phase 5 yourself exactly as SKILL.md describes. This is the common
+case — don't add aggregator overhead to it.
+
+**Multi-session:** do not run your own gate-and-report. Instead:
+
+### 1. Post your contribution summary, not a verdict
+
+On your own ticket(s), post what you delivered and the SHA it survives on — commits, Done/blocked
+status, anything the aggregator will need to cite. This is input for the aggregator, not a report
+to the founder.
+
+### 2. Claim the aggregator role, or stand down
+
+Check the claim ledger for a `ship-aggregator` line naming the current tip:
+
+```json
+{"ts":"<ISO8601>","session":"<sessionId>","ticket":"ship-aggregator","status":"claimed","paths":["<tip-sha>"]}
+```
+
+- **None exists, or it's stale** (session not `isRunning`, or >2h old): claim it yourself by
+  appending that line, then spawn the aggregator (below).
+- **A live claim exists:** you lost the race or arrived after. Stand down — release your own
+  ticket claims, do not spawn a second aggregator, do not issue any report. The aggregator has you
+  covered.
+
+### 3. Spawn the aggregator
+
+`spawn_task` creates a chip the founder clicks to start the session — it does not run
+automatically, so a duplicate claim costs a redundant chip, not a redundant running session. If
+you discover you created one anyway, withdraw it with `mcp__ccd_session__dismiss_task` rather than
+leaving two chips for the same tip.
+
+```
+mcp__ccd_session__spawn_task
+  title: "Aggregate SHIP verdict for 2026-v1 @ <short-sha>"
+  tldr: "Synthesizes every session's work on tonight's batch into one SHIP REPORT so the founder
+         reads one document, not N."
+  cwd: "C:/Users/wolff/Projects/SurvivorPulse"
+  prompt: |
+    You are the SHIP aggregator for the sp-autonomous skill (~/.claude/skills/sp-autonomous/).
+    Read SKILL.md Phase 5 and references/session-sync.md's "SHIP Aggregation" section before
+    doing anything else.
+
+    Target tip: <sha>  (confirm with `git log -1 origin/2026-v1` — if it has moved since this
+    prompt was written, that IS the real target; note the drift in your report rather than
+    reporting against a stale SHA)
+
+    Contributing sessions, as of this claim:
+    - <session title> (<sessionId>) — claims/tickets: SST-###, SST-###
+    - <session title> (<sessionId>) — claims/tickets: SST-###, SST-###
+    [one line per session identified in the detection step]
+
+    Your job, in order:
+    1. For each contributing session, pull its final contribution-summary comment (Notion ticket
+       comments, or `mcp__ccd_session_mgmt__list_events` on the session itself) — don't re-derive
+       their work from source, read what they already reported.
+    2. Confirm exactly one gate run exists against the CURRENT tip, not an intermediate one any
+       contributor ran mid-batch. If the tip moved since the last gate run, or none targets it,
+       trigger `gh workflow run pre-publish.yml --ref 2026-v1` yourself and wait for it.
+    3. Pull final board status for every ticket named by every contributing session.
+    4. Produce ONE SHIP REPORT in the SKILL.md Phase 5 format, citing the single gate run, the
+       full commit range across all sessions, and the merged, deduplicated founder action list.
+    5. Release the ship-aggregator claim when done.
+
+    This is a synthesis-and-verification role — do not re-run Phase 1-4 work, do not build
+    anything, do not second-guess a Done verdict a contributing session already reached unless
+    the gate contradicts it.
+```
+
+### Why this has to be its own session, not a shared document
+
+The aggregator's report is authoritative specifically because it verifies the tip *at report
+time*, not whatever tip existed when any one contributor ran their own gate. That gap is real: a
+gate run one session cited had already been superseded by another session's push by the time it
+would have reached the founder. Re-checking `git log -1 origin/2026-v1` when the report is written
+— not when the batch was claimed — is the entire reason this is a distinct spawned session rather
+than a note appended to an existing one.
+
+---
+
 ## What the CI gate does and does not see
 
 The pre-publish gate runs a **clean checkout of `origin/2026-v1`** — your pushed commits only,
