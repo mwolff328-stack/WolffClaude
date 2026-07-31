@@ -77,6 +77,36 @@ fallback itself (see the 404 trap below) and serves every route with no path
 workaround needed. The hang above is why static mode exists at all; it isn't the
 default because Vite dev is strictly better when it works.
 
+Boot logs print `📋 Demo Credentials for Testing: ... Password: DemoPass123!` in
+plain text (`server/seedDemoUsers.ts`). Harmless locally, but don't paste a boot
+log into a ticket or PR without redacting it.
+
+### Do NOT try "run the bundled server with NODE_ENV=development" as a substitute — it crashes
+
+This looks like an obvious third option (`npm run build` then
+`NODE_ENV=development node dist/index.js`, skipping `CI_STATIC` entirely) because
+`server/index.ts:321`'s branch (`app.get("env") === "development" &&
+!process.env.CI_STATIC` → `setupVite`) is unaffected by whether the server is
+bundled. **It is not viable — verified 2026-07-31, reproduced twice on different
+ports.** API-only routes work fine (`GET /api/me` correctly returns 200 bare /
+401 with `?publicview=1`), which is what makes this convincing. But `setupVite`
+still wires in Vite's *dev* middleware even inside the bundle, and the first
+HTML-page load (e.g. `GET /pools`) triggers a transform of `/src/main.tsx`
+against the wrong module graph:
+```
+[vite] (client) Pre-transform error: Failed to load url /src/main.tsx?v=... Does the file exist?
+```
+`setupVite`'s custom Vite logger calls `process.exit(1)` on any Vite error
+(`server/vite.ts`), so **the entire server dies immediately after** — not on
+that request, but moments later. The trap: `curl -o /dev/null -w
+"%{http_code}"` on that same `/pools` request reports **200**, because the raw
+unrendered `index.html` shell is served successfully before the async
+transform fails — status-code-only checks read this as success right up until
+the next request connection-refuses. Same measurement-artifact family as the
+frozen-animation trap in §4: what you're checking isn't what you think you're
+checking. Use `CI_STATIC` (above) or plain `npm run dev` (if it comes up) —
+not this.
+
 ## 2. The SPA-404 dot-path trap (static mode only)
 
 Under `CI_STATIC`, `/` serves 200 but `/terms`, `/privacy`, `/methodology`, `/pools`
