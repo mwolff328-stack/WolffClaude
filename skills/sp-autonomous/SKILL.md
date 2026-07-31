@@ -132,6 +132,13 @@ the code, by the implementer, describing what the code *does*, certifies the def
   argument, restate it with each key term's actual technical behavior substituted in, not the verb
   that sounds closest to correct.
 
+**For any live/manual measurement — mutation-proof geometry, a real-browser spot check, anything
+this section demands beyond the automated suite — use the `sp-live-verify` skill.** These bullets
+state the *principle*; that skill is the mechanical *procedure*: getting a trustworthy local server
+running at all, the frozen-animation false-positive (this bit multiple stories, identically each
+time), auth/session state you think you're in but aren't, and the full symptom→cause→section
+lookup table. Read it before measuring, not after a confusing result.
+
 ### Commands (Windows — read this, the obvious ones are booby-trapped)
 
 ```bash
