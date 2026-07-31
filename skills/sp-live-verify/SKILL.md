@@ -280,6 +280,7 @@ these.
 | Symptom | Likely cause | Section |
 |---|---|---|
 | Server "running" but connection refused | Vite dev hang | §1 |
+| A page 200s but the server refuses every request moments later | bundled server + `NODE_ENV=development` (Vite-in-a-bundle crash) | §1 |
 | Every route 404s except `/` | dot-path SPA fallback | §2 |
 | Anonymous test sees authenticated content | dev auto-login | §3 |
 | Dialog/element measures off-screen, identically every time | frozen animation | §4 |
