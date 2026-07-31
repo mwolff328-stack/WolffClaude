@@ -239,20 +239,52 @@ Two things that will otherwise waste an hour:
   — the Game Plan / cockpit / pick-write core, including several tripwires. Report the qualification
   explicitly; never issue a bare 🚢 SHIP that implies coverage you didn't get.
 
-Then produce the **founder handoff** — this is the deliverable that ends the run:
+**If other concurrent sessions are also landing work on this same branch tip, the SHIP verdict
+has one owner, not several.** This has happened for real: three separate autonomous runs landed
+on the same commit in one night, and each independently deciding to issue its own SHIP REPORT
+would have produced three conflicting verdicts for one founder to reconcile. Before you run the
+gate, check `git log` for the current tip and — via `mcp__ccd_session_mgmt__list_sessions` /
+`send_message` — whether another session is also converging on it. Whoever runs the gate against
+the *actual final tip* owns the report; say so explicitly ("the other session owns the SHIP
+verdict for tonight's batch, check theirs, not mine"). If you're not the owner, name in your own
+handoff exactly what you delivered and which SHA it survives on, and point at the owning session's
+report rather than duplicating it.
+
+Then produce the **founder handoff** — this is the deliverable that ends the run. Use this exact
+format:
 
 ```
-SHIP REPORT
-  Items delivered:      SST-### … (one line each, with the Notion link)
-  Gate:                 🚢 SHIP / 🚫 DO NOT SHIP  (run id, qualified as above)
-  Pending prod DB:      <migrations/backfills the founder must apply, or "none">
-  Founder actions:      1. Delete the ALLOW_UNSAFE_DEV_FEATURES secret in
-                           Replit → Deployments → Secrets  (prod boot guard is FATAL)
-                        2. Click Publish
-  Deferred / not done:  <anything skipped, with the reason>
+SHIP REPORT — final
+  Landed:      <N> commits, <first-sha>..<last-sha> on 2026-v1
+
+  Gates:       <run-id> (<sha>) ✅   <run-id> (<sha>) ✅
+               <run-id> (<sha>) ✅  ← <why this run exists, e.g. "founder revisions">
+
+  Verified,    <suite> <N> passed / <N> skipped — <how you know this is real, not a repeat>
+  not just     ✓ <specific test that must have executed>          <duration>
+  green:       ✓ <specific test that must have executed>          <duration>
+               Both EXECUTED against <a real DB / the deployed app / etc>. The <N>/<N> is up
+               from the <N>/<N> baseline by exactly <delta>: precisely these <N> suites.
+               Nothing unattributed.
+
+  Board:       SST-### · SST-### · SST-###  → Done
+               SST-### · SST-###             → In Review  (or whatever they actually are)
+
+  Founder:     1. <anything only a human can check — a UI look, a product decision — or omit>
+               2. Delete ALLOW_UNSAFE_DEV_FEATURES in Replit → Deployments → Secrets
+               3. Publish
+
+  Still open:  <exact scope of what's not done — file paths, branch names, counts — not a vague reason>
 ```
 
-The last two steps are physically outside your reach — they happen in the Replit UI, and
+The "Verified, not just green" block is the load-bearing section — write it every time, don't
+compress it away. A bare pass/fail count is not proof anything new executed; the SST-1088 class of
+defect (a suite that reports green while silently skipping the tests that matter) is exactly what
+this section exists to rule out. Name specific tests, show they ran against something real, and
+reconcile the delta against a prior baseline so a reviewer can see *which* tests moved the number —
+"nothing unattributed" is the standard, not a nice-to-have.
+
+The last two founder steps are physically outside your reach — they happen in the Replit UI, and
 production publish is founder-gated regardless. Everything up to them is yours.
 
 ---
