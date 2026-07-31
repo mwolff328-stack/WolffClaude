@@ -92,17 +92,21 @@ These are set by the workflow; you do not set them yourself. Listed so you can t
 
 After the run completes (or fails), report back with:
 
-### Per-Suite Status Table
+### Per-Stage Status Table
 
-| Suite | Status | Test Count | Notes |
+| Stage | Status | Test Count | Notes |
 |---|---|---|---|
-| Unit Tests | ✅ PASS / ❌ FAIL | N | |
-| Integration Tests | ✅ PASS / ❌ FAIL | N | |
-| Vitest e2e-project suites | ✅ PASS / ❌ FAIL | N | node, no browser |
-| Regression Tests | ✅ PASS / ❌ FAIL | N | |
+| Stage 1 — Unit | ✅ PASS / ❌ FAIL | N | 8 shards; failure report lists every failing shard |
+| Stage 2a — Integration (core, full mode) | ✅ PASS / ❌ FAIL | N | this is the "integ-core" line in the gate Summary |
+| Stage 2b — Integration (slow, full mode) | ✅ PASS / ❌ FAIL | N | "integ-slow" in the Summary |
+| Stage 2c — HTTP integration (auth) | ✅ PASS / ❌ FAIL | N | starts and stops its own server |
+| Stage 3 — `test:e2e:project` | ✅ PASS / ❌ FAIL | N | vitest in node, **no browser** — see SST-1129 below |
+| Stage 4 — Regression (a/b/c) | ✅ PASS / ❌ FAIL | N | module boundaries, test-data cleanup, no leftover test pools |
 | **Browser (Playwright)** | **NOT RUN BY THIS GATE** | — | separate workflow — see below |
 
-**SST-1129 — do not report the third row as "E2E Tests".** It is `npm run test:e2e:project`, which is vitest over `tests/` in node; it never launches a browser. The stage was named "E2E tests" until 2026-07-31 and that name was itself the misleading claim. The Playwright browser suite lives in `playwright-ci.yml` and has **never** been part of the Pre-Publish Gate.
+Pull counts from the gate's own Summary step output where it prints one (Stage 2a/2b); for Stage 1 there is no Summary line — read the shard totals from the Stage 1 step's own log instead (`gh run view <id> --log | grep -E "Stage 1|Test Files"`).
+
+**SST-1129 — do not report Stage 3 as "E2E Tests".** It is `npm run test:e2e:project`, which is vitest over `tests/` in node; it never launches a browser. The stage was named "E2E tests" until 2026-07-31 and that name was itself the misleading claim. The Playwright browser suite lives in `playwright-ci.yml` and has **never** been part of the Pre-Publish Gate.
 
 ### Failures (if any)
 
