@@ -87,23 +87,30 @@ This looks like an obvious third option (`npm run build` then
 `NODE_ENV=development node dist/index.js`, skipping `CI_STATIC` entirely) because
 `server/index.ts:321`'s branch (`app.get("env") === "development" &&
 !process.env.CI_STATIC` → `setupVite`) is unaffected by whether the server is
-bundled. **It is not viable — verified 2026-07-31, reproduced twice on different
-ports.** API-only routes work fine (`GET /api/me` correctly returns 200 bare /
-401 with `?publicview=1`), which is what makes this convincing. But `setupVite`
-still wires in Vite's *dev* middleware even inside the bundle, and the first
-HTML-page load (e.g. `GET /pools`) triggers a transform of `/src/main.tsx`
-against the wrong module graph:
+bundled. **It is not viable — verified 2026-07-31, reproduced independently by
+two sessions, including from an actual `.claude/worktrees/…` dot-segment path**
+(control run from the same worktree: `CI_STATIC` correctly 404s `/pools`, per
+§2, and stays listening — `/api/me` still answers 8s later; the bundled+dev
+variant does not). API-only routes work fine (`GET /api/me` correctly returns
+200 bare / 401 with `?publicview=1`), which is what makes this convincing. But
+`setupVite` still wires in Vite's *dev* middleware even inside the bundle, and
+the first HTML-page load (e.g. `GET /pools`) triggers a transform of
+`/src/main.tsx` against the wrong module graph:
 ```
 [vite] (client) Pre-transform error: Failed to load url /src/main.tsx?v=... Does the file exist?
 ```
 `setupVite`'s custom Vite logger calls `process.exit(1)` on any Vite error
-(`server/vite.ts`), so **the entire server dies immediately after** — not on
-that request, but moments later. The trap: `curl -o /dev/null -w
-"%{http_code}"` on that same `/pools` request reports **200**, because the raw
-unrendered `index.html` shell is served successfully before the async
-transform fails — status-code-only checks read this as success right up until
-the next request connection-refuses. Same measurement-artifact family as the
-frozen-animation trap in §4: what you're checking isn't what you think you're
+(`server/vite.ts`), so **the entire server dies ~6 seconds after** — not on
+that request, but moments later. **The diagnostic is a second request a few
+seconds after the first, not the body of the first.** `curl -o /dev/null -w
+"%{http_code}"` on the `/pools` request itself reports **200** (the raw
+unrendered shell — check the body and you'll see `/@vite/client` injected but
+nothing rendered), so a check that stops at the first status code, or even
+reads the first body, still reads green. Only a follow-up request or a
+liveness check a few seconds later shows the process is gone. If you're
+scripting a check, don't declare success on the first response — confirm the
+server answers again after a short wait. Same measurement-artifact family as
+the frozen-animation trap in §4: what you're checking isn't what you think you're
 checking. Use `CI_STATIC` (above) or plain `npm run dev` (if it comes up) —
 not this.
 
