@@ -83,10 +83,10 @@ These are set by the workflow; you do not set them yourself. Listed so you can t
 
 | Variable | Gate value | Purpose |
 |---|---|---|
-| `RUN_HTTP_INTEGRATION_TESTS` | `1` | Enable HTTP integration tests |
-| `RUN_DB_REGRESSION_TESTS` | `1` | Run regression tests against the live test database. **Set in `pre-publish.yml` and nowhere else** — suites gated on it are `describe.skip` locally and execute only on the gate, so a local green run says nothing about them. |
+| `RUN_HTTP_INTEGRATION_TESTS` | **NOT set** at job level — set to `1` only on the Stage 2c step | Gates ~6-7 test files that make real HTTP calls to `localhost:5000`. Deliberately scoped to Stage 2c only: setting it globally would fire those files in Stages 1/2a/2b where no server is running, producing connection-refused failures. |
+| `RUN_DB_REGRESSION_TESTS` | `1` | Run regression tests against the live test database. **Set in `pre-publish.yml` and nowhere else** (`release-guardian.yml` does not set it) — suites gated on it are `describe.skip` locally and execute only on the gate, so a local green run says nothing about them. |
 | `TEST_DISABLE_NETWORK` | `1` in CI | Deliberate, not drift. Since SST-1088 it no longer affects which suites run — it now means only "no outbound internet". DB-integration suites gate on whether a disposable database is reachable (`tests/guards/dbIntegrationGate.ts`). |
-| `RUN_SIGNUP_EDGE_CASES` | `0` | Skip signup edge case tests |
+| `RUN_SIGNUP_EDGE_CASES` | `1` | **Runs** `tests/signup-edge-cases.integration.test.ts` (it is `describe.skip` without this). Do not report this file as skipped in a gate run — it executes here. |
 
 ## Reporting
 
