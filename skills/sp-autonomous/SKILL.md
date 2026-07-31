@@ -254,16 +254,16 @@ Two things that will otherwise waste an hour:
   — the Game Plan / cockpit / pick-write core, including several tripwires. Report the qualification
   explicitly; never issue a bare 🚢 SHIP that implies coverage you didn't get.
 
-**If other concurrent sessions are also landing work on this same branch tip, the SHIP verdict
-has one owner, not several.** This has happened for real: three separate autonomous runs landed
-on the same commit in one night, and each independently deciding to issue its own SHIP REPORT
-would have produced three conflicting verdicts for one founder to reconcile. Before you run the
-gate, check `git log` for the current tip and — via `mcp__ccd_session_mgmt__list_sessions` /
-`send_message` — whether another session is also converging on it. Whoever runs the gate against
-the *actual final tip* owns the report; say so explicitly ("the other session owns the SHIP
-verdict for tonight's batch, check theirs, not mine"). If you're not the owner, name in your own
-handoff exactly what you delivered and which SHA it survives on, and point at the owning session's
-report rather than duplicating it.
+**If other concurrent sessions are also landing work on this same branch tip, do not each issue
+your own SHIP REPORT.** This has happened for real: three separate autonomous runs landed on the
+same commit in one night. Founder-facing preference is explicit: he should never have to read
+through multiple session transcripts to learn whether he can publish. One dedicated aggregator
+session produces the single report instead — **spawn it via
+[`mcp__ccd_session__spawn_task`](references/session-sync.md#ship-aggregation)**, follow the exact
+procedure there. Summary: before running the gate, check whether you're in a multi-session batch;
+if solo, run this phase yourself as below; if not, post your own contribution summary and then
+either claim + spawn the aggregator (if nobody has yet) or stand down (if one already exists) —
+never run your own gate-and-report in a multi-session batch, and never spawn a second aggregator.
 
 Then produce the **founder handoff** — this is the deliverable that ends the run. Use this exact
 format:
