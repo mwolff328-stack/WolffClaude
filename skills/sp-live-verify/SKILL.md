@@ -39,9 +39,44 @@ Some things a local build **cannot** show you, no matter how carefully you run i
   separate from anything in this skill and from the Pre-Publish Gate — see
   `pre-deploy` skill.
 
-Prod is reachable read-only for smoke (`.replit.app`); the `.replit.dev` dev
-subdomain is Cloudflare-blocked from here. Use the founder's logged-in Chrome
-(claude-in-chrome) for auth-gated prod smoke.
+Prod is reachable read-only for smoke (`.replit.app`). Use the founder's
+logged-in Chrome (claude-in-chrome) for auth-gated prod smoke.
+
+⚠️ **CORRECTED 2026-08-01 — `.replit.dev` IS reachable from this sandbox.** This
+section previously said it was Cloudflare-blocked. That is false and it cost
+real time: one session nearly declined a direct founder request to run the E2E
+suite on the strength of it, and a second had already hit the same wall and
+recorded the correction only in its own transcript. Verified by `curl` (200 on
+`/`, 401 on `/api/me`, repeated with a gap) and by a real Playwright run that
+executed 70 tests against it. **GitHub-hosted runners ARE blocked** — that is
+the true half of the old claim (see `OPERATING_MODEL.md`), and it is where the
+confusion came from. Do not generalise it to local runs. Test reachability with
+one `curl` before citing either half.
+
+**What actually blocks a full local E2E run against the deployed app is fixture
+provisioning, not reachability.** `e2e/fixtures.setup.ts` seeds the fixture
+POOL by DIRECT DB INSERT (`:266`), which needs `DATABASE_URL` pointing at the
+database the app under test reads — helium, reachable only inside the Replit
+container. Entries and picks DO go through the real API; only the pool does
+not. So `seedFixturePool` returns `null`, and because all three browser
+projects declare `dependencies: ['setup', 'fixtures']`, every spec is skipped.
+
+Symptom to recognise: `executed=2 skipped=1 did-not-run=327 collected=330`,
+with `executedCountGuard` failing the run. That guard is doing its job — a
+2-of-330 run is not evidence the app works. Diagnose provisioning, not the
+specs.
+
+Fixture-INDEPENDENT specs still run against the deployed app today:
+`npx playwright test --project=chromium --no-deps <specs>` with
+`E2E_MIN_EXECUTED=<n>` (16 specs don't call `readFixtures()`; `--no-deps`
+requires `e2e/.auth/user.json` to already exist). That creates nothing and is
+the safe verification mode while teardown does not exist.
+
+⚠️ **Before running a FULL suite against the deployed app, check SST-1214.**
+SST-1213 removed the 403 that made the direct insert necessary, so provisioning
+now succeeds through the API — which means a full run will leave fixture pools
+in helium, the shared dev DB the founder uses daily. That is SST-1187 (fixture
+pools stranded in production) one environment over. Teardown must land first.
 
 If you do need a local surface, continue below.
 
