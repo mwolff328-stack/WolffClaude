@@ -84,6 +84,8 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [YouTube] [BettorDie](https://www.youtube.com/@BettorDIE) — content creator (posted "NFL Survivor Model", the only genuine survivor video in the 2026-07-25 sweep) — seen: 2026-07-25
 - [X] [gr8tscott0x](https://x.com/gr8tscott0x) — ICP voice / in-market buyer (asked [@SurvivorSweat](https://x.com/SurvivorSweat) for the PoolGenius survivor-tools link — a survivor player actively shopping for a paid tool) — seen: 2026-07-30
 - [Reddit] [u/PoolieDestination](https://www.reddit.com/user/PoolieDestination/) — ICP voice (asked [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) how popular Patriots vs Seahawks will be for Week 1 picks — unmet demand for preseason pick-popularity data) — seen: 2026-07-30
+- [Reddit] [u/Nreekay](https://www.reddit.com/user/Nreekay/) — commissioner / in-market buyer (asked [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) for a new hosting site, claiming Splash Sports bought Run Your Pool and "ruined it"; hard requirement = commissioner can enter missed picks after Sunday-morning kickoff while later games stay open) — seen: 2026-08-01
+- [YouTube] [DigitalPrez LLC](https://www.youtube.com/@DigitalPrezLLC) — adjacent competitor (promoting "Penalty Boss Pick'em" with the positioning "Your League. Your Rules. Zero Spreadsheets." — same spreadsheet-pain wedge, pick'em rather than survivor) — seen: 2026-08-01
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
