@@ -131,6 +131,59 @@ re-reading `GET /api/pools` and counting. Shell extraction failing silently is t
 usual root cause — an empty URL also makes `curl` report `http=000`, which reads as
 "host unreachable" rather than "my variable is empty".
 
+### There is now a THIRD target: the disposable `e2e-throwaway` Neon branch
+
+Neither "local dev DB" nor "the deployed app". A dedicated throwaway branch exists
+so a suite can seed and delete freely without writing into any database a human
+uses: `e2e-throwaway` / `br-royal-recipe-a6p36ef2`, Neon project
+`damp-sunset-84903170`, host `ep-mute-bar-a65jnspl*`. `isE2eSeedableHost` already
+admits it (SST-1186), so the seeder, the fixture setup and
+`scripts/cleanup-e2e-fixtures.ts` all accept it with no code change.
+
+**Its connection string goes in `.env.test`, not `.env`** — `playwright.config.ts`
+loads `.env.test` and never reads `.env`. To run the app against it while keeping
+`.env`'s other secrets, use two env files; the later one wins:
+
+```bash
+npx tsx --env-file=.env --env-file=.env.test server/index.ts
+```
+
+Verify which database you actually resolved to before running anything — print the
+**hostname only**, never the string:
+`node --env-file=.env --env-file=.env.test -e "console.log(new URL(process.env.DATABASE_URL).hostname)"`.
+`ep-blue-tree*` is the **CI** database (shared, schema-dropped every CI run), not
+this one; they are easy to confuse and only the host tells them apart.
+
+⚠️ **The trap that makes a run here lie to you: stale rows from when the branch was
+cut.** `findExistingPicksPool` matches on (name, season), so if an old
+`E2E Fixture Pool - picks` is present the setup **REUSES** it instead of creating
+one. Two consequences, both measured 2026-08-02:
+
+- The reused pool is owned by a **user that no longer corresponds to the seeded
+  test account**, and `sst-658-picks-revived.spec.ts` TC-658-01/02 then fail on a
+  missing Alive-Entries table. Both **pass in CI** on the same commit — so this
+  reads as a regression and is not one.
+- Because it reused rather than created, **nothing carried this run's tag**, so
+  teardown deleted nothing and the create → tag → delete path was never exercised.
+  A green run here proves less than it appears to.
+
+Cure: Neon → `e2e-throwaway` → **Reset from parent** before a run you intend to
+trust. Founder-gated (it is destructive), so ask.
+
+**What DOES work here without a browser at all**, and is the fastest way to prove
+the fixture lifecycle end to end — no app, no build, no Playwright:
+
+```bash
+DOTENV_CONFIG_PATH=<abs path>/.env.test TEST_RUN_ID=local-verify-1 \
+  npx tsx -r dotenv/config scripts/seed-e2e.ts
+DOTENV_CONFIG_PATH=<abs path>/.env.test TEST_RUN_ID=local-verify-1 \
+  npx tsx -r dotenv/config scripts/cleanup-e2e-fixtures.ts
+```
+
+Measured: 7 pools → seed → 9 (2 tagged) → cleanup → 7, zero still tagged. Net
+zero, nothing pre-existing touched. `-r dotenv/config` is safe for a plain `tsx`
+script — but see §7 for why it must NOT be used to launch Playwright.
+
 If you do need a local surface, continue below.
 
 ## 1. Get a live server running
