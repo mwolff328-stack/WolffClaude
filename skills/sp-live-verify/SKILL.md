@@ -54,29 +54,78 @@ confusion came from. Do not generalise it to local runs. Test reachability with
 one `curl` before citing either half.
 
 **What actually blocks a full local E2E run against the deployed app is fixture
-provisioning, not reachability.** `e2e/fixtures.setup.ts` seeds the fixture
-POOL by DIRECT DB INSERT (`:266`), which needs `DATABASE_URL` pointing at the
-database the app under test reads — helium, reachable only inside the Replit
-container. Entries and picks DO go through the real API; only the pool does
-not. So `seedFixturePool` returns `null`, and because all three browser
-projects declare `dependencies: ['setup', 'fixtures']`, every spec is skipped.
+provisioning, not reachability.** The *invariant* is stable: provisioning needs
+`DATABASE_URL` pointing at the database the app under test reads — helium,
+reachable only inside the Replit container. **Which STEP needs it has moved
+twice, so read the current failure rather than this paragraph's history.**
 
-Symptom to recognise: `executed=2 skipped=1 did-not-run=327 collected=330`,
-with `executedCountGuard` failing the run. That guard is doing its job — a
-2-of-330 run is not evidence the app works. Diagnose provisioning, not the
-specs.
+⚠️ **CORRECTED 2026-08-02 — the blocker is now the fixture PICK, not the pool.**
+This section said the fixture POOL is seeded by direct DB insert (`:266`) and
+that `seedFixturePool` returns `null`. That is **stale**, and it is the worse of
+the two staleness bugs fixed on this date, because it sends you to diagnose a
+step that now works:
+
+- **The pool provisions through the API and succeeds.** `POST /api/pools`
+  (`fixtures.setup.ts:467`) is the primary path; `provisionPoolViaDatabase` is a
+  *fallback* that returns `null` without `DATABASE_URL`. It exists only because a
+  **past-season** pool is a state the API refuses. Measured 2026-08-02: pool
+  provisioning completed with no `DATABASE_URL` set.
+- **The run now dies one step later, on the fixture PICK.** The fixture game
+  `2025-01-PHI-DAL` is seeded COMPLETED, so the server's kickoff lock correctly
+  409s an API pick submission. `fixtures.setup.ts` self-heals with a direct
+  `INSERT INTO picks` — but that branch is **gated on `PICK_LOCKED` AND
+  `process.env.DATABASE_URL`** (`:239`). Without `DATABASE_URL` it falls straight
+  through to `expect(pickRes.ok(), …)` and the setup fails:
+
+  ```
+  Error: POST pick failed: 409 {"errorCode":"PICK_LOCKED",
+    "message":"Cannot change pick(s) for team(s) whose game has already started: PHI"}
+    at e2e/fixtures.setup.ts:438
+  ```
+
+So the fix named by the old text ("point `DATABASE_URL` at the DB the app reads")
+is still the right fix — it is just needed for the *pick* now, not the *pool*.
+Tracked as **SST-1236**. The lesson generalises: when a documented blocker
+appears to be gone, check whether it MOVED before concluding the path is clear.
+
+Symptom to recognise: `fixtures` fails, so every dependent project is skipped and
+`executedCountGuard` fails the run. On a full suite that reads as
+`executed=2 skipped=1 did-not-run=327 collected=330`; on a narrowed run it is
+`did-not-run=1` with the spec you asked for never running. Either way the guard is
+doing its job — diagnose provisioning, not the specs.
 
 Fixture-INDEPENDENT specs still run against the deployed app today:
 `npx playwright test --project=chromium --no-deps <specs>` with
 `E2E_MIN_EXECUTED=<n>` (16 specs don't call `readFixtures()`; `--no-deps`
-requires `e2e/.auth/user.json` to already exist). That creates nothing and is
-the safe verification mode while teardown does not exist.
+requires `e2e/.auth/user.json` to already exist).
 
-⚠️ **Before running a FULL suite against the deployed app, check SST-1214.**
-SST-1213 removed the 403 that made the direct insert necessary, so provisioning
-now succeeds through the API — which means a full run will leave fixture pools
-in helium, the shared dev DB the founder uses daily. That is SST-1187 (fixture
-pools stranded in production) one environment over. Teardown must land first.
+⚠️ **CORRECTED 2026-08-02 — teardown HAS landed. The old "teardown must land
+first" prohibition is lifted.** This section previously told you not to run a
+submitting suite against the deployed app because nothing would clean up after
+it. SST-1214 and SST-1235 are Done and SST-1232 (spec-created pool tagging) is
+through its CI acceptance. Verified in the code rather than taken on report:
+
+- `playwright.config.ts` — the `fixtures` project declares
+  `teardown: 'fixtures-teardown'`, and Playwright runs a teardown project after
+  its dependents finish **pass or fail**.
+- `fixtures.teardown.ts` — `resolveCleanupOwnership({ shard: testInfo.config.shard, … })`,
+  so an **unsharded local run owns cleanup**; it stands down only when sharded or
+  when CI sets `E2E_FIXTURE_CLEANUP=deferred`.
+- Deletion goes through the owner-gated `DELETE /api/pools/:id`, which hits the
+  deployed app and therefore removes the row from helium.
+- `globalTimeout` is `process.env.CI ? … : undefined` — the abort path that skips
+  teardown is **CI-only**, so it does not apply to a local run.
+
+Residual, stated rather than waved off: a hard kill (Ctrl-C / SIGKILL) still
+strands rows. They carry `[e2e-run:<id>]` in their description and stay
+sweepable, which is the entire reason the tag exists.
+
+**Cleaning up by hand? Two traps.** `DELETE /api/pools/` with an **empty** id
+returns **HTTP 200 with the SPA HTML shell**, not an error — so a failed cleanup
+reads exactly like a successful one. Assert the id is non-empty before issuing the
+request, and read the **body** (`{"message":"Pool deleted successfully"}`), never
+the status. Then confirm by re-reading `GET /api/pools` and counting, rather than
+trusting the delete's own response.
 
 If you do need a local surface, continue below.
 
