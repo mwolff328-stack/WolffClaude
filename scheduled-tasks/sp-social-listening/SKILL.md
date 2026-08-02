@@ -86,6 +86,11 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/PoolieDestination](https://www.reddit.com/user/PoolieDestination/) — ICP voice (asked [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) how popular Patriots vs Seahawks will be for Week 1 picks — unmet demand for preseason pick-popularity data) — seen: 2026-07-30
 - [Reddit] [u/Nreekay](https://www.reddit.com/user/Nreekay/) — commissioner / in-market buyer (asked [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) for a new hosting site, claiming Splash Sports bought Run Your Pool and "ruined it"; hard requirement = commissioner can enter missed picks after Sunday-morning kickoff while later games stay open) — seen: 2026-08-01
 - [YouTube] [DigitalPrez LLC](https://www.youtube.com/@DigitalPrezLLC) — adjacent competitor (promoting "Penalty Boss Pick'em" with the positioning "Your League. Your Rules. Zero Spreadsheets." — same spreadsheet-pain wedge, pick'em rather than survivor) — seen: 2026-08-01
+- [X] [the_odds_fellow](https://x.com/the_odds_fellow) — commissioner / operator ("That's why we opened the survivor pool baby! It's time" — announced an open survivor pool to a 5.1K-follower betting audience) — seen: 2026-08-02
+- [X] [LEFTCLICKLABZ](https://x.com/LEFTCLICKLABZ) — adjacent competitor operator (free-entry private NFL Survivor pool run on clubz.fun with cash + NFT prizes, password gated behind their Discord — web3 community-funnel model; 1.5K followers, best-engaged survivor tweet of the window at 35 likes / 1,219 views) — seen: 2026-08-02
+- [X] [LKNJBC1](https://x.com/LKNJBC1) — ICP voice / high-stakes player ("I'm in a survivor pool that has $80,000 of entry fees" — large-field, real-money participant; 3,986 views on the reply) — seen: 2026-08-02
+- [X] [DrinkerCoke](https://x.com/DrinkerCoke) — commissioner / ICP voice (recruiting entrants for his own #NFLKickoff survivor pool on X) — seen: 2026-08-02
+- [Reddit] [u/chuddjim](https://www.reddit.com/user/chuddjim/) — commissioner / ICP voice (posted "NFL survivor League!" recruiting entrants in [r/findaleague](https://www.reddit.com/r/findaleague/)) — seen: 2026-08-02
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
