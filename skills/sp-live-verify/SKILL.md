@@ -302,6 +302,21 @@ these.
   impossible.
 - Scratch `.mjs`/config files must live in the **worktree root**, not the
   scratchpad dir, or Node cannot resolve `node_modules`.
+- **A full local run at default parallelism can take the shared dev container down.**
+  Observed 2026-08-02, not conclusively proven but the temporal correlation is strong:
+  running the fixture-independent specs (72 tests, `fullyParallel: true`, Playwright's own
+  CPU-based worker count — unthrottled) against the deployed dev app produced 36 failures
+  all sharing one symptom (`page.waitForSelector('header')` timing out at 45s, across
+  specs with nothing in common — legal pages, sidebar nav, topbar, settlement), and
+  immediately afterward the app started returning 502 across repeated probes with a gap
+  (genuinely down, not a blip — same two-probe-with-a-gap check as §1's liveness test).
+  A Replit dev preview container is not sized for concurrent browser load the way a CI
+  runner or production autoscale target is. Set `PLAYWRIGHT_WORKERS` to a low number
+  (2-3) for any run against the deployed dev app, not the tool's own default — the cost of
+  a slower local run is trivial next to knocking out the shared environment other sessions
+  and the founder are using. If the app 502s mid-run, that is not evidence your change is
+  broken — check reachability (§0-style two-probe) before reading anything else out of the
+  result.
 
 ## 8. Local DB gaps that look like app bugs
 
