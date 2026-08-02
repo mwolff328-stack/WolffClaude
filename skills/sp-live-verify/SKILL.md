@@ -348,3 +348,4 @@ these.
 | `toBeVisible()` fails immediately, page shows only "Loading" | expect timeout ≠ test timeout | §7 |
 | A route 503s only for the current season | no forward odds locally | §8 |
 | A route 500s that touches a recently-added column | local schema drift | §8 |
+| Deployed dev app starts 502ing mid-E2E-run | shared container overloaded by unthrottled parallel workers | §7 |
