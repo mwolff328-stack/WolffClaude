@@ -498,5 +498,6 @@ these.
 | A route 503s only for the current season | no forward odds locally | §8 |
 | A route 500s that touches a recently-added column | local schema drift | §8 |
 | Deployed dev app starts 502ing mid-E2E-run | shared container overloaded by unthrottled parallel workers | §7 |
-| E2E setup dies on `409 PICK_LOCKED`, every spec then skipped / did-not-run | fixture PICK self-heal needs `DATABASE_URL` → helium (SST-1236); NOT the pool, which now provisions via API | §0 |
+| E2E setup dies on `409 PICK_LOCKED`, every spec then skipped / did-not-run | FIXED by SST-1236 — if you see this, you are on a pre-2026-08-02 checkout | §0 |
+| A spec needs the fixture pick and it isn't there | expected off-CI: check `hasFixturePick` in `fixtures.json` and gate on it | §0 |
 | A pool DELETE returns 200 but the row is still there | empty id fell through to the SPA shell — read the body, not the status | §0 |
