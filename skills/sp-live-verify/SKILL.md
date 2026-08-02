@@ -56,8 +56,8 @@ one `curl` before citing either half.
 **What actually blocks a full local E2E run against the deployed app is fixture
 provisioning, not reachability.** The *invariant* is stable: provisioning needs
 `DATABASE_URL` pointing at the database the app under test reads — helium,
-reachable only inside the Replit container. **Which STEP needs it has moved
-twice, so read the current failure rather than this paragraph's history.**
+reachable only inside the Replit container. **Which STEP needs it has already
+moved once, so read the current failure rather than this paragraph's history.**
 
 ⚠️ **CORRECTED 2026-08-02 — the blocker is now the fixture PICK, not the pool.**
 This section said the fixture POOL is seeded by direct DB insert (`:266`) and
