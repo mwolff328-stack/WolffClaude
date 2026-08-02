@@ -389,6 +389,19 @@ these.
 
 ## 7. Playwright-specific traps
 
+- **Never launch Playwright through `tsx -r dotenv/config`.** It looks like the
+  obvious way to feed a non-default env file to the run, and it kills the process
+  before a single test executes — tsx's ESM loader hook and Playwright's own
+  conflict:
+  `TypeError: Expected a string, an ArrayBuffer, or a TypedArray to be returned
+  for the "source" from the "load" hook but got undefined`
+  (`ERR_INVALID_RETURN_PROPERTY_VALUE`). It is also unnecessary:
+  `playwright.config.ts` already calls `dotenv.config()` on `.env.test`, resolved
+  **beside the config file**. So run Playwright from the checkout that HAS that
+  file, and set one-off overrides as ordinary shell env vars — dotenv does not
+  overwrite an existing `process.env` value, so a shell `BASE_URL=…` correctly
+  beats the one in `.env.test`. (`-r dotenv/config` is fine for a plain `tsx`
+  script such as `seed-e2e.ts`; the clash is specific to launching Playwright.)
 - **`--timeout=N` sets the TEST timeout, not the `expect` timeout.** First render
   can leave an auth spinner up past `expect(x).toBeVisible()`'s 5s default while
   the test timeout is nowhere near hit. Put `toBeVisible({ timeout: 30_000 })`
