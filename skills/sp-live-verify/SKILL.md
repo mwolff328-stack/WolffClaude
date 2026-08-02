@@ -59,11 +59,38 @@ provisioning, not reachability.** The *invariant* is stable: provisioning needs
 reachable only inside the Replit container. **Which STEP needs it has already
 moved once, so read the current failure rather than this paragraph's history.**
 
-⚠️ **CORRECTED 2026-08-02 — the blocker is now the fixture PICK, not the pool.**
+✅ **RESOLVED 2026-08-02 (SST-1236) — a full-deps run against the deployed app
+now works.** Measured on the identical command, before and after the fix:
+
+```
+before:  EXIT=1   executed=3 skipped=0 did-not-run=1 collected=4
+after:   EXIT=0   executed=4 skipped=0 did-not-run=0 collected=4
+```
+
+The fixture **pick** is no longer required. It was structurally uncreatable
+against a deployed app — the kickoff lock only checks teams that are *changing*,
+so creating a FIRST pick on a completed game is correctly refused, and the
+direct-insert fallback needs a database you cannot reach. No spec read the pick,
+so provisioning now records `hasFixturePick` in `fixtures.json` and continues.
+**If you need a pick, gate on that flag; do not assume one exists.** Degradation
+is scoped to exactly that one refusal — any other provisioning failure is still
+fatal — so a real regression cannot pass silently, and CI (which has
+`DATABASE_URL`) still creates the pick as before.
+
+**Run it as normal now:** `BASE_URL=<deployed-dev> npx playwright test`. The
+`--no-deps` mode below is still useful when you want to create nothing at all,
+but it is no longer the only thing that works.
+
+The history below is kept because the *shape* of the mistake recurs — read it if
+a documented blocker ever looks like it has vanished.
+
+<details>
+
+⚠️ **CORRECTED 2026-08-02 — the blocker had moved to the fixture PICK, not the pool.**
 This section said the fixture POOL is seeded by direct DB insert (`:266`) and
-that `seedFixturePool` returns `null`. That is **stale**, and it is the worse of
-the two staleness bugs fixed on this date, because it sends you to diagnose a
-step that now works:
+that `seedFixturePool` returns `null`. That was **stale**, and it was the worse of
+the two staleness bugs fixed on this date, because it sent you to diagnose a
+step that already worked:
 
 - **The pool provisions through the API and succeeds.** `POST /api/pools`
   (`fixtures.setup.ts:467`) is the primary path; `provisionPoolViaDatabase` is a
