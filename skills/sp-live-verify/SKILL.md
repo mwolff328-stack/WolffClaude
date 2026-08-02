@@ -120,12 +120,16 @@ Residual, stated rather than waved off: a hard kill (Ctrl-C / SIGKILL) still
 strands rows. They carry `[e2e-run:<id>]` in their description and stay
 sweepable, which is the entire reason the tag exists.
 
-**Cleaning up by hand? Two traps.** `DELETE /api/pools/` with an **empty** id
-returns **HTTP 200 with the SPA HTML shell**, not an error — so a failed cleanup
-reads exactly like a successful one. Assert the id is non-empty before issuing the
-request, and read the **body** (`{"message":"Pool deleted successfully"}`), never
-the status. Then confirm by re-reading `GET /api/pools` and counting, rather than
-trusting the delete's own response.
+**Cleaning up by hand? One footgun, and it is on a destructive endpoint.**
+`DELETE /api/pools/` with an **empty** id returns **HTTP 200 with the SPA HTML
+shell**, not an error — the path matches no API route and falls through to the SPA.
+A failed cleanup therefore reads exactly like a successful one, and you stop
+looking. Guard it three ways: assert the id is non-empty and refuse to send if it
+isn't (`[ -n "$ID" ] || exit 1`), read the **body**
+(`{"message":"Pool deleted successfully"}`) rather than the status, and confirm by
+re-reading `GET /api/pools` and counting. Shell extraction failing silently is the
+usual root cause — an empty URL also makes `curl` report `http=000`, which reads as
+"host unreachable" rather than "my variable is empty".
 
 If you do need a local surface, continue below.
 
