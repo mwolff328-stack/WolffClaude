@@ -110,16 +110,19 @@ step that already worked:
     at e2e/fixtures.setup.ts:438
   ```
 
-So the fix named by the old text ("point `DATABASE_URL` at the DB the app reads")
-is still the right fix — it is just needed for the *pick* now, not the *pool*.
-Tracked as **SST-1236**. The lesson generalises: when a documented blocker
-appears to be gone, check whether it MOVED before concluding the path is clear.
+The lesson generalises and is why this history is kept: **when a documented
+blocker appears to be gone, check whether it MOVED before concluding the path is
+clear.** The invariant ("provisioning needs `DATABASE_URL` → helium") had not
+changed; only which step needed it. Someone who inspected pool provisioning,
+found it working, and stopped would have drawn the wrong conclusion twice over.
 
-Symptom to recognise: `fixtures` fails, so every dependent project is skipped and
-`executedCountGuard` fails the run. On a full suite that reads as
-`executed=2 skipped=1 did-not-run=327 collected=330`; on a narrowed run it is
-`did-not-run=1` with the spec you asked for never running. Either way the guard is
-doing its job — diagnose provisioning, not the specs.
+Symptom to recognise if provisioning ever fails again: `fixtures` fails, so every
+dependent project is skipped and `executedCountGuard` fails the run. On a full
+suite that reads as `executed=2 skipped=1 did-not-run=327 collected=330`; on a
+narrowed run it is `did-not-run=1` with the spec you asked for never running.
+Either way the guard is doing its job — diagnose provisioning, not the specs.
+
+</details>
 
 Fixture-INDEPENDENT specs still run against the deployed app today:
 `npx playwright test --project=chromium --no-deps <specs>` with
