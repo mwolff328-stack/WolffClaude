@@ -49,6 +49,7 @@
 - [Tests that pass by winning an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) — a click that UNMOUNTS its target still passes inside the exit window.
 - [A premise measured at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) — "directional, not causal" was true at week 1, false after, unchallenged.
 - [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared test-arm state faked a 5-of-7 split; mutation testing proves only the fixture.
+- [Concurrent reviewer agents race on shared file reverts](feedback_concurrent_reviewer_agents_race_on_shared_file_reverts.md) — 3 subagents each reverting the same file in one worktree caused transient (harmless) collisions.
 
 ## Shipping, environments, and infra
 
