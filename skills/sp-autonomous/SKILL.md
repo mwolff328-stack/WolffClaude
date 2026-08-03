@@ -90,6 +90,13 @@ Always `notion-fetch` the data source first so you use exact property names and 
 `SurvivorPulse/.claude/skills/survivorpulse-bug-triage/`) — its template and 5-persona triage panel
 replace grooming. Rejoin at Phase 2.
 
+**Adopting an existing ticket does not skip this phase.** A founder brief in chat is not the same as
+populated property fields. Before Phase 2, fetch the ticket and confirm Description, Acceptance
+Criteria and Test Cases are non-empty IN THE PROPERTY FIELDS. If any are empty the story is not
+groomed regardless of how detailed the hand-off was — groom it first. Writing AC afterwards to match
+what you built is the ticket-level form of a test that encodes the bug; if you ever have to do it,
+label it as retro-written.
+
 1. **Pam scopes it.** Create the story (or adopt the existing one). Set Type, Category, Priority,
    Phase, and — required to enter Grooming — **at least one Feature, at least one Epic, and a Size**.
    Set `Assigned To Agent`. Status → `Grooming`.
