@@ -61,6 +61,7 @@
 - [Legacy Repl is rollback-only](project_survivorpulse_legacy_repl_is_rollback_only.md) — cutover COMPLETE 2026-07-28; survivorpulse.com serves v1, legacy is rollback-only.
 - [Open access mode](project_survivorpulse_open_access_mode.md) — one constant hides the beta-code gate and the Stripe paywall; gate the hook, not the pages.
 - [Beta launch site decisions](project_survivorpulse_beta_launch_site_decisions.md) — founder rulings on public-site copy; the access-gate half is superseded.
+- [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — off-season Home copy stays as-is; zero-entry pool gets root-cause fix + copy, routed to Pam→Ann.
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) — a column in schema.ts not applied to helium 502s the entire dev app.
 - [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — the first is commented out; Playwright loads `.env.test`, not `.env`.
 - [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no snapshot regen needed for scoring changes; a full suite shows golden .snap files as modified with ZERO real change.
