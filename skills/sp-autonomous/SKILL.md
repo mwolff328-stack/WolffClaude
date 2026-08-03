@@ -56,6 +56,29 @@ Do not begin Phase 1 until every work item in the founder's list is claimed and 
 mode is chosen. If a claim conflict cannot be resolved autonomously, drop that *item* into the
 deferred list and carry on with the rest — never stall the whole run on one collision.
 
+**If the Notion MCP server is unreachable, drive Notion in the browser — don't defer the work.**
+A session hit a state with no Notion route at all: no MCP tools (two ToolSearch queries empty,
+`plugin:customer-support:notion` needs OAuth and the session was non-interactive), no `NOTION_*`
+token in the shell env or `.env`, no helper in `scripts/`. It fell back to leaving comment text in a
+scratchpad for the founder to paste by hand. That was unnecessary. Verify the outage (ToolSearch +
+env + `scripts/`), then work the routes in order:
+
+1. **Browser — `mcp__claude-in-chrome__*`.** The founder's real Chrome already holds a logged-in
+   Notion session, so ticket creation, property edits, status transitions and comments all still
+   work by hand. Use that surface specifically: the in-app browser (`mcp__Claude_Browser__*`) opens
+   a clean profile and lands on a login wall, and entering credentials is prohibited — a login wall
+   there is not a Notion outage, it's the wrong browser.
+2. **Record the ledger claim regardless** — it's local, and it's the half that prevents collisions.
+3. **Only if the browser route is also unavailable** (Chrome not connected, unattended run) does the
+   outage become a defer trigger, and then for **Phase 1 ticket creation and Phase 4 Done
+   transitions** specifically — `Done` is defined by those comments existing. Scoped work against an
+   already-existing ticket carries on. Write every comment you could not post into the session
+   scratchpad as ready-to-paste text, and name each one in the final report.
+4. **Re-check with ToolSearch before you write the final report.** In that same session the Notion
+   server reconnected mid-run after being wholly absent. First-check absence is not proof of
+   permanent absence — neither the browser detour nor a deferral should outlive the outage that
+   justified it.
+
 ---
 
 ## Phase 1 — TICKET & GROOM → `Ready`
