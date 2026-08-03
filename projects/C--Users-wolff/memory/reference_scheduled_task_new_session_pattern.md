@@ -1,0 +1,25 @@
+---
+name: reference_scheduled_task_new_session_pattern
+description: Proven main+rename (or main+notify+rename) pattern for making a CLI scheduled task surface as a discoverable new Claude Code session with a real phone notification
+metadata: 
+  node_type: memory
+  type: reference
+  originSessionId: 9ffba12d-1463-491f-9d20-31afdbff75d9
+  modified: 2026-07-28T13:45:20.038Z
+---
+
+When the founder wants a scheduled brief/job to land as "a new session in Claude Code" he can open (not just silent background execution), a scheduled task alone does NOT do this reliably:
+
+1. **A session cannot rename itself while running.** The session-rename tools (`mcp__ccd_session_mgmt__set_session_title`) explicitly refuse to operate on "the current session." So a scheduled task's own run sits under a generic auto-title (Claude Code auto-titles from the kebab-case taskId, e.g. `sp-daily-brief` → "Sp daily brief") unless a SEPARATE companion task renames it afterward.
+2. **`notifyOnCompletion` (the create_scheduled_task default) only pings whichever session created the task** — it does NOT reach the founder's phone on a fully unattended run (e.g. 6am, nobody watching). The only reliable unattended delivery channel is calling the `PushNotification` tool (status: "proactive") directly inside the task's own prompt.
+
+**The working pattern (built first for `sp-social-listening`, replicated for `sp-daily-brief`):**
+- **Main task**: does the actual work, outputs full content as its final chat message (that IS the session content), and explicitly calls `PushNotification` itself (concise, <200 char, no Markdown/links — the tool ignores links anyway) so an unattended run still reaches the phone.
+- **Rename companion task** (fires ~10-15 min after main, weekday/daily-matched cron): calls `mcp__ccd_session_mgmt__list_sessions`, finds the generic-titled session, confirms via `mcp__ccd_session_mgmt__get_session` that its `scheduledTaskId` matches the MAIN task's id exactly (not its own id), then `set_session_title` to something human-readable with the date.
+- **Optional third "notify" task** (used for `sp-social-listening-notify`, skipped for `sp-daily-brief`): only add this when the main task's own gather step is expensive/slow (e.g. Apify scraping) and persists a snapshot (Notion page) that a separate lightweight session re-reads and condenses. Skip it when the main task is already cheap/fast and its own output is already tight — a redundant third task would just restate the same short content.
+
+Gap sizing: social listening (Apify, slow) uses ~18min/~17min gaps between its 3 stages. Notion-query-only jobs (like the daily brief) only need ~10min before the rename companion runs.
+
+**Consequence for future asks like this:** don't just recreate a bare scheduled task — check `~/.claude/scheduled-tasks/` for an existing multi-task chain (e.g. grep for `-notify` / `-rename` siblings) before designing from scratch; a working precedent likely already exists. See [[project_survivorpulse_beta_scope_and_rhythm]] for the original (buggy, since-fixed) sp-daily-brief design, and [[reference_skills_two_stores]] for why this is CLI-local and invisible to the desktop Scheduled panel.
+
+**Status (2026-07-28): applied to all 4 SurvivorPulse rhythm tasks, fully resolved.** `sp-daily-brief`+`sp-daily-brief-rename` (weekdays 6:01/6:13am PT) and `sp-friday-sprint-review`+`sp-friday-sprint-review-rename` (Fri 1:05/1:17pm PT) all push-notify directly and get renamed to `SurvivorPulse Daily Brief - <date>` / `SurvivorPulse Sprint Review - <date>`. The founder's separate cloud/desktop-panel copies (created 2026-07-22) were deleted by him directly in the desktop Scheduled panel 2026-07-28 — I have no tool access to that store, could only tell him where to delete them, not do it myself. CLI-side is now the single source for both briefs, confirmed via list_scheduled_tasks (no duplicates).

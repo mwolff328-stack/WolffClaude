@@ -43,8 +43,23 @@ plans/
 # Homunculus
 homunculus/
 
-# Projects memory (per-machine)
-projects/
+# Projects (per-machine session/transcript data) — EXCEPT each project's memory/
+# subdirectory, which is durable cross-session learning and gets backed up centrally.
+#
+# Git can't re-include a path whose parent is excluded, and `projects/*` only
+# matches ONE level deep — it does NOT recurse into re-included directories.
+# A first attempt at this (2026-08-03) re-enabled traversal with `!projects/*/`
+# but forgot to re-ignore what's directly inside each one, which put every
+# session transcript sitting loose in a project directory (not just memory/)
+# back in scope for the next `git add`. Caught before push; never landed on
+# origin. The extra `projects/*/*` line below is what that fix was missing —
+# it re-ignores one level further in, so ONLY the explicit memory/ negations
+# after it survive.
+projects/*
+!projects/*/
+projects/*/*
+!projects/*/memory/
+!projects/*/memory/**
 
 # Paste cache (transient clipboard data)
 paste-cache/

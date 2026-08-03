@@ -1,0 +1,27 @@
+---
+name: project_survivorpulse_compact_grid_card_layout_trap
+description: "A horizontal space-between card layout crushes its content in a compact grid, and jsdom can't see the word-wrap ladder. But jsdom DOES read inline styles — assert composition there, don't retreat to vacuous class-string tests. Plus: Tailwind JIT only compiles arbitrary values present in source."
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 52df324e-bc49-4128-8334-6a51c846c4a7
+  modified: 2026-07-28T20:07:45.819Z
+---
+
+Game Plan Week View pick cards (SST-1014, 2026-07-24) read fine as full-width rows but became unreadable once SST-955 put them in a compact grid (~240–380px columns): the card was one horizontal `display:flex; justify-content:space-between` row with TWO non-shrinking (`flexShrink:0`) action clusters (entry-action icons + Edit pick/Clear) that consumed more than the ~212px interior at the 240px floor, crushing the content column so the stat line "Rank #3 · Win prob 75% · Field exposure 22%" wrapped word-by-word into a vertical ladder and pills piled up.
+
+**Fix pattern:** restack the card into a vertical flex COLUMN of zones (header → pills row → body → full-width actions footer) so content always owns the card width and actions never compete on the x-axis. This is layout-only — preserve every `data-testid`, copy string, and conditional gate; the existing test suite is then the regression net.
+
+**Why:** the defect and its fix were **invisible to jsdom** (no layout engine — it can't measure wrapping or width), so no green unit test could ever prove the readability win. The only real proof was a real-browser render. Because SST-1005 blocks the dev app from rendering `/game-plan` in dev (no season has both alive entries and game data), the proof came from a faithful HTML mockup proxy (`docs/mockups/game-plan-week-cards/index.html`, real DOM + real `--sp-*` tokens) screenshotted at 240/320/375px.
+
+**How to apply:** for any card/tile that will live in a responsive/compact grid, don't rely on a horizontal row with `flexShrink:0` clusters — stack vertically. And never treat a green jsdom suite as proof of layout/visual correctness; render it in a real browser (or a token-accurate mockup proxy) and check the actual widths. Scope jsdom tests honestly to structure/contract; mark readability/responsive ACs as live-only. Reinforces the sp-live-verify skill.
+
+**IMPORTANT REFINEMENT 2026-07-28 (SST-1083):** "jsdom can't see layout" is true but is regularly over-applied, and over-applying it produces vacuous tests. jsdom cannot see **positioning** (wrapping, widths, overlap) — but it reads **inline styles exactly**, so *composition* IS assertable. The overlapping-stepper fix hinged on a control whose intrinsic width is `22 + 2 + 36 + 2 + 22 = 84px` from inline styles; the first test asserted `expect(MIN_TRACK_PX).toBe(84)`, a tautology that would have stayed green if the input were widened to 48px and the defect returned. The fix: **derive** the constant from exported dimension constants the component itself consumes, then have the test **measure the rendered inline widths** and compare. Rule of thumb before accepting "only E2E can cover this": name the mutation that would reintroduce the bug and check whether any test goes red.
+
+Two more traps from the same story:
+- **Tailwind JIT only emits arbitrary values that appear in SOURCE.** A measurement harness using `max-w-[920px]` silently did nothing because no file used it yet — the element fell back to `w-full`. Either commit the class first, or use an inline style. Inline `gridTemplateColumns` is already the codebase idiom (ArchetypeChooser, WeekViewSection, OptimizationResults) and has the bonus of being jsdom-readable.
+- **A `server/public` build mirror poisons repo-scanning tripwires.** Several tests walk `server/` for duplicated literals and exclude only `node_modules|dist|build|__tests__`. The compiled bundle then counts as a second *source* declaration. Gitignored, so it never reaches CI — it looks like a real regression on a dev machine only. (Fixed 2026-07-28 for the entry-delete, derivedMetrics and universalScoring walks.)
+
+**UPDATE 2026-07-24 (SST-1018..1022 pick-modal batch):** two additions to the "how to verify layout" toolkit.
+1. **The SST-1005 dev-app blocker has a workaround.** `/game-plan` DOES render the pick grid + `TeamPickerModal` in local dev — switch the top season selector to **2025** and use the seeded fixture pools ("SST-1005 Dev Fixture - 2025 Regular Season" + "VLAD-SST762-2025-Playoff-Smoke"). Those 2025 fixtures have alive entries + real game/spread data, so the modal fills with real teams/spreads/rank-scores (80/20 Blend archetype active → rank score shows numbers). 2026 still has the data gap.
+2. **When screenshots are unavailable (headless session, Browser pane not composited), measure geometry instead of eyeballing.** `javascript_tool` with `getBoundingClientRect().width` per column testid + `el.scrollWidth > el.clientWidth+1` overflow checks (per cell AND the scroll panel) gives numeric proof of column widths, alignment (`getComputedStyle().textAlign`), and "no cramming/overflow" — more rigorous than a screenshot. Drive interactions (sort clicks, toggle) via `.click()` on testids, but READ state in a SEPARATE `javascript_tool` call — React re-renders async, so a synchronous read right after `.click()` sees the pre-render DOM (false-negative trap).
