@@ -92,6 +92,7 @@
 - [Playwright teardown coverage](project_survivorpulse_playwright_teardown_coverage.md) — a `teardown:` project skips a globalTimeout abort; wrong for sharding over one DB.
 - [Local flake-repro traps](project_survivorpulse_local_flake_repro_traps.md) — machine-wide CPU load scales everything; use an in-process event-loop blocker.
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) — two different causes wear the same message; inspect before escalating.
+- [tsc excludes the tests/ directory entirely](project_survivorpulse_tsc_excludes_tests_directory.md) — `tsconfig.json` include is only client/src, shared, server; a compile-probe in tests/ never runs.
 
 ## Engine and domain behaviour
 
