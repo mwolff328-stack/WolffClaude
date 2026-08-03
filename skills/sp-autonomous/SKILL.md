@@ -179,6 +179,19 @@ NODE_ENV=test TEST_DISABLE_NETWORK=1 TEST_FAST_OPTIMIZER=1 npx vitest run --conf
 the other `npm run test:*` scripts. Always invoke `npx vitest` directly via the Bash tool, and
 sanity-check that the reported test count is non-zero.
 
+> **Never pipe a long run you intend to monitor.** `npx vitest ... | tail -40` buffers the entire
+> stream until exit, so the output file stays at 0 bytes for the whole run. A frozen or empty log is
+> the EXPECTED look of a healthy piped run — it is not evidence of death. Redirect to a file instead
+> (`> run.log 2>&1`) and use `--reporter=dot`.
+>
+> **Process tables cannot tell you a vitest run is alive.** Matching `Win32_Process` `CommandLine` on
+> your worktree name returns 0 for a LIVE run — the worker processes do not carry the path. Measured
+> both directions in one session.
+>
+> **The only two signals that discriminate:** liveness = the log's byte count grew between two reads
+> a few seconds apart; completion = the final `Test Files N passed (N)` line with a NON-ZERO count.
+> Absence of `FAIL` markers is absence of failure, not presence of pass.
+
 Typecheck with `npx tsc --noEmit` (or `npm run check`). **If a slice touches 4+ files, typecheck
 after every 3 edits** — don't let type errors cascade.
 
