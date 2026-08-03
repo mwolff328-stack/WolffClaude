@@ -91,6 +91,9 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [LKNJBC1](https://x.com/LKNJBC1) — ICP voice / high-stakes player ("I'm in a survivor pool that has $80,000 of entry fees" — large-field, real-money participant; 3,986 views on the reply) — seen: 2026-08-02
 - [X] [DrinkerCoke](https://x.com/DrinkerCoke) — commissioner / ICP voice (recruiting entrants for his own #NFLKickoff survivor pool on X) — seen: 2026-08-02
 - [Reddit] [u/chuddjim](https://www.reddit.com/user/chuddjim/) — commissioner / ICP voice (posted "NFL survivor League!" recruiting entrants in [r/findaleague](https://www.reddit.com/r/findaleague/)) — seen: 2026-08-02
+- [X] [Statholesports](https://x.com/Statholesports) — ICP voice / season-path planner (17.9K followers, the largest genuine survivor account seen this week: "Just completed my survivor pool first draft. Lots of Cardinals picks" — plans a full-season path in August, same persona as [@vinnytalarico93](https://x.com/vinnytalarico93)) — seen: 2026-08-03
+- [X] [AiriqTbits](https://x.com/AiriqTbits) — commissioner / ICP voice (recruiting for his own annual $10-entry, 3-entries-max, winner-take-all survivor pool; offers to DM the link) — seen: 2026-08-03
+- [Reddit] [u/FarIntroduction5260](https://www.reddit.com/user/FarIntroduction5260/) — ICP voice / rules designer (posted ["Super Survivor pools"](https://www.reddit.com/r/NFLSurvivor/comments/1vdh4ij/super_survivor_pools/) in [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/) arguing multi-entry survivor is too easy and proposing a no-repeat-opponent rule variant; drew 8 replies) — seen: 2026-08-03
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
