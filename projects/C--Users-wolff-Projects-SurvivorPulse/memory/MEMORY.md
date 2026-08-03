@@ -104,6 +104,7 @@
 - [Missing field exposure collapses the archetypes](project_survivorpulse_missing_field_exposure_collapses_archetypes.md) — with no popularity data all 3 archetypes rank identically.
 - [Multi-pick renders only via 'past' cell variant](project_survivorpulse_multipick_past_variant_only.md) — playoff picks never resolve as odds or projected.
 - [Allocation order blessed](project_survivorpulse_allocation_order_blessed.md) — UUID-order greedy blessed for UNIFORM stakes; stake-weighted ordering shipped as SST-1073.
+- [Reset-to-auto stays grid-matched, not Apply-scoped](project_survivorpulse_reset_to_auto_apply_scope_divergence.md) — founder ruling 2026-08-03; PoolSwitcher-as-scope was already rejected once, don't re-propose it.
 
 ## App structure and data ownership
 
