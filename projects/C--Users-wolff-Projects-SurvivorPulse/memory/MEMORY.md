@@ -118,3 +118,4 @@
 - [maxEntriesPerUser dual-mirror default trap](project_survivorpulse_max_entries_default_dual_mirror.md) — the default lives in 4 places; re-check all 4 on any change.
 - [Admin Real/Test pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md) — `isTestData` arms hard-deletion (superseded for pools); "View all pools"-only visibility means dev-stub ownership.
 - [SST number is an auto-increment column](project_survivorpulse_notion_sst_id_is_auto_increment.md) — never invent one; never match titles on "SST-".
+- [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection are the one shared implementation](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — Game Plan AND both My Pools surfaces render the same component instances; 3 tickets in a row each described a different, correct-for-its-moment reality.
