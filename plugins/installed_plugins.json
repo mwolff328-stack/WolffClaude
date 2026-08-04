@@ -4,21 +4,21 @@
     "superpowers@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mrwolff/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0",
-        "version": "5.1.0",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\6.2.0",
+        "version": "6.2.0",
         "installedAt": "2026-02-23T16:19:15.659Z",
-        "lastUpdated": "2026-05-05T02:38:24.990Z",
+        "lastUpdated": "2026-08-04T13:21:57.568Z",
         "gitCommitSha": "e4a2375cb705ca5800f0833528ce36a3faf9017a"
       }
     ],
     "github@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\d9bbddb257c3",
-        "version": "d9bbddb257c3",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\425e93fabe7f",
+        "version": "425e93fabe7f",
         "installedAt": "2026-03-24T18:43:17.686Z",
-        "lastUpdated": "2026-04-05T04:14:47.691Z",
-        "gitCommitSha": "79caa0d824acb760fd9c023acb39c6c7da5ee7fc"
+        "lastUpdated": "2026-08-04T13:21:53.988Z",
+        "gitCommitSha": "425e93fabe7f18a8dd14bc06d016a2e01a2192cf"
       }
     ],
     "everything-claude-code@everything-claude-code": [
@@ -34,11 +34,11 @@
     "neon@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.0.0",
-        "version": "1.0.0",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.0",
+        "version": "1.1.0",
         "installedAt": "2026-07-24T00:53:40.252Z",
-        "lastUpdated": "2026-07-24T00:53:40.252Z",
-        "gitCommitSha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
+        "lastUpdated": "2026-08-04T13:21:57.764Z",
+        "gitCommitSha": "69f205aa75e9b2cbaf8074d1ab881b744797f36d"
       }
     ]
   }
