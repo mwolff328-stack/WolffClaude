@@ -116,7 +116,7 @@ If nothing new surfaced this run, still check whether any existing pending candi
 
 ## Step 6: Deliver
 
-1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `7bba5cf1-808c-404c-b11e-234283aef418` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date in YYYY-MM-DD (expanded key, not bare `Date`), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only platforms that returned data). Page content = the full summary, ending with Recommended Actions (Step 4) then Suggested New Sources (Step 5, including any promotions). Notion supports Markdown links (`[text](url)`) natively — use them throughout, don't paste bare URLs.
+1. **Notion** — create one page in this exact data source (already created, do not create a new database): data_source_id `35929ce5-833d-813d-ac22-ef23bb216120` (Social Listening Log, under SurvivorPulse > Strategy & Growth > Marketing > Social Media). Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date in YYYY-MM-DD (expanded key, not bare `Date`), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube"] (only platforms that returned data). Page content = the full summary, ending with Recommended Actions (Step 4) then Suggested New Sources (Step 5, including any promotions). Notion supports Markdown links (`[text](url)`) natively — use them throughout, don't paste bare URLs.
 
 2. **Chat output** — end your run by outputting the full summary (including both sections) as your final message, same linked formatting.
 
