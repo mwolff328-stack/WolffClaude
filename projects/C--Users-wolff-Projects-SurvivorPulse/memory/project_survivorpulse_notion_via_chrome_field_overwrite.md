@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4233dbd4-4c4f-4211-baa1-08c236605893
-  modified: 2026-08-03T02:08:50.846Z
+  modified: 2026-08-06T05:30:17.278Z
 ---
 
 **⚠️ "Notion needs auth" in the startup banner does NOT mean there is no Notion MCP.** Measured
@@ -115,6 +115,34 @@ Also: comment drafts survive across batches (unlike property fields) — which i
 an unsent draft can masquerade as a posted comment. The page body is NOT the property field —
 grooming content in the body fails the gate — and `Escape` inside a side-peek closes the whole
 peek rather than the editor, so work full-page for property edits.
+
+**4. A stale element `ref` from `find`/`read_page` can land inside the PREVIOUS comment's
+still-open composer and SPLICE new text into it — no CDP timeout required.** Measured
+2026-08-05/06 on SST-1288: posted a comment via `Return`, then immediately clicked a fresh
+`find`-returned "Add a comment" `ref` and typed the next comment. The DOM had already
+re-rendered (the just-posted comment's composer had not fully closed/reset), so the second
+`type` call appended into that same still-editable box instead of a new one — producing one
+comment with the first message's numbered list followed mid-stream by the second message's
+full text, auto-renumbered into a single garbled list. `get_page_text` on the merged box showed
+NO author/timestamp line at all (unlike a clean draft, which at least shows the avatar) —
+that absence of the `Mike Wolff · <time>` line was the tell that it was still an editable draft,
+not two posted comments.
+
+**How to apply:**
+- **After every comment send, verify with `get_page_text` (not just a screenshot) before
+  clicking into the next box.** Confirm the new comment shows a real author/timestamp line
+  and the composer below it reads the bare `Add a comment…` placeholder with no leftover text.
+- **Never reuse a `ref` from a `find` call issued before the previous send.** Re-run `find` (or
+  re-screenshot and click by fresh coordinate) after every submission — the DOM tree has
+  changed and old refs can silently resolve to the wrong element.
+- **If a merge happens anyway, it's recoverable without deleting anything**, unlike §3b's
+  invisible-buffer case: click into the garbled box, `Ctrl+A`, `Delete` (confirm the box is
+  back to empty/placeholder), then retype ONLY the original first message and send it, then
+  separately add the second message fresh. The garbled content was never posted — Notion syncs
+  a comment on send, not on keystroke, so clearing an unsent draft is always safe here.
+- Prefer clicking the actual send arrow icon (bottom-right of the composer, not a stale `ref`)
+  over a bare `Return` when chaining several comments quickly — `Return` worked reliably in this
+  same session for single-shot comments with no immediately-preceding send.
 
 Related: [[feedback_survivorpulse_fetch_and_search_before_work]],
 [[feedback_survivorpulse_shared_worktree_staging_discipline]].
