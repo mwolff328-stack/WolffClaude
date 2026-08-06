@@ -18,10 +18,10 @@ OWNER RULE
 Owner = the value(s) in "Assigned To Agent". If that is empty for an active story, INFER from Category and prefix the inferred name with "~": Front-End/UX/Design/Navigation→~Deb; Core Engine/Full-Stack/Auth & Accounts→~Felix; Analytics/Research→~Stan; Content/Marketing/Content→~Sky; Infrastructure/DevOps/Admin→~Rita. List any active story with NO assignee under a short "unassigned" note so ownership gets filled in.
 
 PRODUCE EXACTLY FOUR SECTIONS
-1. 🔨 In Progress — rows where Status IN ('In Progress','In Review'). For each: SST-<id> · short title · owner · the [BETA]/[POST-BETA] tag if the Notes begin with one · mark "In Review" items clearly.
-2. ⛔ Blocked — rows where Status='Blocked'. For each: SST-<id> · title · the blocker. Get the blocker from the "Blocked by" relation or from Notes; if no reason is captured, write "reason not captured — needs logging". Group blocked items that share a root cause.
-3. 🎯 Needs You Today — synthesize the 1–4 items that genuinely need Michael today: things In Review awaiting his sign-off, Blocked items needing a founder ruling (collapse related ones into one ask), and any scope/sizing/decision points surfaced in recent Notes. Be specific and phrase each as an action he can take.
-4. ✅ Done yesterday — rows where Status='Done' AND Date Completed is yesterday's Central date. List SST-<id> · title. If none, write "— none yesterday".
+1. 🔨 In Progress — rows where Status IN ('In Progress','In Review'). For each: [SST-<id>](url) · short title · owner · the [BETA]/[POST-BETA] tag if the Notes begin with one · mark "In Review" items clearly. Format ticket links as markdown: [SST-876](https://app.notion.com/p/<page-id>)
+2. ⛔ Blocked — rows where Status='Blocked'. For each: [SST-<id>](url) · title · the blocker. Get the blocker from the "Blocked by" relation or from Notes; if no reason is captured, write "reason not captured — needs logging". Group blocked items that share a root cause. Format ticket links as markdown.
+3. 🎯 Needs You Today — synthesize the 1–4 items that genuinely need Michael today: things In Review awaiting his sign-off, Blocked items needing a founder ruling (collapse related ones into one ask), and any scope/sizing/decision points surfaced in recent Notes. Be specific and phrase each as an action he can take. Reference tickets as markdown links [SST-XXX](url).
+4. ✅ Done yesterday — rows where Status='Done' AND Date Completed is yesterday's Central date. List [SST-<id>](url) · title as markdown links. If none, write "— none yesterday".
 
 OUTPUT — two deliveries, both required
 1. **Chat output**: a markdown brief headed "🗞️ SurvivorPulse Daily — <Weekday Mon DD>". Bullets only. If a section is empty, show it with "— none". Stop after section 4. This is your final message and IS the session's content — Michael will open this session directly to read it.
