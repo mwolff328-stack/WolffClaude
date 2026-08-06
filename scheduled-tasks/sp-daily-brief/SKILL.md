@@ -11,6 +11,8 @@ Query the "SP Stories & Tasks" Notion database. First load the query tool:
 Data source URL (use as the SQL table name): collection://35929ce5-833d-8156-9e29-000ba878443c
 Key columns: "userDefined:ID" (the SST number), "Item" (title), "Status", "Category", "Assigned To Agent" (JSON array of persona names), "Notes", "Priority", "url" (page URL), and date column "date:Date Completed:start".
 
+IMPORTANT: Always include `url` in your SELECT clause. Each ticket's url from the database will be used to format markdown links in the brief output.
+
 DATE HANDLING
 Compute "today" and "yesterday" from the actual run date in America/Chicago (Central). Use those literal date strings in queries; do not rely on SQLite now() (it is UTC).
 
