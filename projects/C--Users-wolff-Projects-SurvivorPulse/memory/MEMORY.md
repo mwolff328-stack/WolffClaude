@@ -51,6 +51,7 @@
 - [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared test-arm state faked a 5-of-7 split; mutation testing proves only the fixture.
 - [Concurrent reviewer agents race on shared file reverts](feedback_concurrent_reviewer_agents_race_on_shared_file_reverts.md) — 3 subagents each reverting the same file in one worktree caused transient (harmless) collisions.
 - [Verify a fix site is live before citing it](feedback_verify_fix_site_is_live_before_citing_it.md) — pool-form.tsx matched the bug's pattern but is wired only to the frozen V2 router; PoolCreationWizard.tsx was the real one.
+- [A new error code activates old dead UI code](feedback_a_new_error_code_activates_old_dead_ui_code.md) — SST-1299 made a 409 reachable for a caller whose remediation UI was hard-wired to a different track.
 
 ## Shipping, environments, and infra
 
