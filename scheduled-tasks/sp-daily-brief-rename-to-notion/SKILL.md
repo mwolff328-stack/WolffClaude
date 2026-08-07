@@ -12,8 +12,9 @@ Extract the `date` field (e.g., "2026-08-07").
 ## Steps
 
 1. **Compute the new title**
-   - If Notion write succeeded: `"SP Brief → Notion ✓ <Date>"` (e.g., "SP Brief → Notion ✓ Aug 07")
-   - If Notion write failed: `"SP Brief → Notion ✗ <Date> (auth/error)"` (indicate the failure reason)
+   - Extract `notionTitle` from latest-brief.json
+   - If Notion write succeeded: `"<notionTitle> ✓"` (e.g., "SurvivorPulse Daily - Thursday, 8/7/26 ✓")
+   - If Notion write failed: `"<notionTitle> ✗"` (e.g., "SurvivorPulse Daily - Thursday, 8/7/26 ✗")
 
 2. **Rename this session**
    - Use the `mcp__ccd_session_mgmt__set_session_title` tool
