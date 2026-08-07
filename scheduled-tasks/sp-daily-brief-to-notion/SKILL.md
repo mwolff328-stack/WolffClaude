@@ -19,7 +19,7 @@ The main task has written the brief to: `C:\Users\wolff\.claude\scheduled-tasks\
    - Database ID: `06c599bd-6f69-4f76-ae8a-b75f7dff07d5` (SurvivorPulse Daily Briefs)
 
 3. **Create the page**
-   - Title: `🗞️ <Weekday> <Date>` (e.g., "🗞️ Thursday Aug 07")
+   - Title: Use `notionTitle` from the brief JSON (e.g., "SurvivorPulse Daily - Thursday, 8/7/26")
    - Date property: ISO date from brief (e.g., "2026-08-07")
    - Children blocks: format the four sections as heading_2 + bulleted_list_item blocks
      - 🔨 In Progress (bulleted list)
