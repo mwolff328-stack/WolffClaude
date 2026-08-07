@@ -39,6 +39,7 @@ OUTPUT — three deliveries, all required
    {
      "date": "2026-08-07",
      "weekday": "Thursday",
+     "notionTitle": "SurvivorPulse Daily - Thursday, 8/7/26",
      "inProgress": [{"id": "SST-###", "title": "...", "owner": "...", "url": "..."}],
      "blocked": [{"id": "SST-###", "title": "...", "blocker": "...", "url": "..."}],
      "needsYou": ["action 1", "action 2", ...],
