@@ -60,6 +60,7 @@
 - [Replit deployment is autoscale](project_survivorpulse_replit_deployment_is_autoscale.md) — prod runs multiple instances, so any in-process cache serves inconsistent data.
 - [Stale SPA bundle after publish](project_survivorpulse_stale_spa_bundle_after_publish.md) — read the deployed bundle before debugging source.
 - [Production smoke access](project_survivorpulse_production_smoke_access.md) — prod IS reachable for read-only smoke; its admin API is the only read path to prod data.
+- [Deployed dev app URL](project_survivorpulse_deployed_dev_url.md) — founder-confirmed workspace preview URL (2026-08-07); try it first for live UI verification, ask founder to refresh if stale.
 - [Legacy Repl is rollback-only](project_survivorpulse_legacy_repl_is_rollback_only.md) — cutover COMPLETE 2026-07-28; survivorpulse.com serves v1, legacy is rollback-only.
 - [Open access mode](project_survivorpulse_open_access_mode.md) — one constant hides the beta-code gate and the Stripe paywall; gate the hook, not the pages.
 - [Beta launch site decisions](project_survivorpulse_beta_launch_site_decisions.md) — founder rulings on public-site copy; the access-gate half is superseded.
