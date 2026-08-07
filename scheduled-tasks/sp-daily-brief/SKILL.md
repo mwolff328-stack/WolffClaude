@@ -16,6 +16,11 @@ IMPORTANT: Always include `url` in your SELECT clause. Each ticket's url from th
 DATE HANDLING
 Compute "today" and "yesterday" from the actual run date in America/Chicago (Central). Use those literal date strings in queries; do not rely on SQLite now() (it is UTC).
 
+For Notion title format, convert the ISO date to `<Weekday>, M/D/YY` format:
+- Example: 2026-08-07 (Thursday) → "SurvivorPulse Daily - Thursday, 8/7/26"
+- Compute weekday name from the ISO date
+- Format date as M/D/YY (no leading zeros)
+
 OWNER RULE
 Owner = the value(s) in "Assigned To Agent". If that is empty for an active story, INFER from Category and prefix the inferred name with "~": Front-End/UX/Design/Navigation→~Deb; Core Engine/Full-Stack/Auth & Accounts→~Felix; Analytics/Research→~Stan; Content/Marketing/Content→~Sky; Infrastructure/DevOps/Admin→~Rita. List any active story with NO assignee under a short "unassigned" note so ownership gets filled in.
 
