@@ -103,6 +103,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/Loud_Candidate_138](https://www.reddit.com/user/Loud_Candidate_138/) — ICP voice / strategy designer (proposed a multi-entry path-optimization variant in [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/): sacrifice weak entries early on bad-team pairings to preserve strong-team flexibility for the back half of the season) — seen: 2026-08-07
 - [Reddit] [u/dto123](https://www.reddit.com/user/dto123/) — adjacent competitor / tool creator (built and gives away free 18-week pick'em tracking sheets via [plexkits.com](https://plexkits.com/weekly-nfl-pickems/) — manual, no live scoring, explicitly positioned as simpler than "the hosted sites") — seen: 2026-08-07
 - [Reddit] [u/survivor_pool_comish](https://www.reddit.com/user/survivor_pool_comish/) — content creator / amplifier (runs a pool-preference poll in [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/), linked to their Substack "The Sports Commish") — seen: 2026-08-07
+- [X] [CircaSports](https://x.com/CircaSports) — competitor operator (runs Circa Survivor contests, "world's largest survivor pool" official account) — seen: 2026-08-08
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
