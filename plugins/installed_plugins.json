@@ -14,11 +14,11 @@
     "github@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\d12e4527b0b4",
-        "version": "d12e4527b0b4",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\ffc8206574d3",
+        "version": "ffc8206574d3",
         "installedAt": "2026-03-24T18:43:17.686Z",
-        "lastUpdated": "2026-08-06T13:17:15.407Z",
-        "gitCommitSha": "d12e4527b0b487d383b950770108a735d1ff5e1c"
+        "lastUpdated": "2026-08-10T15:15:49.723Z",
+        "gitCommitSha": "ffc8206574d322dd5832b8ac6aebe41313b1f882"
       }
     ],
     "everything-claude-code@everything-claude-code": [
@@ -34,11 +34,11 @@
     "neon@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.0",
-        "version": "1.1.0",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.1",
+        "version": "1.1.1",
         "installedAt": "2026-07-24T00:53:40.252Z",
-        "lastUpdated": "2026-08-04T13:21:57.764Z",
-        "gitCommitSha": "69f205aa75e9b2cbaf8074d1ab881b744797f36d"
+        "lastUpdated": "2026-08-10T15:15:53.266Z",
+        "gitCommitSha": "b42b30e5690a60095cabcf406958cd7d73f5724a"
       }
     ]
   }
