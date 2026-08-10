@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-10",
+  "weekday": "Sunday",
+  "notionTitle": "SurvivorPulse Daily - Sunday, 8/10/26",
+  "inProgress": [
+    {
+      "id": "SST-971",
+      "title": "A11Y: during a keyboard drag the focused grip scrolls out of view with no way to follow it",
+      "owner": "Deb",
+      "url": "https://app.notion.com/3a529ce5833d8132b784f48132f16b78"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "SST-876",
+      "title": "BUG (investigate): reset auto-pick recommendation is non-deterministic — two teams on back-to-back calls, no data change",
+      "blocker": "Root cause investigation needed",
+      "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"
+    },
+    {
+      "id": "SST-1279",
+      "title": "BUG: Past-season Apply's own simulated replay dies silently when it needs a second buyback the pool doesn't allow",
+      "blocker": "Cascade logic decision needed",
+      "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"
+    }
+  ],
+  "needsYou": [
+    "Sign off SST-971 (A11Y keyboard drag focus) — in review, ready to close",
+    "Investigate SST-876 (auto-pick non-determinism) — Core Engine blocker affecting recommendations",
+    "Resolve SST-1279 (past-season Apply) — blocker on buyback cascade logic"
+  ],
+  "doneYesterday": []
+}
