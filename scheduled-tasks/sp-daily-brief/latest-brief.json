@@ -1,33 +1,86 @@
 {
-  "date": "2026-08-10",
-  "weekday": "Sunday",
-  "notionTitle": "SurvivorPulse Daily - Sunday, 8/10/26",
+  "date": "2026-08-11",
+  "weekday": "Monday",
+  "notionTitle": "SurvivorPulse Daily - Monday, 8/11/26",
   "inProgress": [
-    {
-      "id": "SST-971",
-      "title": "A11Y: during a keyboard drag the focused grip scrolls out of view with no way to follow it",
-      "owner": "Deb",
-      "url": "https://app.notion.com/3a529ce5833d8132b784f48132f16b78"
-    }
+    {"id": "SST-601", "title": "Back Tester Integration", "owner": "Felix", "tag": "[POST-BETA]", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-1190", "title": "TECH DEBT: Optional-week shape still in getTeamsUsedBy*", "owner": "Felix, Vlad", "url": "https://app.notion.com/3af29ce5833d81c1909cd13876e34f68"},
+    {"id": "SST-1005", "title": "Dev data gap: Game Plan dev render blocker", "owner": "Felix", "url": "https://app.notion.com/3a729ce5833d8189b7e4d3d890f4e5e1"},
+    {"id": "SST-1138", "title": "BUG: ctrl-click E2E test flakes (~12.5%)", "owner": "Vlad, Felix", "url": "https://app.notion.com/3ad29ce5833d814e9d24ec499a4eb8b8"}
   ],
   "blocked": [
     {
+      "id": "SST-799",
+      "title": "Confidence Line + Archetype Label Copy",
+      "blocker": "Copy-test names pending (Play It Safe / Small Edge Off the Crowd / Zig While They Zag)",
+      "owner": "Sky, Pam",
+      "tag": "[BETA] P1",
+      "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"
+    },
+    {
+      "id": "SST-790",
+      "title": "Pre-Build Verification: beta testers (king_17/bigroddy12)",
+      "blocker": "Requires helium inspection + Pam coordination",
+      "owner": "Vlad, Pam",
+      "tag": "[BETA] P0",
+      "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"
+    },
+    {
+      "id": "SST-874",
+      "title": "Game Plan Reset-to-Auto control",
+      "blocker": "Implementation design (strategy-agnostic restore)",
+      "owner": "Felix",
+      "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"
+    },
+    {
+      "id": "SST-881",
+      "title": "Season Grid stale auto pick post-reset",
+      "blocker": "Root cause (diverges from live archetype)",
+      "owner": "Felix",
+      "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"
+    },
+    {
+      "id": "SST-1281",
+      "title": "Proposed vs Actual: data-audit spike",
+      "blocker": "Past-season overwrite exposure investigation",
+      "owner": "Felix",
+      "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"
+    },
+    {
       "id": "SST-876",
-      "title": "BUG (investigate): reset auto-pick recommendation is non-deterministic — two teams on back-to-back calls, no data change",
-      "blocker": "Root cause investigation needed",
+      "title": "Reset auto-pick is non-deterministic",
+      "blocker": "Two teams on back-to-back calls, no data change",
+      "owner": "Felix",
       "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"
     },
     {
       "id": "SST-1279",
-      "title": "BUG: Past-season Apply's own simulated replay dies silently when it needs a second buyback the pool doesn't allow",
-      "blocker": "Cascade logic decision needed",
+      "title": "Past-season Apply: buyback undercount",
+      "blocker": "Silent fail when pool doesn't allow second buyback",
+      "owner": "~Felix",
       "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"
     }
   ],
-  "needsYou": [
-    "Sign off SST-971 (A11Y keyboard drag focus) — in review, ready to close",
-    "Investigate SST-876 (auto-pick non-determinism) — Core Engine blocker affecting recommendations",
-    "Resolve SST-1279 (past-season Apply) — blocker on buyback cascade logic"
+  "inReview": [
+    {"id": "SST-1244", "title": "BUG: compositeScore100 per-entry (poolPicksEstimationService masks)", "owner": "Felix", "url": "https://app.notion.com/3b129ce5833d81959c5ef821359093f3"},
+    {"id": "SST-971", "title": "A11Y: keyboard drag scrolls grip out of view", "owner": "Deb", "url": "https://app.notion.com/3a529ce5833d8132b784f48132f16b78"}
   ],
-  "doneYesterday": []
+  "needsYou": [
+    "Copy-test 3 archetype names before SST-799 lock ([SST-799](https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6))",
+    "Coordinate Vlad+Pam for helium data inspection on beta testers ([SST-790](https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae))",
+    "Sign off on SST-1244 (compositeScore100) and SST-971 (A11Y drag) in review"
+  ],
+  "doneYesterday": [
+    {"id": "SST-1298", "title": "BUG: Proposed buyback ignores null entryRevivalDeadline", "url": "https://app.notion.com/3b529ce5833d8000aa3ddcb275fc6bfb"},
+    {"id": "SST-1311", "title": "Home: Historical Pool Data summary", "url": "https://app.notion.com/3b629ce5833d81a5a613d64251b5c8b3"},
+    {"id": "SST-1314", "title": "Season Grid hover tooltip parity", "url": "https://app.notion.com/3b829ce5833d8186a267e301c0efafe8"},
+    {"id": "SST-1315", "title": "Proposed eliminated cells UI", "url": "https://app.notion.com/3b829ce5833d8131a81dcc79be8e2594"},
+    {"id": "SST-1316", "title": "Proposed entry pills display", "url": "https://app.notion.com/3b829ce5833d818c9a5bca61b4c3431f"},
+    {"id": "SST-1318", "title": "Proposed buyback pill vanish fix", "url": "https://app.notion.com/3b929ce5833d807492e0d9edbdc27f55"},
+    {"id": "SST-1323", "title": "Actual/Proposed segmented control + bulk toggle", "url": "https://app.notion.com/3b929ce5833d80038293e18eea2d06b6"},
+    {"id": "SST-1324", "title": "Pool startingWeek + past-season focus", "url": "https://app.notion.com/3b929ce5833d80e38ad7eaa26e2402eb"},
+    {"id": "SST-1325", "title": "Season Grid track-control UX refinements", "url": "https://app.notion.com/3b929ce5833d806cb618f0109f67fe93"},
+    {"id": "SST-1326", "title": "Stale-data + Proposed/REC mismatch (Splash $25K Wk11)", "url": "https://app.notion.com/3b929ce5833d8039be86cfd09212977d"},
+    {"id": "SST-1328", "title": "Pool track toggle default + UX polish", "url": "https://app.notion.com/3b929ce5833d80ecb08fc1ea51c37797"}
+  ]
 }
