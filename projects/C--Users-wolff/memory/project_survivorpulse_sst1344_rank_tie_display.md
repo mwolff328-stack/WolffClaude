@@ -1,0 +1,21 @@
+---
+name: project_survivorpulse_sst1344_rank_tie_display
+description: "SST-1344 filed 2026-08-12 (Blocked, Priority Medium) — Ranked list/Season Grid number Rank-Score ties as a false total order (#8-#12 for 5 teams tied at 65.07). Needs Deb's shared-rank spec + founder call before build. Also documents a same-day recurrence of the Notion create-comment connector outage, with a twist on the known workaround."
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: a343076d-b813-441a-b4c1-4b50ab96c6f4
+  modified: 2026-08-12T18:05:44.815Z
+---
+
+SST-1344 ("Ranked list assigns distinct sequential ranks to teams tied on the same Rank Score") was spun off from Deb's design-triage comment on SST-1340 while filing that ticket. Root cause: `client/src/lib/entryRecommendations.ts`'s `assignRankedOrder` (line 437) always does `.forEach((t,i) => ranks.set(t.teamId, i+1))` — never shares a rank across a tie. Two call sites confirmed by Vlad (grep, no third surface): `PickGrid.tsx:2216` and `cockpit/seasonGridCell.ts:801`.
+
+5-persona triage panel (Pam/Ann/Deb/Felix/Vlad, dispatched as real subagents per [[survivorpulse-bug-triage skill]]) converged unanimously: Severity Medium, Criticality High → Priority Medium. Two findings worth surfacing to whoever builds this:
+- **Felix:** the `assignRankedOrder` `Map<teamId,number>` is NOT display-only — `PickGrid.tsx:2216` also uses it for the founder-locked "By Division" unified rank / default sort order. A naive fix that collapses tied entries to share one Map value would silently defeat `tests/strategyEngine/tieBreakMatchesRankedDisplay.sst1340.test.ts`'s TC-E (a `<` comparison proving SST-1340's engine/display tie-break agreement). Build the "T-8" shared-rank label as a presentation-layer derivation from the existing ordered Map, not by collapsing the Map itself.
+- **Vlad:** `rankTieBreakParity.sst1183.test.ts` currently asserts a tied pair gets DISTINCT sequential ranks (`bal.rank=2, cin.rank=3`) as CORRECT — it certifies this exact defect rather than catching it. Will need revisiting when this ships. A live example of [[hollow fixtures / tests that encode the bug]] rather than the requirement.
+
+Status set to **Blocked** (not the skill's default "Ready") because all 5 personas independently confirmed this can't go to dev until Deb completes a wireframe/spec pass and the founder approves the tie-display convention — a deliberate deviation from the skill's literal "triage → Ready" step, judged more honest than mechanically following it. Re-triage to Ready once that spec lands.
+
+**Tooling incident, same session:** `mcp__notionApi__API-create-a-comment` failed 100% (3/3 attempts, all payload shapes) with `400 missing_version` — reproducing the exact defect the SurvivorPulse-repo-scoped memory `project_survivorpulse_notion_comment_outage_is_connector_specific` already documented from earlier the same day (2026-08-12, session 2993dd74). That memory's fix is "load the second connector, `mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-*`, via ToolSearch and retry there." Tried exactly that here (`select:` with the exact tool names) — **it returned "No matching deferred tools found," i.e. that connector was not present in this session's tool roster at all**, unlike the session that wrote the memory. So the "switch connectors" fix is not a guaranteed fallback — connector availability appears to vary session-to-session (this session's cwd was `C:\Users\wolff`, a non-project directory, operating on repo files by absolute path, rather than a session rooted in the repo itself — that may be the actual variable, not random flakiness).
+
+**How to apply:** when `API-create-a-comment` fails, still try the second connector (cheap to check), but do NOT assume it will be there. Have a real fallback ready: this session asked the founder directly (AskUserQuestion) rather than silently defaulting to the Notes-property workaround the older memory warns is "lossy" — founder chose "run the substantive work, defer only the signed-comment mechanics" (Notes property + full reasoning delivered in chat, comments to be posted once the connector's fixed). `API-patch-page` (property writes, incl. Notes) kept working the whole time — only comment-creation was down.
