@@ -4,21 +4,21 @@
     "superpowers@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\6.2.0",
-        "version": "6.2.0",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\6.3.0",
+        "version": "6.3.0",
         "installedAt": "2026-02-23T16:19:15.659Z",
-        "lastUpdated": "2026-08-04T13:21:57.568Z",
+        "lastUpdated": "2026-08-12T19:25:41.648Z",
         "gitCommitSha": "e4a2375cb705ca5800f0833528ce36a3faf9017a"
       }
     ],
     "github@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\ffc8206574d3",
-        "version": "ffc8206574d3",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\9bae69456725",
+        "version": "9bae69456725",
         "installedAt": "2026-03-24T18:43:17.686Z",
-        "lastUpdated": "2026-08-10T15:15:49.723Z",
-        "gitCommitSha": "ffc8206574d322dd5832b8ac6aebe41313b1f882"
+        "lastUpdated": "2026-08-12T19:25:38.126Z",
+        "gitCommitSha": "9bae694567256ced7e6e57ab73f59f2dcd468e93"
       }
     ],
     "everything-claude-code@everything-claude-code": [
@@ -34,11 +34,11 @@
     "neon@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.1",
-        "version": "1.1.1",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.2",
+        "version": "1.1.2",
         "installedAt": "2026-07-24T00:53:40.252Z",
-        "lastUpdated": "2026-08-10T15:15:53.266Z",
-        "gitCommitSha": "b42b30e5690a60095cabcf406958cd7d73f5724a"
+        "lastUpdated": "2026-08-12T19:25:43.721Z",
+        "gitCommitSha": "af27b52659c3c5bbf05d6c626b166163eb351e19"
       }
     ]
   }
