@@ -5,7 +5,7 @@
 - [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) — nothing's proven until shown red against wrong code.
 - [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — a tested helper behind a severed call site killed 0 of 109 mutants.
 - [An AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — the AC→TC orphan check found in seconds what two review rounds missed.
-- [Verify a reviewer's evidence, not their judgement](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — scope call was right, 2 of 5 files were wrong.
+- [Verify a reviewer's evidence, not their judgement](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — scope call was right, 2 of 5 files wrong.
 - [Delegating is not agreeing](feedback_delegating_is_not_agreeing.md) — "same by construction" is a claim to execute, not comment on.
 - [Check the distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) — don't override from 2 nearby examples.
 - [Renaming for clarity can re-create the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md) — a new name can lie on one branch.
@@ -39,7 +39,7 @@
 - [Staged ticket headers rot into harmful instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md) — a status line inverted twice in 48h.
 - [An AC can launder an ungroomed commit into a decision](feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision.md) — git log -S the behaviour first.
 - [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) — write vs read on different quantities drifts.
-- [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie the tie-break outranked.
+- [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie.
 - [Enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping a VALUE's formatting found 2 of 3 and read as complete.
 - [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producing code before warning anyone of a consequence.
 - [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" DELETED a cap.
@@ -50,7 +50,7 @@
 - [Assert after the effect, not before it](feedback_assert_after_the_effect_not_before_it.md) — a post-auth guard went green with BOTH fixes reverted.
 - [A third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md) — "never returns none" held while the warning became unreachable.
 - [A premise measured at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) — true at week 1, false after, unchallenged.
-- [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared arm state faked a 5-of-7 split.
+- [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared arm state faked a split.
 - [Concurrent reviewer agents race on shared file reverts](feedback_concurrent_reviewer_agents_race_on_shared_file_reverts.md) — transient, harmless collisions.
 - [Verify a fix site is live before citing it](feedback_verify_fix_site_is_live_before_citing_it.md) — matched the bug but was wired only to a frozen router.
 - [A new error code activates old dead UI code](feedback_a_new_error_code_activates_old_dead_ui_code.md) — a 409 became reachable for an unready caller.
@@ -111,13 +111,13 @@
 - [Entry-recommendations payload](project_survivorpulse_entry_recommendations_payload.md) — what `allTeams`/`available` mean, and the caching invariant.
 - [Missing field exposure collapses the archetypes](project_survivorpulse_missing_field_exposure_collapses_archetypes.md) — no popularity data, all 3 tie.
 - [Multi-pick renders only via 'past' cell variant](project_survivorpulse_multipick_past_variant_only.md) — playoff picks never resolve as odds or projected.
-- [Allocation order blessed](project_survivorpulse_allocation_order_blessed.md) — UUID-order greedy blessed for UNIFORM stakes; stake-weighted shipped as SST-1073.
+- [Allocation order blessed](project_survivorpulse_allocation_order_blessed.md) — UUID-order greedy for UNIFORM stakes; stake-weighted shipped as SST-1073.
 - [Reset-to-auto stays grid-matched, not Apply-scoped](project_survivorpulse_reset_to_auto_apply_scope_divergence.md) — PoolSwitcher-as-scope already rejected.
 
 ## App structure and data ownership
 
 - [The Notion comment "outage" is connector-specific](project_survivorpulse_notion_comment_outage_is_connector_specific.md) — a second connector still works.
-- [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — reads are blind, not writes.
+- [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — reads are blind.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated; trace red checks via logs.
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — opt-in, not blanket.
 - [Split route registration](project_survivorpulse_split_route_registration.md) — routes live in BOTH routes.ts and index.ts; grepping one false-negatives.
@@ -128,4 +128,4 @@
 - [SST number is an auto-increment column](project_survivorpulse_notion_sst_id_is_auto_increment.md) — never invent one; never match titles on "SST-".
 - [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — same instances render everywhere.
 - [My Strategy wizard: deleted 2026-08-03](project_survivorpulse_my_strategy_wizard_unreachable.md) — Step1,2,5 gone; Step3/4/Context/Modal survive via /tools/*.
-- [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — two files with the same literal queryKey share ONE cache entry.
+- [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — same literal queryKey in two files shares ONE cache entry.
