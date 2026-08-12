@@ -47,6 +47,8 @@
 - [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter works for edits but not MOVES; strip comments and compare.
 - [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; a per-line regex misses multi-line matches; NUL hides the file.
 - [Tests that pass by winning an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) — a click that UNMOUNTS its target still passes inside the exit window.
+- [Assert after the effect, not before it](feedback_assert_after_the_effect_not_before_it.md) — a post-auth guard went green with BOTH fixes reverted; `waitFor` can't see a state that arrives later.
+- [A third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md) — "never returns none" held while the warning became unreachable; guard the user-visible meaning, not the enum.
 - [A premise measured at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) — "directional, not causal" was true at week 1, false after, unchallenged.
 - [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared test-arm state faked a 5-of-7 split; mutation testing proves only the fixture.
 - [Concurrent reviewer agents race on shared file reverts](feedback_concurrent_reviewer_agents_race_on_shared_file_reverts.md) — 3 subagents each reverting the same file in one worktree caused transient (harmless) collisions.
