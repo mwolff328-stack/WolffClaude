@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 1822a37a-6806-42d1-a467-6dd43d564c56
-  modified: 2026-08-12T05:44:06.998Z
+  modified: 2026-08-12T05:52:00.213Z
 ---
 
 Two traps burned hours in one session. Both produce a *confident wrong answer*, not an
@@ -32,10 +32,16 @@ dev app runs — that's `/home/runner/workspace`, a different filesystem. Local 
 changes will never appear in the dev console. Instrument via the Replit shell, or push
 and let Replit Sync land it.
 
-**2. `tests/` is excluded from every tsconfig, so type-level test guards are inert.**
-`tsconfig.json` has `"exclude": ["node_modules","build","dist","**/*.test.ts"]`, `include`
-covers only `client/src`, `shared`, `server`, and no npm script type-checks the test dir
-(`check` runs `tsc` + `check:e2e` only).
+**2. `tests/*.test.ts` is excluded from every tsconfig, so type-level guards there are inert.**
+`tsconfig.json` has `"exclude": ["node_modules","build","dist","**/*.test.ts"]` and
+`include` covers only `client/src`, `shared`, `server`; no npm script type-checks the
+`tests/` dir (`check` runs `tsc` + `check:e2e`).
+
+**Exact scope, because the difference bites both ways:** the exclude glob is `.test.ts`
+only. A `.test.tsx` under `client/src/**` **IS** type-checked — a co-resident session's
+half-finished `SeasonGridSection.test.tsx` produced a real `npx tsc --noEmit` error in
+the same session this was learned. So `tsc` in the main worktree also compiles other
+sessions' WIP: an error in a file you never touched is theirs, not yours.
 
 A `@ts-expect-error` tripwire in a test file is therefore **never evaluated** — a guard
 that cannot fail. I wrote one, ran `npx tsc --noEmit`, and got exit 0 / 0 errors; that
