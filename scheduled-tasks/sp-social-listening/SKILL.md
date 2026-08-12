@@ -125,7 +125,7 @@ CURRENT_YOUTUBE_CHANNELS: ["https://www.youtube.com/@VSiNLive", "https://www.you
 ```
 
 Each run, do this:
-1. From this run's Step 2/3 findings, identify any X account, subreddit, or YouTube channel that's genuinely relevant (real content, not a coincidental keyword match) and NOT already in the standing watch lists above.
+1. From this run's Step 2/3 findings, identify any X account, subreddit, YouTube channel, Substack publication, or Medium tag/publication that's genuinely relevant (real content, not a coincidental keyword match) and NOT already in the standing watch lists above.
 2. For each one: if it's already in the Pending Candidates list, add today's date to its "seen" list (only once per calendar day, even if it appeared multiple times in today's run). If it's new, add it with today's date as its first "seen" entry, formatted as a Markdown link per the linking rule.
 3. Any candidate with 3 or more DISTINCT dates in "seen" gets **promoted**: move it into the correct CURRENT_* list in Standing Watch Lists, and remove it from Pending Candidates.
 4. Safety valve: if more than 2 candidates would promote in a single run, only promote the 2 with the most distinct seen-dates; leave the rest pending for next run (prevents a single noisy day from bulk-adding low-quality sources).
