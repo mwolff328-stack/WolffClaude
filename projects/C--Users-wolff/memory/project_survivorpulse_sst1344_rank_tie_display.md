@@ -1,11 +1,11 @@
 ---
 name: project_survivorpulse_sst1344_rank_tie_display
-description: "SST-1344 filed 2026-08-12 (Blocked, Priority Medium) — Ranked list/Season Grid number Rank-Score ties as a false total order (#8-#12 for 5 teams tied at 65.07). Needs Deb's shared-rank spec + founder call before build. Also documents a same-day recurrence of the Notion create-comment connector outage, with a twist on the known workaround."
+description: "SST-1344 filed 2026-08-12 (Grooming, Priority Medium) — Ranked list/Season Grid number Rank-Score ties as a false total order (#8-#12 for 5 teams tied at 65.07). Deb's full wireframe/spec pass is done (published artifact); founder sign-off pending before Ready. Also documents a same-day Notion connector outage-then-recovery, with a correction to the earlier 'connector wasn't present' note."
 metadata: 
   node_type: memory
   type: project
   originSessionId: a343076d-b813-441a-b4c1-4b50ab96c6f4
-  modified: 2026-08-12T18:05:44.815Z
+  modified: 2026-08-12T19:35:35.469Z
 ---
 
 SST-1344 ("Ranked list assigns distinct sequential ranks to teams tied on the same Rank Score") was spun off from Deb's design-triage comment on SST-1340 while filing that ticket. Root cause: `client/src/lib/entryRecommendations.ts`'s `assignRankedOrder` (line 437) always does `.forEach((t,i) => ranks.set(t.teamId, i+1))` — never shares a rank across a tie. Two call sites confirmed by Vlad (grep, no third surface): `PickGrid.tsx:2216` and `cockpit/seasonGridCell.ts:801`.
