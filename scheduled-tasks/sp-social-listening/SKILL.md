@@ -46,6 +46,17 @@ Before calling either Xquik Actor, open its linked Apify listing. Confirm the li
 - Expect real signal (competitor channel PoolGenius, and a channel called "THE Pipeline EDGE" running a templated team-by-team preview series that boilerplate-mentions "survivor pool strategy"). Templated/boilerplate video series like that one are low-signal padding — don't list each video individually, just note the pattern once if a channel is doing high volume of it, but still link the channel itself.
 - Expect occasional unrelated "survivor" noise (shark-attack survivors, Dead by Daylight, reality TV) — discard, same rule as Reddit.
 
+**Substack** — actor `cryptosignals/substack-scraper` (keyword search across all of Substack, no login required, $0.005/result):
+- Run: `{"searchQuery": "NFL survivor pool", "scrapeType": "search", "maxItems": 15, "sortBy": "recent"}`. If the actor supports only one query per call, run it twice — once for `"NFL survivor pool"` and once for `"survivor pool strategy"` — rather than trying to OR multiple phrases into one query.
+- Also directly check any CURRENT_SUBSTACK_PUBLICATIONS from the tracker below (if any have been promoted) via the `publications` input with the publication's Substack URL, small `maxItems`.
+- Set `callOptions.maxTotalChargeUsd` to a conservative per-run cap (e.g. $0.50) — this runs daily and result volume should stay small. No per-run founder approval needed for this actor (already approved 2026-08-12); if pricing or input schema drifts materially from what's described here, note it in the report and ask before continuing.
+- Expect real signal: competitor/adjacent newsletters (e.g. "The Sports Commish" from [u/survivor_pool_comish](https://www.reddit.com/user/survivor_pool_comish/)), ICP content creators writing survivor strategy pieces, and occasional paid-tool promotion. Discard unrelated "survivor" noise using the same rule as Reddit/YouTube.
+
+**Medium** — actor `automation-lab/medium-scraper` (tag/author/publication-based, no login required, ~$0.002/article):
+- `startUrls`: search-relevant tag pages, e.g. `https://medium.com/tag/nfl`, `https://medium.com/tag/fantasy-football`, plus any CURRENT_MEDIUM_TAGS/publications from the tracker below. `maxArticles`: 5-10 per URL, sorted/filtered to the last 24h where the actor supports it (otherwise pull recent and discard anything older than the window yourself).
+- Set `callOptions.maxTotalChargeUsd` to a conservative per-run cap (e.g. $0.50). No per-run founder approval needed for this actor (already approved 2026-08-12).
+- Medium's tag pages are broad and noisy — apply the same discard rule as Reddit/YouTube (irrelevant "survivor"/"pool" content, unrelated NFL content with no survivor-pool angle). Expect thin signal most days; that's normal, say so plainly rather than padding.
+
 If any actor run fails or returns nothing, note that plainly in the summary rather than failing the whole task — still produce a report for the platforms that worked.
 
 ## Step 3: Synthesize
