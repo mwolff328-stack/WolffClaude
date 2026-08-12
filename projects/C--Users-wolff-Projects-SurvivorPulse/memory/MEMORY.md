@@ -29,7 +29,7 @@
 - [Claim-ledger timestamps are not orderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md) — two correct sessions still duplicated a ticket.
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by explicit path; bare `push -u` can move 2026-v1.
 - [A task premise may describe an unmerged sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md) — true elsewhere, false on yours.
-- [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) — a 4-worker suite killed the dev app; investigator ruled itself out first.
+- [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) — a 4-worker suite killed the dev app.
 - [Never pkill by shared entry point](feedback_never_pkill_by_shared_entry_point.md) — over-match kills every session; prove liveness by log growth.
 - [A 200 is not proof the server lived](feedback_a_200_is_not_proof_the_server_lived.md) — it can serve one response then exit(1).
 - [Prefix-mounted guards have prefix-bounded coverage](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — can't ask what isn't behind the mount.
@@ -70,7 +70,7 @@
 - [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — off-season Home copy stays; zero-entry pool gets root-cause fix.
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) — a column not applied to helium 502s the entire dev app.
 - [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — the first is commented out; Playwright loads `.env.test`.
-- [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen needed; golden .snap can show ZERO real change.
+- [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen needed for scoring changes.
 
 ## Verifying UI for real
 
@@ -105,7 +105,7 @@
 - [Per-call-site rules recur](project_survivorpulse_per_call_site_rules_recur.md) — used-team/ranking rules re-implemented per call site; one defect, nine tickets.
 - [greedyPath fixture facts](project_survivorpulse_greedypath_fixture_facts.md) — rows carry no `score` field so hand-set ties are silently ignored.
 - [A fabricated finality tier splits the spread paths](project_survivorpulse_fabricated_finality_tier_splits_the_paths.md) — a fabricated stamp splits analytics/UI.
-- [Apply write-order collision](project_survivorpulse_apply_write_order_collision.md) / [past-season cascades](project_survivorpulse_past_season_apply_cascades.md) — a MOVE can collide with itself; completed weeks inherit lock+elim duties.
+- [Apply write-order collision](project_survivorpulse_apply_write_order_collision.md) / [past-season cascades](project_survivorpulse_past_season_apply_cascades.md) — a MOVE can collide with itself.
 - [Planning override leaks as truth](project_survivorpulse_planning_override_leaks_as_truth.md) — overriding cockpit `currentWeek` re-classifies concluded weeks.
 - [Shared pool-week optimizer context](project_survivorpulse_shared_pool_week_context.md) — pool/week work is shareable, per-entry work is not.
 - [Entry-recommendations payload](project_survivorpulse_entry_recommendations_payload.md) — what `allTeams`/`available` mean, and the caching invariant.
@@ -117,15 +117,15 @@
 ## App structure and data ownership
 
 - [The Notion comment "outage" is connector-specific](project_survivorpulse_notion_comment_outage_is_connector_specific.md) — a second connector still works.
-- [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — no write defect; reads are blind to replies.
+- [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — no write defect; reads are blind.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated; trace red checks via logs.
-- [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — no middleware = anonymous; no IP/UA binding.
+- [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — no middleware = anonymous.
 - [Split route registration](project_survivorpulse_split_route_registration.md) — routes live in BOTH routes.ts and index.ts; grepping one false-negatives.
 - [A dead page's route is still load-bearing](project_survivorpulse_dead_page_live_redirect_route.md) — my-picks is deleted but live CTAs still navigate there.
 - [Per-pool cockpit wrapper global-nav trap](project_survivorpulse_pool_cockpit_wrapper_global_nav_trap.md) — a multi-pool wrapper must NOT seed the nav week.
 - [maxEntriesPerUser dual-mirror default trap](project_survivorpulse_max_entries_default_dual_mirror.md) — the default lives in 4 places; re-check all 4.
-- [Admin Real/Test pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md) — `isTestData` arms hard-deletion; "View all" means dev-stub.
+- [Admin Real/Test pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md) — `isTestData` arms hard-deletion.
 - [SST number is an auto-increment column](project_survivorpulse_notion_sst_id_is_auto_increment.md) — never invent one; never match titles on "SST-".
-- [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — both My Pools surfaces render the same instances.
+- [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — same instances render everywhere.
 - [My Strategy wizard: deleted 2026-08-03](project_survivorpulse_my_strategy_wizard_unreachable.md) — Step1,2,5 gone; Step3/4/Context/Modal survive via /tools/*.
 - [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — two files with the same literal queryKey share ONE cache entry.
