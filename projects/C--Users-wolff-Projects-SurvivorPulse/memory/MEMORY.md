@@ -34,7 +34,7 @@
 - [A 200 is not proof the server lived](feedback_a_200_is_not_proof_the_server_lived.md) — it can serve one response then exit(1).
 - [Prefix-mounted guards have prefix-bounded coverage](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — can't ask what isn't behind the mount.
 - [No em dashes in drafts](feedback_no_em_dashes_in_drafts.md) — not in drafted outbound messages; use periods and commas instead.
-- [Rely on self-learning, not manual monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md) — learnings queue + weekly review replace polling.
+- [Rely on self-learning, not manual monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md) — the learnings queue replaces polling.
 - [A doc saying code was deleted is not evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md) — a "deleted" resolver was live and load-bearing.
 - [Staged ticket headers rot into harmful instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md) — a status line inverted twice in 48h.
 - [An AC can launder an ungroomed commit into a decision](feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision.md) — git log -S the behaviour first.
@@ -42,7 +42,7 @@
 - [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie the tie-break outranked.
 - [Enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping a VALUE's formatting found 2 of 3 and read as complete.
 - [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producing code before warning anyone of a consequence.
-- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" silently DELETED a cap.
+- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" DELETED a cap.
 - [Validated identifiers still carry SQL wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md) — `_` is a LIKE wildcard, even validated.
 - [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter works for edits but not MOVES.
 - [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; multi-line misses; NUL hides the file.
@@ -70,7 +70,7 @@
 - [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — off-season Home copy stays; zero-entry pool gets root-cause fix.
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) — a column not applied to helium 502s the entire dev app.
 - [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — the first is commented out; Playwright loads `.env.test`.
-- [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen needed for scoring changes.
+- [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen needed.
 
 ## Verifying UI for real
 
@@ -101,7 +101,7 @@
 
 ## Engine and domain behaviour
 
-- [Elimination predicate rulings (2026-08-01)](project_survivorpulse_elimination_predicate_rulings.md) — tie=loss, strikeCount is real, buyback assumed at read time.
+- [Elimination predicate rulings (2026-08-01)](project_survivorpulse_elimination_predicate_rulings.md) — tie=loss, strikeCount is real, buyback at read time.
 - [Per-call-site rules recur](project_survivorpulse_per_call_site_rules_recur.md) — used-team/ranking rules re-implemented per call site; one defect, nine tickets.
 - [greedyPath fixture facts](project_survivorpulse_greedypath_fixture_facts.md) — rows carry no `score` field so hand-set ties are silently ignored.
 - [A fabricated finality tier splits the spread paths](project_survivorpulse_fabricated_finality_tier_splits_the_paths.md) — a fabricated stamp splits analytics/UI.
