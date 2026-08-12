@@ -9,17 +9,17 @@
 - [Delegating is not agreeing](feedback_delegating_is_not_agreeing.md) — "same by construction" is a claim to execute, not comment on.
 - [Check the distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) — don't override from 2 nearby examples.
 - [Renaming for clarity can re-create the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md) — a new name can lie on one branch.
-- [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) — a behaviour flip invalidates a CLASS of assertions.
+- [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) — a behaviour flip invalidates a CLASS of tests.
 - [Confirm the check covers what you changed](feedback_confirm_the_check_covers_what_you_changed.md) — read `include`/`exclude` before quoting a green typecheck.
 - [The local run differs from CI by construction](feedback_local_run_differs_from_ci_by_construction.md) — POSIX-broken/Windows-fine parsing; can exit 0 silently.
 - [Derive test expectations from the DB, not the fixture](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — CI's DB is fuller than your fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) — comments and compiled output trip `toMatch()`.
-- [A green test certifies its stale comments](feedback_a_green_test_certifies_its_stale_comments.md) — a hand-built "call shape" can't notice the site moved.
+- [A green test certifies its stale comments](feedback_a_green_test_certifies_its_stale_comments.md) — a hand-built "call shape" can't see the site moved.
 - [The naive fix is green](feedback_survivorpulse_gate_page_not_viewer.md) — three fixes passed and were wrong; gate the page, not the viewer.
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — 13 failures, two causes, two routes; grep each.
 - [Guard the query you're reading](feedback_read_the_querys_own_loading_state.md) — inferring loading from a sibling query fails when both invalidate.
 - [Grep callers before changing a shared resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) — a scoped ruling scopes intent, not blast radius.
-- [Duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — the winner varies by worker; passes alone, fails in a full run.
+- [Duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — winner varies by worker; passes alone, fails in a full run.
 - [Proving a flake fix without reproducing it](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the PRECURSOR, not the rare compound event.
 - [Relocating an entry point changes its threat model](feedback_relocating_an_entry_point_changes_its_threat_model.md) — a moved button re-exposes its endpoint.
 - [Verify a deferral reason, don't inherit it](feedback_survivorpulse_verify_a_deferral_reason.md) — confirm a blocker still holds; never inherit one from a peer.
