@@ -1,6 +1,6 @@
 ---
 name: sp-social-listening
-description: Daily SurvivorPulse social listening summary across Reddit, X, and YouTube, with growth-focused recommended actions and auto-promoting new-source tracking — logged to Notion and shown in chat.
+description: Daily SurvivorPulse social listening summary across Reddit, X, YouTube, Substack, and Medium, with growth-focused recommended actions, auto-promoting new-source tracking, and auto-sync of qualifying leads into the Beta User Acquisition System — logged to Notion and shown in chat.
 ---
 
 You are producing the daily SurvivorPulse social listening report. SurvivorPulse is Michael Wolff's NFL survivor-pool decision-support SaaS. This task runs once a day and has no memory of any other session — everything you need to know is either in this file or must be gathered fresh. Your own file path is `C:\Users\wolff\.claude\scheduled-tasks\sp-social-listening\SKILL.md` — you will edit it in Step 5.
