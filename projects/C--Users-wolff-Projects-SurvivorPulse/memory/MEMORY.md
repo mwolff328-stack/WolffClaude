@@ -42,7 +42,7 @@
 - [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie.
 - [Enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping a VALUE's formatting found 2 of 3 and read as complete.
 - [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producing code before warning anyone of a consequence.
-- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" DELETED a cap.
+- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" deleted a cap.
 - [Validated identifiers still carry SQL wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md) — `_` is a LIKE wildcard, even validated.
 - [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter works for edits but not MOVES.
 - [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; multi-line misses; NUL hides the file.
@@ -105,7 +105,7 @@
 - [Per-call-site rules recur](project_survivorpulse_per_call_site_rules_recur.md) — used-team/ranking rules re-implemented per call site; one defect, nine tickets.
 - [greedyPath fixture facts](project_survivorpulse_greedypath_fixture_facts.md) — rows carry no `score` field so hand-set ties are silently ignored.
 - [A fabricated finality tier splits the spread paths](project_survivorpulse_fabricated_finality_tier_splits_the_paths.md) — a fake stamp splits analytics/UI.
-- [Apply write-order collision](project_survivorpulse_apply_write_order_collision.md) / [past-season cascades](project_survivorpulse_past_season_apply_cascades.md) — a MOVE collides with itself.
+- [Apply write-order collision](project_survivorpulse_apply_write_order_collision.md) / [past-season cascades](project_survivorpulse_past_season_apply_cascades.md) — a MOVE self-collides.
 - [Planning override leaks as truth](project_survivorpulse_planning_override_leaks_as_truth.md) — overriding cockpit `currentWeek` re-classifies concluded weeks.
 - [Shared pool-week optimizer context](project_survivorpulse_shared_pool_week_context.md) — pool/week work is shareable, per-entry work is not.
 - [Entry-recommendations payload](project_survivorpulse_entry_recommendations_payload.md) — what `allTeams`/`available` mean, and the caching invariant.
@@ -119,7 +119,7 @@
 - [The Notion comment "outage" is connector-specific](project_survivorpulse_notion_comment_outage_is_connector_specific.md) — a second connector still works.
 - [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — reads are blind.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated; trace red checks via logs.
-- [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — opt-in, not blanket.
+- [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — not blanket.
 - [Split route registration](project_survivorpulse_split_route_registration.md) — routes live in BOTH routes.ts and index.ts; grepping one false-negatives.
 - [A dead page's route is still load-bearing](project_survivorpulse_dead_page_live_redirect_route.md) — my-picks is deleted but live CTAs still navigate there.
 - [Per-pool cockpit wrapper global-nav trap](project_survivorpulse_pool_cockpit_wrapper_global_nav_trap.md) — a multi-pool wrapper must NOT seed the nav week.
