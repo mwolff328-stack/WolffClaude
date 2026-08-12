@@ -10,7 +10,7 @@
 - [Check the distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) — don't override from 2 nearby examples.
 - [Renaming for clarity can re-create the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md) — a new name can lie on one branch.
 - [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) — a behaviour flip invalidates a CLASS of tests.
-- [Confirm the check covers what you changed](feedback_confirm_the_check_covers_what_you_changed.md) — read `include`/`exclude` before trusting a green typecheck.
+- [Confirm the check covers what you changed](feedback_confirm_the_check_covers_what_you_changed.md) — read `include`/`exclude` before trusting a green check.
 - [The local run differs from CI by construction](feedback_local_run_differs_from_ci_by_construction.md) — POSIX-broken/Windows-fine parsing; can exit 0 silently.
 - [Derive test expectations from the DB, not the fixture](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — CI's DB is fuller than your fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) — comments and compiled output trip `toMatch()`.
@@ -30,9 +30,9 @@
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by explicit path; bare `push -u` can move 2026-v1.
 - [A task premise may describe an unmerged sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md) — true elsewhere, false on yours.
 - [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) — a 4-worker suite killed the dev app.
-- [Never pkill by shared entry point](feedback_never_pkill_by_shared_entry_point.md) — over-match kills every session; prove liveness by log growth.
+- [Never pkill by shared entry point](feedback_never_pkill_by_shared_entry_point.md) — over-match kills every session; prove liveness via log growth.
 - [A 200 is not proof the server lived](feedback_a_200_is_not_proof_the_server_lived.md) — it can serve one response then exit(1).
-- [Prefix-mounted guards have prefix-bounded coverage](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — can't ask what isn't behind the mount.
+- [Prefix-mounted guards have prefix-bounded coverage](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — blind to what isn't behind the mount.
 - [No em dashes in drafts](feedback_no_em_dashes_in_drafts.md) — not in drafted outbound messages; use periods and commas instead.
 - [Rely on self-learning, not manual monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md) — the learnings queue replaces polling.
 - [A doc saying code was deleted is not evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md) — a "deleted" resolver was live and load-bearing.
