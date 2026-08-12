@@ -47,7 +47,7 @@
 - [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter works for edits but not MOVES.
 - [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; multi-line misses; NUL hides the file.
 - [Tests that pass by winning an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) — a click UNMOUNTING its target still passes.
-- [Assert after the effect, not before it](feedback_assert_after_the_effect_not_before_it.md) — a post-auth guard went green with BOTH fixes reverted.
+- [Assert after the effect, not before it](feedback_assert_after_the_effect_not_before_it.md) — a post-auth guard passed with BOTH fixes reverted.
 - [A third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md) — "never returns none" held while the warning became unreachable.
 - [A premise measured at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) — true at week 1, false after, unchallenged.
 - [A harness disagreement is evidence about the harness](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) — shared arm state faked a split.
@@ -124,7 +124,7 @@
 - [A dead page's route is still load-bearing](project_survivorpulse_dead_page_live_redirect_route.md) — my-picks is deleted but live CTAs still navigate there.
 - [Per-pool cockpit wrapper global-nav trap](project_survivorpulse_pool_cockpit_wrapper_global_nav_trap.md) — a multi-pool wrapper must NOT seed the nav week.
 - [maxEntriesPerUser dual-mirror default trap](project_survivorpulse_max_entries_default_dual_mirror.md) — the default lives in 4 places; re-check all 4.
-- [Admin Real/Test pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md) — hard-deletion trigger.
+- [Admin Real/Test pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md) — hard-delete flag.
 - [SST number is an auto-increment column](project_survivorpulse_notion_sst_id_is_auto_increment.md) — never invent one; never match titles on "SST-".
 - [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — same instances render everywhere.
 - [My Strategy wizard: deleted 2026-08-03](project_survivorpulse_my_strategy_wizard_unreachable.md) — Step1,2,5 gone; Step3/4/Context/Modal survive via /tools/*.
