@@ -1,158 +1,35 @@
 {
   "date": "2026-08-13",
-  "weekday": "Wednesday",
-  "notionTitle": "SurvivorPulse Daily - Wednesday, 8/13/26",
+  "weekday": "Thursday",
+  "notionTitle": "SurvivorPulse Daily - Thursday, 8/13/26",
   "inProgress": [
-    {
-      "id": "SST-1244",
-      "title": "BUG: compositeScore100 is still per-entry from week 2 — poolPicksEstimationService masks the viewer's used teams upstream",
-      "owner": "Felix",
-      "status": "In Review",
-      "priority": "High",
-      "url": "https://app.notion.com/3b129ce5833d81959c5ef821359093f3"
-    },
-    {
-      "id": "SST-1005",
-      "title": "Dev data gap: Game Plan (Season Grid / Week View) cannot be rendered in dev — no season has both live entries and game data",
-      "owner": "Felix",
-      "priority": "Medium",
-      "url": "https://app.notion.com/3a729ce5833d8189b7e4d3d890f4e5e1"
-    },
-    {
-      "id": "SST-1338",
-      "title": "Record the writing archetype ON the proposed_picks rows (closes SST-1333's cross-device and multi-run residual)",
-      "owner": "Felix, Ann, Vlad",
-      "priority": "Medium",
-      "note": "[FOUNDER GATE] Schema change complete; NOT pushed to 2026-v1. Blocks E2E verification and team sign-offs. Needs helium migration + CI/integration DB confirmation.",
-      "url": "https://app.notion.com/3ba29ce5833d81038cbbe0c44b13acfb"
-    },
-    {
-      "id": "SST-601",
-      "title": "Step 2 — Back Tester Integration",
-      "owner": "Felix",
-      "priority": "High",
-      "note": "[POST-BETA]",
-      "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"
-    },
-    {
-      "id": "SST-1190",
-      "title": "TECH DEBT: getTeamsUsedByUser / getTeamsUsedByEntry still carry the optional-week shape the chokepoint split removed",
-      "owner": "Felix, Vlad",
-      "priority": "High",
-      "url": "https://app.notion.com/3af29ce5833d81c1909cd13876e34f68"
-    },
-    {
-      "id": "SST-1138",
-      "title": "BUG: ctrl-click-opens-new-tab E2E test flakes ~1 in 8 CI runs — the popup path is contention-sensitive, not racy in app code",
-      "owner": "Vlad, Felix",
-      "priority": "Low",
-      "url": "https://app.notion.com/3ad29ce5833d814e9d24ec499a4eb8b8"
-    }
+    {"id": "SST-601", "title": "Back Tester Integration (Step 2) [POST-BETA]", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-1005", "title": "Dev data gap: Game Plan cannot be rendered in dev", "owner": "Felix", "url": "https://app.notion.com/3a729ce5833d8189b7e4d3d890f4e5e1"},
+    {"id": "SST-1138", "title": "BUG: ctrl-click E2E test flakes ~1 in 8 CI runs", "owner": "Vlad, Felix", "url": "https://app.notion.com/3ad29ce5833d814e9d24ec499a4eb8b8"},
+    {"id": "SST-1190", "title": "TECH DEBT: getTeamsUsedByUser/Entry still carry optional-week shape", "owner": "Felix, Vlad", "url": "https://app.notion.com/3af29ce5833d81c1909cd13876e34f68"},
+    {"id": "SST-1244", "title": "BUG: compositeScore100 still per-entry from week 2 (IN REVIEW)", "owner": "Felix", "url": "https://app.notion.com/3b129ce5833d81959c5ef821359093f3"}
   ],
   "blocked": [
-    {
-      "id": "SST-874",
-      "title": "Game Plan Reset-to-Auto control (strategy-agnostic, restores what the grid shows)",
-      "owner": "Felix",
-      "priority": "High",
-      "blocker": "Related to SST-881 (stale auto pick divergence); grouped family",
-      "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"
-    },
-    {
-      "id": "SST-881",
-      "title": "BUG: Season Grid shows a stale/incoherent auto pick after Reset-to-Auto — diverges from live archetype computation",
-      "owner": "Felix",
-      "priority": "High",
-      "blocker": "Related to SST-874 (Reset-to-Auto control); grouped family",
-      "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"
-    },
-    {
-      "id": "SST-876",
-      "title": "BUG (investigate): reset auto-pick recommendation is non-deterministic — two teams on back-to-back calls, no data change",
-      "owner": "Felix",
-      "priority": "Medium",
-      "blocker": "Investigation needed; reason not captured",
-      "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"
-    },
-    {
-      "id": "SST-1279",
-      "title": "BUG: Past-season Apply's own simulated replay dies silently when it needs a second buyback the pool doesn't allow",
-      "owner": "~Felix",
-      "priority": "Medium",
-      "blocker": "Reason not captured — needs logging",
-      "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"
-    },
-    {
-      "id": "SST-790",
-      "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)",
-      "owner": "Vlad, Pam",
-      "priority": "High",
-      "blocker": "Requires Replit console access to helium for data audit",
-      "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"
-    },
-    {
-      "id": "SST-799",
-      "title": "Confidence Line + Archetype Label Copy (Copy-Tested, SST-782/783-Grounded)",
-      "owner": "Sky, Pam",
-      "priority": "High",
-      "blocker": "Copy-test names on 3-5 founders before lock — landed on 2026-v1, in review",
-      "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"
-    },
-    {
-      "id": "SST-1281",
-      "title": "Proposed vs. Actual — Story 1: Data-audit spike (past-season overwrite exposure)",
-      "owner": "Felix",
-      "priority": "High",
-      "blocker": "Reason not captured — needs logging",
-      "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"
-    }
+    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy", "blocker": "copy-test 3 candidate names on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
+    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 entries (Helium)", "blocker": "requires Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
+    {"id": "SST-874 / SST-876 / SST-881", "title": "Reset-to-Auto / Season Grid cluster (control, non-determinism, stale pick)", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
+    {"id": "SST-1279", "title": "Past-season Apply's simulated replay dies on second buyback", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
+    {"id": "SST-1281", "title": "Proposed vs. Actual Story 1: data-audit spike", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"}
   ],
   "needsYou": [
-    "[SST-1338](https://app.notion.com/3ba29ce5833d81038cbbe0c44b13acfb) — Schema complete; needs helium migration (run SQL in Replit console) + confirmation that CI/integration DB applies this repo's migrations before 2026-v1 push, E2E verification, and team sign-offs can proceed.",
-    "[SST-1344](https://app.notion.com/3ba29ce5833d816090c3d79eea8d03c0) — Deb to complete tie-display wireframe spec + your approval on format convention (shared-rank vs 'T-8' style) before Felix can build.",
-    "[SST-799](https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6) — Copy-test archetype warmth names ('Play It Safe / Small Edge Off the Crowd / Zig While They Zag') on 3–5 founders before copy locks. Already landed 2026-v1, awaiting approval.",
-    "[SST-790](https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae) — Verify real beta testers' (king_17/bigroddy12) entry data via Replit helium console (data audit only, no writes)."
+    "Sign off SST-1244 (In Review) — compositeScore100 per-entry fix",
+    "Pick the winning name for SST-799's confidence-line copy test (Play It Safe / Small Edge Off the Crowd / Zig While They Zag) so it can lock",
+    "Grant Replit console access to helium so SST-790's king_17/bigroddy12 verification can proceed",
+    "Rule on the Reset-to-Auto/Season Grid cluster (SST-874/876/881) — three Blocked tickets with no reason logged"
   ],
   "doneYesterday": [
-    {
-      "id": "SST-1114",
-      "title": "TECH DEBT: direct pushes to 2026-v1 get zero automated e2e re-verification",
-      "url": "https://app.notion.com/3ac29ce5833d815c80dccfc5cfd45332"
-    },
-    {
-      "id": "SST-1329",
-      "title": "BUG: Game Plan stale-Proposed dot fires on nearly every week — Apply and the grid read compute entry plans under different pool scopes",
-      "url": "https://app.notion.com/3ba29ce5833d812490e8dd7550263179"
-    },
-    {
-      "id": "SST-1333",
-      "title": "BUG: switching or reloading the archetype makes the orange stale-Proposed dot fire again — proposed_picks records no archetype",
-      "url": "https://app.notion.com/3ba29ce5833d811ba23ce1a4c54dc1f1"
-    },
-    {
-      "id": "SST-1337",
-      "title": "TECH DEBT: direct pushes to 2026-v1 got zero unit/integration re-verification — two broken commits sat undetected for ~24h",
-      "url": "https://app.notion.com/3ba29ce5833d81f689eaf1673bb333d7"
-    },
-    {
-      "id": "SST-1340",
-      "title": "BUG: the auto-allocator's tie-break disagrees with the ranked-display tie-break — Apply writes a team the modal ranks 4 places lower",
-      "url": "https://app.notion.com/3ba29ce5833d810c8f26c89d3cff7dfc"
-    },
-    {
-      "id": "SST-1341",
-      "title": "Pick modal: explain teams the allocator skipped because another pool's entry claimed them under 'no duplicate picks across pools'",
-      "url": "https://app.notion.com/3ba29ce5833d81d6977ae6b72591ffc6"
-    },
-    {
-      "id": "SST-1344",
-      "title": "BUG: Ranked list assigns distinct sequential ranks (#8-#12) to teams tied on the same Rank Score",
-      "url": "https://app.notion.com/3ba29ce5833d816090c3d79eea8d03c0"
-    },
-    {
-      "id": "SST-1345",
-      "title": "Season Grid tool — archetype cards replace toggle buttons, inline cell stats, rank-score color coding",
-      "url": "https://app.notion.com/3ba29ce5833d813d888dd7631dc1381e"
-    }
+    {"id": "SST-1114", "title": "TECH DEBT: direct pushes to 2026-v1 get zero automated e2e re-verification", "url": "https://app.notion.com/3ac29ce5833d815c80dccfc5cfd45332"},
+    {"id": "SST-1329", "title": "BUG: Game Plan stale-Proposed dot fires on nearly every week", "url": "https://app.notion.com/3ba29ce5833d812490e8dd7550263179"},
+    {"id": "SST-1333", "title": "BUG: switching/reloading archetype re-fires stale-Proposed dot", "url": "https://app.notion.com/3ba29ce5833d811ba23ce1a4c54dc1f1"},
+    {"id": "SST-1337", "title": "TECH DEBT: direct pushes to 2026-v1 got zero unit/integration re-verification", "url": "https://app.notion.com/3ba29ce5833d81f689eaf1673bb333d7"},
+    {"id": "SST-1340", "title": "BUG: auto-allocator tie-break disagrees with ranked-display tie-break", "url": "https://app.notion.com/3ba29ce5833d810c8f26c89d3cff7dfc"},
+    {"id": "SST-1341", "title": "Pick modal: explain teams skipped due to no-duplicate-picks-across-pools", "url": "https://app.notion.com/3ba29ce5833d81d6977ae6b72591ffc6"},
+    {"id": "SST-1344", "title": "BUG: Ranked list assigns distinct ranks to tied Rank Scores", "url": "https://app.notion.com/3ba29ce5833d816090c3d79eea8d03c0"},
+    {"id": "SST-1345", "title": "Season Grid tool — archetype cards, inline cell stats, rank-score coloring", "url": "https://app.notion.com/3ba29ce5833d813d888dd7631dc1381e"}
   ]
 }
