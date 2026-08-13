@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4233dbd4-4c4f-4211-baa1-08c236605893
-  modified: 2026-08-06T05:30:17.278Z
+  modified: 2026-08-13T06:14:58.641Z
 ---
 
 **⚠️ "Notion needs auth" in the startup banner does NOT mean there is no Notion MCP.** Measured
@@ -143,6 +143,30 @@ not two posted comments.
 - Prefer clicking the actual send arrow icon (bottom-right of the composer, not a stale `ref`)
   over a bare `Return` when chaining several comments quickly — `Return` worked reliably in this
   same session for single-shot comments with no immediately-preceding send.
+
+**5. Interleaving an API `patch-page` call with browser typing on the SAME page can resync the
+live tab's editor and clobber the API write — landing subsequent keystrokes in the wrong field
+entirely.** Measured 2026-08-13 on SST-1338. The Notion comment endpoint was down (missing_version
+400), but `API-patch-page` on property fields worked fine, so property writes went through the API
+while comments went through Chrome — reasonable, except the SAME page was open in both places at
+once. Sequence: clicked what a stale screenshot showed as the comment box, typed a long
+grooming-verdict paragraph — it landed inside the **Acceptance Criteria** field instead (the page
+had re-rendered/scrolled between screenshot and click, likely triggered by an unrelated API-PATCH
+call moments earlier). Fixed via `API-patch-page` restoring the AC field's original text — but a
+follow-up `API-retrieve-a-page` showed the corrupted text **still there**, `last_edited_by` now
+the browser-session user, not the API caller. The live tab's stale in-editor buffer had re-synced
+outward and overwritten the API fix a second time, immediately after it landed.
+
+**How to apply:**
+- **Never hold the same Notion page open in a live Chrome tab while also API-patching it.**
+  The browser tab's collaborative-editor state is a source of truth Notion will push, not just
+  pull — an API write can be clobbered by a stale client buffer syncing moments later.
+- If you must fix via API after a browser mishap on the same page, **navigate the tab AWAY from
+  the page first** (e.g. to `https://app.notion.com/`), THEN issue the API patch, THEN verify with
+  a fresh `API-retrieve-a-page` GET — not a screenshot, which can itself show stale/cached content.
+- Take a screenshot **immediately before** any click+type sequence, not one carried over from
+  several tool calls earlier — page state (scroll position, which field is focused) can shift from
+  intervening actions of any kind, not just other browser calls.
 
 Related: [[feedback_survivorpulse_fetch_and_search_before_work]],
 [[feedback_survivorpulse_shared_worktree_staging_discipline]].
