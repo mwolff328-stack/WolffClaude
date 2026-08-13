@@ -119,6 +119,9 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/survivor_pool_comish](https://www.reddit.com/user/survivor_pool_comish/) — content creator / amplifier (runs a pool-preference poll in [r/NFLSurvivor](https://www.reddit.com/r/NFLSurvivor/), linked to their Substack "The Sports Commish") — seen: 2026-08-07
 - [X] [CircaSports](https://x.com/CircaSports) — competitor operator (runs Circa Survivor contests, "world's largest survivor pool" official account) — seen: 2026-08-08
 - [Reddit] [u/Sfear](https://www.reddit.com/user/Sfear/) — adjacent competitor / tool creator (built and is promoting [punt.fyi](http://punt.fyi/), an invite-only survivor-league tracking tool — awards cabinet, weekly roundup humor, one pick/week, no reusing teams; opening to a dozen or so pools this season) — seen: 2026-08-12
+- [X] [Ms_NYRangers](https://x.com/Ms_NYRangers) — ICP voice / in-market buyer ("Does anyone have any spots open for a survivor pool for NFL? I miss doing those" — actively pool-shopping) — seen: 2026-08-13
+- [X] [DoogieHauser01](https://x.com/DoogieHauser01) — ICP voice / commissioner (asked Sleeper support whether a survivor pool account can hold 2 entries per individual — direct multi-entry demand) — seen: 2026-08-13
+- [X] [PhotoBourbon](https://x.com/PhotoBourbon) — ICP voice (quit fantasy leagues for a pick'em/survivor pool, cites not having time to manage a weekly lineup — quotable time-pain point) — seen: 2026-08-13
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
