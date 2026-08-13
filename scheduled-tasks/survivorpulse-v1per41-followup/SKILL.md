@@ -49,4 +49,10 @@ If you've got 2 minutes to test it, would love your take.
 SurvivorPulse.com (free through Week 3)
 ---
 
-Success criteria: Message successfully sent and visible in chat thread with u/V1per41.
+Success criteria (either outcome is a successful run):
+- **Sent:** reply check confirmed no response in either account, and the message is sent and
+  visible in the chat thread with u/V1per41 from u/Cold_Issue_5093; or
+- **Correctly withheld:** a reply from u/V1per41 was found, the follow-up was NOT sent, and the
+  reply is reported.
+
+Sending without having completed the reply check is a FAILED run even if the message delivers.
