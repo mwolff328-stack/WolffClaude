@@ -16,6 +16,8 @@ Seasonality: NFL survivor-pool chatter is naturally near-zero during the off-sea
 Get today's date (run `date` via Bash/PowerShell if you need to confirm). Your window is the last 24 hours ending now.
 
 ## Step 2: Gather from each platform via Apify
+**Load the Apify MCP tools first.** They are deferred tools and will NOT be callable until loaded — before your first Apify call this run, call `ToolSearch` with `select:mcp__Apify__search-actors,mcp__Apify__fetch-actor-details,mcp__Apify__call-actor,mcp__Apify__get-actor-run,mcp__Apify__get-dataset-items` (one call, not one per tool). This is a fresh unattended session every run with no memory of prior loads, so this step is mandatory every single time — never assume the tools are already available. If any of these come back missing or the ToolSearch call itself errors, treat it as a hard blocker: say so plainly in the chat output and the push notification (Step 6.4) rather than silently skipping the platforms that need them.
+
 Use the Apify MCP tools (search-actors / fetch-actor-details / call-actor / get-dataset-items). For each actor, call fetch-actor-details first if you're unsure of current input field names — these schemas drift over time. When reading dataset items back, always pass a narrow `fields` list (e.g. title, postUrl/url, communityName/channelName, createdAt/date, upVotes/viewCount) — do NOT pull the full item including body/text/media fields, that blows past output limits. The URL field is mandatory in every `fields` list per the linking rule above — never omit it to save space.
 
 **Reddit** — actor `harshmaur/reddit-scraper`:
