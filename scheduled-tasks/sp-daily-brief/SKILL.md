@@ -30,7 +30,7 @@ PRODUCE EXACTLY FOUR SECTIONS
 3. 🎯 Needs You Today — synthesize the 1–4 items that genuinely need Michael today: things In Review awaiting his sign-off, Blocked items needing a founder ruling (collapse related ones into one ask), and any scope/sizing/decision points surfaced in recent Notes. Be specific and phrase each as an action he can take. Reference tickets as markdown links [SST-XXX](url).
 4. ✅ Done yesterday — rows where Status='Done' AND Date Completed is yesterday's Central date. List [SST-<id>](url) · title as markdown links. If none, write "— none yesterday".
 
-OUTPUT — three deliveries, all required
+OUTPUT — four deliveries, all required
 
 1. **Chat output**: a markdown brief headed "🗞️ SurvivorPulse Daily — <Weekday Mon DD>". Bullets only. If a section is empty, show it with "— none". Stop after section 4. This is your final message and IS the session's content — Michael will open this session directly to read it.
 
@@ -51,9 +51,16 @@ OUTPUT — three deliveries, all required
      "doneYesterday": [{"id": "SST-###", "title": "...", "url": "..."}]
    }
    ```
+   This file is a debug/audit artifact only now — nothing downstream reads it anymore (see history note below). Still write it; it's cheap and useful for spot-checking a run after the fact.
 
-4. **Trigger companion task**: Call RemoteTrigger to invoke `sp-daily-brief-to-notion` (the companion task that writes to Notion). This runs in a separate interactive session where Notion API auth is available. Pass no arguments — the companion task will read `latest-brief.json`.
+4. **Write to Notion directly** (folded in — no companion task): call this in-session, right after the chat output and push notification.
+   - Load the tool: `ToolSearch query: select:mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-create-pages`
+   - Database ID: `06c599bd-6f69-4f76-ae8a-b75f7dff07d5` (SurvivorPulse Daily Briefs)
+   - Title: the computed `notionTitle` (e.g., "SurvivorPulse Daily - Thursday, 8/7/26")
+   - Date property: the ISO date computed above
+   - Children blocks: the same four sections as heading_2 + bulleted_list_item blocks (🔨 In Progress, ⛔ Blocked — grouped by root cause, 🎯 Needs You Today, ✅ Done yesterday), same content as the chat output
+   - If the Notion write fails, do NOT crash the run — the chat output and push notification above have already delivered the brief. Note the failure in one line at the end of your chat output (e.g., "Notion write failed: <reason>") so Michael sees it when he reads the session.
 
-5. **Session rename**: The existing `sp-daily-brief-rename` companion task will retitle this session after you finish. You don't need to do anything about that yourself.
+5. **Session rename**: The existing `sp-daily-brief-rename` scheduled task retitles this session a few minutes after you finish. You don't need to do anything about that yourself.
 
-COMPANION TASK PATTERN: This follows the documented pattern in memory (`reference_scheduled_task_new_session_pattern.md`). The unattended scheduled task (this one) handles reliable operations (data queries, file writes), while companion tasks (sp-daily-brief-to-notion, sp-daily-brief-rename) run in interactive sessions where user auth is available.
+HISTORY NOTE: This task used to hand off the Notion write to a separate companion task (`sp-daily-brief-to-notion`, triggered via `RemoteTrigger`) per the pattern in `reference_scheduled_task_new_session_pattern.md`. That companion was never actually provisioned as a runnable trigger — it existed only as a SKILL.md file with no scheduled-task or RemoteTrigger registration behind it — so every Notion write silently failed to fire from 2026-07-28 (when the pattern was documented as "resolved") until 2026-08-13, when it was discovered and folded back into this task. Steps 1–2 (chat output, push notification) were never affected — Michael always got the brief, just never in Notion. If Notion write reliability becomes a problem again, re-provisioning a real companion task is an option, but don't recreate one without actually registering it this time.
