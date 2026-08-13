@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Notion OAuth Preference](feedback_notion_oauth_preference.md) — use OAuth connector `mcp__d77c6777...__notion-*`, not `mcp__notionApi__*`, for all Notion work
 - [SurvivorPulse X Account](project_survivorpulse_x_account.md) — @survivor_pulse live 2026-08-03; reply-first not broadcast; multi-pool positioning vs category's single-pool frame
 - [Scheduled Task → New-Session Pattern](reference_scheduled_task_new_session_pattern.md) — main task must call PushNotification itself; a rename companion retitles the session after
 - [Shared Query Key, Different Shape](project_survivorpulse_shared_query_key_shape.md) — a queryFn storing a projection under a cache key shared with other shapes goes blank until Refresh; narrow via module-scope `select`, never in queryFn
