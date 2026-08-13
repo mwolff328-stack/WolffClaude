@@ -61,3 +61,4 @@
 - [SurvivorPulse Verification Query Traps](feedback_survivorpulse_verification_query_traps.md) — schedule_type is "regular_season" NOT "regular"; run a grouped count with no filters before trusting a 0-row result
 - [SST-1344 Rank-Tie Display](project_survivorpulse_sst1344_rank_tie_display.md) — Done 2026-08-13, shipped `2b9179cf`. A background agent with the full sp-autonomous skill loaded kept autonomously continuing through later phases (more fix rounds, Done, worktree cleanup) unprompted — verify state directly, don't trust self-reports, for anything git/Status-mutating
 - [SE-74 Games & Spreads](project_se74_games_spreads.md) — epic complete 2026-06-16 on 2026-v1; only SE-74-11 (resizable columns) deferred to Backlog
+- [Substack Direct API Fix](project_survivorpulse_substack_direct_api.md) — sp-social-listening's Substack channel uses free public HTTP endpoints now, not Apify; don't reintroduce the actor
