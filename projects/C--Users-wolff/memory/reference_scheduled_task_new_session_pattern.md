@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 9ffba12d-1463-491f-9d20-31afdbff75d9
-  modified: 2026-07-28T13:45:20.038Z
+  modified: 2026-08-13T22:33:00.030Z
 ---
 
 When the founder wants a scheduled brief/job to land as "a new session in Claude Code" he can open (not just silent background execution), a scheduled task alone does NOT do this reliably:
@@ -23,3 +23,5 @@ Gap sizing: social listening (Apify, slow) uses ~18min/~17min gaps between its 3
 **Consequence for future asks like this:** don't just recreate a bare scheduled task — check `~/.claude/scheduled-tasks/` for an existing multi-task chain (e.g. grep for `-notify` / `-rename` siblings) before designing from scratch; a working precedent likely already exists. See [[project_survivorpulse_beta_scope_and_rhythm]] for the original (buggy, since-fixed) sp-daily-brief design, and [[reference_skills_two_stores]] for why this is CLI-local and invisible to the desktop Scheduled panel.
 
 **Status (2026-07-28): applied to all 4 SurvivorPulse rhythm tasks, fully resolved.** `sp-daily-brief`+`sp-daily-brief-rename` (weekdays 6:01/6:13am PT) and `sp-friday-sprint-review`+`sp-friday-sprint-review-rename` (Fri 1:05/1:17pm PT) all push-notify directly and get renamed to `SurvivorPulse Daily Brief - <date>` / `SurvivorPulse Sprint Review - <date>`. The founder's separate cloud/desktop-panel copies (created 2026-07-22) were deleted by him directly in the desktop Scheduled panel 2026-07-28 — I have no tool access to that store, could only tell him where to delete them, not do it myself. CLI-side is now the single source for both briefs, confirmed via list_scheduled_tasks (no duplicates).
+
+**Correction (2026-08-13): a 3rd-stage companion (main → RemoteTrigger → interactive Notion-write task) is a trap, not a proven extension of this pattern.** `sp-daily-brief` was extended on 2026-07-28 to hand its Notion write off to a third task, `sp-daily-brief-to-notion`, invoked via `RemoteTrigger` from inside the main task. The SKILL.md was written and the "fully resolved" status above was recorded, but the trigger was never actually provisioned — no scheduled-task entry, no RemoteTrigger routine existed for it (`RemoteTrigger action:list` returned zero routines). Every Notion write silently no-op'd for over two weeks; chat output and the phone push were unaffected, so nobody noticed until the RemoteTrigger call was actually attempted and errored. Fix applied 2026-08-13: folded the Notion write directly into the main task's own run (in-session, right after the push notification) instead of handing it to an unprovisioned companion. **Lesson: a companion task's SKILL.md file existing on disk is not evidence it's registered anywhere runnable — verify with `list_scheduled_tasks` (local cron) or `RemoteTrigger action:list` (cloud trigger) before trusting a multi-stage chain, especially one that fires from *inside* another task's prompt rather than its own cron.**
