@@ -148,6 +148,10 @@ CURRENT_SUBSTACK_PUBLICATIONS: [] # Substack + Medium added to this job 2026-08-
 CURRENT_MEDIUM_TAGS: ["https://medium.com/tag/nfl", "https://medium.com/tag/fantasy-football"] # Standing broad tag sweep, not promoted single-source candidates — Medium doesn't have an obvious per-source watch pattern like X handles/subreddits, so this list holds tag pages to check every run rather than promoted individual publications
 ```
 
+**FOLLOW QUEUE LEDGER (added 2026-08-14, founder-directed — permanent, append-only, never remove entries, never re-list an entry already here)**
+```
+```
+
 Each run, do this:
 1. From this run's Step 2/3 findings, identify any X account, subreddit, YouTube channel, Substack publication, or Medium tag/publication that's genuinely relevant (real content, not a coincidental keyword match) and NOT already in the standing watch lists above.
 2. For each one: if it's already in the Pending Candidates list, add today's date to its "seen" list (only once per calendar day, even if it appeared multiple times in today's run). If it's new, add it with today's date as its first "seen" entry, formatted as a Markdown link per the linking rule.
