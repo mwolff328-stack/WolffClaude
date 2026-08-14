@@ -128,6 +128,15 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [Ms_NYRangers](https://x.com/Ms_NYRangers) — ICP voice / in-market buyer ("Does anyone have any spots open for a survivor pool for NFL? I miss doing those" — actively pool-shopping) — seen: 2026-08-13
 - [X] [DoogieHauser01](https://x.com/DoogieHauser01) — ICP voice / commissioner (asked Sleeper support whether a survivor pool account can hold 2 entries per individual — direct multi-entry demand) — seen: 2026-08-13
 - [X] [PhotoBourbon](https://x.com/PhotoBourbon) — ICP voice (quit fantasy leagues for a pick'em/survivor pool, cites not having time to manage a weekly lineup — quotable time-pain point) — seen: 2026-08-13
+- [X] [DPettus24](https://x.com/DPettus24) — commissioner / ICP voice (running $20 entry, 5-max survivor pool on Sleeper; active recruiting) — seen: 2026-08-14
+- [X] [thefinalround11](https://x.com/thefinalround11) — commissioner / ICP voice (promoting $25 Splash Sports survivor pool) — seen: 2026-08-13
+- [X] [DolphinsTalk](https://x.com/DolphinsTalk) — content creator / operator (running Dolphins survivor pool with autographed prize incentives) — seen: 2026-08-14
+- [X] [RingerRundown](https://x.com/RingerRundown) — commissioner / ICP voice (announcing plans to run survivor pool this year) — seen: 2026-08-13
+- [X] [JPsWorld27](https://x.com/JPsWorld27) — operator / ICP voice (recruiting for $100 entry NFL survivor pool with tiered payouts: $5K/$1.5K/$500) — seen: 2026-08-13
+- [X] [beerandopinions](https://x.com/beerandopinions) — ICP voice (simplified portfolio to 1 league + 1 survivor pool for enjoyment) — seen: 2026-08-13
+- [Reddit] [u/Sage2050](https://www.reddit.com/user/Sage2050/) — ICP voice (asking r/SleeperApp about multi-entry survivor pool capability) — seen: 2026-08-13
+- [Reddit] [u/marky8338](https://www.reddit.com/user/marky8338/) — operator / ICP voice (recruiting on r/FantasyLeagues for $20/$150 survivor/pick'em pools on LeagueSafe) — seen: 2026-08-13
+- [Reddit] [u/Wide_Somewhere8241](https://www.reddit.com/user/Wide_Somewhere8241/) — adjacent competitor / tool creator (solo dev released [NFL Survivor Optimizer Tool](https://nflsurvivor.streamlit.app/) on Streamlit; week-by-week path optimization + ESPN pick % tracking) — seen: 2026-08-14
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
