@@ -162,6 +162,25 @@ Each run, do this:
 
 If nothing new surfaced this run, still check whether any existing pending candidate ages out — there's no automatic expiry, so just leave stale ones pending indefinitely unless Michael says to clear them.
 
+## Step 5.5: Manual Follow Queue (added 2026-08-14, founder-directed)
+
+**Why this exists and why it's manual, not automated:** Michael wants both of his accounts (personal, and the SurvivorPulse business account) to follow newly-identified prospects and newly-promoted source accounts on Reddit, Discord, and X specifically. As of 2026-08-14, **no follow automation exists on any platform** this job touches:
+- **X**: X removed follow/like from all self-serve API tiers in April 2026; automated follow now requires an Enterprise API contract ($42K+/month). Not viable — flag manually instead.
+- **Reddit**: the follow mechanism itself (subscribing to a user's `u_username` profile-subreddit) is a plausible but unconfirmed technique, and Reddit now requires an approved "Responsible Builder Policy" application for any new API app. Pending Michael's go-ahead to live-test the mechanism and apply. Flag manually until then.
+- **YouTube**: technically feasible via the official Data API (`subscriptions.insert`), but needs a Google Cloud OAuth app + consent grant from both of Michael's accounts, not yet set up. Flag manually until then.
+- **Discord**: out of scope for listening entirely per this file's Objective — do not flag anything here for Discord. (Michael's direction, once Discord listening exists: a bot account joining a prospect's server and following their announcement channel, never automating a personal account to "friend" someone — that's a bannable Discord ToS violation.)
+- **Substack / Medium**: no official follow API exists for either platform (Substack has none; Medium's API has been unsupported since 2023). These will likely stay manual-flag permanently, not just until credentials land.
+
+**What to do each run:** after Step 5's promotion logic runs, build today's Follow Queue from two sources:
+1. Any candidate that was **newly promoted** to a Standing Watch List this run (any category — competitor, ICP voice, commissioner, content creator, affiliate; "newly-promoted source account" per Michael's direction covers all of these, not just prospects).
+2. Any person **newly synced to the Prospect Tracker** this run per Step 6.2 (ICP voice or commissioner).
+
+For each one, check the FOLLOW QUEUE LEDGER above. If it's already listed there, skip it — never re-flag the same account twice. If it's new, add one line to the ledger (`[Platform] [Name](link) — flagged <today's date>`) and include it in today's report's Follow Queue section, grouped by platform, each line reading like: `[Name](link) — <why they qualified> — follow on both: Michael's personal account + the SurvivorPulse business account`.
+
+If the queue is empty this run (normal on most days), write "No new follow candidates today" rather than omitting the section.
+
+This step never takes any follow/friend/subscribe action itself — see Constraints. It only surfaces who to follow so Michael (or whoever has account access) can do it by hand.
+
 ## Step 6: Deliver
 
 **Notion write method (updated 2026-08-12):** use the OAuth Notion connector tools (`mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-*` — `notion-fetch`, `notion-create-pages`, `notion-search`, `notion-update-page`) as the PRIMARY and only intended write method for this job. This is an account-level OAuth connector (same category as the Gmail/Calendar/Drive connectors), not a live browser-automation session — it should work the same whether this run is interactive or on the unattended 5am cron.
