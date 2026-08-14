@@ -191,7 +191,7 @@ The custom `mcp__notionApi` server (a separate npx-based stdio MCP server readin
 
    Use `mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-create-pages` with `parent: {"type": "data_source_id", "data_source_id": "<id above>"}`.
 
-   Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date (`YYYY-MM-DD`), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube", "Substack", "Medium"] (only platforms that returned data — if "Substack" or "Medium" aren't yet options on this select property, add them via the page write, Notion will create the option). Page content = the full summary, ending with Recommended Actions (Step 4) then Suggested New Sources (Step 5, including any promotions). Notion supports Markdown links (`[text](url)`) natively — use them throughout, don't paste bare URLs.
+   Properties: `Name` = "Social Listening — <YYYY-MM-DD>", `date:Date:start` = today's date (`YYYY-MM-DD`), `Flag` = your classification, `Platforms` = ["Reddit", "X", "YouTube", "Substack", "Medium"] (only platforms that returned data — if "Substack" or "Medium" aren't yet options on this select property, add them via the page write, Notion will create the option). Page content = the full summary, ending with Recommended Actions (Step 4), then Suggested New Sources (Step 5, including any promotions), then the Follow Queue (Step 5.5). Notion supports Markdown links (`[text](url)`) natively — use them throughout, don't paste bare URLs.
 
    **Never skip this step silently.** If the write fails, say so plainly in the chat output and the push notification (Step 6.3) — a missing Notion entry must always be visible, never silent.
 
