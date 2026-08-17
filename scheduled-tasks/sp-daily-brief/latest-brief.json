@@ -16,7 +16,7 @@
     {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: data-audit spike (past-season overwrite exposure)", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"}
   ],
   "needsYou": [
-    "SST-1342 tie-break fix is commit-only (96966867, not pushed) per your ask — confirm push to 2026-v1; note 5 of 95 golden-season Back Tester numbers moved (2021-2023) as a side effect, so any backtesting content drafted before 2026-08-16 needs re-derivation before publishing",
+    "[CORRECTED 2026-08-17] SST-1342 is already pushed and published (commit b373bcff on origin/2026-v1) — the earlier 'commit-only, not pushed' note was stale. Remaining: 5 of 95 golden-season Back Tester numbers moved (2021-2023) as a side effect, so any backtesting content drafted before 2026-08-16 needs re-derivation before publishing",
     "SST-799: pick a couple minutes to copy-test archetype label candidates ('Play It Safe' / 'Small Edge Off the Crowd' / 'Zig While They Zag') with 3-5 founders so Sky/Pam can lock the copy",
     "SST-790: grant Vlad Replit console access to helium — it's blocking verification of king_17/bigroddy12 entry data, which in turn blocks the Cross-Pool Entries Read Endpoint",
     "Reset-to-Auto now has 3 blocked tickets (SST-874, SST-876, SST-881) with no blocker reason logged — worth a quick priority/scope call for Felix since it's becoming a cluster"
