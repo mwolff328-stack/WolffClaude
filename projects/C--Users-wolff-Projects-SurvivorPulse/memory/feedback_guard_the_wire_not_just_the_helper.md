@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 449fbd91-3ff9-4db3-9f9b-2f5cba2d44a7
-  modified: 2026-08-03T04:29:18.087Z
+  modified: 2026-08-17T05:18:44.311Z
 ---
 
 Testing the FUNCTION and testing the WIRE that reaches it are different jobs. A
@@ -119,6 +119,18 @@ reading as solved — worth saying out loud on SST-1211, which is the standing t
    byte-identical — source guard 24/24 green, behaviour guard 3 of 4 red. Keep both
    (source fails faster and more legibly), but never let the source one carry the load
    alone.
+   **Second blind spot, measured on SST-1342 (2026-08-16): a source guard cannot see a
+   WIRE CUT either, when the call text lives inside the helper.** The SST-1340 AC-8 guard
+   asserts `client/src/backtester/lib/assignIndependentPicks.ts` imports
+   `@shared/strategyEngine/tieBreak` and contains `sortTiedTeamIds(`. Severing all five
+   call sites of the local `resolveTiedWinner` wrapper — leaving the wrapper defined,
+   imported and calling `sortTiedTeamIds` inside its own body — kept BOTH source
+   assertions green while **10 behavioural tests went red**. The guard proved the text
+   exists; nothing proved anything calls it. Generalises: whenever the shared rule is
+   reached through a local wrapper, the source guard's target is the WRAPPER's body, not
+   the wire, so it degrades from weak evidence to none. Full revert of the same file
+   (the coarser mutation) does fail it — so the guard only looks load-bearing until you
+   mutate at the right granularity.
 4. **If you do write a source guard, make it POSITIVE.** Assert the correct wire is
    PRESENT (`toContain('…, archetype)')`) — that fails loudly on severing *and* on
    renaming. `not.toContain('…, null)')` goes fail-open the moment anything is renamed.
