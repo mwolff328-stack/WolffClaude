@@ -1,7 +1,7 @@
 # Memory Index
 
 - [SurvivorPulse Overnight Cleanup 2026-08-14](project_survivorpulse_overnight_cleanup_2026-08-14.md) — sp-autonomous solo run on 16-ticket Kanban list: 8 Done, 1 Cancelled, 7 deferred with next-step comments; extraction-proves-nothing defect class recurs in clusters; FAILED_STAGE gate label is a static env var, not a live signal
-- [Notion OAuth Preference](feedback_notion_oauth_preference.md) — use OAuth connector `mcp__d77c6777...__notion-*`, not `mcp__notionApi__*`, for all Notion work
+- [Notion OAuth Preference](feedback_notion_oauth_preference.md) — use OAuth connector `mcp__d77c6777...__notion-*`, not `mcp__notionApi__*`; the latter's create-comment endpoint 400s with missing_version regardless of payload
 - [SurvivorPulse X Account](project_survivorpulse_x_account.md) — @survivor_pulse live 2026-08-03; reply-first not broadcast; multi-pool positioning vs category's single-pool frame
 - [Scheduled Task → New-Session Pattern](reference_scheduled_task_new_session_pattern.md) — main task must call PushNotification itself; a rename companion retitles the session after
 - [Shared Query Key, Different Shape](project_survivorpulse_shared_query_key_shape.md) — a queryFn storing a projection under a cache key shared with other shapes goes blank until Refresh; narrow via module-scope `select`, never in queryFn
