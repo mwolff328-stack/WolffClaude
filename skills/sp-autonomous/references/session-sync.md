@@ -189,15 +189,29 @@ git push origin HEAD:refs/heads/2026-v1
 Pushing from the worktree straight to `2026-v1` means you never check out or disturb the main
 worktree, where another session may be working. Because you rebased, it is a fast-forward.
 
-> ⚠️ **This push triggers no CI e2e run at all** (SST-1114). `playwright-ci.yml` only fires on
-> `pull_request` into `2026-v1` or `push` to `ci/e2e-ephemeral` — a direct push to `2026-v1` matches
-> neither. The commit gets zero automated e2e coverage until the next manual `pre-publish.yml`
-> dispatch, which is late and batched across every change since the last publish. Concretely: this
-> is how SST-1108 (a mobile wizard bug, pre-existing on `2026-v1`) sat undetected until an unrelated
-> PR happened to touch its test shard — a PR-based landing gets *some* signal this push does not.
-> Until SST-1114 lands, **Phase 3's local Playwright run against the deployed dev app is the only
-> e2e coverage this commit will ever get before a real publish.** Do not skip it, do not narrow it
-> to only the story's own new flows, and do not treat a green typecheck/unit run as a substitute.
+> ✅ **SST-1114 landed 2026-08-12** (commit c42d1d1e) and fixed exactly the gap this warning used
+> to describe — a direct push to `2026-v1` now auto-triggers **both** `playwright-ci.yml` and
+> `pre-publish.yml` (`push: branches: [2026-v1]` on each), independently, within ~5 minutes, no PR
+> needed. This is how SST-1108 (a mobile wizard bug that sat undetected until an unrelated PR
+> happened to touch its test shard) is no longer possible for a direct-push landing.
+>
+> Two things to actually do with this, not just know:
+> 1. **Don't claim "zero e2e coverage from this push" in a build summary or SHIP report anymore.**
+>    Verify instead: `gh run list --workflow=playwright-ci.yml --branch=2026-v1 --limit=5` and
+>    confirm a run against your exact SHA. If it's still `in_progress`, wait for it before Done —
+>    don't assume it'll be fine.
+> 2. **Before dispatching `pre-publish.yml` or `playwright-ci.yml` yourself, check for an
+>    already-running auto-triggered run against your commit first.** Manually dispatching on top
+>    of one wastes a full CI run for zero new signal — observed directly: two `pre-publish.yml`
+>    runs 4 seconds apart against the same SHA, one auto-triggered by the push, one a redundant
+>    manual `gh workflow run`.
+>
+> `playwright-ci.yml` runs against an **ephemeral GitHub-hosted app + isolated DB**, not the real
+> deployed Replit app — it's real CI signal, but a different target than Phase 3's local
+> `BASE_URL=<deployed-dev-url> npx playwright test` run. **That local run is still required for UI
+> stories**, not superseded: it's the only signal against the actual dev-app environment (real
+> Replit deployment, real auth cookies, real dev-app state). Do not skip it, do not narrow it to
+> only the story's own new flows, and do not treat a green typecheck/unit run as a substitute.
 
 **Record your own commit range the moment the push succeeds** — you need it for every "what did I
 change" claim from here on:
