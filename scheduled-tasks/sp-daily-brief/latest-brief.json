@@ -1,112 +1,33 @@
 {
-  "date": "2026-08-14",
-  "weekday": "Thursday",
-  "notionTitle": "SurvivorPulse Daily - Thursday, 8/14/26",
+  "date": "2026-08-17",
+  "weekday": "Monday",
+  "notionTitle": "SurvivorPulse Daily - Monday, 8/17/26",
   "inProgress": [
-    {
-      "id": "SST-601",
-      "title": "Step 2 — Back Tester Integration",
-      "owner": "Felix",
-      "tag": "[POST-BETA]",
-      "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"
-    },
-    {
-      "id": "SST-1190",
-      "title": "TECH DEBT: getTeamsUsedByUser / getTeamsUsedByEntry shape obsolescence",
-      "owner": "Felix, Vlad",
-      "tag": null,
-      "url": "https://app.notion.com/3af29ce5833d81c1909cd13876e34f68"
-    }
+    {"id": "SST-601", "title": "Step 2 — Back Tester Integration [POST-BETA]", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-1342", "title": "TECH DEBT: client Back Tester engine tie-break diverges from server (In Review)", "owner": "~Felix", "url": "https://app.notion.com/3ba29ce5833d819ca740f9345eaeee2c"}
   ],
   "blocked": [
-    {
-      "id": "SST-790",
-      "title": "Pre-Build Verification: king_17/bigroddy12 Entries (Helium)",
-      "blocker": "Needs helium data audit (beta tester accounts)",
-      "owner": "Vlad, Pam",
-      "priority": "High",
-      "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"
-    },
-    {
-      "id": "SST-874",
-      "title": "Game Plan Reset-to-Auto control",
-      "blocker": "Determinism ruling needed (SST-876, SST-881 related)",
-      "owner": "Felix",
-      "priority": "High",
-      "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"
-    },
-    {
-      "id": "SST-881",
-      "title": "Season Grid shows stale auto pick after Reset-to-Auto",
-      "blocker": "No self-healing affordance; SST-874/876 cluster",
-      "owner": "Felix",
-      "priority": "High",
-      "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"
-    },
-    {
-      "id": "SST-799",
-      "title": "Confidence Line + Archetype Label Copy (Copy-Tested)",
-      "blocker": "Copy-test pending on 3 archetype names (In Review)",
-      "owner": "Sky, Pam",
-      "priority": "High",
-      "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"
-    },
-    {
-      "id": "SST-1281",
-      "title": "Proposed vs. Actual Story 1: Data-Audit Spike",
-      "blocker": "Past-season overwrite exposure assessment",
-      "owner": "Felix",
-      "priority": "High",
-      "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"
-    },
-    {
-      "id": "SST-876",
-      "title": "BUG: Reset auto-pick recommendation is non-deterministic",
-      "blocker": "Investigation blocker; no root cause yet",
-      "owner": "Felix",
-      "priority": "Medium",
-      "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"
-    },
-    {
-      "id": "SST-1279",
-      "title": "BUG: Past-season Apply dies silently on second buyback",
-      "blocker": "Pool buyback constraint handling",
-      "owner": "~Felix",
-      "priority": "Medium",
-      "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"
-    }
+    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy [BETA]", "blocker": "candidate archetype names need copy-testing on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
+    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 entries (Helium) [BETA]", "blocker": "requires Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
+    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
+    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation non-deterministic", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
+    {"id": "SST-881", "title": "BUG: Season Grid stale auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
+    {"id": "SST-1279", "title": "BUG: Past-season Apply's simulated replay dies silently on second buyback", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
+    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: data-audit spike (past-season overwrite exposure)", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"}
   ],
   "needsYou": [
-    "[SST-790](https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae) — Helium verification: audit king_17/bigroddy12 entry data (beta blocker, Vlad+Pam)",
-    "[SST-799](https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6) — Copy-test 3 archetype names ('Play It Safe / Small Edge Off the Crowd / Zig While They Zag') on 3–5 founders; currently In Review, names marked test-pending",
-    "[SST-874](https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233) + [SST-881](https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9) — Reset-to-Auto determinism ruling: decide whether the control must self-heal or merely restore to grid state (3 related blockers: SST-876 non-determinism, SST-881 stale grid, SST-874 control itself)",
-    "[SST-1281](https://app.notion.com/3b329ce5833d8157b53efee153528f8d) — Data-audit spike: assess past-season Apply overwrite exposure before multi-week Apply ships"
+    "SST-1342 tie-break fix is commit-only (96966867, not pushed) per your ask — confirm push to 2026-v1; note 5 of 95 golden-season Back Tester numbers moved (2021-2023) as a side effect, so any backtesting content drafted before 2026-08-16 needs re-derivation before publishing",
+    "SST-799: pick a couple minutes to copy-test archetype label candidates ('Play It Safe' / 'Small Edge Off the Crowd' / 'Zig While They Zag') with 3-5 founders so Sky/Pam can lock the copy",
+    "SST-790: grant Vlad Replit console access to helium — it's blocking verification of king_17/bigroddy12 entry data, which in turn blocks the Cross-Pool Entries Read Endpoint",
+    "Reset-to-Auto now has 3 blocked tickets (SST-874, SST-876, SST-881) with no blocker reason logged — worth a quick priority/scope call for Felix since it's becoming a cluster"
   ],
   "doneYesterday": [
-    {
-      "id": "SST-1338",
-      "title": "Record writing archetype on proposed_picks rows (shipped 2026-v1, pre-publish gates ✓)",
-      "url": "https://app.notion.com/3ba29ce5833d81038cbbe0c44b13acfb"
-    },
-    {
-      "id": "SST-1347",
-      "title": "Pick Card Cleanup: toggle parity + de-clutter",
-      "url": "https://app.notion.com/3bb29ce5833d81b5ae3dc79bde26d623"
-    },
-    {
-      "id": "SST-1348",
-      "title": "BUG: Pick overlap icon on no-pick cells",
-      "url": "https://app.notion.com/3bb29ce5833d818aa5a8c48d151e0c53"
-    },
-    {
-      "id": "SST-1349",
-      "title": "Pick Card Cleanup Round 2: track/pool defaults + Compare parity",
-      "url": "https://app.notion.com/3bb29ce5833d8110946dc064699e525d"
-    },
-    {
-      "id": "SST-1350",
-      "title": "Add tooltips for truncated text sitewide",
-      "url": "https://app.notion.com/3bb29ce5833d812b9d85f8bc4d9973f4"
-    }
+    {"id": "SST-1363", "title": "BUG: Picks silently excluded for playoff weeks -> corrupted isAlive/currentWeekPick on Dashboard for combined pools", "url": "https://app.notion.com/3be29ce5833d81908032eb7383ec71f5"},
+    {"id": "SST-1364", "title": "BUG: Pick-save endpoints 500 when submitting playoff-week picks/stats for combined pools", "url": "https://app.notion.com/3be29ce5833d8188a4fbfcda557f3e8c"},
+    {"id": "SST-1365", "title": "BUG: Pool Dynamics endpoints silently return empty data or 404 for playoff weeks in combined pools", "url": "https://app.notion.com/3be29ce5833d810181b4fbba1ae07803"},
+    {"id": "SST-1366", "title": "BUG: Entry pool-dynamics DTO builder mis-routes playoff periods for combined pools", "url": "https://app.notion.com/3be29ce5833d81deb843cb6bc61a858d"},
+    {"id": "SST-1367", "title": "BUG: /portfolio/week never rejects or correctly resolves playoff weeks for combined pools", "url": "https://app.notion.com/3be29ce5833d814dad3ef9510b104d28"},
+    {"id": "SST-1368", "title": "BUG: /playoff-teams unconditionally 400s for combined pools, blocking the playoff team picker", "url": "https://app.notion.com/3be29ce5833d819294cff2896413c1d2"},
+    {"id": "SST-1369", "title": "BUG: /historical-data-status silently skips playoff periods for combined pools (+ dead scheduleTypeParam)", "url": "https://app.notion.com/3be29ce5833d81d383b1d07d7ceb4a7d"}
   ]
 }
