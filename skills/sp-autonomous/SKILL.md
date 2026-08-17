@@ -68,6 +68,20 @@ env + `scripts/`), then work the routes in order:
    work by hand. Use that surface specifically: the in-app browser (`mcp__Claude_Browser__*`) opens
    a clean profile and lands on a login wall, and entering credentials is prohibited — a login wall
    there is not a Notion outage, it's the wrong browser.
+
+   ⚠️ **Stale coordinates + a live collaborative editor is a real trap, not a theoretical one**
+   (SST-1338, 2026-08-13): an API-PATCH call between screenshotting and clicking can cause Notion's
+   client to resync and shift what's under the coordinate you captured — a click meant for the
+   Comments box landed inside an Acceptance Criteria field instead, silently appending a
+   grooming-verdict paragraph onto it. Guard against this every time you mix browser and API access
+   on the same page:
+   - **Take a fresh screenshot immediately before any click+type sequence** into a Notion page —
+     never reuse one from before an intervening API call.
+   - **After typing into what should be the Comments box, screenshot again immediately** to confirm
+     the text landed there, not in a property field, before moving on.
+   - **If you must follow a browser edit with an API-side fix (or the reverse) on the same page,
+     navigate the tab away first.** A live tab still holding an in-progress edit can resync and
+     silently overwrite the other side's fix moments later.
 2. **Record the ledger claim regardless** — it's local, and it's the half that prevents collisions.
 3. **Only if the browser route is also unavailable** (Chrome not connected, unattended run) does the
    outage become a defer trigger, and then for **Phase 1 ticket creation and Phase 4 Done
