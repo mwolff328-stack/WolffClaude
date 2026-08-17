@@ -227,10 +227,24 @@ Cloudflare-blocked from `.replit.dev`):
 BASE_URL=<deployed-dev-url> npx playwright test
 ```
 
-**This is load-bearing, not a formality.** Because Phase 2's push goes straight to `2026-v1` with
-no PR, `playwright-ci.yml` never triggers for it (SST-1114) — this local run is the only e2e
-coverage the commit gets before a real publish. Run the full suite, not just the story's own new
-flows; a targeted run cannot catch a regression this story introduced elsewhere (see SST-1108).
+**This is still load-bearing, not a formality — but it is no longer the only signal.**
+SST-1114 (landed 2026-08-12, commit c42d1d1e) added a `push: branches: [2026-v1]` trigger to
+**both** `playwright-ci.yml` and `pre-publish.yml`, so a direct push to `2026-v1` (Phase 2's
+default landing path, no PR) now auto-triggers a real CI Playwright run within ~5 minutes,
+against an ephemeral GitHub-hosted app + isolated DB — not the deployed Replit app, and a
+different target than the local run above. Two consequences:
+- **Don't report "zero CI e2e coverage" for a direct push anymore** — that was true before
+  SST-1114 and is a stale claim now. Check `gh run list --workflow=playwright-ci.yml
+  --branch=2026-v1` for a run against your exact commit before assuming there is none.
+- **Check for that auto-triggered run before manually dispatching your own** — `gh workflow run
+  playwright-ci.yml`/`pre-publish.yml` on top of an already-running auto-triggered one wastes a
+  full CI run for no new signal (observed directly: two pre-publish runs 4 seconds apart against
+  the same SHA, one auto-triggered, one redundant manual dispatch).
+The local run against the real deployed dev app is still required for UI stories — it's a
+genuinely different environment (real Replit deployment, real auth cookies, real dev-app state)
+that the ephemeral CI target can't stand in for. Run the full suite there too, not just the
+story's own new flows; a targeted run cannot catch a regression this story introduced elsewhere
+(see SST-1108).
 
 **Before you run any of this, read the `sp-live-verify` skill — don't rediscover its traps by
 hand.** Two are structural collisions with this skill's own design, not generic advice:
