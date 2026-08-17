@@ -72,6 +72,7 @@
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) — a column not applied to helium 502s the entire dev app.
 - [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — the first is commented out; Playwright loads `.env.test`.
 - [CA1 is self-contained](project_survivorpulse_ca1_is_self_contained.md) / [snapshot CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
+- [Back Tester goldens re-baselined by SST-1342](project_survivorpulse_backtester_goldens_rebaselined_sst1342.md) — upstream regen reintroduces the bug.
 
 ## Verifying UI for real
 
