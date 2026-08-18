@@ -38,15 +38,13 @@ If this session touched a git repository (main worktree or one entered via `Ente
 - A plan or decision that was proposed but not confirmed
 - Anything flagged as a blocker earlier in the session that was never marked resolved
 
-### Step 4: Render the verdict
+### Step 4: Render the verdict and act on it
 
 **If everything in Steps 1–3 is clear:**
 
 > ✅ Safe to archive. [one-line summary of what this session accomplished]
->
-> Want me to archive it now?
 
-Only call `archive_session` (with `session_id: "self"`) after the user explicitly says yes — never speculatively, per that tool's own contract.
+Immediately call `archive_session` with `session_id: "self"` and a `reason` summarizing the session — do not pause here to ask "want me to archive it now?" first. `archive_session` itself prompts the user for confirmation before it does anything, so that prompt is the approval step; adding a second one in chat is redundant. This still respects the tool's "never speculatively" rule because the user invoking `/archive` on this session is the explicit trigger — it's not a background or unrelated context calling it unprompted.
 
 **If anything is outstanding:**
 
