@@ -58,6 +58,7 @@ Each item must be concrete and actionable — "some things are unresolved" is no
 
 ## Notes
 
-- This command reports; it never archives without an explicit yes after showing the verdict.
+- This command calls `archive_session` itself the moment the verdict is safe — approval happens via that tool's own confirmation prompt, not a separate chat exchange.
+- If the verdict is unsafe, still don't call `archive_session` — resolve the checklist first (or ask the user to), then re-run `/archive`.
 - A session with zero git activity and zero background work (e.g. pure conversation, research, or a fully-committed-and-pushed session) is trivially safe — say so plainly, don't manufacture caveats.
 - If the user regularly hits "not safe" for the same reason (e.g. always forgetting to push), that's a signal to fix the underlying habit or workflow, not to keep re-running this check as a substitute.
