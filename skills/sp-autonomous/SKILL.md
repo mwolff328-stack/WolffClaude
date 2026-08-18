@@ -82,6 +82,16 @@ env + `scripts/`), then work the routes in order:
    - **If you must follow a browser edit with an API-side fix (or the reverse) on the same page,
      navigate the tab away first.** A live tab still holding an in-progress edit can resync and
      silently overwrite the other side's fix moments later.
+   - **Never type a multi-paragraph comment with embedded blank lines into a Notion comment box
+     via computer-use.** A blank line in typed text is a literal Enter keypress, and Enter
+     *submits* the comment box rather than inserting a line break — a long comment with paragraph
+     breaks silently fragments into several partial comments, one per Enter. Worse, the character
+     typed immediately after each auto-submit can be dropped as the box re-renders, so the next
+     fragment starts mid-word (observed twice: "Evidence:" landed as "vidence:", "This supersedes"
+     landed as "his supersedes"). Write the comment as a single newline-free paragraph before
+     typing it — confirm via the same fresh-screenshot-after-typing check above that it landed as
+     one intact draft, then send. If it still fragments, delete every partial comment via its
+     `...` menu → Delete before reposting; don't leave broken fragments alongside a fix.
 2. **Record the ledger claim regardless** — it's local, and it's the half that prevents collisions.
 3. **Only if the browser route is also unavailable** (Chrome not connected, unattended run) does the
    outage become a defer trigger, and then for **Phase 1 ticket creation and Phase 4 Done
