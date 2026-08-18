@@ -1,12 +1,12 @@
 ---
-description: Evaluate whether the current session is safe to archive. If it's not, list exactly what needs to happen first.
+description: Evaluate whether the current session is safe to archive, then archive it automatically once approved. If it's not safe, list exactly what needs to happen first.
 ---
 
 # Archive Readiness Check
 
 Archiving stops this session's process and, by default, tears down its worktree. That's fine when the work is actually settled — but if it happens while something is still in flight, the in-flight thing is what gets lost (uncommitted diffs in a worktree, a background job with no one watching it, an unanswered question the user needed to weigh in on).
 
-This command evaluates readiness and reports a verdict. It does not archive anything on its own — that always still goes through `archive_session`, which prompts for confirmation itself.
+This command evaluates readiness, then hands off straight to `archive_session` when it's safe — `archive_session` carries its own confirmation prompt, so that single approval is the only gate; this skill does not additionally stop and wait for a separate "yes" in chat before calling it.
 
 ## When to Use
 
