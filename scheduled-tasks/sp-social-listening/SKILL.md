@@ -135,7 +135,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [JPsWorld27](https://x.com/JPsWorld27) — operator / ICP voice (recruiting for $100 entry NFL survivor pool with tiered payouts: $5K/$1.5K/$500) — seen: 2026-08-13
 - [X] [beerandopinions](https://x.com/beerandopinions) — ICP voice (simplified portfolio to 1 league + 1 survivor pool for enjoyment) — seen: 2026-08-13
 - [Reddit] [u/Sage2050](https://www.reddit.com/user/Sage2050/) — ICP voice (asking r/SleeperApp about multi-entry survivor pool capability) — seen: 2026-08-13
-- [Reddit] [u/marky8338](https://www.reddit.com/user/marky8338/) — operator / ICP voice (recruiting on r/FantasyLeagues for $20/$150 survivor/pick'em pools on LeagueSafe) — seen: 2026-08-13
+- [Reddit] [u/marky8338](https://www.reddit.com/user/marky8338/) — operator / ICP voice (recruiting on r/FantasyLeagues for $20/$150 survivor/pick'em pools on LeagueSafe; also posted a new $30 recruiting thread in [r/findaleague](https://www.reddit.com/r/findaleague/comments/1vrp26v/big_prize_30_nfl_survivor_pool_leaguesafe_over_33/)) — seen: 2026-08-13, 2026-08-19
 - [Reddit] [u/Wide_Somewhere8241](https://www.reddit.com/user/Wide_Somewhere8241/) — adjacent competitor / tool creator (solo dev released [NFL Survivor Optimizer Tool](https://nflsurvivor.streamlit.app/) on Streamlit; week-by-week path optimization + ESPN pick % tracking) — seen: 2026-08-14
 - [Substack] [The Eliminator](https://eliminator.substack.com) — NEW. Kevin Ruger's dedicated NFL Survivor Pool publication. *"The Premier NFL Survivor Pool: Where Dreams are Made and Crushed."* Founder-voice content creator. Seen: 2026-08-16
 ```
