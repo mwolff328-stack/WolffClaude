@@ -165,6 +165,7 @@ CURRENT_MEDIUM_TAGS: ["https://medium.com/tag/nfl", "https://medium.com/tag/fant
 
 **FOLLOW QUEUE LEDGER (added 2026-08-14, founder-directed — permanent, append-only, never remove entries, never re-list an entry already here)**
 ```
+- [X] [FightOnSpooky](https://x.com/FightOnSpooky) — flagged 2026-08-19
 ```
 
 Each run, do this:
