@@ -43,6 +43,7 @@
 - [SurvivorPulse Smoke Over Mocks](feedback_survivorpulse_smoke_over_mocks.md) — mocked tests pass while the feature is broken; require a live dev smoke before Done
 - [SurvivorPulse Unified Strategy Engine](project_survivorpulse_unified_strategy_engine.md) — founder 2026-06-29: Back Tester + Set Strategy share ONE optimization engine; full grid search is a differentiator
 - [SurvivorPulse Local Verification](project_survivorpulse_local_verification.md) — dev Windows can't run full vitest (OOM, false positives); use tsc+build+targeted batches instead
+- [switch_browser Unblocks Live Verification](reference_switch_browser_unblocks_live_verify.md) — multiple connected Chromes is NOT a blocker: `switch_browser` lets the human pick inside Chrome, no AskUserQuestion needed; 3 tickets wrongly shipped with live tests open. Also: local DB has no founder user row, fresh worktrees have no `.env`, rebase kills your noted SHAs
 - [Writing Style](feedback_writing_style.md) — no em-dashes ever; write like a 50-year-old male talking; short, conversational
 - [Communication Style](feedback_communication_style.md) — plain language, no jargon, concise; state what was done/found or what decision is needed
 - [Verify Checkout Freshness](feedback_verify_checkout_freshness.md) — before "code-verified", confirm the checkout isn't stale vs `origin/<branch>`
