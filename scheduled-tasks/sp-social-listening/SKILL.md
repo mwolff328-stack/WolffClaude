@@ -198,6 +198,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 **FOLLOW QUEUE LEDGER (added 2026-08-14, founder-directed — permanent, append-only, never remove entries, never re-list an entry already here)**
 ```
 - [X] [FightOnSpooky](https://x.com/FightOnSpooky) — flagged 2026-08-19
+- [Reddit] [u/DraftFunds](https://www.reddit.com/user/DraftFunds/) — flagged 2026-08-20
+- [Reddit] [u/KendallStreetCompany](https://www.reddit.com/user/KendallStreetCompany/) — flagged 2026-08-20
+- [Reddit] [u/Xtratimesoccer](https://www.reddit.com/user/Xtratimesoccer/) — flagged 2026-08-20
 ```
 
 Each run, do this:
