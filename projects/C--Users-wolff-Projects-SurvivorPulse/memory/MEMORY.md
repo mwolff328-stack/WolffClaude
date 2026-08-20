@@ -2,6 +2,7 @@
 
 ## Working practice
 
+- [Prefer the Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
 - [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) — nothing's proven until shown red against wrong code.
 - [Search memory before accepting a tool failure as fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — a documented fix existed 3 days before 6 agents re-hit the same wall.
 - [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — a tested helper behind a severed call site killed 0 of 109 mutants.
