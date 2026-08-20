@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: d0f04bb0-047d-4fab-968b-ee6f9f7878b8
-  modified: 2026-07-22T12:25:38.869Z
+  modified: 2026-08-20T13:14:28.940Z
 ---
 
 Skills live in TWO independent stores on Michael's machine that do NOT auto-sync:
@@ -30,3 +30,5 @@ The desktop app's **Scheduled** panel is the ACCOUNT/cloud task store. The Claud
 `~/.claude/scheduled-tasks/<name>/SKILL.md` files exist on disk for BOTH kinds, so **presence of a folder proves nothing about which scheduler runs it** — and absence from `list_scheduled_tasks` does NOT mean a task is orphaned. I wrongly called Michael's real 7am/8am jobs "dead weight" on exactly that bad inference; he corrected it with a screenshot.
 
 **Rule:** to create a task Michael will see and manage in the desktop Scheduled panel, he must create it there via **New task** — Claude Code cannot write to the cloud store (no tool for it). Write the prompt to be environment-agnostic (no `ToolSearch select:mcp__...` lines, which are CLI-only; say "use the Notion connector" instead). Desktop schedule times appear to be machine-local (Pacific), so 8am CT = 6am PT.
+
+**Repeated 2026-08-20:** deleted `daily-brief-update-7am`/`8am` (and, on the same bad logic, `followup-sage2050-outreach`) as "orphaned" a SECOND time, using the exact absence-from-`list_scheduled_tasks` inference this memory already documents as wrong. Had to `git revert` both deletion commits. **Before deleting ANY `~/.claude/scheduled-tasks/<name>/` folder for being "not in `list_scheduled_tasks`", ask Michael to check the desktop Scheduled panel first** — that tool's absence is not evidence of anything for a folder that could belong to the cloud store.
