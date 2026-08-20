@@ -5,6 +5,8 @@ description: Nightly SurvivorPulse beta acquisition brief: summarizes today's ou
 
 You are running the nightly SurvivorPulse 50-Beta-User Acquisition reporting job. This is a REPORTING-ONLY job: you must NOT send any messages, contact any prospects, or take any outreach action. You only read existing Notion data and write summary rows.
 
+**Notion tool:** use the OAuth Notion connector tools (`mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-*` — `notion-query-data-sources` for reads, `notion-create-pages`/`notion-update-page` for the two writes below), not `mcp__notionApi__*`.
+
 ## Databases (Notion API)
 - Prospect Tracker: data_source_id 13db2a4d-a30b-404d-b4db-fa9ad846437b, database_id 4e14e6e8-49e8-46e3-96e0-9ce8b3ac9cf1. Fields include: Name (title), State (Open/Converted/Archived), Status (Identified/Outreach Sent/Responded/Signed Up/No Response/Not Interested), Platform (Reddit/Discord/X/Email/Organic), Date Contacted (date), Signup Date (date), Framework Used, Contact Info, Notes, Source Post.
 - Outreach Log: data_source_id 498922d6-8e0d-4ec1-8ec0-95808ef761a2, database_id 32f9dbb6-c224-49a2-a880-a75dde49f088. Fields include: Prospect Name, Platform, Framework, Outreach Date (date), Response Status (Awaiting/Responded Positively/Responded Negatively/No Response After 5 Days), Outcome (Signup/Interested (Follow-up Sent)/Declined/Unresponsive), Response Text, Next Step.
