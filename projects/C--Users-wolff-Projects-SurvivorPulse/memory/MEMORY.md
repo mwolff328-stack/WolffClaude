@@ -5,7 +5,7 @@
 - [Prefer the Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
 - [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) — nothing's proven until shown red against wrong code.
 - [Search memory before accepting a tool failure as fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — a documented fix existed 3 days before 6 agents re-hit the same wall.
-- [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — a tested helper behind a severed call site killed 0 of 109 mutants.
+- [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0 of 109 mutants killed; RECURRED 2026-08-20 on an ADDED SIDE EFFECT (audit logging), asserting its input instead of the call.
 - [Paired assertions both go vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) — clear+preserve both pass on a no-op; assert the run acted first.
 - [An AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — the AC→TC orphan check found in seconds what two review rounds missed.
 - [Verify a reviewer's evidence, not their judgement](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — scope call was right, 2 of 5 files wrong.

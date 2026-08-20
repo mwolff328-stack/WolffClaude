@@ -148,3 +148,55 @@ Related: [[feedback_proving_a_test_is_load_bearing]],
 [[feedback_derive_from_the_quantity_the_reader_validates]].
 (The `survivorpulse-tests-that-encode-bugs` skill cited above at line 131 is a project skill
 file, not a personal memory — no wikilink for it; that plain path is the pointer.)
+
+---
+
+## Recurrence, 2026-08-20 (SST-1416) — the ADDED SIDE EFFECT variant, and it bit the session that had just proved this rule twice
+
+Worth recording because of *when* it happened, not just that it did. In a single
+session this rule was demonstrated twice, deliberately and successfully:
+
+- mutating a helper's lock guard killed 6 of 14 (4 helper tests + 2 planner tests,
+  the planner deaths proving the planner genuinely called the helper);
+- severing ONLY the handler's call into the service turned **8 of 11 wire tests
+  red while all 14 pure tests stayed green**.
+
+One commit later, closing a security finding, the same session added admin
+audit-logging to a route handler and guarded it by asserting
+`res.body.adminOnBehalf` — **the data that FEEDS the side effect, not the side
+effect**. Deleting the handler's entire `for (const onBehalf of …) logAuthEvent(…)`
+block left **all 14 tests green**, silently restoring the unattributable-delete
+state the finding was filed about. Caught only by an independent re-review.
+
+The precedent was already in this repo and went unapplied:
+`tests/gameplanClearPicks.sst961.integration.test.ts` records *"removing the whole
+logAuthEvent block left all 22 original tests passing."*
+
+**Why this variant hides so well:** with a helper, the missing wire usually shows
+as a *wrong value* somewhere. With an added side effect — logging, metrics,
+audit records, cache invalidation, notifications — the happy path is **identical
+whether the effect fires or not**. The response body is the same. The DB rows are
+the same. Nothing observable changes except the thing nobody asserted.
+
+**How to apply, specifically:**
+
+1. **Asserting the INPUT to a side effect is not a wire guard.** `adminOnBehalf`
+   in the response proved the service produced the data; it said nothing about
+   whether the handler consumed it. Mock the collaborator
+   (`vi.mock('../server/authEventLogger')`) and assert the CALL, with its
+   arguments.
+2. **For any observable effect a fix introduces, delete the producing code and
+   confirm something goes red.** This is mechanical, takes two minutes, and is
+   the only defence that does not depend on remembering the rule at the moment
+   it matters — which is precisely what failed here.
+3. **Ordering matters for audit records.** The same fix originally pushed the
+   record BEFORE the delete it described, so a failed delete still logged
+   "these weeks were cleared" while the rows survived. Record side effects that
+   describe a mutation *after* the mutation succeeds.
+4. **A wholesale-mocked-storage suite that never mocks the logger is doing real
+   DB writes.** `authEventLogger` imports `server/db` and swallows failures in
+   its own try/catch, so the noise is invisible. Mocking it fixes the guard and
+   the stray write together.
+
+Related: [[feedback_a_helper_can_implement_half_a_rule]],
+[[feedback_proving_a_test_is_load_bearing]].
