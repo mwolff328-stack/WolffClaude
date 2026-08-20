@@ -122,7 +122,7 @@
 ## App structure and data ownership
 
 - [The Notion comment "outage" is connector-specific](project_survivorpulse_notion_comment_outage_is_connector_specific.md) — a second connector still works.
-- [Notion comments via the Chrome composer](project_survivorpulse_notion_comments_via_chrome_composer.md) — when BOTH connectors are dead; a type-timeout still lands the text.
+- [Notion comments via the Chrome composer](project_survivorpulse_notion_comments_via_chrome_composer.md) — fallback when BOTH connectors are dead; but RE-CHECK for the OAuth connector, it came back mid-session.
 - [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — reads are blind.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated; trace red checks via logs.
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — not blanket.

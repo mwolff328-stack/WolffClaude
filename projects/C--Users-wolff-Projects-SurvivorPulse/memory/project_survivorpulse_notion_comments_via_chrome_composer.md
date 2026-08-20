@@ -10,16 +10,38 @@ metadata:
 
 **2026-08-20.** `mcp__notionApi__API-create-a-comment` still returns
 `400 missing_version` (the known client-side header defect — see
-[[project_survivorpulse_notion_comment_outage_is_connector_specific]]), and the
-documented fallback connector
-`mcp__d77c6777-…__notion-create-comment` was **not loadable in this session** —
-`ToolSearch` with an exact `select:` returned "No matching deferred tools found",
-because the OAuth-backed Notion connector needs authorization and the session
-could not run the flow.
+[[project_survivorpulse_notion_comment_outage_is_connector_specific]]).
 
-So both documented MCP routes were dead. The **browser route worked on the first
-try** and is worth reaching for immediately rather than falling back to the Notes
-property.
+## ⚠️ READ THIS FIRST: the OAuth connector came back mid-session
+
+Early in the session the fallback connector `mcp__d77c6777-…__notion-create-comment`
+was **not loadable at all** — `ToolSearch` with an exact `select:` returned
+"No matching deferred tools found". Both documented MCP routes were dead, so the
+whole browser procedure below was built and used.
+
+**Hours later, in the SAME session, the OAuth connector appeared in the deferred
+tool list and worked on the first call** — `notion-get-comments` read cleanly and
+`notion-create-comment` posted successfully, including a threaded reply via
+`discussion_id`.
+
+This is exactly the pattern `sp-autonomous`'s SKILL.md warns about: *"Re-check
+with ToolSearch before you write the final report. First-check absence is not
+proof of permanent absence."* It cost real time here — several long, fragile
+browser typing sessions that the connector would have done in one call.
+
+**So: re-run the `select:` ToolSearch for the OAuth connector periodically, not
+just once at the start.** The browser procedure below is the genuine fallback and
+it does work, but it is far slower and far more failure-prone than the connector.
+
+When it IS available, prefer it outright: it takes `page_id` + `markdown`, posts
+reliably regardless of length, supports real markdown formatting (which the
+browser route cannot produce), and `discussion_id` lets you thread a reply
+directly onto an existing discussion.
+
+## The browser fallback, for when the connector is genuinely absent
+
+The **browser route worked on the first try** and is worth reaching for
+immediately rather than falling back to the Notes property.
 
 ## What works
 

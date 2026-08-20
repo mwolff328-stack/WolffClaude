@@ -22,7 +22,7 @@
 - [SurvivorPulse Replit Secrets vs Configurations](project_survivorpulse_replit_secrets_vs_config.md) — Configurations=plaintext in .replit, wiped by Sync's `git reset --hard` unless committed to the repo
 - [SurvivorPulse Prod Publish Runbook](project_survivorpulse_prod_publish_runbook.md) — Beta LIVE prod 2026-07-14; `ALLOW_UNSAFE_DEV_FEATURES` global Secret trips a FATAL prod guard, must be deleted
 - [SurvivorPulse Historical Pool Data](project_survivorpulse_historical_pool_data.md) — unified onto ONE PoolDataSubSection across 3 surfaces; never fork it again
-- [SurvivorPulse Back Tester Refactor](project_survivorpulse_backtester_refactor.md) — productizing SST-779-783; winning is DIRECTION-only, an identical-portfolio comparison is catastrophic
+- [SurvivorPulse Back Tester Refactor](project_survivorpulse_backtester_refactor.md) — productizing SST-779-783; winning is DIRECTION-only. RE-ENGAGED 2026-08-20 as SST-1424 (data+engine only, no UI): buybacks are NOT a no-op (that claim was false), and all 5 season pools lack reproducible provenance
 - [SurvivorPulse White-Paper Retraction](project_survivorpulse_whitepaper_retraction.md) — "The systematic edge" RETRACTED 2026-07-12; honest replacement still an unpublished Notion draft
 - [WolffClaude Repo](reference_wolffclaude_repo.md) — GitHub repo for versioning ~/.claude config
 - [SurvivorPulse EV Field-Size + Dev Data](project_survivorpulse_ev_fieldsize_and_devdata.md) — poolSize=0 explodes EV via the field-size proxy; 3-tier resolvePoolFieldSize policy fixes it
