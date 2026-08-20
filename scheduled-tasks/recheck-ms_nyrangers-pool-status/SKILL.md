@@ -10,5 +10,5 @@ Steps:
 2. Report back to Michael what you found.
 3. If she found a pool: draft 2-3 SurvivorPulse outreach message options using the authentic-tone-of-voice skill, positioned around helping her make smart picks in the pool she joined (not the multi-pool coordination angle, since she's a single-pool casual player). Get his approval before he sends anything himself.
 4. If she still hasn't found a pool: ask Michael whether he wants to point her toward pool options (e.g. a pool-finder resource or subreddit) as a warm-up before introducing SurvivorPulse, or just let this prospect go cold.
-5. Update the "1. Prospect Tracker" Notion database (https://app.notion.com/p/4e14e6e849e846e396e09ce8b3ac9cf1) record for Ms_NYRangers with whatever is decided (Notes, State, Status).
+5. Update the "1. Prospect Tracker" Notion database (https://app.notion.com/p/4e14e6e849e846e396e09ce8b3ac9cf1) record for Ms_NYRangers with whatever is decided (Notes, State, Status). Use the OAuth Notion connector tools (`mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-*`), not `mcp__notionApi__*`.
 This is part of the SurvivorPulse 50-Beta-User Acquisition campaign. Do not send any message yourself; Michael sends all outreach personally from his own accounts.
