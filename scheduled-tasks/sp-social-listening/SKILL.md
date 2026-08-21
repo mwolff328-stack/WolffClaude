@@ -203,6 +203,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/ssnowmann11](https://www.reddit.com/user/ssnowmann11/) — adjacent competitor / tool creator (posted ["Survivor League Platform"](https://www.reddit.com/r/NFLSurvivor/comments/1vthipb/survivor_league_platform/) in r/NFLSurvivor — reviewed 2026-08-21: launched [StillAlivePools.com](http://www.stillalivepools.com), a free/ad-free "vibe coded" survivor pool site, positioned against paid options like SundaySurvivor/OfficePools/RunYourGrid) — seen: 2026-08-20, 2026-08-21
 - [YouTube] [Last Men Standing: The Survivor Contest Podcast](https://www.youtube.com/@LastMenPod) — content creator (posted "Circa Survivor Game Theory, NFL Futures & AI Strategy with Clev Analytics"; also cross-posts to X as [@LastMenPod](https://x.com/LastMenPod), already engaging with [@PoolGenius](https://x.com/PoolGenius)) — seen: 2026-08-20
 - [Reddit] [u/CanvasToCode](https://www.reddit.com/user/CanvasToCode/) — adjacent competitor / tool creator (commented on u/ssnowmann11's Still Alive Pools thread promoting their own free color-coded Google Sheet mapping every NFL team's 18-week schedule/byes/season win totals as a survivor-pick reference tool) — seen: 2026-08-21
+- [X] [ThunderDanDFS](https://x.com/ThunderDanDFS) — affiliate/promoter (promoting [@RotoBaller](https://x.com/RotoBallerNFL)'s survivor tool — "planned out my picks for the entire season using it") — seen: 2026-08-21
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
