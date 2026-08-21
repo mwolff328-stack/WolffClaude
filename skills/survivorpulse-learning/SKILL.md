@@ -127,7 +127,7 @@ Check before creating a new one.
 - `replit-bashrc-permission-denied.md` — shell alias workaround for Replit
 - `vitest-fake-timers-hook-testing.md` — testing time-based React hooks
 
-## Channel formatting (Discord #learning)
+## Channel formatting (Discord #learning) — SUSPENDED, see notice at top of file
 
 - Bullet lists only (no markdown tables)
 - Keep initial posts concise (3-5 bullets)
