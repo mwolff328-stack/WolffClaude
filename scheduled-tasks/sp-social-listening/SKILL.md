@@ -98,6 +98,25 @@ Classify the day with one flag: "Nothing notable", "Worth a look", "Competitor m
 ## Step 4: Recommend actions
 Add a "Recommended Actions" section: 1-5 concrete, growth-focused next steps, each grounded in something you actually observed this run — never generic evergreen advice disconnected from a finding. For each: the action, which finding it responds to (linked, per the linking rule), and why it drives growth (acquisition / positioning-differentiation / distribution-content / retention-product). Order by impact. If nothing warrants action, write "No action needed today."
 
+## Step 4.5: Identify Reply Opportunities (added 2026-08-21, founder-directed)
+
+Founder wants a short, specific list of posts/tweets/comments from today's findings where **Michael personally replying in public** — conversational, authentic, helpful-first — would build trust, credibility, and interest in SurvivorPulse. This is distinct from Recommended Actions (Step 4, internal growth strategy) and the Follow Queue (Step 5.5, accounts to follow) — this is about specific threads Michael could actually type a reply into himself.
+
+**What qualifies (cap at 5 per run, favor quality over quantity — skip this section entirely on a quiet day rather than stretching for weak candidates):**
+- A genuine question, pain point, or strategy debate from today's findings where Michael's domain expertise adds real value on its own merits, independent of whether SurvivorPulse ever comes up.
+- The thread is still live — posted or actively getting comments within roughly the last 24-48 hours. A reply to a week-old dead thread reads as random, not conversational.
+- The community/thread doesn't read as hostile to paid tools, self-promotion, or "vendors" showing up uninvited — skip anti-tool threads and hard competitor-brand threads where a reply would look like ambulance-chasing.
+- Priority order: direct questions from ICP voices/commissioners > genuine pain-point venting (cost, clunky UX, poor support) > strategy/analytical debates where Michael can add a substantive, non-generic take > competitor threads only if a factual, non-defensive reply would plainly help the asker (never a takedown, never unsolicited pitching).
+
+**What to produce for each candidate:**
+- The post/tweet/comment's direct link (per the linking rule).
+- One line on why it's a good opportunity — what makes this specific thread worth a reply right now.
+- A short suggested angle or talking points for Michael to write from — 1-3 sentences of direction, NOT a polished reply to copy-paste verbatim. Keep it conversational and helpful-first. Only suggest mentioning SurvivorPulse when it's a natural, non-pushy fit for the specific question asked — most good replies won't mention it at all, and that's fine; the trust-building comes from being genuinely useful, not from the plug.
+
+**Hard rule:** this step only surfaces candidates for Michael to act on by hand. It NEVER drafts a reply intended to be posted verbatim without his edit, and it NEVER posts, comments, or replies to anything itself — same restriction as the rest of this job (see Constraints).
+
+If nothing qualifies this run, write "No reply opportunities today" rather than forcing weak candidates.
+
 ## Step 5: Maintain the source tracker and auto-promote high-confidence repeats
 
 Founder-approved rule (2026-07-23): a candidate source gets added to standing monitoring automatically once it has been genuinely observed as relevant on **3 separate calendar days** — no manual approval needed at that point. Below 3 days, it stays pending and just gets re-flagged. This replaces the old "always ask before adding" rule.
