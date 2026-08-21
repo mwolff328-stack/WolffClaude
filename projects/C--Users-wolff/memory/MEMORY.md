@@ -1,5 +1,6 @@
 # Memory Index
 
+- [SurvivorPulse Discord Learning Suspended](project_survivorpulse_discord_learning_suspended.md) — Discord #learning posting suspended 2026-08-21 (founder not running OpenClaw); skill file has suspension notice, don't offer to connect Discord
 - [SST-1407 Cross-Pool Claims Equal Treatment](project_survivorpulse_sst1407_crosspool_equal_treatment.md) — founder ruling 2026-08-19 reverses SST-1329: ALL entries (alive/eliminated) participate equally in cross-pool claims for proposed picks; Actual-track/eliminationWeek vs Proposed-track cap are independent axes; "expected/harmless" anomaly claims need data-derived proof, not prose
 - [SurvivorPulse Overnight Cleanup 2026-08-14](project_survivorpulse_overnight_cleanup_2026-08-14.md) — sp-autonomous solo run on 16-ticket Kanban list: 8 Done, 1 Cancelled, 7 deferred with next-step comments; extraction-proves-nothing defect class recurs in clusters; FAILED_STAGE gate label is a static env var, not a live signal
 - [Notion OAuth Preference](feedback_notion_oauth_preference.md) — use OAuth connector `mcp__d77c6777...__notion-*`, not `mcp__notionApi__*`; the latter's create-comment endpoint 400s with missing_version regardless of payload
