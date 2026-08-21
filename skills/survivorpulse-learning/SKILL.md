@@ -24,6 +24,8 @@ triggers:
 
 Every Done transition is a mandatory learning moment. Weekly synthesis turns individual moments into institutional knowledge. This is systematic — baked into the Kanban flow, not ad-hoc.
 
+> **⚠️ SUSPENDED (2026-08-21, founder instruction): Discord `#learning` posting.** All Discord-posting steps below (Luigi's weekly synthesis step 4/5, the "Channel formatting" section) are **suspended** — the founder isn't running OpenClaw right now, which was the mechanism these steps assumed. Everything else in this skill stays in force: the mandatory `🎓 Learning:` line on Done, `learned/` skill file capture, and Notion comment capture all continue as normal. Skip the Discord step entirely (don't ask to connect a Discord tool, don't look for a webhook) until the founder says OpenClaw is back up, at which point re-enable Discord posting by removing this notice.
+
 ## When learning is captured
 
 **Mandatory:** Every persona's Done transition comment must include a `🎓 Learning:` line. N/A is acceptable; silence is not.
