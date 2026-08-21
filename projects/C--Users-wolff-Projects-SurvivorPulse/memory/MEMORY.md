@@ -125,8 +125,8 @@
 - [The Notion comment "outage" is connector-specific](project_survivorpulse_notion_comment_outage_is_connector_specific.md) — a second connector still works.
 - [Notion comments via the Chrome composer](project_survivorpulse_notion_comments_via_chrome_composer.md) — fallback when BOTH connectors are dead; but RE-CHECK for the OAuth connector, it came back mid-session.
 - [Notion via Chrome overwrites fields](project_survivorpulse_notion_via_chrome_field_overwrite.md) / [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — reads are blind.
-- [A page read truncates long rich_text](project_survivorpulse_notion_page_read_truncates_rich_text.md) — 12,274 chars came back as 7,577, silently; it hid a real AC clause.
-- [API-create-a-comment is broken, page writes are not](project_survivorpulse_notion_mcp_create_comment_missing_version.md) — `missing_version` on comments only; don't declare an outage.
+- [A page read truncates long rich_text](project_survivorpulse_notion_page_read_truncates_rich_text.md) — 12,274 chars came back as 7,577, silently; it hid a real AC clause. Read long props via the OAuth SQL path.
+- [Comments: use the OAuth connector, not notionApi](project_survivorpulse_notion_mcp_create_comment_missing_version.md) — `missing_version` is a known-bad server, not an outage; do NOT build a page-body workaround.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated; trace red checks via logs.
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [sp_session is a bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md) — not blanket.
 - [Split route registration](project_survivorpulse_split_route_registration.md) — routes live in BOTH routes.ts and index.ts; grepping one false-negatives.
