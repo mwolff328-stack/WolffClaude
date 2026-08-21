@@ -97,6 +97,7 @@
 
 - [Sandbox has no local Postgres](project_survivorpulse_sandbox_has_no_local_postgres.md) — DB-integration proof comes from a targeted CI dispatch, not local.
 - [Playwright/CI evidence traps](project_survivorpulse_playwright_ci_evidence_traps.md) — narrowed runs aren't controls; the gate runs no retained tests.
+- [The dev preview runs an UNBUNDLED Vite dev server](project_survivorpulse_dev_preview_runs_vite_dev_server.md) — 116 modules / ~7s per cold load; any Playwright run kills the container.
 - [E2E CI drift traps](project_survivorpulse_e2e_ci_drift_traps.md) — a persistent E2E DB masked months of drift; any shard's spec can break the run.
 - [E2E fixture provisioning reality](project_survivorpulse_e2e_fixture_provisioning.md) — ⚠️ REVERSED by SST-1213: the POST now succeeds.
 - [Playwright teardown coverage](project_survivorpulse_playwright_teardown_coverage.md) — `teardown:` skips a globalTimeout abort; wrong for one shared DB.
