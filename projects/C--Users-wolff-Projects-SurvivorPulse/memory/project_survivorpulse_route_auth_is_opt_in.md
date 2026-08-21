@@ -21,7 +21,10 @@ Measured 2026-07-31 across `server/routes.ts` + `server/index.ts`: **221** `/api
 admin-**named** but `/api/v1/admin/…` doesn't match the `/api/admin/*` prefix. Proven by
 reverting the fix and watching the admin guard still pass 2/2.
 
-`tests/apiRoutesRequireAuthGuard.test.ts` now covers **all** registrations in **both** files.
+`tests/routesRequireAuthGuard.test.ts` covers **all** registrations in **both** files.
+⚠️ The file is `routesRequireAuthGuard.test.ts`. An earlier version of this memory named it
+`apiRoutesRequireAuthGuard.test.ts` — that predecessor was MERGED AWAY and no longer exists, so
+grepping the old name returns nothing and reads like the guard was deleted. Corrected 2026-08-21.
 Each must be guarded, in `PUBLIC_ROUTES` (blessed, with a reason), or in `QUARANTINE` — a
 **shrink-only** backlog with ratchet counters, so a new unguarded route can't be waved through
 by appending to it. Unguarded writes get a separate, tighter counter.
