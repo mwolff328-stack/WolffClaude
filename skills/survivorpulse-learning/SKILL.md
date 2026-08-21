@@ -71,8 +71,8 @@ Every week, Luigi:
 1. Reads all Done story and bug comments from the past 7 days.
 2. Identifies every substantive `🎓 Learning:` line (not N/A).
 3. Promotes any learning that surfaces across **2+ stories** to a `learned/` skill file.
-4. Posts standout learnings and new `learned/` entries to Discord `#learning` (channel `1493965556817334313`).
-5. Posts a brief weekly synthesis summary to `#learning` — even if no new learnings emerged.
+4. ~~Posts standout learnings and new `learned/` entries to Discord `#learning` (channel `1493965556817334313`).~~ **Suspended — see notice above.**
+5. ~~Posts a brief weekly synthesis summary to `#learning` — even if no new learnings emerged.~~ **Suspended — see notice above.**
 6. Assesses each substantive learning against the operating model: if a learning reveals a process gap, an unclear rule, or a missing convention, Luigi drafts the proposed improvement and presents it to the founder for review and approval before making any edit to the Operating Model.
 
 If a learning changes how an agent should operate, update the relevant agent spec or `CLAUDE.md`/`.claude/rules/` entry. Commit and push to WolffClaude after any skill/config update.
