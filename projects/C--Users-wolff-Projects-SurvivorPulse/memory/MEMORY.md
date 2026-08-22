@@ -139,3 +139,4 @@
 - [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — same instances render everywhere.
 - [My Strategy wizard: deleted 2026-08-03](project_survivorpulse_my_strategy_wizard_unreachable.md) — Step1,2,5 gone; Step3/4/Context/Modal survive via /tools/*.
 - [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — same literal queryKey in two files shares ONE cache entry.
+- [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) — Prospect Tracker + Outreach Log locations; update both after sending outreach.
