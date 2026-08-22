@@ -22,7 +22,9 @@ The register flexes with who he's talking to, but the core stays the same. To a 
 ## Vocabulary Rules
 
 ### Never use:
-leverage, synergy, holistic, seamless, empower, transformative, game-changer, deep dive, unpack, robust, elevate, curated, journey (as a metaphor), resonate, testament, tapestry, foster, navigate (as a metaphor), delve, moreover, furthermore, in conclusion, it is important to note.
+leverage, synergy, holistic, seamless, empower, transformative, game-changer, deep dive, unpack, robust, elevate, curated, journey (as a metaphor), resonate, testament, tapestry, foster, navigate (as a metaphor), delve, moreover, furthermore, in conclusion, it is important to note, push/pushing on, blast radius, circle back, surface (as a verb for "mention"), align/alignment (as a metaphor), bandwidth (as a metaphor for time/capacity), granular, actionable, at the end of the day, low-hanging fruit, move the needle.
+
+These read as AI-generated jargon even when they're common business speak. Say the plain version instead: "pushing on" becomes "asking about" or "asking why," "blast radius" becomes "what it affects" or "what breaks," "circle back" becomes "get back to you," "surface" becomes "bring up" or "mention," "granular" becomes "specific" or "detailed."
 
 ### Never use these constructions:
 - Em dashes. Ever. Use a period or a line break.
