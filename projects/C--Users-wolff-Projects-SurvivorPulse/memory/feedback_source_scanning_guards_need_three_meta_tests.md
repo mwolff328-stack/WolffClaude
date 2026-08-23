@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 29ab28e5-1bde-4292-b74b-031f40ea1c5c
-  modified: 2026-08-02T07:04:14.515Z
+  modified: 2026-08-23T16:31:08.311Z
 ---
 
 SurvivorPulse enforces several invariants by scanning `server/routes.ts` for a
@@ -18,7 +18,11 @@ but it fails silently in four specific ways, each needing its own meta-test:
    stays green with every guard deleted, because the token appears in the file's
    own header, in comment blocks above the routes, and in the test's own doc
    comment. Anchor on the `app.VERB(path, guard)` **syntax** and add a test that
-   feeds a comment-only mention above an unguarded route.
+   feeds a comment-only mention above an unguarded route. See
+   [[feedback_survivorpulse_source_text_guards_fooled_by_text]] for the fuller
+   catalogue of "text that isn't code" false-positives (comments, docstrings,
+   compiled build output) — this is the same failure mode, applied here to a
+   route-guard scan specifically.
    ⚠️ Assert "the captured token is NOT in the guard list", never a specific
    value: for `app.get('/x', async (req,res) => …)` the capture is `async`, not
    `''`. A `toBe('')` assertion fails on correct code.
