@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 29ab28e5-1bde-4292-b74b-031f40ea1c5c
-  modified: 2026-08-01T18:55:39.675Z
+  modified: 2026-08-23T06:57:53.388Z
 ---
 
 Authenticated prod smoke goes through **claude-in-chrome** (the founder's real
@@ -58,4 +58,9 @@ than trusting that the click sequence did what it looked like.
 
 Related: [[project_survivorpulse_production_smoke_access]],
 [[project_survivorpulse_radix_outside_click_arming_race]],
-[[project_survivorpulse_stale_spa_bundle_after_publish]]
+[[project_survivorpulse_stale_spa_bundle_after_publish]],
+[[project_survivorpulse_notion_via_chrome_field_overwrite]] (same probe-before-typing discipline,
+applied to the comment composer specifically — a stale composer click there lands text inside the
+LAST EXISTING COMMENT rather than the page title, recurring 2026-08-05 and again 2026-08-22),
+[[project_survivorpulse_notion_comments_via_chrome_composer]] (current standing order: try the
+OAuth connector's `notion-create-comment` before Chrome at all, given this corruption risk)
