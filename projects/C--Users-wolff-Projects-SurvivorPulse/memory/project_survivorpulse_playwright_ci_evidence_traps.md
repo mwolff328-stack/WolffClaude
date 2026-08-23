@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 0bc8ce6a-82e1-49d4-bda8-86318368d7ee
-  modified: 2026-08-02T07:04:08.137Z
+  modified: 2026-08-23T16:31:47.434Z
 ---
 
 Learned 2026-07-31 chasing one `sf4-my-pools` failure through six CI runs. Each trap cost a wrong conclusion that was published before it was corrected.
@@ -18,7 +18,7 @@ Learned 2026-07-31 chasing one `sf4-my-pools` failure through six CI runs. Each 
 
 **3. A test can pass its entire life on a CSS exit-animation race.** `UC-4.7-A` asserted "Discard reverts it" against an input that only still existed because Radix keeps `DialogContent` mounted for `duration-200` (`client/src/components/ui/dialog.tsx:47`). `my-pools-detail.tsx` closes the settings modal **unconditionally** on that button — it is one control whose *label* alone switches on `isDirty`. So the assertion resolved inside a ~200ms window on an idle machine and lost it under load. It had never verified its own name. When a test's outcome tracks machine load, suspect it is racing an unmount, not that the product is flaky — and never "fix" it by awaiting the animation, which re-cements the accident.
 
-**4. `current_database()` cannot distinguish the three Neon databases — all are named `neondb`.** A post-connect name assertion returns the same string for the E2E CI DB, shared dev (helium), and production, so it reads as a safety guard while discriminating nothing. `scripts/ci-reset-e2e-db.mjs` runs `DROP SCHEMA public CASCADE`; its real boundary is a positive URL-host allowlist. A post-connect check needs a genuinely distinguishing fact — `inet_server_addr()` or a marker row. See the wrong-host trap in CLAUDE.md.
+**4. `current_database()` cannot distinguish the three Neon databases — all are named `neondb`.** A post-connect name assertion returns the same string for the E2E CI DB, shared dev (helium), and production, so it reads as a safety guard while discriminating nothing. `scripts/ci-reset-e2e-db.mjs` runs `DROP SCHEMA public CASCADE`; its real boundary is a positive URL-host allowlist. A post-connect check needs a genuinely distinguishing fact — `inet_server_addr()` or a marker row. See the wrong-host trap in CLAUDE.md and [[project_survivorpulse_production_smoke_access]] (same fact, applied to identifying prod for read-only smoke rather than guarding a destructive CI reset).
 
 **5. The pre-publish gate CANNOT run Playwright specs.** Stage 3 runs `vitest.projects.config.ts --project e2e`, whose include is `tests/**/*.e2e.test.ts` — a different directory AND extension from `e2e/*.spec.ts`, so there is no glob overlap at all. A green gate says nothing about the browser suite.
 
