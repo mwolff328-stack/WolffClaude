@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 21592230-06ea-476f-b7cd-e40061b85574
-  modified: 2026-08-21T13:37:30.511Z
+  modified: 2026-08-23T06:56:01.427Z
 ---
 
 ## The answer first
@@ -62,4 +62,23 @@ around it.**
 Page creation, property updates, block append/delete. All verified working the same session. So
 "the notionApi server is broken" is too strong — it is comment creation specifically.
 
-Related: [[project-survivorpulse-notion-page-read-truncates-rich-text]].
+## Recurred 2026-08-22 (SST-1438 grooming) — and a reason to prefer the OAuth connector beyond speed
+
+Same `missing_version` 400 on `mcp__notionApi__API-create-a-comment`. The OAuth connector's
+`notion-create-comment` worked on the first call as usual — no new information there.
+
+What is new: the *other* fallback people reach for when a connector seems down — driving the
+founder's Chrome to use the page-bottom comment composer — was found to carry a real corruption
+risk. Twice in that session, clicking the composer did not reliably focus a fresh comment field;
+typed text instead landed mid-sentence inside the body of the **last existing comment on the
+page**, silently editing someone else's comment. Both incidents were caught only because the page
+was re-read immediately after typing, and reverted with ctrl+z. Full protocol and detail in
+[[project_survivorpulse_notion_comments_via_chrome_composer]].
+
+**Practical effect on this memory's guidance:** the OAuth connector isn't just the faster option
+now, it's the only one with no corruption risk. Try it first, every time, before even considering
+Chrome — do not treat "the notionApi connector 400s" as license to reach for the browser as a
+casual next step.
+
+Related: [[project-survivorpulse-notion-page-read-truncates-rich-text]],
+[[project_survivorpulse_notion_comments_via_chrome_composer]].
