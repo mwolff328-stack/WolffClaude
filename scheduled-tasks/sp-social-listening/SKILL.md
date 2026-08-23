@@ -325,6 +325,27 @@ If the queue is empty this run (normal on most days), write "No new follow candi
 
 This step never takes any follow/friend/subscribe action itself — see Constraints. It only surfaces who to follow so Michael (or whoever has account access) can do it by hand.
 
+## Step 5.6: Open Follow-Ups backlog (added 2026-08-22, founder-directed)
+
+**Why this exists:** before the Follow-Ups database, dated to-dos lived as prose inside Outreach Log `Next Step` fields ("Follow up if no response by Aug 13"), which nothing queried. On 2026-08-22 an audit found **12 follow-ups past their own stated due date**, several by more than a week, despite one-off `followup-*` cron tasks nominally covering some of them. The failure wasn't that follow-ups went unrecorded — it's that "overdue" was never visible anywhere. This step is what makes it visible, daily.
+
+Query the Follow-Ups data source `cda4165c-c49a-4f81-8e66-04fff863a10c` for every row with `Status = "Open"` AND `Due Date` on or before today. Report them in a **"Open Follow-Ups"** section, grouped by `Priority` (High first), each line reading:
+
+`[Priority] <Action> — <Platform> — due <Due Date> (<N> days overdue) — [source](Source URL)`
+
+Include the days-overdue figure explicitly; "due 2026-08-13" alone doesn't read as urgent, "9 days overdue" does. If a row has no `Due Date`, treat it as due the day it was created.
+
+Also report, as separate one-liners under that section:
+- Rows auto-closed this run per Step 2.6a (with their `Closing Evidence`), so every autonomous close is surfaced the same day it happens.
+- Rows created this run, and the count.
+- Total Open rows regardless of due date, as a backlog-size number.
+
+If nothing is open and overdue, write "No overdue follow-ups" — and still report the total Open count, because a growing not-yet-due backlog is itself worth seeing.
+
+**This step never closes, edits, or drops a row on the basis of it being old.** The only autonomous close in this job is Step 2.6a's evidence-based auto-close. Age is reported, never acted on.
+
+**Note on the `followup-*` scheduled tasks (founder ruling 2026-08-22):** the ~10 existing one-off `followup-<handle>-outreach` cron tasks stay running in parallel until this tracker proves itself. Expect some duplication between them and this section for now — that's deliberate, not a bug. Do not delete, disable, or edit those tasks.
+
 ## Step 6: Deliver
 
 **Notion write method (updated 2026-08-12):** use the OAuth Notion connector tools (`mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-*` — `notion-fetch`, `notion-create-pages`, `notion-search`, `notion-update-page`) as the PRIMARY and only intended write method for this job. This is an account-level OAuth connector (same category as the Gmail/Calendar/Drive connectors), not a live browser-automation session — it should work the same whether this run is interactive or on the unattended 5am cron.
