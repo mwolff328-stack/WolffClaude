@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-07-29T04:49:10.851Z
+  modified: 2026-08-23T16:31:35.381Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -20,8 +20,11 @@ A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion
 - The `ALLOW_UNSAFE_DEV_FEATURES` deployment-secret deletion was done: prod boots and serves, which it cannot do with the flag set (`server/envValidation.ts` fatal-exits first). **This is a free post-publish check — if the site is up, the secret was deleted.**
 
 **Still open (not schema):**
-1. **Every future publish** must re-do the `ALLOW_UNSAFE_DEV_FEATURES` deletion in Replit → Deployments → Secrets. Do NOT touch the `.replit` `[userenv.development]` line — different thing, dev-only.
-2. Founder review of `landing.tsx` public copy (~6 residual edge/overclaim phrases flagged). Subscription-flow pre-prod verification story is tagged `[POST-BETA]` — confirm scope rather than treating it as a hard block.
+1. **Every future publish** must re-do the `ALLOW_UNSAFE_DEV_FEATURES` deletion — full
+   how/where and the self-proving verification method live in
+   [[project_survivorpulse_prepublish_gate_mechanism]] and
+   [[project_survivorpulse_unsafe_dev_flag_is_self_proving]], not duplicated here.
+2. Founder review of `landing.tsx` public copy (~6 residual edge/overclaim phrases flagged). Subscription-flow pre-prod verification story is tagged `[POST-BETA]` — confirm scope rather than treating it as a hard block. ⚠️ This memory is 25+ days old as of 2026-08-23 — re-check current status (e.g. via the SST ticket, not this note) before citing item 2 as still open.
 
 **A publish carries the code that existed WHEN YOU CLICKED IT — always compare timestamps.** On 2026-07-28 the founder published at ~20:13 UTC (applying the SST-1037 + SST-1079 migrations), then later reported "I have published" in a session whose commits landed at 21:43–23:01 UTC. The migrations were live; the CODE was not. The prod bundle's `Last-Modified` (20:13:57 GMT) predated the first commit by 90 minutes, and the deployed `Footer.tsx` was still the pre-change version. A DB migration being Done says nothing about whether the code deploy carries your commit — they are separate halves of the same button press, and only the migration half is visible in Notion. Check `curl -sI <prod>/assets/index-*.js | grep Last-Modified` against `git log --date=iso-strict-local` before declaring anything shipped.
 
