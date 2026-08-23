@@ -1,11 +1,11 @@
 ---
 name: feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect
-description: "Two shipped fixes were wrong because their tickets' Proposed resolution asserted a false equivalence between two code paths; the implementers followed it faithfully and every review passed."
+description: "Two shipped fixes were wrong because their tickets' Proposed resolution asserted a false equivalence between two code paths; the implementers followed it faithfully and every review passed. Also covers: a DRY 'reuse the shared helper' recommendation that deletes a safety cap, and delegating to a helper whose rule disagrees with the reference quantity."
 metadata: 
   node_type: memory
   type: feedback
   originSessionId: 715ea743-c5bf-44e7-a238-1b31c07f379a
-  modified: 2026-08-23T16:30:37.285Z
+  modified: 2026-08-23T16:30:42.463Z
 ---
 
 A SurvivorPulse bug ticket's **Proposed resolution** section carries real authority — it is
