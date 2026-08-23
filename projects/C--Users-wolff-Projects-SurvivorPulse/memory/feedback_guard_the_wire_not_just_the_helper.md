@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 449fbd91-3ff9-4db3-9f9b-2f5cba2d44a7
-  modified: 2026-08-17T05:18:44.311Z
+  modified: 2026-08-23T16:31:18.560Z
 ---
 
 Testing the FUNCTION and testing the WIRE that reaches it are different jobs. A
@@ -118,7 +118,10 @@ reading as solved — worth saying out loud on SST-1211, which is the standing t
    Measured: `archetype = null;` inserted before the call leaves the call-site text
    byte-identical — source guard 24/24 green, behaviour guard 3 of 4 red. Keep both
    (source fails faster and more legibly), but never let the source one carry the load
-   alone.
+   alone. [[feedback_a_source_guard_must_assert_the_wire_is_reached]] is the deep-dive on
+   this exact point — three more ways a source guard reads as green-and-correct while the
+   code it "guards" cannot execute at all (unreachable mount point, a regex that can never
+   match the real spelling, a tautological assertion).
    **Second blind spot, measured on SST-1342 (2026-08-16): a source guard cannot see a
    WIRE CUT either, when the call text lives inside the helper.** The SST-1340 AC-8 guard
    asserts `client/src/backtester/lib/assignIndependentPicks.ts` imports
