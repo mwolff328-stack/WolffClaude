@@ -1,11 +1,11 @@
 ---
 name: project_survivorpulse_publish_prerequisites
-description: "What actually blocks a SurvivorPulse production publish as of 2026-07-28 — SST-941/997 done; live items are the SST-1037 and SST-1079 PROD migrations and the ALLOW_UNSAFE_DEV_FEATURES deployment secret. The 241-skipped-tests caveat is RESOLVED (SST-1088, now 864 passed / 10 skipped); the CI DB is never a blocker."
+description: "What actually blocks a SurvivorPulse production publish — as of the 2026-08-23 publish the baseline is 8308b085 and NO migration is pending; the only recurring step is deleting the ALLOW_UNSAFE_DEV_FEATURES deployment secret. Also carries the post-publish smoke recipe and the two bundle-grep false negatives (backtick quoting, template literals)."
 metadata: 
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-23T17:07:47.153Z
+  modified: 2026-08-23T17:07:54.549Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
