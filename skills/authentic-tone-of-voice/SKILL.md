@@ -26,6 +26,9 @@ leverage, synergy, holistic, seamless, empower, transformative, game-changer, de
 
 These read as AI-generated jargon even when they're common business speak. Say the plain version instead: "pushing on" becomes "asking about" or "asking why," "blast radius" becomes "what it affects" or "what breaks," "circle back" becomes "get back to you," "surface" becomes "bring up" or "mention," "granular" becomes "specific" or "detailed."
 
+### Never use these phrases:
+"holds up" (as in "see if it holds up against"), "run backward" / "run it backward" (as in "run backward on last year's data"). These sound like AI trying to describe a comparison or a lookback in a punchy way, and they read as generated even though they're not corporate jargon. Say the plain version instead: "holds up against" becomes "compares to" or "measures up against," "run backward on" becomes "look back over" or "go back through."
+
 ### Never use these constructions:
 - Em dashes. Ever. Use a period or a line break.
 - "Not X. Not Y. But Z." (overused pattern)
