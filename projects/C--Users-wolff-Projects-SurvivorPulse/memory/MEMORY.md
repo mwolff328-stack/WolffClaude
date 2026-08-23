@@ -45,7 +45,7 @@
 - [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie.
 - [Enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping a VALUE's formatting found 2 of 3 and read as complete.
 - [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producing code before warning anyone of a consequence.
-- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" deleted a cap.
+- [A bug ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) — "reuse the helper" deleted a cap; "same by construction" is a claim to execute, not comment on.
 - [Validated identifiers still carry SQL wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md) — `_` is a LIKE wildcard, even validated.
 - [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter works for edits but not MOVES.
 - [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; multi-line misses; NUL hides the file.
