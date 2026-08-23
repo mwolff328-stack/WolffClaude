@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-23T16:31:35.381Z
+  modified: 2026-08-23T17:07:36.606Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -18,6 +18,14 @@ A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion
 - **SST-1037** `pools.pool_classification` ALTER — APPLIED to prod.
 - **SST-1079** `user_preferences` TABLE — APPLIED to prod.
 - The `ALLOW_UNSAFE_DEV_FEATURES` deployment-secret deletion was done: prod boots and serves, which it cannot do with the flag set (`server/envValidation.ts` fatal-exits first). **This is a free post-publish check — if the site is up, the secret was deleted.**
+
+**PUBLISHED 2026-08-23 — new baseline is `8308b085`** (was `4d0b9b5d`). Compute the next
+unpublished batch from `8308b085..origin/2026-v1`, not from any older SHA. Shipped SST-1439
+(Admin Support Mode) + SST-1438 (Season Grid Proposed-track clear), 11 commits.
+**NO migration was pending or applied** — zero schema/migration/`.sql` files in the whole range.
+Post-publish smoke, all green: prod bundle `Last-Modified` 16:49:45 GMT vs tip commit 08:01:15 UTC
+(deploy is NEWER, so it carries the code); `/api/seasons/current` 200 JSON; `/api/pools` and
+`/api/me` 401; site boots at all, which self-proves `ALLOW_UNSAFE_DEV_FEATURES` was deleted.
 
 **Still open (not schema):**
 1. **Every future publish** must re-do the `ALLOW_UNSAFE_DEV_FEATURES` deletion — full
