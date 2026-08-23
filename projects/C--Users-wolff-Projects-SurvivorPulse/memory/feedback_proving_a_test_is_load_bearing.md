@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: fa26fd53-3bfc-4421-99d2-4669e6b4fab0
-  modified: 2026-08-03T04:28:31.433Z
+  modified: 2026-08-23T16:30:45.817Z
 ---
 
 A green test proves nothing until it has been shown RED against code that is wrong
@@ -325,7 +325,8 @@ there.
 ---
 
 Related: `.claude/skills/learned/survivorpulse-tests-that-encode-bugs.md` (project skill,
-not a personal memory), [[feedback_delegating_is_not_agreeing]],
+not a personal memory), [[feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect]]
+(the SST-1220 tie-break-fixture case now lives there),
 [[feedback_local_run_differs_from_ci_by_construction]],
 [[feedback_survivorpulse_gate_page_not_viewer]],
 [[feedback_survivorpulse_source_text_guards_fooled_by_text]],
