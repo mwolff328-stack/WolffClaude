@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4233dbd4-4c4f-4211-baa1-08c236605893
-  modified: 2026-08-13T06:14:58.641Z
+  modified: 2026-08-23T06:57:45.136Z
 ---
 
 **⚠️ "Notion needs auth" in the startup banner does NOT mean there is no Notion MCP.** Measured
@@ -143,6 +143,20 @@ not two posted comments.
 - Prefer clicking the actual send arrow icon (bottom-right of the composer, not a stale `ref`)
   over a bare `Return` when chaining several comments quickly — `Return` worked reliably in this
   same session for single-shot comments with no immediately-preceding send.
+
+**Recurred 2026-08-22 (SST-1438), same failure class, worse outcome.** Clicking the `Add a
+comment…` composer — both by a fresh `ref` and by coordinate — again landed typed text inside the
+body of the LAST EXISTING comment on the page instead of a new composer, twice in one session.
+This time it was caught immediately (re-read via `get_page_text`) and reverted with `ctrl+z`, but
+one over-aggressive multi-press `ctrl+z` deleted the target comment's body entirely and needed
+`ctrl+shift+z` (redo) to restore it — a new failure mode on top of the splice itself. Full
+protocol update (try the OAuth connector first, always; probe-string verification if Chrome is
+truly the only option) lives in
+[[project_survivorpulse_notion_comments_via_chrome_composer]]. **The underlying lesson from §4
+was correct and still holds — re-run `find`/re-screenshot before every click on this element,
+never trust a carried-over ref or coordinate — but three sessions apart (2026-08-05, 2026-08-22)
+have now hit the same corruption anyway, so treat every click on this specific element as
+guilty until the post-type read proves otherwise, not just as a best practice to remember.**
 
 **5. Interleaving an API `patch-page` call with browser typing on the SAME page can resync the
 live tab's editor and clobber the API write — landing subsequent keystrokes in the wrong field
