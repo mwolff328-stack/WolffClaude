@@ -10,7 +10,6 @@
 - [An AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — the AC→TC orphan check found in seconds what two review rounds missed.
 - [Enumerate a typed return's fields before signing off](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) — 6 assertions, all on one field of two; the HIGH defect sat in the other.
 - [Verify a reviewer's evidence, not their judgement](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — scope call was right, 2 of 5 files wrong.
-- [Delegating is not agreeing](feedback_delegating_is_not_agreeing.md) — "same by construction" is a claim to execute, not comment on.
 - [Check the distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) — don't override from 2 nearby examples.
 - [Renaming for clarity can re-create the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md) — a new name can lie on one branch.
 - [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) — a behaviour flip invalidates a CLASS of tests.
