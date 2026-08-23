@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 715ea743-c5bf-44e7-a238-1b31c07f379a
-  modified: 2026-08-02T01:21:41.222Z
+  modified: 2026-08-23T16:30:37.285Z
 ---
 
 A SurvivorPulse bug ticket's **Proposed resolution** section carries real authority — it is
@@ -86,8 +86,56 @@ still prints a reassuring "Planned Delete Counts" header.
    written by the same session that later implemented it, hours apart, and was still wrong —
    because it was written from the FK graph without reading the script's other 300 lines.
 
+## Third sub-shape: delegating to a shared helper whose RULE disagrees with the reference
+
+Routing a consumer through a shared helper removes the *duplicate implementation*. It does
+**not** make the helper's answer the right one. If the helper's rule differs from the quantity
+you actually needed, delegation propagates the wrong answer faster and with more confidence than
+a local copy would have — this is the SST-1192/1194 case above from the other side: not just
+"did anyone verify the equivalence claim" but "of several plausible delegates, which one did they
+pick, and why."
+
+**The case (SST-1220, 2026-08-01).** SurvivorPulse had **three** tie-break rules for "which team
+does a tied recommendation resolve to":
+
+| where | rule |
+|---|---|
+| `resolveSingleTeamForSimulation` (greedyPath) | `[...candidates].sort()[0]` — ALPHABETICAL |
+| `resolvePlannedTeamsForWeek` (gameplanApplyService) | `candidates.find(not-already-used)` — engine order ← **what Apply WRITES** |
+| greedyPath's internal `usedTeams` | the walk-chosen team |
+
+SST-1192 and SST-1194 each repointed a consumer at the **alphabetical** one, both citing "one
+comparator" as the reason to delegate rather than tie-break locally. Both were right to delegate.
+Both picked the wrong delegate, and each wrote a variant of *"so they are the same team by
+construction"* into a doc comment. Neither had ever called both functions on one input. Live
+consequences, both in production: the claim map withheld a team nobody took, so a second entry
+was planned onto the team Apply really writes and **one pool was written the same team twice in
+one week**; and the REC badge pointed at a team Apply would not write.
+
+**How to apply:**
+
+8. **"A is the same as B by construction" is an assertion to execute, not to document.** Call
+   both on one input, print both, and diff — before writing the comment, and again as a test
+   that compares the two functions' outputs rather than either against a literal.
+9. **Choose the delegate by naming the reference quantity first.** Here it was "the team Apply
+   writes" — both tickets said so explicitly and neither checked which function computed it.
+   Read the reference implementation, don't infer it from a helper's name.
+10. **When two fixes both delegate and both are still wrong, fix the HELPER'S RULE, not the call
+    sites.** One-line change, corrects every consumer at once, edits no call site — which also
+    avoids collision with a concurrent session that has the call-site files claimed.
+11. **Pick a fixture where the candidate rules disagree.** A pair whose orderings coincide passes
+    under the broken and the fixed implementation alike — see
+    [[feedback_proving_a_test_is_load_bearing]]. The SST-1192 test used `ZZ_TIE_A` before
+    `ZZ_TIE_B` and stayed green straight through the defect it was named for.
+12. **A doc comment asserting an equivalence ages into a false claim** the moment either side
+    moves, and it reads as verified. After changing a shared rule, grep the codebase for prose
+    describing the OLD rule — three comments here still said "alphabetical by team ID" after the
+    fix, one of them justifying a helper by contrast with a guess that no longer existed.
+
 Related: [[feedback_derive_from_the_quantity_the_reader_validates]],
 [[feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision]],
-[[feedback_guard_the_wire_not_just_the_helper]],
+[[feedback_guard_the_wire_not_just_the_helper]] (the coverage half of the SST-1220 case — a
+delegate can be thoroughly tested while the wire carrying its answer is naked; severing both
+badge call sites left 154 files / 1920 tests green),
 [[feedback_a_doc_saying_code_was_deleted_is_not_evidence]],
 [[feedback_survivorpulse_verify_a_deferral_reason]].
