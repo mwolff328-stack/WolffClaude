@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 606235bf-b91b-432d-b211-7da816a9d0aa
-  modified: 2026-07-29T08:06:12.458Z
+  modified: 2026-08-23T16:31:30.079Z
 ---
 
 **SST-1097/1098 (2026-07-29, on `2026-v1` @ `cfd6056a`).** `shared/accessMode.ts` exports
@@ -28,11 +28,10 @@ patch the hook, never the consumers), and `signup.tsx`.
 - Behavioural suites pin the mode they test; exactly one test records the shipped value,
   so flipping the flag reddens 1 of 101, by design.
 
-**Two access primitives, easy to confuse** (`server/routes.ts`):
-`canAccessPool` = ADMIN or owner → **mutations**. `canParticipateInPool` = ADMIN, owner,
-or anyone holding an entry → **pool data reads**. Picking the owner-only one for a read
-doesn't fail a test — it 403s everyone who *joined* a pool. `tests/poolDataReadAccessGuard.test.ts`
-guards this per route.
+**Two access primitives are easy to confuse** (`canAccessPool` = mutations vs.
+`canParticipateInPool` = pool data reads) — full detail lives in
+[[project_survivorpulse_route_auth_is_opt_in]], not duplicated here.
 
 Related: [[feedback_sweep_for_the_class_not_the_change]],
-[[feedback_check_distribution_before_inferring_convention]]
+[[feedback_check_distribution_before_inferring_convention]],
+[[project_survivorpulse_route_auth_is_opt_in]]
