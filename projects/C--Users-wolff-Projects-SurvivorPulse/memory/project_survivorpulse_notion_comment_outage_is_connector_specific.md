@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 2993dd74-1b19-4302-9b8a-6bd5b31d6e47
-  modified: 2026-08-16T03:37:29.666Z
+  modified: 2026-08-23T06:55:54.876Z
 ---
 
 Multiple sessions (SST-1293, SST-1331, SST-1332, SST-1317-1322) recorded the
@@ -54,3 +54,18 @@ working. **Lesson: a tool failure that looks like infrastructure flakiness is
 exactly the kind of thing worth a memory search before working around it — the
 workaround itself (Notes-only) degrades the audit trail for everyone
 downstream, not just this session.**
+
+**Confirmed again 2026-08-22 (SST-1438 grooming):** `mcp__notionApi__API-create-a-comment`
+was still 400ing with `missing_version`. `notion-create-comment` on the OAuth connector
+(`mcp__d77c6777-2678-446f-b1ea-d56a8303dfb6__notion-create-comment`, `page_id` + `markdown`)
+posted cleanly on the first call, no retries needed.
+
+This run also surfaced a reason to prefer the OAuth connector even harder than "it's faster":
+the standing Chrome-browser fallback (see
+[[project_survivorpulse_notion_comments_via_chrome_composer]]) turned out to carry a real
+**data-corruption risk** — the composer click can silently type into the last existing
+comment on the page instead of creating a new one. So the order is no longer "try OAuth,
+fall back to Chrome if it's down" as a matter of convenience; it's that now, because the
+Chrome path is not just slower but unsafe. Always attempt the OAuth connector first, and
+only reach for Chrome when it is confirmed genuinely unavailable — and even then, use the
+probe-string verification protocol documented in that file before typing a real comment.
