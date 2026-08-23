@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 515ac9ce-220f-4755-b974-8f44a68dacc8
-  modified: 2026-08-02T01:41:25.281Z
+  modified: 2026-08-23T16:31:11.639Z
 ---
 
 SurvivorPulse has many `readFileSync` + `expect(source).toMatch(...)` guardrails. They are cheap and catch real architectural regressions, but they share one failure mode: **an assertion about code, evaluated against text, fooled by text that is not code.** Five confirmed instances on 2026-07-28 alone, across two branches and two sessions:
@@ -16,7 +16,7 @@ SurvivorPulse has many `readFileSync` + `expect(source).toMatch(...)` guardrails
 4. **My own new guardrail vs. my own docblock.** `not.toMatch(/import\.meta\.env/)` on a visibility module failed because the module's docblock *describes* the retired env gate in prose.
 5. **The regex comment-stripper itself — the nastiest.** Stripping `/\/\*[\s\S]*?\*\//g` to fix (4) then swallowed real code, because a comment containing `/admin/*` has `/*` in it, which opens a bogus match that runs to the next `*/`. This *removes* code rather than adding a false hit, so the assertion silently finds nothing and **passes**.
 
-**Sibling failure mode, opposite direction:** a per-line scan can be blind to code that spans multiple lines (matches too *little* rather than too much) — see [[feedback_source_scanning_guards_need_three_meta_tests]] for the multi-line-registration instance of this same "assert on syntax, not identifiers, and add an adversarial fixture" discipline.
+**Sibling failure mode, opposite direction:** a per-line scan can be blind to code that spans multiple lines (matches too *little* rather than too much) — see [[feedback_source_scanning_guards_need_three_meta_tests]] for the multi-line-registration instance of this same "assert on syntax, not identifiers, and add an adversarial fixture" discipline. That file also documents its own independent "prose satisfies a route-guard scan" instance — same mechanism as case 1 below, different concrete guard.
 
 **How to apply — in preference order:**
 1. **Assert on syntax, not identifiers.** `not.toMatch(/import\s[^;]*Foo/)` and `not.toMatch(/<Foo\b/)` beat `not.toMatch(/Foo/)`. A comment may reference a symbol; code may not import or render it. This is strictly *more* precise, not weaker, and needs no stripping.
