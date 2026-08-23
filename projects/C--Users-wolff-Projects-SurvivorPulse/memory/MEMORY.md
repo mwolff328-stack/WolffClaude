@@ -59,6 +59,7 @@
 - [Verify a fix site is live before citing it](feedback_verify_fix_site_is_live_before_citing_it.md) — matched the bug but was wired only to a frozen router.
 - [A new error code activates old dead UI code](feedback_a_new_error_code_activates_old_dead_ui_code.md) — a 409 became reachable for an unready caller.
 - [A helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md) — the other half lived in the caller; a new call site broke silently.
+- [A source guard must assert the wire is REACHED](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — a resolver call that read as correct was unreachable; the guard asserted its text and stayed green.
 
 ## Shipping, environments, and infra
 
@@ -140,4 +141,6 @@
 - [PickGrid.tsx is dead; SeasonGridSection/WeekViewSection is shared](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — same instances render everywhere.
 - [My Strategy wizard: deleted 2026-08-03](project_survivorpulse_my_strategy_wizard_unreachable.md) — Step1,2,5 gone; Step3/4/Context/Modal survive via /tools/*.
 - [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — same literal queryKey in two files shares ONE cache entry.
+- [Support Mode is server-side now](project_survivorpulse_support_mode_is_server_side.md) — SST-1439; ?supportUserId= retired, and "should this read resolve?" turns on scoping-vs-authorization.
+- [A glob in a comment breaks block strippers](project_survivorpulse_glob_in_comment_breaks_block_stripper.md) — /api/optimizer/* silently ate 45 of 231 route registrations.
 - [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) — Prospect Tracker + Outreach Log locations; update both after sending outreach.
