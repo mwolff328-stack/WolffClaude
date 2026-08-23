@@ -90,6 +90,71 @@ Before calling either Xquik Actor, open its linked Apify listing. Confirm the li
 
 If any actor run fails or returns nothing, note that plainly in the summary rather than failing the whole task — still produce a report for the platforms that worked.
 
+## Step 2.6: Own-asset activity check (added 2026-08-22, founder-directed)
+
+Everything in Step 2 looks *outward* — at what other people are posting. This step looks *inward*, at activity on SurvivorPulse's own past posts (Original Content Log) and on prior outreach threads (Outreach Log), and turns anything that needs a human response into a row in the Follow-Ups database (Step 5.6). Before this existed, a reply to one of Michael's own posts could sit unanswered indefinitely — nothing in this job or any other looked at it.
+
+**Databases involved:**
+- Original Content Log — data source `5ca826d7-ad5f-452c-af0a-81b1742b1d29`. Relevant fields: `Post URL`, `Status`, `Date Posted`, `Pillar`, `Last Checked`, `Last Seen Engagement`.
+- 2. Outreach Log — data source `498922d6-8e0d-4ec1-8ec0-95808ef761a2`. Relevant fields: `Thread URL`, `Response Status`, `Outcome`, `Outreach Date`, `Last Checked`, `Last Seen Engagement`.
+- 5. Follow-Ups — data source `cda4165c-c49a-4f81-8e66-04fff863a10c` (under Strategy & Growth > Beta User Acquisition System). This is the only database this step creates rows in.
+
+**No backfill — this applies going forward only (founder ruling 2026-08-22).** `Post URL` and `Thread URL` were added 2026-08-22 and are blank on every row that predates them. A blank URL means the row is invisible to this step, permanently and by design. Do NOT attempt to reconstruct, search for, or infer the URL of an older post — skip the row silently and move on. Do not report blank-URL rows as a gap or a failure; they are the expected state for anything logged before 2026-08-22.
+
+**Build the check set** (cap the combined set at **15 URLs per run**, ordered by `Last Checked` ascending with never-checked rows first, so nothing starves):
+1. Original Content Log rows where `Status = "Posted"` AND `Post URL` is non-empty AND `Date Posted` is within the last **30 days**.
+2. Outreach Log rows where `Thread URL` is non-empty AND (`Response Status = "Awaiting"` OR `Outcome` contains "Interested").
+3. `Source URL` of every Follow-Ups row with `Status = "Open"` — included so the auto-close check below can actually reach rows pointing at third-party threads that aren't in either log.
+
+De-duplicate the set by URL before scraping — the same URL can legitimately arrive from more than one of the three sources.
+
+**Re-scrape those exact URLs** using the comment-mining call patterns already established in Step 2 — no new actors, no new cost tier, no separate founder approval:
+- Reddit: `urls: ["<url>", ...]`, `scrapeComments: true`, `maxComments: 25`.
+- X: `conversationIds: ["<numeric id from the status URL>"]`.
+- Discord: only if Step 2's availability check passed this run. If it did not, skip Discord URLs in the check set and say so — do not treat it as a failure.
+- Substack / Medium / YouTube: not supported here (no comment-read path exists for them per Step 2). Skip rows on those platforms.
+
+**MICHAEL-OWNED ACCOUNTS (maintain this list here; the auto-close rule depends on it being correct):**
+```
+Reddit: u/Cold_Issue_5093
+X:      @mrwolff369 (personal), @survivorpulse (business)
+```
+If a new posting account is ever added, add it here in the same edit that starts using it. An account NOT on this list is a third party, always — never infer ownership from a display name, a bio, or a post's content.
+
+### 2.6a — Auto-close satisfied follow-ups (runs BEFORE any row creation)
+
+Founder ruling 2026-08-22: this job closes follow-up rows itself when it can see the action landed, rather than leaving Michael to close them by hand.
+
+For each Follow-Ups row with `Status = "Open"` whose `Source URL` was successfully scraped this run:
+- Look for a reply/comment in that thread authored by an account on the MICHAEL-OWNED ACCOUNTS list above, with its own timestamp **after** the row's `Date Created`.
+- If found, update the row: `Status` = `Done`, `Date Closed` = today, `Closed By` = `sp-social-listening auto-close`, `Closing Evidence` = the reply's direct URL + its own timestamp + which owned account authored it.
+- List every auto-close in the run's report and in the Notion Social Listening Log page content, so a wrong close is visible the same day rather than discovered later.
+
+**Hard limits on auto-close — all of these, no exceptions:**
+- Only these Types are auto-closeable: `Outreach follow-up`, `Content engagement`, `Reply opportunity`. **Never auto-close `Content mirror`, `Source promotion`, or `Admin`** — those are satisfied by a Notion/bookkeeping action, not by a public reply, so a reply in the thread is not evidence they're done.
+- Close only on **positive evidence of a reply from an owned account**. Never close because engagement went up, because the thread went quiet, because a third party replied, because the row looks stale, or because its `Due Date` passed. Absence of evidence closes nothing.
+- Never auto-close a row created by this same run.
+- If the scrape of that URL failed or returned nothing this run, leave the row Open — a failed read is not evidence of anything.
+- Never auto-close more than **5 rows in a single run**. If more than 5 qualify, close the 5 oldest by `Date Created` and report the remainder as "qualified for auto-close but held by the per-run cap" so a mass-close can't happen silently from one bad read.
+
+### 2.6b — Detect new activity and create follow-up rows
+
+For each URL in the check set, compare the reply/comment count returned against that row's `Last Seen Engagement`. Then, regardless of whether anything new was found, write back `Last Checked` = today and `Last Seen Engagement` = the count just observed. Writing these back on every successful scrape is what makes the ordering and the retirement rule work — never skip the write-back on a quiet result.
+
+If the count increased, read the new replies and apply the same discard rule as everywhere else in this job (skip anything not genuinely about NFL/football survivor pools). Then create a Follow-Ups row when any of the following is true, in this priority order:
+
+1. **A direct question or reply addressed to a Michael-owned account went unanswered** — `Type` = `Content engagement` (own post) or `Outreach follow-up` (outreach thread), `Priority` = `High`, `Due Date` = today. This is the highest-value case in the entire job: someone asked Michael something in public and nobody has answered.
+2. **A prospect with an Awaiting/Interested outreach row replied publicly in that thread** — `Type` = `Outreach follow-up`, `Priority` = `High`, `Due Date` = today. Also set `Related Outreach` and `Related Prospect`.
+3. **A post picked up substantive new discussion (3+ new replies since last check)** — `Type` = `Content engagement`, `Priority` = `Medium`, `Due Date` = today + 1.
+
+Populate on every row created: `Action` (imperative, specific — "Answer u/Sage2050's question about multi-entry limits on the Series 2 wipeout post", never a vague "check thread"), `Source URL`, `Platform`, `Detected Signal` (what was actually observed, e.g. "3 new replies since 2026-08-19, one a direct question to u/Cold_Issue_5093"), `Trigger` = `sp-social-listening`, `Status` = `Open`, and whichever of `Related Content` / `Related Outreach` / `Related Prospect` apply.
+
+**Dedupe rule (mandatory):** at most one **Open** row per (`Source URL` + `Type`). Before creating, query Follow-Ups for an existing Open row with that pair. If one exists, do NOT create a second — update its `Detected Signal` to reflect the newer activity, and raise `Priority` if the new activity qualifies at a higher level than the existing row. This is what stops a busy thread from generating a row a day. A row that is already `Done` or `Dropped` does not block a new row — genuinely new activity after a close is a new follow-up.
+
+Any new commenter surfaced here who clears the ICP-voice bar goes through Step 6.2's Prospect Tracker sync unchanged, including the 60-day Comment-Age Quality Filter.
+
+**Retirement rule (prevents unbounded cost growth):** stop including a Content Log post in the check set once it has been checked **3 consecutive times with zero new engagement**, or once its `Date Posted` passes **30 days** — whichever comes first. Track the consecutive-quiet count by comparing `Last Seen Engagement` across runs; when a post retires, note it once in the report ("Retired from monitoring: <title> — 3 quiet checks"). Without this the check set only ever grows and the run cost grows with it.
+
 ## Step 3: Synthesize
 Write one tight summary (under ~500 words), organized by platform, each with a few bullets: what happened, why it matters, and its link (per the linking rule above — every bullet citing a specific post/tweet/video ends with its URL; every account/competitor named is itself a link to its profile/channel). Call out explicitly, in a top "Flags" line: any competitor moves, any recurring ICP pain point or feature request worth reusing in copy (individual X anecdotes are often the best source of this), and any concrete lead (someone asking for exactly what SurvivorPulse does). If nothing meaningful surfaced, say so directly in one line — do not pad or invent signal.
 
