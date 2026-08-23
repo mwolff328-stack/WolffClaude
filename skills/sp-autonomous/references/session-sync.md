@@ -294,6 +294,11 @@ before you read the next file, same as Phase 0 always required.
 
 ## SHIP Aggregation — one founder-facing verdict, not N
 
+**This is the mechanical how-to for [Operating Model §4.9](https://app.notion.com/p/37629ce5833d81eca755f86e4e001a33)**,
+which states the rule at the process level (trigger conditions, who stands down, what the
+aggregator must re-verify). This section is the exact procedure; the Operating Model is canonical
+if the two ever disagree.
+
 When multiple sp-autonomous sessions converge on the same `2026-v1` tip, the founder's stated
 preference is explicit: **one consolidated SHIP REPORT, produced by its own dedicated session** —
 not "whoever finishes last owns it," which still means hunting through transcripts to find the

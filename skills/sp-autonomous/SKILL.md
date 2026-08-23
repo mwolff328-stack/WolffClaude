@@ -357,10 +357,14 @@ Two things that will otherwise waste an hour:
   explicitly; never issue a bare 🚢 SHIP that implies coverage you didn't get.
 
 **If other concurrent sessions are also landing work on this same branch tip, do not each issue
-your own SHIP REPORT.** This has happened for real: three separate autonomous runs landed on the
-same commit in one night. Founder-facing preference is explicit: he should never have to read
-through multiple session transcripts to learn whether he can publish. One dedicated aggregator
-session produces the single report instead — **spawn it via
+your own SHIP REPORT.** This is now a codified Operating Model rule, not just a skill convention
+— see **[Operating Model §4.9 — SHIP Aggregation](https://app.notion.com/p/37629ce5833d81eca755f86e4e001a33)**:
+when multiple commits have landed since the last publish from more than one session, or more than
+one coding session has worked SurvivorPulse concurrently, no individual session issues its own
+verdict. This has happened for real: three separate autonomous runs landed on the same commit in
+one night. Founder-facing preference is explicit: he should never have to read through multiple
+session transcripts to learn whether he can publish. One dedicated aggregator session produces the
+single report instead — **spawn it via
 [`mcp__ccd_session__spawn_task`](references/session-sync.md#ship-aggregation)**, follow the exact
 procedure there. Summary: before running the gate, check whether you're in a multi-session batch;
 if solo, run this phase yourself as below; if not, post your own contribution summary and then
