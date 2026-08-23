@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: f8c8a42e-f441-4153-aff9-4a83881d1a26
-  modified: 2026-07-31T16:37:24.264Z
+  modified: 2026-08-23T16:31:50.634Z
 ---
 
 Verified 2026-07-31 while designing agent access to the authenticated app.
@@ -34,7 +34,9 @@ can't write because of CSRF" — a session cookie is full write access.
 **There is no read-only mode.** Roles are `ADMIN | USER | TEST_USER`
 (`shared/schema.ts:34`, `varchar(10)` — so a new 9-char `READ_ONLY` would fit).
 Support mode is the *opposite* of read-only: `canEdit = isOwner || supportMode ||
-isAdmin` — it grants an admin write access to another user's pool.
+isAdmin` — it grants an admin write access to another user's pool. Full mechanism
+(now server-side, not just this one-line summary) in
+[[project_survivorpulse_support_mode_is_server_side]].
 
 **If read-only is ever needed, there is exactly one chokepoint.** `server/index.ts`
 runs `customSessionMiddleware` (191) → `devAutoLoginMiddleware` (195) →
