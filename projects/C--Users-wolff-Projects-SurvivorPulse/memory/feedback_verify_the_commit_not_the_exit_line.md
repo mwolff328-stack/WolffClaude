@@ -50,6 +50,39 @@ pre-change commit. Checking out the baseline **in the same worktree** preserves
 untracked files (a gitignored stale build artifact was the real cause of the
 4th failure), which a fresh worktree would have hidden.
 
+
+## The general rule (refined with nifty-jackson-ebd58f, 2026-08-24): the STEP and the CHECK must not share a failure mode
+
+Five instances across two sessions in one night, all the same shape — **a step reported
+success while doing nothing, and the confirming check could not tell success from no-op
+because it measured the same thing the step did, or something downstream that was already
+true.**
+
+| step that silently did nothing | check that could not see it |
+|---|---|
+| Python string replace whose `old` anchor did not match | "the suite passes" — it passed at the OLD value too |
+| `git rm` pre-staged a path, so `git add` errored and broke the `&&` chain | the commit succeeded, exit line looked clean |
+| `npx vitest … ; echo $?` | the echo's own exit 0 |
+| a guard silently stopped covering moved routes | the full suite stayed green — guards fail OPEN |
+| a floor left stale at 224 against a true count of 232 | `>= 224` passes trivially |
+
+**The cheap rule is NOT "assert more". It is: make the check measure something the broken
+path could not have produced.**
+
+- `assert old in s` works — a missing anchor cannot produce a present anchor.
+- `git show --name-status HEAD` works — a partial commit cannot produce the full file list.
+- Reading the floor value back out of the file works — a no-op cannot change it.
+- Mutation-killing works — a guard that stopped scanning cannot kill a mutant.
+- "The suite is green" fails the bar in every one of these cases.
+
+Corollary for numbers: derive a value by *measurement*, not arithmetic, and prefer the
+authority the consumer itself uses. Two sessions independently landed on 230 here — one
+by setting an assertion absurdly high and reading the real value out of the failure
+message, one by running the consuming file's own regex against `git show <ref>:<path>`
+blobs. Agreement by two different routes is worth far more than either alone. A hand grep
+disagreed with the file's own scanner by one (229 vs 228); when they disagree, the
+authority is whichever scan the assertion actually runs.
+
 Related: [[feedback_survivorpulse_shared_worktree_staging_discipline]],
 [[feedback_local_run_differs_from_ci_by_construction]],
 [[feedback_a_200_is_not_proof_the_server_lived]],
