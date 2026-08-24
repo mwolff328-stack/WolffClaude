@@ -112,6 +112,7 @@
 
 ## Engine and domain behaviour
 
+- [Three near-identical "claimed team" fields](project_survivorpulse_three_claim_signals.md) — wrong one wired to the badge survived 7 tickets.
 - [Elimination predicate rulings](project_survivorpulse_elimination_predicate_rulings.md) — tie=loss, strikeCount is real, buyback at read time.
 - [Per-call-site rules recur](project_survivorpulse_per_call_site_rules_recur.md) — re-implemented per site; one defect, nine tickets.
 - [greedyPath fixture facts](project_survivorpulse_greedypath_fixture_facts.md) — rows carry no `score`, hand-set ties are ignored.
