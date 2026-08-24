@@ -132,6 +132,7 @@
 - [Deleting a Notion row needs notionApi](project_survivorpulse_notion_page_delete_path.md) — OAuth connector has no delete tool.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated.
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md).
+- [client/src/content/ is governance-scanned](project_survivorpulse_content_dir_governance_scan.md) — exports must be PLAIN DATA; a RegExp or a 1-arg function fails a GOVERNANCE-CRITICAL test.
 - [Split route registration](project_survivorpulse_split_route_registration.md) — routes live in BOTH routes.ts and index.ts.
 - [A dead page's route is still load-bearing](project_survivorpulse_dead_page_live_redirect_route.md) — my-picks deleted, live CTAs remain.
 - [Cockpit wrapper global-nav trap](project_survivorpulse_pool_cockpit_wrapper_global_nav_trap.md) — must NOT seed the nav week.
