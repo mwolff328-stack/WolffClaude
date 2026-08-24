@@ -1,11 +1,11 @@
 ---
 name: project-survivorpulse-sst1247-residual-gap-rulings
-description: Founder rulings (2026-08-02) on two residual Home-page copy gaps surfaced during SST-1247 code review but deliberately not built in that fix.
+description: "Founder rulings (2026-08-02) on two residual Home-page copy gaps surfaced during SST-1247 code review but deliberately not built in that fix. Off-season copy: ruled cosmetic, no change needed. Zero-entry pool: RESOLVED 2026-08-24 — shipped as SST-1257 (root cause, Done 2026-08-04) + SST-1258 (Home copy, Done)."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4c359c28-bc54-4271-8b4c-ee0e1871d8fa
-  modified: 2026-08-24T21:35:25.373Z
+  modified: 2026-08-24T21:35:32.582Z
 ---
 
 SST-1247 fixed Home's "Add your first pool" empty state wrongly showing for users with a real pool in a non-current season. Code review surfaced two related, NOT-fixed residual gaps (documented in `tests/currentSeasonDebriefHasPoolsInOtherSeasons.sst1247.test.ts` TC-3/4/6 and `server/services/currentSeasonDebriefService.ts`'s off-season branch). Brought to the founder for a product call; both are now resolved:
