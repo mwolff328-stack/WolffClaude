@@ -274,6 +274,12 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [YouTube] [MockSlate](https://www.youtube.com/@mockslate) — content creator (posted ["Schedule Survivor: The NFL Survivor Pool Where You Want Shootouts"](https://www.youtube.com/watch?v=_nUUUlmI0-w) — genuine survivor strategy content) — seen: 2026-08-22
 - [Reddit] [u/dukefan1342](https://www.reddit.com/user/dukefan1342/) — commissioner / ICP voice (recruiting for a [$25 NFL Survivor League hosted on Sleeper](https://www.reddit.com/r/findaleague/comments/1vulvyr/25_nfl_survivor_league_hosted_on_sleeper/)) — seen: 2026-08-22
 - [Reddit] [u/PurplePango](https://www.reddit.com/user/PurplePango/) — ICP voice / in-market buyer (asked [r/sportsbook](https://www.reddit.com/r/sportsbook/comments/1vv0tqw/nfl_survivor_best_books/) for smaller sportsbook-run NFL survivor pools besides DraftKings) — seen: 2026-08-22
+- [Reddit] [u/jbf302](https://www.reddit.com/user/jbf302/) — see full entry above — also seen: 2026-08-24 (posts still live in the sweep, no new content)
+- [X] [joelbfeinberg](https://x.com/joelbfeinberg) — adjacent competitor / tool creator (built and is pitching a free(mium) site "to help Survivor Pool players navigate the season" directly to [@ScottHanson](https://x.com/ScottHanson) and Splash Sports) — seen: 2026-08-24
+- [X] [BOATcommishFF](https://x.com/BOATcommishFF) — commissioner / ICP voice (runs Vampire/Chopped/Redraft leagues on a DynastyzeFF-powered platform; announced he's adding a Survivor Pool and recruiting entrants on X) — seen: 2026-08-24
+- [X] [bklynfletchIV](https://x.com/bklynfletchIV) — ICP voice (replying in NFL threads about his own knockout/suicide pool team-avoidance strategy) — seen: 2026-08-24
+- [Reddit] [u/Waroom_Creator](https://www.reddit.com/user/Waroom_Creator/) — content creator / analyst (posted ["I have over analyzed and dug deep into 15 seasons of NFL Survivor Pool data. Here is what it told me."](https://www.reddit.com/r/FantasyFootballGM/comments/1vw93ez/i_have_over_analyzed_and_dug_deep_into_15_seasons/) in r/FantasyFootballGM) — seen: 2026-08-24
+- [YouTube] [SportsLine](https://www.youtube.com/@SportsLine) — content creator (posted ["NFL Survivor Pool 2026: Week 1 Picks and Strategy! | Take the Points"](https://www.youtube.com/watch?v=UZgbEt5ZVzI)) — seen: 2026-08-24
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
