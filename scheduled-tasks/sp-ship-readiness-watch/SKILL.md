@@ -13,7 +13,7 @@ Each run:
 
 2. Call `mcp__ccd_session_mgmt__list_sessions` and check for any session with `isRunning: true` whose cwd/worktree is under SurvivorPulse. If any are running, work may still be in flight — do nothing further this cycle (no claim, no gate, no notification) and end.
 
-3. Read the TAIL of the claim ledger at `~/.claude/projects/C--Users-wolff-Projects-SurvivorPulse/active-claims.jsonl` (tail it — do not read the full 200+ line file) for the most recent `ship-aggregator` lines and the most recent full SHIP REPORT.
+3. Read the TAIL of the claim ledger at `~/.claude/projects/C--Users-wolff-Projects-SurvivorPulse/active-claims.jsonl` (tail it — do NOT read the whole file; it grows unbounded and was already 773 lines / ~750KB as of 2026-08-24, with no rotation/archival policy — expect it to keep growing) for the most recent `ship-aggregator` lines and the most recent full SHIP REPORT.
 
 4. If `origin/2026-v1` has no new commits beyond what the most recent full SHIP REPORT already covers, OR the current tip's tree is byte-identical to the already-published tree (`git rev-parse <tip>^{tree}` vs the published commit's tree), there is nothing new. End quietly — no claim, no gate, no notification, no report.
 
