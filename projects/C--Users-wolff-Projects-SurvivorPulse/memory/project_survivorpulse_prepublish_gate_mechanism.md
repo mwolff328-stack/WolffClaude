@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: edc8aee2-d97b-4425-8d87-2b881a2c2894
-  modified: 2026-08-24T20:21:12.660Z
+  modified: 2026-08-24T20:21:18.238Z
 ---
 
 The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but that **cannot run on the Windows dev box**: the npm scripts use POSIX inline env syntax (`NODE_ENV=test ... vitest`) which npm executes via cmd.exe → `'NODE_ENV' is not recognized`, and the DB-dependent stages (integration/e2e/regression) need a live DB with network — which the SST-1006 `dbHostGuard` correctly refuses against `ep-flat-rice` (the shared dev DB), and which you must never pollute unattended anyway.
@@ -35,7 +35,9 @@ Locally you CAN still run: the unit/component config directly via bash (`NODE_EN
 
 **Publish-time step (founder ruling 2026-07-24):** after the gate passes and BEFORE clicking Publish in Replit, the founder must **delete the `ALLOW_UNSAFE_DEV_FEATURES` secret from the Replit DEPLOYMENT** (Replit → Deployments → Secrets — the deployment's own env, NOT the workspace Secrets pane and NOT the `.replit` `[userenv.development]` line). `server/envValidation.ts` FATAL-exits the prod process on boot if `ALLOW_UNSAFE_DEV_FEATURES=true`, so leaving the deployment secret set makes the publish come up broken. Do NOT edit the `.replit` `[userenv.development]` copy — that one is dev-only (deploy runs `npm run start`/NODE_ENV=production and never reads it) and it powers the deployed dev app's auto-login. The deployment secret and the `.replit` line are two different things: leave the file line, delete the deployment secret. This is documented in the `/pre-deploy` skill's "After the Gate Passes" section. It's a manual Replit-console action — Claude can't perform it, only remind.
 
-Playwright CI (`playwright-ci.yml`) is a SEPARATE workflow (PR-triggered) and was failing ~1 min at setup on `drizzle-kit push --force` needing a TTY (SST-1011) — do not confuse a red Playwright CI with the pre-publish gate.
+Playwright CI (`playwright-ci.yml`, shows as "Playwright CI (ephemeral)") is a SEPARATE workflow from the pre-publish gate — do not confuse a red one with the other, they can disagree.
+
+**⚠️ Corrected 2026-08-24 — the rest of this paragraph was stale.** It used to say this workflow was PR-triggered and failing ~1 min at setup on `drizzle-kit push --force` needing a TTY (SST-1011). Both claims are now wrong: it fires on `push` to `2026-v1` (the SST-1114 fix flagged as pending in the 2026-07-29 WolffClaude changelog landed at some point since), and the 5 most recent runs as of 2026-08-24 all `success` in ~4-5 minutes each. Treat SST-1011 as resolved; if a session encounters a TTY/drizzle-kit failure on this workflow again, that's a regression worth its own ticket, not a rediscovery of SST-1011.
 
 ## What each stage actually runs
 
