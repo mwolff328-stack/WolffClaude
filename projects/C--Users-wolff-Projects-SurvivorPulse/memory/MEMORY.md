@@ -131,6 +131,7 @@
 - [A page read truncates long rich_text](project_survivorpulse_notion_page_read_truncates_rich_text.md) — 12,274 chars → 7,577, silently.
 - [Use OAuth for comments, not notionApi](project_survivorpulse_notion_mcp_create_comment_missing_version.md) — `missing_version` is known-bad.
 - [Deleting a Notion row needs notionApi](project_survivorpulse_notion_page_delete_path.md) — OAuth connector has no delete tool.
+- [Notion select options aren't auto-created](project_survivorpulse_notion_select_options_not_autocreated.md) — writes reject; ALTER replaces the WHOLE option set.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md) — `gh pr merge` isn't gated.
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [bearer token](project_survivorpulse_session_cookie_is_a_bearer_token.md).
 - [client/src/content/ is governance-scanned](project_survivorpulse_content_dir_governance_scan.md) — exports must be PLAIN DATA; a RegExp or a 1-arg function fails a GOVERNANCE-CRITICAL test.
