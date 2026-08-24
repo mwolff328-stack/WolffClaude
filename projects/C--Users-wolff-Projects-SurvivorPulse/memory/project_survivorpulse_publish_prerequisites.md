@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-23T17:07:54.549Z
+  modified: 2026-08-24T19:47:06.109Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -52,4 +52,4 @@ Adjacent, does NOT qualify a ship but do not read "864 passed" as 864 verified b
 
 **Why:** stale checklist entries cost real time and, worse, hid a genuinely pending prod ALTER.
 
-**How to apply:** run the gate per [[project_survivorpulse_prepublish_gate_mechanism]], then walk this list. Items 1-4 are founder-run manual steps; Claude can only remind. When a backfill IS applied, delete its warning here rather than leaving a dangling index line.
+**How to apply:** run the gate per [[project_survivorpulse_prepublish_gate_mechanism]], then walk the "Still open" list above. ⚠️ That list has shrunk over time (was 4 items, now 2) — this line used to say "Items 1-4"; count the actual list rather than trusting a number here, since this exact staleness bug is what it's warning about. Both current items are founder-run manual steps; Claude can only remind. When a backfill IS applied, delete its warning here rather than leaving a dangling index line.
