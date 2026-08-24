@@ -3,6 +3,7 @@
 ## Working practice
 
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
+- [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) — unproven until shown red against wrong code.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — a fix existed days earlier.
 - [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0/109 mutants killed; recurs on side effects too.
