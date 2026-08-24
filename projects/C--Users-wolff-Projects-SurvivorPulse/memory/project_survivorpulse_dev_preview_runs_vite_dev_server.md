@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d82d8712-5081-4ef9-b4b9-148894d49e43
-  modified: 2026-08-21T12:55:04.774Z
+  modified: 2026-08-24T16:45:00.000Z
 ---
 
 **Measured 2026-08-21, after three failed attempts to run the E2E suite against
@@ -87,6 +87,41 @@ trap in `sp-live-verify` §7, with a concrete cause.
    `[e2e-run:<id>]`; cleanup is `DELETE /api/pools/:id` once the app is up
    (read the BODY, not the status — an empty id returns 200 with the SPA
    shell).
+
+## The unbundled server is also a VERIFICATION TOOL, not only a hazard
+
+**Added 2026-08-24 (SST-1450).** Because the dev preview serves modules
+on demand, you can ask it for a source module **by path** and read exactly what
+that deployed app is running — no build, no bundle hash, no SPA render needed:
+
+```js
+await (await fetch('/src/pages/admin/admin-hub.tsx')).text()
+```
+
+This saved a live verification that would otherwise have been abandoned. The
+SPA sat at "Loading" forever (container instability, zero console errors, auth
+confirmed ADMIN via `/api/me`), so **no screenshot was obtainable** — but the
+served module proved the change was live: the deleted import absent, the newly
+added `data-testid` present, the removed wrapper class absent.
+
+Two rules that make it trustworthy:
+
+1. **Check `isHtmlFallback`.** An unknown path returns the SPA `index.html`
+   (~4KB, starts with `<`), NOT a 404. So "the string isn't in the response" is
+   *vacuous* for a deleted file — the response is HTML, of course it isn't
+   there. Read `t.trimStart().startsWith('<')` as the real signal: fallback =
+   the module does not exist. A file that DOES exist returns real transformed
+   JS and does not start with `<`.
+2. **Assert a POSITIVE marker from your own change**, not only absences. Finding
+   `a newly added `data-testid` present is what proves you are
+   reading YOUR code rather than a stale artifact. Absence alone is equally
+   consistent with "wrong path, fallback returned".
+
+The same fallback logic applies to probing whether a **route** was removed:
+`GET /api/admin/<deleted>` returns the SPA shell, identical to a nonsense path.
+Always run a three-way control — deleted route, a known-live route (must return
+real JSON), and a deliberate nonsense route — or the probe proves nothing.
+Use **GET only** when the paired POST would write.
 
 Related: [[project_survivorpulse_playwright_ci_evidence_traps]],
 [[project_survivorpulse_e2e_ci_drift_traps]],

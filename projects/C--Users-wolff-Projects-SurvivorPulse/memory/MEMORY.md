@@ -60,6 +60,8 @@
 - [A new error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md) — a 409 became reachable for an unready caller.
 - [A helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md) — other half lived in the caller; a new call site broke.
 - [Source guard must assert wire is reached](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — unreachable call read correct.
+- [Removal tests need the most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md) — a loading branch satisfies "it's gone".
+- [Verify the commit, not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — `git rm` broke an `add &&` chain; `echo` masked exit 1.
 
 ## Shipping, environments, and infra
 
