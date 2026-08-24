@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-24T19:47:06.109Z
+  modified: 2026-08-24T19:47:11.286Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -32,7 +32,7 @@ Post-publish smoke, all green: prod bundle `Last-Modified` 16:49:45 GMT vs tip c
    how/where and the self-proving verification method live in
    [[project_survivorpulse_prepublish_gate_mechanism]] and
    [[project_survivorpulse_unsafe_dev_flag_is_self_proving]], not duplicated here.
-2. Founder review of `landing.tsx` public copy (~6 residual edge/overclaim phrases flagged). Subscription-flow pre-prod verification story is tagged `[POST-BETA]` — confirm scope rather than treating it as a hard block. ⚠️ This memory is 25+ days old as of 2026-08-23 — re-check current status (e.g. via the SST ticket, not this note) before citing item 2 as still open.
+2. Founder review of `landing.tsx` public copy (~6 residual edge/overclaim phrases flagged, first raised 2026-07-28). Subscription-flow pre-prod verification story is tagged `[POST-BETA]` — confirm scope rather than treating it as a hard block. ⚠️ Un-re-verified dated notes rot — this item has now sat "open" across multiple publishes (2026-07-28 through at least 2026-08-23) with no confirmation anyone re-checked it in between. Re-check current status via the SST ticket, not this note, before citing it as still open on any future publish; don't just re-copy this line forward again.
 
 **A publish carries the code that existed WHEN YOU CLICKED IT — always compare timestamps.** On 2026-07-28 the founder published at ~20:13 UTC (applying the SST-1037 + SST-1079 migrations), then later reported "I have published" in a session whose commits landed at 21:43–23:01 UTC. The migrations were live; the CODE was not. The prod bundle's `Last-Modified` (20:13:57 GMT) predated the first commit by 90 minutes, and the deployed `Footer.tsx` was still the pre-change version. A DB migration being Done says nothing about whether the code deploy carries your commit — they are separate halves of the same button press, and only the migration half is visible in Notion. Check `curl -sI <prod>/assets/index-*.js | grep Last-Modified` against `git log --date=iso-strict-local` before declaring anything shipped.
 
