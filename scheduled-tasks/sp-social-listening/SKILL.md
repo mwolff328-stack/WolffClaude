@@ -353,7 +353,9 @@ If nothing is open and overdue, write "No overdue follow-ups" — and still repo
 
 **This step never closes, edits, or drops a row on the basis of it being old.** The only autonomous close in this job is Step 2.6a's evidence-based auto-close. Age is reported, never acted on.
 
-**Note on the `followup-*` scheduled tasks (founder ruling 2026-08-22):** the ~10 existing one-off `followup-<handle>-outreach` cron tasks stay running in parallel until this tracker proves itself. Expect some duplication between them and this section for now — that's deliberate, not a bug. Do not delete, disable, or edit those tasks.
+**Note on the `followup-*` scheduled tasks — updated 2026-08-24, supersedes the 2026-08-22 text below.** The ~10 one-off `followup-<handle>-outreach` cron tasks were deleted 2026-08-23 during a scheduled-task cleanup, founder-approved at the time without this file's "do not delete" instruction being visible to that session. In practice this didn't create a coverage gap: every one of those tasks was already a dormant one-shot (fired once, then `enabled:false` forever) by the time it was removed, so "stays running in parallel" below was already inaccurate — they were never going to fire again regardless. This tracker (Step 5.6 + the Follow-Ups database) is now the **sole** mechanism surfacing these follow-ups; there is no longer any duplication to expect, and none of the deleted tasks need reconstructing. If a similar one-off follow-up cron is ever proposed again, prefer a Follow-Ups row over a new cron task — that's exactly the redundancy this tracker was built to replace.
+
+Original 2026-08-22 text, kept for history rather than silently deleted: *"the ~10 existing one-off followup-<handle>-outreach cron tasks stay running in parallel until this tracker proves itself. Expect some duplication between them and this section for now — that's deliberate, not a bug. Do not delete, disable, or edit those tasks."*
 
 ## Step 6: Deliver
 
