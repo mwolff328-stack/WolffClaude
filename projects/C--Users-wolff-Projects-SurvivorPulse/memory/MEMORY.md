@@ -76,7 +76,7 @@
 - [Legacy Repl is rollback-only](project_survivorpulse_legacy_repl_is_rollback_only.md) — cutover COMPLETE; survivorpulse.com serves v1.
 - [Open access mode](project_survivorpulse_open_access_mode.md) — one constant hides the beta gate and paywall.
 - [Beta launch site decisions](project_survivorpulse_beta_launch_site_decisions.md) — founder rulings; access-gate + screenshots items superseded.
-- [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — zero-entry pool gets root-cause fix.
+- [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — zero-entry pool fix RESOLVED (SST-1257+1258, both Done).
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) — a missing column 502s the whole app.
 - [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — first is commented out; Playwright loads `.env.test`.
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) / [CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
