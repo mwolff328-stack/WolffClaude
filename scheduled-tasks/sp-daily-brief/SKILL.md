@@ -17,8 +17,8 @@ DATE HANDLING
 Compute "today" and "yesterday" from the actual run date in America/Chicago (Central). Use those literal date strings in queries; do not rely on SQLite now() (it is UTC).
 
 For Notion title format, convert the ISO date to `<Weekday>, M/D/YY` format:
-- Example: 2026-08-07 (Thursday) → "SurvivorPulse Daily - Thursday, 8/7/26"
-- Compute weekday name from the ISO date
+- Example: 2026-08-07 (Friday) → "SurvivorPulse Daily - Friday, 8/7/26"
+- Compute weekday name from the ISO date **independently each run — do not anchor off this or any other example**. ⚠️ A prior version of this example itself was wrong (said "Thursday" when 2026-08-07 is a Friday), and multiple real runs (8/14, 8/20, 8/21) inherited that error by reasoning relative to it rather than computing fresh, always off by exactly one weekday. If unsure, derive it from a date you can verify (e.g. today's actual weekday, stated elsewhere in your context) by counting days — never state a weekday from memory of a past example.
 - Format date as M/D/YY (no leading zeros)
 
 OWNER RULE
