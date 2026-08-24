@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: edc8aee2-d97b-4425-8d87-2b881a2c2894
-  modified: 2026-08-02T18:11:18.659Z
+  modified: 2026-08-24T20:21:12.660Z
 ---
 
 The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but that **cannot run on the Windows dev box**: the npm scripts use POSIX inline env syntax (`NODE_ENV=test ... vitest`) which npm executes via cmd.exe → `'NODE_ENV' is not recognized`, and the DB-dependent stages (integration/e2e/regression) need a live DB with network — which the SST-1006 `dbHostGuard` correctly refuses against `ep-flat-rice` (the shared dev DB), and which you must never pollute unattended anyway.
@@ -14,7 +14,7 @@ The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but 
 ```
 gh workflow run pre-publish.yml --ref 2026-v1
 gh run list --workflow=pre-publish.yml --limit 1 --json databaseId --jq '.[0].databaseId'
-gh run watch <id> --exit-status        # blocks until done; but the run is ~15 min, > the 10-min bash timeout, so run it with run_in_background
+gh run watch <id> --exit-status        # blocks until done; ~15 min when this was written, measured 30-43 min as of 2026-08-24 — always > the 10-min bash timeout either way, so run it with run_in_background
 gh run view <id> --log-failed          # extract the failing test file/name
 ```
 **The gate DB is EPHEMERAL, and that matters when reasoning about adding an assertion to it (SST-1215, 2026-08-01).** `pre-publish.yml:31-33` declares a `postgres:16` **service container**; `:59-61` point `DATABASE_URL`/`POSTGRES_URL`/`TEST_DATABASE_URL` at `localhost:5432/ci_test`. Created **fresh per job** — it is NOT a persistent Neon DB, so it can never hold historical residue and there is nothing in it to inventory or pre-clean. A peer session blocked a useful guard change on the belief that it might; the belief was wrong. But the *conclusion* (don't bolt a new assertion onto Stage 4c) was still right for a different reason: **Stage 3 (`test:e2e:project`, vitest over `**/*.e2e.test.ts`) creates rows that Stage 4b cannot reap**, so a new assertion in 4c fires on SAME-RUN residue, on every run. Concretely: `eliminationEndpointsHttp.e2e.test.ts` and `backfillCanonicalSpreads.e2e.test.ts` mint `http_e2e_user_*` / `backfill_e2e_*`, `cleanup-test-pools.ts` (Stage 4b) matches only `testuser_`/`testadmin_`, and `verify-no-test-pools.ts` (Stage 4c) checks pools only. **Upside: any test-data-leak defect is therefore reproducible in CI against a disposable container — build and RED→GREEN-prove that class of fix there, never against production.**
