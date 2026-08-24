@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 21161978-e055-4d72-ab00-4e13ee7e87f4
-  modified: 2026-07-31T03:47:19.083Z
+  modified: 2026-08-24T21:14:22.630Z
 ---
 
 Founder decisions for the V1 Beta Launch (end of July 2026), made 2026-07-22:
@@ -22,7 +22,7 @@ still binding.**
 2. **Pricing**: beta is free for at least the first 5 weeks of the 2026 season, possibly the whole regular season — expiry must be configurable/extendable. Site may hint "paid version coming soon" for non-beta users; no prices.
 3. **CMEA multi-entry coordination is prototype-only** — the public site must not claim automated cross-entry coordination.
 4. **Competitor naming**: never name PoolGenius/PoolCrunch etc. in public site copy; generic "other sites and tools" is fine. Named comparisons reserved for demos.
-5. **Screenshots**: deferred to Phase 2; Day-1 site uses placeholders.
+5. **Screenshots**: ⚠️ SUPERSEDED — real product screenshots shipped 2026-07-29 (`301c5ef2`, "swap landing page screenshots to My Pools and Game Plan," then cropped tighter in `31c39f77`), two days before this memory's own last edit. `client/src/pages/landing.tsx` renders real PNGs (`beta-my-pools.png`, `beta-game-plan.png`) via `LandingScreenshot`, not placeholders — confirmed live 2026-08-24. Originally: "deferred to Phase 2; Day-1 site uses placeholders."
 
 Site strategy (Paige, approved direction): keep public pages inside the React app; content-as-data (copy in JSON/MD files under client/src/content/); evergreen-only public copy (nothing season/week-specific); backtest credibility claim limited to "5 real NFL seasons, 14 candidate strategies" — no outcome promises.
 
