@@ -1,11 +1,11 @@
 ---
 name: project_survivorpulse_publish_prerequisites
-description: "What actually blocks a SurvivorPulse production publish — as of the 2026-08-23 publish the baseline is 8308b085 and NO migration is pending; the only recurring step is deleting the ALLOW_UNSAFE_DEV_FEATURES deployment secret. Also carries the post-publish smoke recipe and the two bundle-grep false negatives (backtick quoting, template literals)."
+description: "What actually blocks a SurvivorPulse production publish — as of the 2026-08-24 publish the baseline is c98d9242 and NO real migration is pending; the only recurring step is deleting the ALLOW_UNSAFE_DEV_FEATURES deployment secret. Also carries the post-publish smoke recipe, the baseline-identification method (skip the 'Published your App' marker commit, use the real commit before it), and the two bundle-grep false negatives (backtick quoting, template literals)."
 metadata: 
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-24T19:47:11.286Z
+  modified: 2026-08-25T00:34:20.471Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
