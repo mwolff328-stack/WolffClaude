@@ -20,6 +20,8 @@ Sprint Review Reports database (under Product & Engineering): data source collec
 DATE HANDLING
 Compute the current week (Monday–Friday) in America/Chicago from the run date. "This week" = those 7 calendar days ending on the run date. Use literal date strings; SQLite now() is UTC.
 
+⚠️ **The "week ending Fri <Mon DD>" label has gone wrong before — verify it, don't compute it from memory.** The run on 2026-08-21 (a real Friday, confirmed via the archived page's own timestamp) labeled and archived itself as "week ending Fri Aug 22" — Aug 22, 2026 is a Saturday. The run date itself was correct; only the label was off by one day. Before writing the title or the `Week Ending` property, confirm the run date's actual weekday independently (e.g. `date` via Bash/PowerShell, or reasoning from a date already stated elsewhere in your context) rather than asserting it from arithmetic alone — the same class of mistake that produced the Aug 22 error.
+
 OWNER RULE
 Owner = "Assigned To Agent"; if empty, infer from Category and prefix with "~": Front-End/UX/Design/Navigation→~Deb; Core Engine/Full-Stack/Auth & Accounts→~Felix; Analytics/Research→~Stan; Content/Marketing→~Sky; Infrastructure/DevOps/Admin→~Rita.
 
