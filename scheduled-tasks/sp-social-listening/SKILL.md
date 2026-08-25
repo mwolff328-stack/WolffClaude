@@ -275,10 +275,15 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/PurplePango](https://www.reddit.com/user/PurplePango/) — ICP voice / in-market buyer (asked [r/sportsbook](https://www.reddit.com/r/sportsbook/comments/1vv0tqw/nfl_survivor_best_books/) for smaller sportsbook-run NFL survivor pools besides DraftKings) — seen: 2026-08-22
 - [Reddit] [u/jbf302](https://www.reddit.com/user/jbf302/) — see full entry above — also seen: 2026-08-24 (posts still live in the sweep, no new content)
 - [X] [joelbfeinberg](https://x.com/joelbfeinberg) — adjacent competitor / tool creator (built and is pitching a free(mium) site "to help Survivor Pool players navigate the season" directly to [@ScottHanson](https://x.com/ScottHanson) and Splash Sports) — seen: 2026-08-24
-- [X] [BOATcommishFF](https://x.com/BOATcommishFF) — commissioner / ICP voice (runs Vampire/Chopped/Redraft leagues on a DynastyzeFF-powered platform; announced he's adding a Survivor Pool and recruiting entrants on X) — seen: 2026-08-24
-- [X] [bklynfletchIV](https://x.com/bklynfletchIV) — ICP voice (replying in NFL threads about his own knockout/suicide pool team-avoidance strategy) — seen: 2026-08-24
+- [X] [BOATcommishFF](https://x.com/BOATcommishFF) — commissioner / ICP voice (runs Vampire/Chopped/Redraft leagues on a DynastyzeFF-powered platform; announced he's adding a Survivor Pool and recruiting entrants on X) — seen: 2026-08-24, 2026-08-25
+- [X] [bklynfletchIV](https://x.com/bklynfletchIV) — ICP voice (replying in NFL threads about his own knockout/suicide pool team-avoidance strategy) — seen: 2026-08-24, 2026-08-25
 - [Reddit] [u/Waroom_Creator](https://www.reddit.com/user/Waroom_Creator/) — content creator / analyst (posted ["I have over analyzed and dug deep into 15 seasons of NFL Survivor Pool data. Here is what it told me."](https://www.reddit.com/r/FantasyFootballGM/comments/1vw93ez/i_have_over_analyzed_and_dug_deep_into_15_seasons/) in r/FantasyFootballGM) — seen: 2026-08-24
 - [YouTube] [SportsLine](https://www.youtube.com/@SportsLine) — content creator (posted ["NFL Survivor Pool 2026: Week 1 Picks and Strategy! | Take the Points"](https://www.youtube.com/watch?v=UZgbEt5ZVzI)) — seen: 2026-08-24
+- [X] [MikloLocks](https://x.com/MikloLocks) — commissioner / ICP voice (hosting a Circa-style NFL Survivor Pool, current prize pool $520, recruiting on X) — seen: 2026-08-25
+- [X] [SBergerBOSTON](https://x.com/SBergerBOSTON) — content creator (posted that Jaguars and Chargers will be popular Week 1 survivor pool picks) — seen: 2026-08-25
+- [X] [RefCharlesVan](https://x.com/RefCharlesVan) — content creator / ICP voice (posted a full Week 1-7 survivor pick list "to guarantee you survive until at least week 8," drew engagement from [@Daqs_Pickem](https://x.com/Daqs_Pickem)) — seen: 2026-08-25
+- [X] [CapperIsland](https://x.com/CapperIsland) — commissioner / ICP voice (recruiting entrants for his own $40-entry NFL Survivor Pool on Splash Sports, "Comment if you want in") — seen: 2026-08-24, 2026-08-25
+- [X] [Buffalo88888](https://x.com/Buffalo88888) — ICP voice / in-market (asked [@survivorgrid](https://x.com/survivorgrid) directly when the 2026 Week 1 pick-popularity grid will be up) — seen: 2026-08-25
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
