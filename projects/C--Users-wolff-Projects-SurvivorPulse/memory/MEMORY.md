@@ -101,6 +101,7 @@
 ## Test infrastructure
 
 - [Sandbox has no local Postgres](project_survivorpulse_sandbox_has_no_local_postgres.md) — DB proof needs a targeted CI dispatch.
+- [registerRoutes skips customSessionMiddleware](project_survivorpulse_customsessionmiddleware_not_in_registerroutes.md) — hand-built test apps 401 real sessions.
 - [Playwright/CI evidence traps](project_survivorpulse_playwright_ci_evidence_traps.md) — narrowed runs aren't controls.
 - [Dev preview runs an UNBUNDLED Vite server](project_survivorpulse_dev_preview_runs_vite_dev_server.md) — any Playwright run kills the container.
 - [E2E CI drift traps](project_survivorpulse_e2e_ci_drift_traps.md) — a persistent E2E DB masked months of drift.
