@@ -34,6 +34,14 @@ Campaign started 2026-08-07 (Day 1). **Window EXTENDED 2026-08-24 (founder decis
 
    Going forward: **a welcome, onboarding, or other post-signup lifecycle message must never be written to the Outreach Log.** It belongs in the recipient's Beta Testers row only. If you encounter an Outreach Log row that is plainly a post-signup lifecycle send rather than an acquisition touch, do NOT delete it yourself (this job is read-only against the Outreach Log) — flag it in **Blockers / Pivots Needed**, naming the row and the metrics it distorts, so a human can remove it.
 
+5a. **Unredeemed-Invite check (added 2026-08-25, founder-directed).** Query Beta Testers for rows with `Status = "Invited"` and no `Date Redeemed`. For each, compute days since `Date Invited`. Report any at **14+ days** in **Blockers / Pivots Needed**, naming the tester, the day count, and their `ICP Signal` / `Cohort`.
+
+   **Why this exists:** on 2026-08-25 all four `Invited` rows — Str8GuySecrets, MechRxn, survivor_pool_comish, estamosready — turned out to be the entire Founding / Strong-ICP invite wave from 2026-08-05, each carrying the identical `Next Action` line "Check back in 1-2 weeks if no signup or reply." Not one check-back was ever done. They had sat 20 days with `Last Active` still showing the invite date. Nothing was broken and nothing was blocking them: each was sent a live link with "no code needed," and `OPEN_ACCESS_MODE` is `true` in `shared/accessMode.ts`, so signup was open to them the whole time. The instruction to follow up existed, in writing, on every row — it just lived in a free-text field that nothing queried. That is the same defect class as the `Next Step` backlog (see 5b): **a dated commitment stored as prose is not tracked.**
+
+   One of the four, survivor_pool_comish, had meanwhile replied enthusiastically twice in Reddit content threads while still sitting unredeemed — so an unredeemed invite does NOT mean the person is cold, and must never be read as disinterest. Check whether they have recent Outreach Log activity before characterizing them.
+
+   This job only reports. Do not edit Beta Testers.
+
 5b. **Warm-Lead Decay check (added 2026-08-25, founder-directed).** `Interested - Follow-up Sent` describes an action *we* took, not a state the *lead* is in, so it never expires — on 2026-08-25 five warm leads had been sitting in it indefinitely with nothing forcing a next action, and the funnel could not distinguish a live lead from a dead one. Two successor states now exist:
 
    - **`Awaiting Season`** — the prospect gave a *specific* timing deferral tied to the NFL calendar ("I start my survivor prep in about two weeks", "before things get busy with the season"). This is not a stall and must not be chased early. Requires a date in `Next Step` saying when to re-engage. Expect these to cluster just before Week 1 (2026-09-10).
