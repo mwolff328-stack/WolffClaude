@@ -113,6 +113,8 @@
 
 ## Engine and domain behaviour
 
+- [SST-783 pseudo-replication reversal](project_survivorpulse_sst783_pseudo_replication_reversal.md) — pooled-CI bug reversed the "confirmed" mild-lean claim and part of the contrarian claim, 2026-08-25.
+
 - [Three near-identical "claimed team" fields](project_survivorpulse_three_claim_signals.md) — wrong one wired to the badge survived 7 tickets.
 - [Elimination predicate rulings](project_survivorpulse_elimination_predicate_rulings.md) — tie=loss, strikeCount is real, buyback at read time.
 - [Per-call-site rules recur](project_survivorpulse_per_call_site_rules_recur.md) — re-implemented per site; one defect, nine tickets.
