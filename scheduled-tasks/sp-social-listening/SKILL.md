@@ -308,6 +308,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/RealtorAustinn](https://www.reddit.com/user/RealtorAustinn/) — flagged 2026-08-23
 - [Reddit] [u/Jeoconnor425](https://www.reddit.com/user/Jeoconnor425/) — flagged 2026-08-23
 - [X] [GeoffLambert77](https://x.com/GeoffLambert77) — flagged 2026-08-24
+- [X] [MikloLocks](https://x.com/MikloLocks) — flagged 2026-08-25
+- [X] [CapperIsland](https://x.com/CapperIsland) — flagged 2026-08-25
+- [X] [Buffalo88888](https://x.com/Buffalo88888) — flagged 2026-08-25
 ```
 
 Each run, do this:
