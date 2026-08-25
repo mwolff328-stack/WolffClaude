@@ -1,29 +1,35 @@
 {
-  "date": "2026-08-24",
-  "weekday": "Monday",
-  "notionTitle": "SurvivorPulse Daily - Monday, 8/24/26",
+  "date": "2026-08-25",
+  "weekday": "Tuesday",
+  "notionTitle": "SurvivorPulse Daily - Tuesday, 8/25/26",
   "inProgress": [
-    {"id": "SST-601", "title": "Step 2 — Back Tester Integration [POST-BETA]", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
-    {"id": "SST-1377", "title": "Backtesting Series (1.1): Article Shell + Series Hub Page (In Review)", "owner": "Deb, Ann, Vlad", "url": "https://app.notion.com/3bf29ce5833d81a7aa00e1ee26ae1f53"}
+    {"id": "SST-601", "title": "Back Tester Integration (Step 2)", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-1377", "title": "Backtesting Series 1.1: Article Shell + Series Hub Page", "owner": "Deb/Ann/Vlad", "url": "https://app.notion.com/3bf29ce5833d81a7aa00e1ee26ae1f53"},
+    {"id": "SST-1446", "title": "Support Mode follow-ons (P&L route coverage, disabled write affordances)", "owner": "Felix", "url": "https://app.notion.com/3c529ce5833d81609f89c7f05a121f2d"}
   ],
   "blocked": [
-    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy [BETA]", "blocker": "waiting on founder copy-test of 3 candidate names (3-5 founders) before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
-    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium) [BETA P0]", "blocker": "needs Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
-    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
-    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation non-deterministic", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
-    {"id": "SST-881", "title": "BUG: Season Grid stale auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
-    {"id": "SST-1279", "title": "BUG: Past-season Apply's replay dies silently on 2nd buyback", "blocker": "reason not captured — needs logging; also unassigned", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
-    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: Data-audit spike", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"},
-    {"id": "SST-1400", "title": "BUG: Season Grid ELIMINATED divider/order not enforcing tier boundaries", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3c129ce5833d813ea35bee2200bd1d9a"}
+    {"id": "SST-874,SST-876,SST-881", "title": "Game Plan Reset-to-Auto control + related non-deterministic/stale auto-pick bugs", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
+    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)", "blocker": "needs Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
+    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy", "blocker": "copy-test candidate names on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
+    {"id": "SST-1279", "title": "Past-season Apply simulated replay dies silently on second buyback", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
+    {"id": "SST-1281", "title": "Proposed vs. Actual Story 1: Data-audit spike", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"},
+    {"id": "SST-1400", "title": "Season Grid ELIMINATED divider/order not enforcing tier boundaries", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3c129ce5833d813ea35bee2200bd1d9a"}
   ],
   "needsYou": [
-    "Copy-test the 3 confidence-line/archetype name candidates (SST-799) on 3-5 founders — that's the only thing keeping it from locking and shipping",
-    "Grant/confirm Replit console access to helium so SST-790 (P0) can proceed — it's blocking the Cross-Pool Entries Read Endpoint work behind it",
-    "3 Reset-to-Auto tickets (SST-874, SST-876, SST-881) are sitting Blocked with no reason logged — worth a quick check with Felix on real status",
-    "SST-1377 (Backtesting Series article shell) is In Review — take a look if you want eyes on it before it moves to Done"
+    "Grant Replit console access to helium (or assign someone) so Vlad/Pam can finish SST-790's pre-build verification, which is blocking Cross-Pool Entries Read Endpoint",
+    "Decide who runs the copy-test on the 3 candidate confidence-line names for SST-799 before lock",
+    "Check with Felix on why the Reset-to-Auto cluster (SST-874/876/881) is blocked with no reason logged",
+    "SST-1279 and SST-1281 are also blocked with no reason logged — worth a quick sweep to get blockers documented"
   ],
   "doneYesterday": [
-    {"id": "SST-1438", "title": "Season Grid: no per-week clear affordance on the Proposed track", "url": "https://app.notion.com/3c429ce5833d81c6956ac10d3dc3b4e2"},
-    {"id": "SST-1439", "title": "Admin Support Mode: full-experience access to another user's account", "url": "https://app.notion.com/3c429ce5833d81678a3af3252b1fe1f4"}
+    {"id": "SST-1330", "title": "Ranked list gives no sign a higher-ranked team is already claimed by another entry", "url": "https://app.notion.com/3ba29ce5833d81069a19d0cb043d6f22"},
+    {"id": "SST-1447", "title": "BUG: Pick Grid Proposed-cell click gating uses ACTUAL track's elimination status instead of Proposed's own", "url": "https://app.notion.com/3c629ce5833d816fb7add3b8ca5bab06"},
+    {"id": "SST-1448", "title": "TECH DEBT: SST-1447 code-review nits", "url": "https://app.notion.com/3c629ce5833d817d8297c09bb89d4b6d"},
+    {"id": "SST-1450", "title": "Deprecate the Spec Mismatches module from the Admin Hub home page", "url": "https://app.notion.com/3c629ce5833d81d497faf9095d2c8800"},
+    {"id": "SST-1451", "title": "My Pools card view: pool cards onto the shared surface token", "url": "https://app.notion.com/3c629ce5833d81cf9a82c38a5f000140"},
+    {"id": "SST-1457", "title": "My Pools: Portfolio Overview metric cards + banner onto shared surface tokens", "url": "https://app.notion.com/3c629ce5833d815297e9c02b70cf574e"},
+    {"id": "SST-1460", "title": "BUG: SF-4.10 deep-link e2e flaky in CI (DATA_TIMEOUT narrower than test budget)", "url": "https://app.notion.com/3c629ce5833d812da3b9ccc70dca45fb"},
+    {"id": "SST-1461", "title": "Portfolio ROI drawer onto shared surface tokens", "url": "https://app.notion.com/3c629ce5833d81fc9b74f6cf73295bef"},
+    {"id": "SST-1464", "title": "BUG: admin-support-mode e2e TC-46/TC-47 (banner stacking) fails intermittently", "url": "https://app.notion.com/3c729ce5833d81809cecca1ce2b76d7a"}
   ]
 }
