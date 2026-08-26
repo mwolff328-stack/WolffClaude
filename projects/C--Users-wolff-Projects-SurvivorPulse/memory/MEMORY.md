@@ -110,6 +110,7 @@
 - [Playwright teardown coverage](project_survivorpulse_playwright_teardown_coverage.md) — `teardown:` skips a globalTimeout abort.
 - [Local flake-repro traps](project_survivorpulse_local_flake_repro_traps.md) — use an event-loop blocker, not CPU load.
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) — two causes share one message.
+- [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md) — initiation routes redirect to ?error= instead; stub one hash.
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md) — a compile-probe there never runs.
 
 ## Engine and domain behaviour
