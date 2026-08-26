@@ -1,11 +1,11 @@
 ---
 name: project_survivorpulse_prepublish_gate_mechanism
-description: "How to actually run the SurvivorPulse pre-publish/ship gate — it's CI-only, not local — plus what each stage really runs, which config a test lands in, the publish-time secret deletion, and that NO stage anywhere typechecks anything."
+description: "How to actually run the SurvivorPulse pre-publish/ship gate — it's CI-only, not local — plus what each stage really runs, which config a test lands in, the publish-time secret deletion, that NO stage anywhere typechecks anything, and how to dispatch an isolated run against a commit that's no longer a branch tip."
 metadata: 
   node_type: memory
   type: project
   originSessionId: edc8aee2-d97b-4425-8d87-2b881a2c2894
-  modified: 2026-08-26T16:46:06.640Z
+  modified: 2026-08-26T16:46:21.351Z
 ---
 
 The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but that **cannot run on the Windows dev box**: the npm scripts use POSIX inline env syntax (`NODE_ENV=test ... vitest`) which npm executes via cmd.exe → `'NODE_ENV' is not recognized`, and the DB-dependent stages (integration/e2e/regression) need a live DB with network — which the SST-1006 `dbHostGuard` correctly refuses against `ep-flat-rice` (the shared dev DB), and which you must never pollute unattended anyway.
