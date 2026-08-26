@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 21592230-06ea-476f-b7cd-e40061b85574
-  modified: 2026-08-26T17:27:22.727Z
+  modified: 2026-08-26T18:35:13.211Z
 ---
 
 ## The answer first
@@ -120,6 +120,19 @@ per-session flakiness: as of 2026-08-26, budget for the OAuth connector being ab
 unauthenticated) on **any** SurvivorPulse worktree session, and go straight to the page-block
 workaround the first time `ToolSearch` for `notion-create-comment`-family tools comes back empty,
 rather than retrying or escalating.
+
+## API-update-a-block is also broken (2026-08-26, SST-1476 filing)
+
+Tried to fix one typo in an already-appended paragraph block via `mcp__notionApi__API-update-a-block`,
+passing `type: {"paragraph": {"rich_text": [...]}}` (matching the tool's documented shape). Got a
+400 `validation_error` listing ~30 block-type keys ("body.paragraph should be defined", "body.embed
+should be defined", ...) — i.e. none of them landed. Retried passing the same object as a JSON
+string per the schema's `anyOf` string alternative; identical error. This is the same family of bug
+as `API-create-a-comment`'s `missing_version`: the wrapper doesn't marshal the parameter into the
+shape the real Notion API expects. **Don't burn retries on `API-update-a-block` for `notionApi`** —
+if a page-block workaround (used because comments are broken) has a typo, either accept it (if the
+meaning still reads fine, as it did here) or delete-and-re-append via `API-patch-block-children` +
+whatever this server's block-delete tool is, rather than trying to edit in place.
 
 ## API-post-page parent gotcha
 
