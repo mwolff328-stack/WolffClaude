@@ -41,3 +41,42 @@ The consequence is not obvious until you try it: **a helper cannot satisfy that 
 **The fix is to keep the guarded call in the guarded file, not to weaken the guard.** Inject it: the shared helper takes the description fill as a **callback** (`fillDescription: (page) => fillPoolDescriptionWithRunTag(page, note)`), so each spec keeps its own import and call site while the helper owns the *order* and the *count*. Coverage then splits cleanly along what each instrument can actually see — the tripwire keeps guarding "a spec forgot to tag", and a unit test on the helper guards "the description is written exactly once", which the tripwire is structurally blind to.
 
 **How to apply, generally:** before extracting anything out of a file that a source-shape guard scans, check the guard's *enumeration* (recursive or flat? which glob?) and whether it demands import **and** call in the same file. If it does, the extraction must leave the guarded token behind — pass the guarded operation in rather than moving it out. And per [[feedback_guard_the_wire_not_just_the_helper]], prove the guard still has teeth *after* the move: sever one call site, confirm it goes red **naming that file**, restore, confirm green. A tripwire that was load-bearing before a refactor is not automatically load-bearing after it.
+
+## How to exclude build output, and the plausible exclusion that fails open
+
+Instance 3 recurred on 2026-08-26, same directory: the SST-1424 allowlist guard
+(`revivalCostNotStrategyKeyed.sst1424.test.ts`) walked `server/**` and reported
+`server/public/assets/index-B9pGzg_T.js` as an illegal consumer of
+`totalRevivalCost`. Two things worth carrying forward beyond "exclude build
+output":
+
+- **Never allowlist the offending filename.** Bundles are hash-stamped, so the
+  entry stops matching at the next build and the guard quietly resumes failing.
+- **Defer to `git check-ignore`, not to a hand-kept path list.** Batch every
+  candidate through `git check-ignore -z --stdin` (exit status **1 means nothing
+  matched**, which is a valid empty answer, not an error) and drop what it names.
+  The source/output boundary then lives only in `.gitignore`, and a newly ignored
+  output dir is excluded for free. Report whether the filter actually *ran* and
+  assert that in a test — otherwise a missing git silently restores the bug.
+
+**The measured trap.** The obvious alternative — "only git-**tracked** files are
+source", via `git ls-files` — excludes the bundle correctly and **fails open**:
+it also excludes every source file not yet committed, which is exactly the state
+a new consumer is added in. Mutating the guard to that variant with a real
+violation sitting on disk at `server/services/sst1424Probe.ts` left the allowlist
+assertion **green**. This is the subtractive-fix hazard from the section above,
+in its concrete form.
+
+**Meta-test it against a fixture repo, not the real tree.** The repo is clean, so
+an over-broad exclusion is invisible to a repo-only assertion — cf. rule 9,
+"guard the mechanism, not today's data". Parameterise the scan by root
+(`scanForToken(root, dirs, token)`), then in `beforeAll` build a throwaway
+`git init` tree containing a violation in a source path (must be reported), the
+same violation under two *differently named* ignored dirs (must not be — proves
+the rule is `.gitignore` and not a `server/public` special case), and one
+innocent source file that must survive the filter (proves the exclusion is not
+over-broad). Under the `ls-files` mutation, those meta-tests were the **only**
+thing that went red.
+
+Related: [[feedback_proving_a_test_is_load_bearing]],
+[[feedback_source_scanning_guards_need_three_meta_tests]]
