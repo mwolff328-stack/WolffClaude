@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: edc8aee2-d97b-4425-8d87-2b881a2c2894
-  modified: 2026-08-26T16:46:21.351Z
+  modified: 2026-08-26T17:31:08.711Z
 ---
 
 The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but that **cannot run on the Windows dev box**: the npm scripts use POSIX inline env syntax (`NODE_ENV=test ... vitest`) which npm executes via cmd.exe → `'NODE_ENV' is not recognized`, and the DB-dependent stages (integration/e2e/regression) need a live DB with network — which the SST-1006 `dbHostGuard` correctly refuses against `ep-flat-rice` (the shared dev DB), and which you must never pollute unattended anyway.
@@ -71,5 +71,7 @@ git push origin --delete ci-verify-<label>
 This gets a genuinely isolated signal — none of whatever landed on top of you — which matters specifically when a concurrent session's commits touch the same function your change reads from (observed same session: a peer's predicate-extraction refactor sat inside the exact auth callback a welcome-email fix's tests exercised). **A `startup_failure` is not a real signal either way** — before treating a gate result as meaningful, confirm `status: completed` with a real `conclusion` (`success`/`failure`), not `startup_failure`; the latter means the workflow never ran a single step and proves nothing about the code.
 
 **When you monitor a specific commit's gate run, verify which SHA is actually yours independently before trusting your own working notes.** Mid-session, after a peer described "your four commits landing on top of mine," a monitor script got pointed at the peer's SHA instead of the author's own — an easy slip once several sessions are trading SHAs in chat. `git log -1 --format="%H %s" <sha>` on both candidates, or `git merge-base --is-ancestor <sha-a> <sha-b>`, settles it in seconds and should be habitual before wiring a watch, not just when something looks wrong.
+
+**During a fast run of concurrent pushes, most commits never get a completed gate run at all — not cancelled, not queued, just absent.** `concurrency: group: pre-publish-${{ github.event_name }}` on `push` means the group key is the SAME for every push to `2026-v1` (not per-SHA), and `cancel-in-progress: false` only protects the run already IN PROGRESS — it still allows at most one PENDING run per group, so a new push cancels whatever was queued-but-not-started before it. Measured directly (2026-08-26, two sessions cross-checking the same window): of 9 commits pushed in quick succession by one session, only 1 got a completed run; 4 showed `conclusion: cancelled`; **4 had no run in `gh run list` at all** — indistinguishable from a SHA nobody has looked up yet, since the CLI silently omits rows rather than saying "no run exists here." Before citing a gate result (green OR red) for a specific commit, confirm a run actually exists and completed for that exact `headSha` (`gh run list --workflow=pre-publish.yml --json databaseId,headSha,status,conclusion`) — don't infer coverage from "the branch's most recent run" during a busy window, and don't assume "no run shown" means "not yet dispatched" when it could mean "silently cancelled between pushes."
 
 Related: [[project_survivorpulse_publish_prerequisites]], [[feedback_confirm_the_check_covers_what_you_changed]]
