@@ -3,6 +3,7 @@
 ## Working practice
 
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
+- [Await vs fire-and-forget for usage events](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only when the write IS the response's payload.
 - [A "completed" agent can resume and act again](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) / [proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — RED-proof and the +/- filter both miss MOVES.
