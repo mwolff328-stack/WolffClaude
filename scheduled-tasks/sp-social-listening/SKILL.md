@@ -310,6 +310,10 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [MikloLocks](https://x.com/MikloLocks) — flagged 2026-08-25
 - [X] [CapperIsland](https://x.com/CapperIsland) — flagged 2026-08-25
 - [X] [Buffalo88888](https://x.com/Buffalo88888) — flagged 2026-08-25
+- [X] [bklynfletchIV](https://x.com/bklynfletchIV) — flagged 2026-08-26
+- [Reddit] [u/muddycleats92](https://www.reddit.com/user/muddycleats92/) — flagged 2026-08-26
+- [Reddit] [u/Competitive_Copy4371](https://www.reddit.com/user/Competitive_Copy4371/) — flagged 2026-08-26
+- [Reddit] [u/thereallevay](https://www.reddit.com/user/thereallevay/) — flagged 2026-08-26
 ```
 
 Each run, do this:
