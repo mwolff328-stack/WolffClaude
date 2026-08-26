@@ -63,6 +63,7 @@
 - [jsdom rewrites inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md) — drops a var() `border` shorthand; hex reads as rgb().
 - [Removal tests need the most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md) — a loading branch satisfies "it's gone".
 - [Verify the commit, not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — `git rm` broke an `add &&` chain; `echo` masked exit 1.
+- [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) — invisible in `git diff`; breaks source-shape guards.
 
 ## Shipping, environments, and infra
 
