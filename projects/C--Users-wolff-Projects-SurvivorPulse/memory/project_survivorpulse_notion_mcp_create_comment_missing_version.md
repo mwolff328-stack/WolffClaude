@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 21592230-06ea-476f-b7cd-e40061b85574
-  modified: 2026-08-26T17:11:03.914Z
+  modified: 2026-08-26T17:27:22.727Z
 ---
 
 ## The answer first
@@ -100,6 +100,26 @@ that would all hit the identical missing MCP connection, the persona assessments
 Felix/Vlad) were written directly with genuinely distinct reasoning per lens, then appended as one
 batch of blocks — preserves the skill's "note dissent, don't average it away" requirement without
 wasting agent calls on a tool neither they nor I have access to.
+
+## Recurred again 2026-08-26 (SST-1475 filing, separate worktree/session)
+
+Same pattern, different session (worktree `vigorous-euler-916b4f`, filing SST-1475 as a sibling to
+SST-1474): `mcp__notionApi__API-create-a-comment` 400s `missing_version` immediately; `ToolSearch`
+for `notion-create-comment`/`notion-search`/`notion-fetch` returned zero matches, confirming the
+OAuth connector (`d77c6777-...`) was genuinely not connected to this session either, not just
+unauthenticated. Applied the page-block fallback from the entry above without hesitation this
+time — checked memory first per [[feedback-search-memory-before-accepting-a-tool-failure-as-fatal]],
+found this exact entry, and skipped straight to the callout-plus-paragraph-blocks pattern. It
+worked cleanly: `API-patch-block-children` accepted a `callout` block (not just `paragraph` —
+worth knowing since the tool's JSON schema only formally documents `paragraph` and
+`bulleted_list_item` as typed requests, but the API accepts other real Notion block types passed
+as plain objects through the schema's loose `additionalProperties: true` fallback branch).
+
+Two same-day recurrences across two different sessions is enough to stop treating this as
+per-session flakiness: as of 2026-08-26, budget for the OAuth connector being absent (not just
+unauthenticated) on **any** SurvivorPulse worktree session, and go straight to the page-block
+workaround the first time `ToolSearch` for `notion-create-comment`-family tools comes back empty,
+rather than retrying or escalating.
 
 ## API-post-page parent gotcha
 
