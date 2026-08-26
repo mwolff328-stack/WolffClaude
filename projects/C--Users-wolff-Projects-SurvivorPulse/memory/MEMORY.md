@@ -3,6 +3,7 @@
 ## Working practice
 
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
+- [Static dupe theory beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md) — re-fetch both tickets before calling one a duplicate.
 - [Await vs fire-and-forget for usage events](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only when the write IS the response's payload.
 - [A "completed" agent can resume and act again](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
