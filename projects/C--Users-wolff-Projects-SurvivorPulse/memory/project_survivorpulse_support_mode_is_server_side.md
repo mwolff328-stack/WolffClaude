@@ -28,4 +28,10 @@ How it works now:
 
 Blocked while a session is active (`rejectBlockedSupportModeActions`, mounted beside `rejectReadOnlyWrites`): Stripe checkout/attach, `/api/auth/password/change`, `/api/auth/profile`, signout and signout-all, beta-access invite/approve/reject/revoke, and founding-feedback. Paths are normalised for case and trailing slash first — Express 5 here routes non-strictly and case-insensitively, so `/API/auth/signout` and a trailing slash both reached the handler before that was added.
 
+⚠️ **The client reads TWO different identities, and picking the wrong one is silent** (found building SST-1467, 2026-08-26). `useCurrentUser()` / `UserContext` queries **`/api/me`** — the TARGET during a support session. `GET /api/auth/me` returns **`req.customUser`** — always the real ADMIN. Both are "the current user" and neither name hints at the divergence.
+
+This matters for any **account-settings** feature, because those act on the ACTOR (`req.customUser`) while the page around them renders the TARGET. Wiring such a control to `useCurrentUser()` displays one identity beside a button that operates on another — with a credential-changing action like attaching a Google identity, that is a backdoor into a user's account created by a support action and attributed to the user. Read `/api/auth/me` for actor state, or hide the section during a support session.
+
+The route tripwire's `AUTH_ACTOR_SCOPED` list is where routes that must NOT resolve to the target are recorded (`/api/auth/me`, signout, signout-all, password/change, profile, and SST-1467's two Google-link routes). Note its block comment says nothing on the client consumes `/api/auth/me` during a support session — keep that true, or update it in the same story.
+
 `tests/supportSessionRouteCoverage.test.ts` is a ratchet over the re-derived route table: a NEW identity-scoped route added without the resolver fails it. Related: [[feedback_guard_the_wire_not_just_the_helper]], [[feedback_a_source_guard_must_assert_the_wire_is_reached]], [[project_survivorpulse_route_auth_is_opt_in]].
