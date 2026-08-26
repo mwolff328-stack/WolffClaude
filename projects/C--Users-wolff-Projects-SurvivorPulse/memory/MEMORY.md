@@ -5,12 +5,12 @@
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP server is fallback-only.
 - [A "completed" agent can resume and act again](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
-- [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) — unproven until shown red against wrong code.
+- [Proving a test is load-bearing](feedback_proving_a_test_is_load_bearing.md) / [proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — RED-proof and the +/- filter both miss MOVES.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — a fix existed days earlier.
-- [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0/109 mutants killed; recurs on side effects too.
+- [Guard the wire, not just the helper](feedback_guard_the_wire_not_just_the_helper.md) / [source guard must assert wire is reached](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed; an unreachable call still read correct.
 - [Paired assertions both go vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) — clear+preserve both pass on a no-op.
 - [An AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — orphan check beat two review rounds.
-- [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) — 6 assertions, 1 of 2 fields.
+- [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) / [enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping formatting found 2 of 3; assertions found 1 of 2 fields.
 - [Verify a reviewer's evidence](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — scope right, 2 of 5 files wrong.
 - [Check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) — don't override from 2 examples.
 - [Renaming for clarity can recreate the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md) — a new name can lie on one branch.
@@ -18,7 +18,7 @@
 - [Confirm the check covers what changed](feedback_confirm_the_check_covers_what_you_changed.md) — read `include`/`exclude` first.
 - [Local run differs from CI by construction](feedback_local_run_differs_from_ci_by_construction.md) — POSIX-broken/Windows-fine; exits 0 silently.
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — CI's DB is fuller than your fixture.
-- [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) — comments/build output trip `toMatch()`.
+- [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — comments/build output trip `toMatch()`; NUL hides the file.
 - [A green test certifies its stale comments](feedback_a_green_test_certifies_its_stale_comments.md) — a "call shape" check misses a moved site.
 - [The naive fix is green](feedback_survivorpulse_gate_page_not_viewer.md) — three wrong fixes passed; gate the page, not the viewer.
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — 13 failures, two causes; grep each.
@@ -30,8 +30,7 @@
 - [Verify a deferral reason, don't inherit it](feedback_survivorpulse_verify_a_deferral_reason.md) — never inherit a blocker from a peer.
 - [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) — ONE re-survey story, not upkeep.
 - [Fetch and search before working](feedback_survivorpulse_fetch_and_search_before_work.md) — a stale branch and no ticket search cost a session.
-- [Semantic duplicate guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md).
-- [Claim-ledger timestamps aren't orderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md) — 2 sessions duplicated a ticket.
+- [Semantic duplicate guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) / [claim-ledger timestamps aren't orderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md) — 2 sessions duplicated a ticket.
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by path; bare `push -u` moves 2026-v1.
 - [A task premise may describe a sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md) — true elsewhere, false here.
 - [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) — a 4-worker suite killed the dev app.
@@ -45,12 +44,9 @@
 - [An AC can launder an ungroomed commit](feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision.md) — git log -S the behaviour first.
 - [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) — write/read quantities drift apart.
 - [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) — two precisions manufactured a tie.
-- [Enumerate by the structural anchor](feedback_enumerate_by_the_structural_anchor.md) — grepping a value's formatting found 2 of 3.
 - [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producer before warning of a consequence.
 - [Ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md).
 - [Validated identifiers still carry wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md) — `_` is a LIKE wildcard.
-- [Proving a change is comment-only](feedback_proving_a_change_is_comment_only.md) — the +/- filter misses MOVES.
-- [Source-scanning guards fail four ways](feedback_source_scanning_guards_need_three_meta_tests.md) — prose satisfies it; NUL hides the file.
 - [Tests that win an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) — a click UNMOUNTING its target still passes.
 - [Assert after the effect, not before it](feedback_assert_after_the_effect_not_before_it.md) — passed with BOTH fixes reverted.
 - [A third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md) — "never returns none" hid an unreachable warning.
@@ -60,7 +56,6 @@
 - [Verify a fix site is live before citing it](feedback_verify_fix_site_is_live_before_citing_it.md) — matched the bug, wired to a frozen router.
 - [A new error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md) — a 409 became reachable for an unready caller.
 - [A helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md) — other half lived in the caller; a new call site broke.
-- [Source guard must assert wire is reached](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — unreachable call read correct.
 - [jsdom rewrites inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md) — drops a var() `border` shorthand; hex reads as rgb().
 - [Removal tests need the most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md) — a loading branch satisfies "it's gone".
 - [Verify the commit, not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — `git rm` broke an `add &&` chain; `echo` masked exit 1.
