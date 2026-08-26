@@ -1,8 +1,11 @@
 ---
 name: feedback_verify_the_commit_not_the_exit_line
-description: Two independent ways a shell step reports success while doing the wrong thing — `git rm` breaking a later `git add &&` chain into a partial commit, and a trailing `echo` masking a non-zero test exit.
-metadata:
+description: "Two independent ways a shell step reports success while doing the wrong thing — `git rm` breaking a later `git add &&` chain into a partial commit, and a trailing `echo` masking a non-zero test exit."
+metadata: 
+  node_type: memory
   type: feedback
+  originSessionId: 1aee0994-00f0-449b-b4ca-7effd89db392
+  modified: 2026-08-26T17:30:58.959Z
 ---
 
 Both of these fired in one session (SST-1450, 2026-08-24) and both look exactly
@@ -41,6 +44,15 @@ files. `FULL_SUITE_EXIT=1` was sitting in the output all along.
 `Test Files … / Tests …` summary lines and the FAIL markers from the log. This
 compounds with the known trap that absence of `FAIL` is absence of *evidence*,
 not presence of pass — confirm a NON-ZERO passed count too.
+
+**Third instance, same shape, different tool (peer-reported, 2026-08-26, SST-1467):**
+`tsc --noEmit | tail -N` reports the exit code of **`tail`**, not `tsc`. A commit
+message claimed a clean typecheck read off a tail-truncated log; the typecheck had
+actually been failing (TS2739, two files missed in a 4-site required-field change)
+for a full commit's worth of `2026-v1` history until the next commit fixed it.
+Same fix as the `echo` case: never pipe the command you're checking into anything
+before reading its own exit code — `npx tsc --noEmit; echo "TSC_EXIT=$?"` captures
+`tsc`'s own status; `npx tsc --noEmit | tail -N; echo $?` does not.
 
 **Corollary that saved this story:** when failures do appear, attribute each one
 with a real baseline control rather than the obvious-looking cause. Three
