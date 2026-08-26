@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: edc8aee2-d97b-4425-8d87-2b881a2c2894
-  modified: 2026-08-24T20:21:41.526Z
+  modified: 2026-08-26T16:46:06.640Z
 ---
 
 The `/pre-deploy` skill tells you to run `npm run test:prepublish` locally, but that **cannot run on the Windows dev box**: the npm scripts use POSIX inline env syntax (`NODE_ENV=test ... vitest`) which npm executes via cmd.exe → `'NODE_ENV' is not recognized`, and the DB-dependent stages (integration/e2e/regression) need a live DB with network — which the SST-1006 `dbHostGuard` correctly refuses against `ep-flat-rice` (the shared dev DB), and which you must never pollute unattended anyway.
@@ -60,5 +60,16 @@ grep -E "yourTestFile" /tmp/gate.log | sed 's/\x1b\[[0-9;]*m//g'
 ```
 
 A `✓ tests/foo.test.ts (N tests)` line is proof of execution; absence proves nothing on its own, because the file may have landed in another shard's log.
+
+**`workflow_dispatch` needs a branch/tag ref, not an arbitrary SHA — and in this repo your commit stops being a branch tip fast.** `--ref` on `gh workflow run` only accepts a ref GitHub can resolve (branch or tag), so once `2026-v1`'s tip moves past your push (routine here — measured 4 pushes from concurrent sessions in under 30 minutes on 2026-08-26), you can no longer dispatch the gate against your exact commit directly, and a push-triggered auto-run for your exact SHA that terminally fails with `startup_failure` (0s duration, no logs, `gh run rerun` refuses with "cannot be retried") cannot be recovered either — that combination happened together in the same session. Fix: push a throwaway branch pointing at your exact SHA, dispatch against that, then delete the branch:
+```bash
+git push origin <your-sha>:refs/heads/ci-verify-<label>
+gh workflow run pre-publish.yml --ref ci-verify-<label>
+# … wait for the run …
+git push origin --delete ci-verify-<label>
+```
+This gets a genuinely isolated signal — none of whatever landed on top of you — which matters specifically when a concurrent session's commits touch the same function your change reads from (observed same session: a peer's predicate-extraction refactor sat inside the exact auth callback a welcome-email fix's tests exercised). **A `startup_failure` is not a real signal either way** — before treating a gate result as meaningful, confirm `status: completed` with a real `conclusion` (`success`/`failure`), not `startup_failure`; the latter means the workflow never ran a single step and proves nothing about the code.
+
+**When you monitor a specific commit's gate run, verify which SHA is actually yours independently before trusting your own working notes.** Mid-session, after a peer described "your four commits landing on top of mine," a monitor script got pointed at the peer's SHA instead of the author's own — an easy slip once several sessions are trading SHAs in chat. `git log -1 --format="%H %s" <sha>` on both candidates, or `git merge-base --is-ancestor <sha-a> <sha-b>`, settles it in seconds and should be habitual before wiring a watch, not just when something looks wrong.
 
 Related: [[project_survivorpulse_publish_prerequisites]], [[feedback_confirm_the_check_covers_what_you_changed]]
