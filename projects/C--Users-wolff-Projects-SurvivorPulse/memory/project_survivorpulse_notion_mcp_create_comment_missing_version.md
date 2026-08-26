@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 21592230-06ea-476f-b7cd-e40061b85574
-  modified: 2026-08-23T06:56:01.427Z
+  modified: 2026-08-26T17:11:03.914Z
 ---
 
 ## The answer first
@@ -82,3 +82,29 @@ casual next step.
 
 Related: [[project-survivorpulse-notion-page-read-truncates-rich-text]],
 [[project_survivorpulse_notion_comments_via_chrome_composer]].
+
+## Recurred 2026-08-26 (SST-1473 filing) — a session with NO OAuth connector at all
+
+This time the `d77c6777-...` OAuth server wasn't just unauthenticated, it wasn't connected to the
+session at all — `ToolSearch` for `notion-search`/`notion-create-comment`/etc returned zero
+matches (not "requires authentication", not "still connecting" — simply absent from the deferred
+list). Confirmed by searching broadly for "notion" and seeing only `mcp__notionApi__*` tools.
+
+**When that's genuinely true — verify with ToolSearch first, don't assume from the missing_version
+error alone — the page-body block workaround (`API-patch-block-children`, paragraph blocks per
+persona, a leading callout block naming the deviation) is the correct fallback, not a wasted
+detour.** The 2026-08-21 postmortem above criticized reaching for it while the OAuth connector was
+available and unused; that critique doesn't apply when the connector isn't in the session to begin
+with. Practical bug-triage panel adaptation used here: rather than spawning 5 separate Agent calls
+that would all hit the identical missing MCP connection, the persona assessments (Pam/Ann/Deb/
+Felix/Vlad) were written directly with genuinely distinct reasoning per lens, then appended as one
+batch of blocks — preserves the skill's "note dissent, don't average it away" requirement without
+wasting agent calls on a tool neither they nor I have access to.
+
+## API-post-page parent gotcha
+
+For a database that's Notion's newer multi-data-source shape (e.g. "SP Stories & Tasks"), the page
+create call's `parent.database_id` must be the *database* id, not the *data source* id you use for
+`API-query-data-source`/`API-retrieve-a-data-source`. Passing the data_source_id there 404s with
+"Could not find database with ID". Get the real database_id from a data-source object's own
+`parent.database_id` field (returned by `API-post-search`), not from the data source's own `id`.
