@@ -115,7 +115,7 @@
 
 ## Engine and domain behaviour
 
-- [SST-783 pseudo-replication reversal](project_survivorpulse_sst783_pseudo_replication_reversal.md) — pooled-CI bug reversed the "confirmed" mild-lean claim and part of the contrarian claim, 2026-08-25.
+- [SST-783 pseudo-replication reversal](project_survivorpulse_sst783_pseudo_replication_reversal.md) — pooled-CI bug reversed the "confirmed" mild-lean claim 2026-08-25, then RE-confirmed at 10 seasons 2026-08-26 after a real data extension. Always check current doc state.
 - [SST-782 rank and scope errors](project_survivorpulse_sst782_rank_and_scope_errors.md) — "#5-#18 everywhere" was wrong in 2/36 setups; wipeout table was unscoped. Quiet non-repeat on posts 1/2, 2026-08-25.
 - [Three near-identical "claimed team" fields](project_survivorpulse_three_claim_signals.md) — wrong one wired to the badge survived 7 tickets.
 - [Elimination predicate rulings](project_survivorpulse_elimination_predicate_rulings.md) — tie=loss, strikeCount is real, buyback at read time.
