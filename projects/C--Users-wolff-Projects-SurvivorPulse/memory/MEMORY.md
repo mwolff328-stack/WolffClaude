@@ -112,6 +112,7 @@
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) — two causes share one message.
 - [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md) — initiation routes redirect to ?error= instead; stub one hash.
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md) — a compile-probe there never runs.
+- [clearAllRateLimits() is a cross-process no-op in Stage 2c](project_survivorpulse_clearallratelimits_is_cross_process_noop_in_stage2c.md) — compute real cross-file volume before raising or trusting a ceiling.
 
 ## Engine and domain behaviour
 
