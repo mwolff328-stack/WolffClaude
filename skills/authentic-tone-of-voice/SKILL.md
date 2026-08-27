@@ -27,7 +27,9 @@ leverage, synergy, holistic, seamless, empower, transformative, game-changer, de
 These read as AI-generated jargon even when they're common business speak. Say the plain version instead: "pushing on" becomes "asking about" or "asking why," "blast radius" becomes "what it affects" or "what breaks," "circle back" becomes "get back to you," "surface" becomes "bring up" or "mention," "granular" becomes "specific" or "detailed."
 
 ### Never use these phrases:
-"holds up" (as in "see if it holds up against"), "run backward" / "run it backward" (as in "run backward on last year's data"). These sound like AI trying to describe a comparison or a lookback in a punchy way, and they read as generated even though they're not corporate jargon. Say the plain version instead: "holds up against" becomes "compares to" or "measures up against," "run backward on" becomes "look back over" or "go back through."
+"holds up" (as in "see if it holds up against"), "run backward" / "run it backward" (as in "run backward on last year's data"), "swinging hard away from the crowd" (or similar). These sound like AI trying to describe a comparison or a lookback in a punchy way, and they read as generated even though they're not corporate jargon. Say the plain version instead: "holds up against" becomes "compares to" or "measures up against," "run backward on" becomes "look back over" or "go back through," "swinging hard away from the crowd" becomes a plain named term like "heavy contrarian strategy" or "weighting against the field."
+
+More generally: watch for elaborate, image-heavy descriptive phrases standing in for a term you could just name directly. If a concept has a real name (a strategy, a metric, a thing you already call something elsewhere), use that name instead of reaching for a vivid paraphrase. "Swinging hard away from the crowd" is describing something with a name, "heavy contrarian," dressed up as if it needed describing. That dressing-up is the tell.
 
 ### Never use these constructions:
 - Em dashes. Ever. Use a period or a line break.
