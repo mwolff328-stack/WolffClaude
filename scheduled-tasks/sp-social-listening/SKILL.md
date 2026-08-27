@@ -319,6 +319,14 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/muddycleats92](https://www.reddit.com/user/muddycleats92/) — flagged 2026-08-26
 - [Reddit] [u/Competitive_Copy4371](https://www.reddit.com/user/Competitive_Copy4371/) — flagged 2026-08-26
 - [Reddit] [u/thereallevay](https://www.reddit.com/user/thereallevay/) — flagged 2026-08-26
+- [X] [BOATcommishFF](https://x.com/BOATcommishFF) — flagged 2026-08-27
+- [X] [Daqs_Pickem](https://x.com/Daqs_Pickem) — flagged 2026-08-27
+- [Reddit] [u/slowtrees](https://www.reddit.com/user/slowtrees/) — flagged 2026-08-27
+- [X] [CMurda812](https://x.com/CMurda812) — flagged 2026-08-27
+- [X] [AnnoyedPitBoss](https://x.com/AnnoyedPitBoss) — flagged 2026-08-27
+- [X] [MarkFusetti](https://x.com/MarkFusetti) — flagged 2026-08-27
+- [X] [IainMacBets](https://x.com/IainMacBets) — flagged 2026-08-27
+- [X] [Metaleka_](https://x.com/Metaleka_) — flagged 2026-08-27
 ```
 
 Each run, do this:
