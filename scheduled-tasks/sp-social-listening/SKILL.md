@@ -192,7 +192,6 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [DaveMasonBOL](https://x.com/DaveMasonBOL) — competitor (BetOnline; $500K no-rake NFL Survivor contest operator) — seen: 2026-07-24
 - [X] [SpookyExpress](https://x.com/SpookyExpress) — competitor (Splash Sports NFL Survivor contest operator, $5K/$10K) — seen: 2026-07-24
 - [Reddit] [u/Sunday_Survivor](https://www.reddit.com/user/Sunday_Survivor/) — competitor operator (Sunday Survivor founder, replies in r/NFLSurvivor, ships features same-day; = [@SundaySurvivorX](https://x.com/SundaySurvivorX) already in standing X list) — seen: 2026-07-26
-- [X] [JConnSports](https://x.com/JConnSports) — commissioner / ICP voice (runs his own $50 Yahoo NFL survivor pool with a charity split, recruits entrants by DM on X) — seen: 2026-07-26
 - [X] [Spicy_NBA_Chili](https://x.com/Spicy_NBA_Chili) — amplifier (reposts survivor pick videos with a promo code funneling into his own pool) — seen: 2026-07-26, 2026-07-27
 - [X] [BetOpenly](https://x.com/BetOpenly) — adjacent competitor operator (peer-to-peer book running YEAR-ROUND daily MLB survivor pools, $200 winner-take-all, open-groups model — proof survivor mechanics sell outside the NFL calendar) — seen: 2026-07-31
 - [X] [OldManBish](https://x.com/OldManBish) — commissioner / sponsorship lead ("Actively seeking a sponsor for this year's Circa Survivor Pool" — an open sponsor slot in front of a Circa-entry audience) — seen: 2026-07-31
