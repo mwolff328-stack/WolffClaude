@@ -90,10 +90,10 @@ More generally: watch for elaborate, image-heavy descriptive phrases standing in
 ### SurvivorPulse content register
 (Business content, not personal, and higher stakes than an email: real research findings, published under the SurvivorPulse brand. Distinct from the personal register above, no "Well," no "just" as intensifier, no bear hugs, that would be tonally wrong for a data-backed post. What carries over from Michael's voice is the underlying discipline: short paragraphs, plain declarative sentences, no em dashes, no corporate jargon, name the finding straight instead of dressing it up, concede a null result honestly instead of spinning it. This is the register to match for SurvivorPulse Reddit/Discord/X content specifically.)
 
-10. r/SurvivorPulse, Post 3 of a 6-part backtesting series:
+10. r/SurvivorPulse, Post 3 of a 6-part backtesting series (as published, https://www.reddit.com/r/SurvivorPulse/comments/1w0idna/we_tested_two_more_common_strategies_neither_helps/):
 > "TITLE: We tested two more common strategies. Neither helps.
 >
-> Quick recap. [Post 1] showed that our Chalk strategy survives longest but almost never wins the pot. [Post 2] showed why, and that leaning away from the most heavily owned team helps you dodge the weeks that actually decide pools.
+> Quick recap. Post 1 showed that our Chalk strategy survives longest but almost never wins the pot. Post 2 showed why, and that leaning away from the most heavily owned team helps you dodge the weeks that actually decide pools.
 >
 > Before getting to today's finding, we made a real upgrade to how we test this stuff. We've expanded our evidence base from 5 real NFL seasons to 10, 2016 through 2025. Double the seasons means a lot less chance we're reading a fluke into a handful of years as if it were a real pattern.
 >
@@ -103,9 +103,11 @@ More generally: watch for elaborate, image-heavy descriptive phrases standing in
 >
 > [...]
 >
-> In summary, the Heavy Contrarian strategy is a double loser both on survival and winning outcomes."
+> In summary, the Heavy Contrarian strategy is a double loser both on survival and winning outcomes.
+>
+> As always, our reporting is directional and where there is statistical significance we will say so, but we don't provide dollar figures. Payoff numbers from this kind of modeling are inflated by construction, so we don't quote them, and you shouldn't trust anyone else's either."
 
-Why this works in the same voice as the personal register, even though the subject matter is completely different: it states the null result plainly ("Neither helps," "doesn't buy you anything additional") instead of hedging it into mush. It names the cliché-adjacent move and skips it, no "we're excited to share," no "surprising results." Short paragraphs, a real number stated once and moved past, not paraded. No em dashes anywhere in the piece. "Double loser" is exactly the kind of plain, slightly blunt phrase-instead-of-jargon this voice reaches for, the SurvivorPulse-register equivalent of "just kick back and talk about whatever."
+Why this works in the same voice as the personal register, even though the subject matter is completely different: it states the null result plainly ("Neither helps," "doesn't buy you anything additional") instead of hedging it into mush. It names the cliché-adjacent move and skips it, no "we're excited to share," no "surprising results." Short paragraphs, a real number stated once and moved past, not paraded. No em dashes anywhere in the piece. "Double loser" is exactly the kind of plain, slightly blunt phrase-instead-of-jargon this voice reaches for, the SurvivorPulse-register equivalent of "just kick back and talk about whatever." Note the closing paragraph's actual published phrasing ("our reporting is directional and where there is statistical significance we will say so, but we don't provide dollar figures") over a more clipped draft version ("what we're reporting is direction... not a dollar figure") — the founder's live edit reads slightly more explanatory and a touch more formal than the draft. Both are in voice; when in doubt, this published version is the calibration target, not the draft.
 
 ## Examples of Bad Output
 (Same ideas, written the way Michael would hate. Do not do this.)
