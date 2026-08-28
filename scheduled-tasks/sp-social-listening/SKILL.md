@@ -339,6 +339,17 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [MarkFusetti](https://x.com/MarkFusetti) — flagged 2026-08-27
 - [X] [IainMacBets](https://x.com/IainMacBets) — flagged 2026-08-27
 - [X] [Metaleka_](https://x.com/Metaleka_) — flagged 2026-08-27
+- [Reddit] [u/jbf302](https://www.reddit.com/user/jbf302/) — flagged 2026-08-28
+- [Reddit] [u/Odd_Argument8667](https://www.reddit.com/user/Odd_Argument8667/) — flagged 2026-08-28
+- [Reddit] [u/grgizmo](https://www.reddit.com/user/grgizmo/) — flagged 2026-08-28
+- [Reddit] [u/jackzak1](https://www.reddit.com/user/jackzak1/) — flagged 2026-08-28
+- [Reddit] [u/Maleficent_Card_5560](https://www.reddit.com/user/Maleficent_Card_5560/) — flagged 2026-08-28
+- [Reddit] [u/BewareTheHare](https://www.reddit.com/user/BewareTheHare/) — flagged 2026-08-28
+- [X] [tanktalk_pod](https://x.com/tanktalk_pod) — flagged 2026-08-28
+- [X] [PeteXU](https://x.com/PeteXU) — flagged 2026-08-28
+- [X] [LockWagers](https://x.com/LockWagers) — flagged 2026-08-28
+- [X] [VincentArtale](https://x.com/VincentArtale) — flagged 2026-08-28
+- [X] [JConnSports](https://x.com/JConnSports) — flagged 2026-08-28
 ```
 
 Each run, do this:
