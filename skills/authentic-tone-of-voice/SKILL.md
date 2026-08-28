@@ -87,6 +87,26 @@ More generally: watch for elaborate, image-heavy descriptive phrases standing in
 
 9. To a career consultant, bowing out politely: "Thanks for getting in touch. For the final four weeks, I think I just need access to the site. I'm fully invested in growing my AI business and have picked up another consulting gig. I appreciate all of your guidance and help. Best, Mike"
 
+### SurvivorPulse content register
+(Business content, not personal, and higher stakes than an email: real research findings, published under the SurvivorPulse brand. Distinct from the personal register above, no "Well," no "just" as intensifier, no bear hugs, that would be tonally wrong for a data-backed post. What carries over from Michael's voice is the underlying discipline: short paragraphs, plain declarative sentences, no em dashes, no corporate jargon, name the finding straight instead of dressing it up, concede a null result honestly instead of spinning it. This is the register to match for SurvivorPulse Reddit/Discord/X content specifically.)
+
+10. r/SurvivorPulse, Post 3 of a 6-part backtesting series:
+> "TITLE: We tested two more common strategies. Neither helps.
+>
+> Quick recap. [Post 1] showed that our Chalk strategy survives longest but almost never wins the pot. [Post 2] showed why, and that leaning away from the most heavily owned team helps you dodge the weeks that actually decide pools.
+>
+> Before getting to today's finding, we made a real upgrade to how we test this stuff. We've expanded our evidence base from 5 real NFL seasons to 10, 2016 through 2025. Double the seasons means a lot less chance we're reading a fluke into a handful of years as if it were a real pattern.
+>
+> [...]
+>
+> In a large pool of 1,000 entries, The 65/25/10 Blend picked the exact same teams as the Chalk strategy in every single one of the 10 seasons. Zero difference. [...] This outcome isn't definitive proof, but it is a real result that extra weight on future value doesn't buy you anything additional.
+>
+> [...]
+>
+> In summary, the Heavy Contrarian strategy is a double loser both on survival and winning outcomes."
+
+Why this works in the same voice as the personal register, even though the subject matter is completely different: it states the null result plainly ("Neither helps," "doesn't buy you anything additional") instead of hedging it into mush. It names the cliché-adjacent move and skips it, no "we're excited to share," no "surprising results." Short paragraphs, a real number stated once and moved past, not paraded. No em dashes anywhere in the piece. "Double loser" is exactly the kind of plain, slightly blunt phrase-instead-of-jargon this voice reaches for, the SurvivorPulse-register equivalent of "just kick back and talk about whatever."
+
 ## Examples of Bad Output
 (Same ideas, written the way Michael would hate. Do not do this.)
 
