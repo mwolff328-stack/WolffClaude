@@ -352,6 +352,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [LockWagers](https://x.com/LockWagers) — flagged 2026-08-28
 - [X] [VincentArtale](https://x.com/VincentArtale) — flagged 2026-08-28
 - [X] [JConnSports](https://x.com/JConnSports) — flagged 2026-08-28
+- [Reddit] [u/Maleficent_Proof8091](https://www.reddit.com/user/Maleficent_Proof8091/) — flagged 2026-08-29
+- [Reddit] [u/Repulsive_Nail6601](https://www.reddit.com/user/Repulsive_Nail6601/) — flagged 2026-08-29
+- [Reddit] [u/fbi-office](https://www.reddit.com/user/fbi-office/) — flagged 2026-08-29
 ```
 
 Each run, do this:
