@@ -296,7 +296,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [Buffalo88888](https://x.com/Buffalo88888) — ICP voice / in-market (asked [@survivorgrid](https://x.com/survivorgrid) directly when the 2026 Week 1 pick-popularity grid will be up) — seen: 2026-08-25, 2026-08-26
 - [Reddit] [u/slowtrees](https://www.reddit.com/user/slowtrees/) — ICP voice (posted ["Week 1: What is the strategy?"](https://www.reddit.com/r/NFLSurvivor/comments/1vz6g3t/week_1_what_is_the_strategy/) in r/NFLSurvivor) — seen: 2026-08-26
 - [X] [CMurda812](https://x.com/CMurda812) — ICP voice (asked [@Stuckey2](https://x.com/Stuckey2) if anyone does survivor pool strategy/breakdowns for NFL) — seen: 2026-08-27
-- [X] [AnnoyedPitBoss](https://x.com/AnnoyedPitBoss) — commissioner / ICP voice (runs the #APB NFL survivor pool, $25/entry up to 4 entries per person, $6-7K prize pool last season) — seen: 2026-08-26
+- [X] [AnnoyedPitBoss](https://x.com/AnnoyedPitBoss) — commissioner / ICP voice (runs the #APB NFL survivor pool, $25/entry up to 4 entries per person, $6-7K prize pool last season; switched hosting from Splash Sports to Poolhost) — seen: 2026-08-26, 2026-08-29
 - [X] [MarkFusetti](https://x.com/MarkFusetti) — commissioner (recruiting for his 2026 Suicide Pool on the Outlast Pool hosting platform) — seen: 2026-08-26
 - [X] [IainMacBets](https://x.com/IainMacBets) — commissioner / ICP voice (running the 2026 Road to 272 NFL Survivor Pool, $30 entry, max 3 entries, winner-take-all) — seen: 2026-08-26
 - [X] [Metaleka_](https://x.com/Metaleka_) — ICP voice (made it to Week 18 last season for a shot at $26,000 before losing on a Cowboys pick — quotable pain point) — seen: 2026-08-26
