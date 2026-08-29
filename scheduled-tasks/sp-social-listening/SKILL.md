@@ -293,7 +293,6 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [MikloLocks](https://x.com/MikloLocks) — commissioner / ICP voice (hosting a Circa-style NFL Survivor Pool, current prize pool $520, recruiting on X) — seen: 2026-08-25
 - [X] [SBergerBOSTON](https://x.com/SBergerBOSTON) — content creator (posted that Jaguars and Chargers will be popular Week 1 survivor pool picks) — seen: 2026-08-25
 - [X] [RefCharlesVan](https://x.com/RefCharlesVan) — content creator / ICP voice (posted a full Week 1-7 survivor pick list "to guarantee you survive until at least week 8," drew engagement from [@Daqs_Pickem](https://x.com/Daqs_Pickem)) — seen: 2026-08-25
-- [X] [CapperIsland](https://x.com/CapperIsland) — commissioner / ICP voice (recruiting entrants for his own $40-entry NFL Survivor Pool on Splash Sports, "Comment if you want in") — seen: 2026-08-24, 2026-08-25
 - [X] [Buffalo88888](https://x.com/Buffalo88888) — ICP voice / in-market (asked [@survivorgrid](https://x.com/survivorgrid) directly when the 2026 Week 1 pick-popularity grid will be up) — seen: 2026-08-25, 2026-08-26
 - [Reddit] [u/slowtrees](https://www.reddit.com/user/slowtrees/) — ICP voice (posted ["Week 1: What is the strategy?"](https://www.reddit.com/r/NFLSurvivor/comments/1vz6g3t/week_1_what_is_the_strategy/) in r/NFLSurvivor) — seen: 2026-08-26
 - [X] [CMurda812](https://x.com/CMurda812) — ICP voice (asked [@Stuckey2](https://x.com/Stuckey2) if anyone does survivor pool strategy/breakdowns for NFL) — seen: 2026-08-27
