@@ -302,6 +302,12 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [Metaleka_](https://x.com/Metaleka_) — ICP voice (made it to Week 18 last season for a shot at $26,000 before losing on a Cowboys pick — quotable pain point) — seen: 2026-08-26
 - [X] [gobaldxyz](https://x.com/gobaldxyz) — unclear/adjacent (cryptic teaser: "one survivor pool. the pot stays in play, dropping soon" — possible new web3-flavored survivor product, needs another sighting to clarify) — seen: 2026-08-26
 - [YouTube] [DFSG+ Sports Betting](https://www.youtube.com/@DFSGsportsbetting) — content creator (posted ["The Only NFL Survivor Guide You'll Ever Need: 2026 Edition!"](https://www.youtube.com/watch?v=mK6PaWKPMxc)) — seen: 2026-08-27
+- [Reddit] [u/No_Shame5693](https://www.reddit.com/user/No_Shame5693/) — commissioner / ICP voice (posted ["8th Year of RealSimpleFootballPool"](https://www.reddit.com/r/NFLSurvivor/comments/1w203mz/8th_year_of_realsimplefootballpool/) in r/NFLSurvivor — $100 buy-in, over $30K pot / 240 people last season, charity cut) — seen: 2026-08-30
+- [Reddit] [u/glman99](https://www.reddit.com/user/glman99/) — commissioner / ICP voice (posted ["Survivor Pool | $5 Buy in on LeagueSafe | Sleeper | No Revives | No Max | Winner Takes All"](https://www.reddit.com/r/findaleague/comments/1w1w0aw/survivor_pool_5_buy_in_on_leaguesafe_sleeper_no/) in r/findaleague) — seen: 2026-08-30
+- [X] [DynastyDNA_](https://x.com/DynastyDNA_) — commissioner / ICP voice (recruiting for own Dynasty DNA Survivor pool, spots still open for the season) — seen: 2026-08-30
+- [X] [FLKeysBeachBum](https://x.com/FLKeysBeachBum) — ICP voice (enthusiastic player in the Hard Rock Bet $2M NFL survivor pool, publicly asking why it starts at Week 4 instead of Week 1) — seen: 2026-08-30
+- [X] [gfienberg17](https://x.com/gfienberg17) — competitor / affiliate (promoting the [@BetOnline_ag](https://x.com/BetOnline_ag) $500,000 survivor pool, $30 entry, buy-3-get-1-free early bird) — seen: 2026-08-30
+- [X] [4for4football](https://x.com/4for4football) — content creator (Jen Eakins breaking down three ways to attack the 4for4 Splash Survivor Pool and its guaranteed $100,035 grand prize) — seen: 2026-08-30
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
