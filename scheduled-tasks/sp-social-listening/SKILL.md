@@ -366,6 +366,8 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/glman99](https://www.reddit.com/user/glman99/) — flagged 2026-08-30
 - [X] [DynastyDNA_](https://x.com/DynastyDNA_) — flagged 2026-08-30
 - [X] [FLKeysBeachBum](https://x.com/FLKeysBeachBum) — flagged 2026-08-30
+- [Discord] KeKe (keke099720) — flagged 2026-08-30
+- [Discord] mikkon123 — flagged 2026-08-30
 ```
 
 Each run, do this:
