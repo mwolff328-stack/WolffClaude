@@ -2,6 +2,8 @@
 
 ## Working practice
 
+- [Run tone-of-voice check before publishing social](feedback_run_tone_of_voice_before_publishing_social.md) — proactively, not on request.
+
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP is fallback-only.
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md) — re-fetch both tickets first.
 - [Await vs fire-and-forget](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only if write IS the payload.
