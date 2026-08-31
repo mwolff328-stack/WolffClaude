@@ -380,6 +380,15 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [FLKeysBeachBum](https://x.com/FLKeysBeachBum) — flagged 2026-08-30
 - [Discord] KeKe (keke099720) — flagged 2026-08-30
 - [Discord] mikkon123 — flagged 2026-08-30
+- [Reddit] [u/RemoteThought80](https://www.reddit.com/user/RemoteThought80/) — flagged 2026-08-31
+- [Reddit] [u/PsyBorgHive](https://www.reddit.com/user/PsyBorgHive/) — flagged 2026-08-31
+- [X] [DuvALLsports](https://x.com/DuvALLsports) — flagged 2026-08-31
+- [X] [Joncole23](https://x.com/Joncole23) — flagged 2026-08-31
+- [X] [statue_baker](https://x.com/statue_baker) — flagged 2026-08-31
+- [X] [funwithnumberz](https://x.com/funwithnumberz) — flagged 2026-08-31
+- [X] [TheMachine225](https://x.com/TheMachine225) — flagged 2026-08-31
+- [X] [JohnPaulFAL](https://x.com/JohnPaulFAL) — flagged 2026-08-31
+- [X] [ClosingDime](https://x.com/ClosingDime) — flagged 2026-08-31
 ```
 
 Each run, do this:
