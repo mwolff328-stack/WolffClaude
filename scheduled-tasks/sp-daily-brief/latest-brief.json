@@ -1,32 +1,35 @@
 {
-  "date": "2026-08-28",
-  "weekday": "Friday",
-  "notionTitle": "SurvivorPulse Daily - Friday, 8/28/26",
+  "date": "2026-08-31",
+  "weekday": "Monday",
+  "notionTitle": "SurvivorPulse Daily - Monday, 8/31/26",
   "inProgress": [
-    {"id": "SST-601", "title": "Step 2 — Back Tester Integration [POST-BETA]", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-601", "title": "Step 2 — Back Tester Integration", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
     {"id": "SST-1446", "title": "Support Mode follow-ons: real-handler P&L route coverage, scanner extension, disabled write affordances", "owner": "Felix", "url": "https://app.notion.com/3c529ce5833d81609f89c7f05a121f2d"},
-    {"id": "SST-1377", "title": "Backtesting Series (1.1): Article Shell + Series Hub Page (In Review)", "owner": "Deb, Ann, Vlad", "url": "https://app.notion.com/3bf29ce5833d81a7aa00e1ee26ae1f53"},
-    {"id": "SST-1467", "title": "Google Account Integration (2.1): Connect Google from Account Settings (In Review — cleared to Ready pending founder actions)", "owner": "Ann, Deb, Felix, Vlad, Sky", "url": "https://app.notion.com/3c729ce5833d8190b9aad098c92ddbb6"}
+    {"id": "SST-1377", "title": "Backtesting Series (1.1): Article Shell + Series Hub Page", "owner": "Deb/Ann/Vlad", "url": "https://app.notion.com/3bf29ce5833d81a7aa00e1ee26ae1f53"},
+    {"id": "SST-1467", "title": "Google Account Integration (2.1): Connect Google from Account Settings", "owner": "Ann/Deb/Felix/Vlad/Sky", "url": "https://app.notion.com/3c729ce5833d8190b9aad098c92ddbb6"}
   ],
   "blocked": [
-    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy (Copy-Tested)", "blocker": "Copy-test candidate names ('Play It Safe' / 'Small Edge Off the Crowd' / 'Zig While They Zag') on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
-    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)", "blocker": "Requires Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
-    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control (strategy-agnostic)", "blocker": "reason not captured — needs logging (Season Grid/Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
-    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation is non-deterministic", "blocker": "reason not captured — needs logging (Season Grid/Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
-    {"id": "SST-881", "title": "BUG: Season Grid shows stale/incoherent auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging (Season Grid/Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
-    {"id": "SST-1400", "title": "BUG: Season Grid ELIMINATED divider/order not enforcing tier boundaries", "blocker": "reason not captured — needs logging (Season Grid/Reset-to-Auto cluster)", "url": "https://app.notion.com/3c129ce5833d813ea35bee2200bd1d9a"},
-    {"id": "SST-1279", "title": "BUG: Past-season Apply's own simulated replay dies silently on second buyback", "blocker": "reason not captured — needs logging; also unassigned", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
-    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: Data-audit spike", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"}
+    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy (Copy-Tested)", "blocker": "copy-test the 3 candidate archetype names on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
+    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)", "blocker": "requires Replit console access to helium", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
+    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control (strategy-agnostic)", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
+    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation is non-deterministic", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
+    {"id": "SST-881", "title": "BUG: Season Grid shows stale/incoherent auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
+    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: Data-audit spike", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"},
+    {"id": "SST-1279", "title": "BUG: Past-season Apply's simulated replay dies silently on second buyback", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3b329ce5833d816fabdcf284bca93760"},
+    {"id": "SST-1400", "title": "BUG: Season Grid ELIMINATED divider/order not enforcing tier boundaries", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/3c129ce5833d813ea35bee2200bd1d9a"}
   ],
   "needsYou": [
-    "Google Account Integration (SST-1467) is cleared to build but blocked on you: register the callback redirect URI in Google Cloud Console (same OAuth client as SST-1466, for prod/dev/localhost) and live-link with two real Google accounts on the deployed dev app, then log the results as a dated comment.",
-    "Confidence Line copy (SST-799) needs you to run or greenlight the 3-5 founder copy-test on the archetype label candidates before the names get locked.",
-    "Pre-Build Verification (SST-790) is stuck waiting on Replit console access to helium for Vlad — grant access so he can verify king_17/bigroddy12 entry data.",
-    "Four Season Grid / Reset-to-Auto tickets (SST-874, 876, 881, 1400) are Blocked with no reason logged — decide priority or have Felix log the actual blocker so they can move."
+    "SST-1467 Google Account Integration: register the OAuth redirect URI in Google Cloud Console (AC 34) then live-test the link flow with two real Google accounts, one matching and one not matching the signed-in account's email (AC 35) — both block this story shipping",
+    "SST-799 Confidence Line copy: run the 3 candidate archetype names past 3-5 founders before the copy locks",
+    "SST-790 Helium verification: grant/confirm Replit console access to helium so Vlad can verify king_17/bigroddy12 entry data — this is a P0 beta blocker",
+    "5 Blocked tickets (SST-874, SST-876, SST-881, SST-1281, SST-1279) have no blocker reason logged — ask Felix to log why each is stuck so they can move"
   ],
   "doneYesterday": [
-    {"id": "SST-1483", "title": "BUG: Duplicate-pick warning fires across tracks", "url": "https://app.notion.com/3c929ce5833d81bb88bfd464b66ab894"},
-    {"id": "SST-1484", "title": "Guard cross-pool coreScore100 invariance with a regression test (SST-1176 follow-on)", "url": "https://app.notion.com/3c929ce5833d814cb13dc6f41cf4b2ae"},
-    {"id": "SST-1485", "title": "Tech Debt: Consolidate duplicate-pick overlap onto the canonical PickOverlapIndex", "url": "https://app.notion.com/3c929ce5833d81e9b458ed9cc98d8ca7"}
+    {"id": "SST-26", "title": "Pool Data page: expose Pick Popularity data to standard users under a new tab", "url": "https://app.notion.com/35929ce5833d811e98d3f9b6fa2ed9bf"},
+    {"id": "SST-1490", "title": "Auto-populate Open Spread from Odds API when the current week's line first becomes available", "url": "https://app.notion.com/3cb29ce5833d8116846cf76d335a9ab4"},
+    {"id": "SST-1491", "title": "BUG: Pre-Publish Gate Stage 2a fails — cockpitEntries.sst789 season detection", "url": "https://app.notion.com/3cc29ce5833d81d89eb9e25868154c2a"},
+    {"id": "SST-1492", "title": "Pool Data page: table styling consistency, sortable Alive Entries, team logos, Pick Popularity timestamp + Source column", "url": "https://app.notion.com/3cc29ce5833d810fb005f0989296dd98"},
+    {"id": "SST-1493", "title": "Pool Data page: Alive Entries/Pool Picks card background + uppercase sort headers", "url": "https://app.notion.com/3cd29ce5833d818c8bb1e77c3d2764ac"},
+    {"id": "SST-1494", "title": "BUG: Pool Data page (Historical Data) hangs on load with infinite render loop", "url": "https://app.notion.com/3cd29ce5833d81f29ccbfac38aa684c4"}
   ]
 }
