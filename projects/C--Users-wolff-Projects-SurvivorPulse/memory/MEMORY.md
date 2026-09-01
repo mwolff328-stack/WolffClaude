@@ -23,8 +23,7 @@
 - [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) / [verify the commit not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — a green run can still lie.
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
-- [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md).
-- [The naive fix is green](feedback_survivorpulse_gate_page_not_viewer.md) — gate the page, not the viewer.
+- [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) / [the naive fix is green too](feedback_survivorpulse_gate_page_not_viewer.md) — gate the page, not the viewer.
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — grep each.
 - [Guard the query you're reading](feedback_read_the_querys_own_loading_state.md) — a sibling's state lies.
 - [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md).
