@@ -43,9 +43,7 @@
 - [A doc saying code was deleted isn't evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md) / [verify fix site is live](feedback_verify_fix_site_is_live_before_citing_it.md).
 - [Staged ticket headers rot into instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md).
 - [An AC can launder an ungroomed commit](feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision.md) — `git log -S` first.
-- [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md).
-- [Rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md).
-- [A value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producer.
+- [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) / [rounding a display input destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) / [a value in output is not a constant](feedback_a_value_in_output_is_not_a_constant.md) — read the producer, not the display.
 - [Ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md).
 - [Validated identifiers still carry wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md) — `_` is LIKE.
 - [Tests that win an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) — UNMOUNT still passes.
