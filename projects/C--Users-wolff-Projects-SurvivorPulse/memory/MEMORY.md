@@ -152,4 +152,4 @@
 - [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md) — one cache entry.
 - [Support Mode is server-side now](project_survivorpulse_support_mode_is_server_side.md) — ?supportUserId= retired.
 - [A glob in a comment breaks block strippers](project_survivorpulse_glob_in_comment_breaks_block_stripper.md).
-- [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) — update Prospect Tracker + Outreach Log.
+- [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) — update Prospect Tracker + Outreach Log; Status without State overcounts live prospects.
