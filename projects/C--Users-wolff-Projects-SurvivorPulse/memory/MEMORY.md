@@ -16,7 +16,6 @@
 - [Paired assertions both go vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) — on a no-op.
 - [An AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — orphan check beat 2 review rounds.
 - [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) / [by structural anchor](feedback_enumerate_by_the_structural_anchor.md).
-- [Verify a reviewer's evidence](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — 2 of 5 files wrong.
 - [Check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md).
 - [Renaming for clarity can recreate the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md).
 - [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md).
