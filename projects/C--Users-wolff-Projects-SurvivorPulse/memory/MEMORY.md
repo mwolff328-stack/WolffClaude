@@ -139,6 +139,7 @@
 - [get-comments can't see replies](project_survivorpulse_notion_create_comment_write_path_defect.md) — write succeeds, read blind.
 - [A page read truncates long rich_text](project_survivorpulse_notion_page_read_truncates_rich_text.md) — silently.
 - [Use OAuth for comments, not notionApi](project_survivorpulse_notion_mcp_create_comment_missing_version.md).
+- [Or post comments via REST with NOTION_TOKEN](feedback_notion_comments_via_rest_when_mcp_missing_version.md) — beats the browser fallback; subagents can use it too.
 - [Deleting a Notion row needs notionApi](project_survivorpulse_notion_page_delete_path.md) — OAuth has no delete.
 - [Notion select options aren't auto-created](project_survivorpulse_notion_select_options_not_autocreated.md) — ALTER replaces ALL.
 - [No branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md).
