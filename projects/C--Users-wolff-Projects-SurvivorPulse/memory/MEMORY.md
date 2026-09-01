@@ -75,6 +75,8 @@
 - [Legacy Repl is rollback-only](project_survivorpulse_legacy_repl_is_rollback_only.md) — survivorpulse.com serves v1.
 - [Open access mode](project_survivorpulse_open_access_mode.md) — one constant hides gate + paywall.
 - [Beta launch site decisions](project_survivorpulse_beta_launch_site_decisions.md) — founder rulings.
+- [Paid-tier launch target](project_survivorpulse_paid_tier_launch_target.md) — ~2026-09-30/10-01, after Week 3.
+- [Moat Gap 3 wipeout read-out status](project_survivorpulse_moat_gap3_wipeout_readout.md) — SST-1497/1498, was smaller gap than it looked.
 - [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — RESOLVED.
 - [Replit edge forwards X-Forwarded-Host](project_survivorpulse_replit_edge_passes_forwarded_host.md) — not a mitigation.
 - [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md).
