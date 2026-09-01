@@ -157,3 +157,4 @@
 - [Support Mode is server-side now](project_survivorpulse_support_mode_is_server_side.md) — ?supportUserId= retired.
 - [A glob in a comment breaks block strippers](project_survivorpulse_glob_in_comment_breaks_block_stripper.md).
 - [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) — update Prospect Tracker + Outreach Log; Status without State overcounts live prospects.
+- [r/sportsbook, r/sportsbetting are open fan-out targets](project_survivorpulse_sportsbook_subs_are_open_fanout_targets.md) — those log rows were replies, not posts.
