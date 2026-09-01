@@ -59,7 +59,6 @@
 - [Two correct fixes can collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) — each suite green.
 - [jsdom normalizes inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md) — drops var() border.
 - [Removal tests need the most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md).
-- [Verify the commit, not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — `echo` masked exit 1.
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) — invisible in diff.
 
 ## Shipping, environments, and infra
