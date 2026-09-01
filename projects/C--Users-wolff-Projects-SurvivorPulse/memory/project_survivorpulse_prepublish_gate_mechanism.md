@@ -82,3 +82,45 @@ Consequences for flake-vs-regression work, where running the SAME sha twice is t
 - **Serialize.** Dispatch one, wait for `completed`, then dispatch the next. Two data points cost ~60-90 min, not ~40.
 - A `cancelled` conclusion on your own bisect branch usually means **you** superseded it, not a peer — check your own in-flight dispatches before blaming another session.
 - Pushes to `2026-v1` land in group `pre-publish-push`, a *different* group, so they do not contend with your dispatches (that part of the isolated-branch trick does work).
+
+## 17 suites are `describe.skip` locally and execute ONLY in the gate (verified 2026-09-01)
+
+A whole family of tests is **skipped everywhere you can observe it and executed only where you cannot.** The pattern is a top-level ternary:
+
+```ts
+process.env.RUN_HTTP_INTEGRATION_TESTS === '1' ? describe : describe.skip
+```
+
+**17 suites** under `tests/` use it, across three gate variables — and `pre-publish.yml` sets all three, so they all run in CI and none run on a default local invocation:
+
+| Env gate | Suites | Set in pre-publish.yml |
+|---|---|---|
+| `RUN_DB_REGRESSION_TESTS` | 8 | line 112 (job level) |
+| `RUN_HTTP_INTEGRATION_TESTS` | 8 | line 418 (step level, Stage 2c) |
+| `RUN_SIGNUP_EDGE_CASES` | 1 | line 113 (job level) |
+
+Consequences, learned the hard way when SST-1502 turned the gate red (its fix: commits `d78c7efa` + `362f6c70`):
+
+- **A green local run says nothing about these 17 files.** Your suite reports them as *skipped*, not *missing*, so the count looks healthy.
+- **Setting the env vars locally only HALF works — do not trust a green run after doing it.** The 8 `RUN_HTTP_INTEGRATION_TESTS` suites `fetch()` against `AUTH_TEST_BASE_URL || 'http://localhost:5000'`, so the var alone buys you *collection*, not *execution* — without a live server they fail connection-refused. That is exactly why `pre-publish.yml:108` sets that one var at STEP level (Stage 2c, after starting a server) rather than job level, and says so in a comment. `RUN_DB_REGRESSION_TESTS` and `RUN_SIGNUP_EDGE_CASES` are job-level and need only a DB.
+- **They can be coupled to your change by SCHEMA SHAPE rather than by import or test id.** SST-1502 reduced the signup payload to email+password and swept for coupled tests by grepping test ids (`input-username`) and imports (`pages/signup`). That could never have found `tests/signup-edge-cases.integration.test.ts`, which merely asserts on the 400 `errors` object's keys. **When you change a request/response shape, grep for assertions on the SHAPE — field names in the payload and in the error body — not just for the component's name.** That sweep had already missed a fifth file (`client/src/components/legal/__tests__/signup.legalModals.test.tsx`) for the narrower reason that it lives outside `tests/` and `e2e/`.
+- **"The test is just stale" and "validation actually regressed" are indistinguishable from the gate output.** Both present as one assertion failing right after a field-set change. SST-1502 resolved it by pinning the contract: an empty body still returns 400 `VALIDATION_ERROR` with `errors.email` and `errors.password` defined and only `errors.username` gone — then added a **local** route-level guard, RED-proved by making `email` optional too. Do that rather than accepting the comfortable read; the comfortable read happened to be true there, but nothing in the failure text established it.
+
+### A suite is dead only if BOTH invocation paths miss it (corrected 2026-09-01)
+
+There are **two independent ways** a suite gets invoked, and a gated suite needs its var live in a stage that reaches it by *either*:
+
+1. **Explicit filename list** — e.g. Stage 2c names 8 files at `pre-publish.yml:407-415`.
+2. **Config include-glob** — e.g. `vitest.config.ts` (Stage 1) takes everything except its exclude list, which drops `**/*.integration.test.ts(x)` (`:47-48`).
+
+**Do NOT audit with a filename `comm -23` alone — it cries wolf.** Run naively it reports 9 dead suites when the true answer is 1. All 8 false positives gate on `RUN_DB_REGRESSION_TESTS`, are never named in any workflow, and run perfectly well: they are plain `.test.ts` with no `.integration.` infix, so the unit config takes them by GLOB, and their var is set at **job** level (`:112`) so it is live during Stage 1. A recipe that flags 9 when the answer is 1 gets ignored the third time someone runs it.
+
+**Var SCOPE is half the rule.** Job-level (`RUN_DB_REGRESSION_TESTS` `:112`, `RUN_SIGNUP_EDGE_CASES` `:113`) reaches the glob path in every stage. Step-level (`RUN_HTTP_INTEGRATION_TESTS` `:418`) reaches only its own step — deliberately, per the comment at `:108`: setting it job-wide would fire the HTTP suites without a server in Stages 1/2a/2b and produce connection-refused failures.
+
+**The real audit is two questions.** A suite is dead only if BOTH miss:
+- Is it named in a stage's explicit list, with its gate var in that stage's scope?
+- Is it inside the include-glob and outside the exclude-list of a config some stage runs, with its var live in that stage's scope?
+
+#### The one genuine dead suite found so far
+
+`tests/prototypeFeedback.integration.test.ts` (6 tests) fails both paths at once: it IS `*.integration.test.ts` so the unit glob drops it; `vitest.integration.core.config.ts:24` **explicitly** excludes it; and Stage 2c's list omits it while being the only place its var is set. Sharpest detail — the config excludes it under the comment *"HTTP integration tests — require a live server, run in Stage 2c"* (`:17`), so **the repo documents a delegation the workflow never implements**. Commit `eedc227f` fixed a flaky sort in it: a flake debugged in a suite that has never run. The `RUN_DB_REGRESSION_TESTS` set has never had the two-path audit applied to it.

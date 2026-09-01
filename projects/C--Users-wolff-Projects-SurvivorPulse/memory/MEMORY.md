@@ -56,6 +56,7 @@
 - [Two correct fixes can collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) — each suite green.
 - [jsdom normalizes inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md) — drops var() border.
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) — invisible in diff.
+- [A shape change needs a shape grep](feedback_a_shape_change_needs_a_shape_grep_not_a_name_grep.md) — one coupling form is ungreppable.
 
 ## Shipping, environments, and infra
 
@@ -109,6 +110,8 @@
 - [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md) — stub one hash.
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md).
 - [clearAllRateLimits() is cross-process no-op in Stage 2c](project_survivorpulse_clearallratelimits_is_cross_process_noop_in_stage2c.md).
+- [17 env-gated suites are invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md) — two invocation paths.
+- [Drizzle wraps pg errors on .cause](project_survivorpulse_drizzle_wraps_pg_errors_on_cause.md) — error.code is always undefined.
 
 ## Engine and domain behaviour
 
