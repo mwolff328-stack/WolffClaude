@@ -20,7 +20,7 @@
 - [Renaming for clarity can recreate the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md).
 - [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md).
 - [Confirm the check covers what changed](feedback_confirm_the_check_covers_what_you_changed.md) — read include/exclude.
-- [Local run differs from CI by construction](feedback_local_run_differs_from_ci_by_construction.md) — exits 0 silently.
+- [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) / [verify the commit not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — a green run can still lie.
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
 - [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md).
