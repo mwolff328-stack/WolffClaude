@@ -320,6 +320,20 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [FLKeysBeachBum](https://x.com/FLKeysBeachBum) — ICP voice (enthusiastic player in the Hard Rock Bet $2M NFL survivor pool, publicly asking why it starts at Week 4 instead of Week 1) — seen: 2026-08-30
 - [X] [gfienberg17](https://x.com/gfienberg17) — competitor / affiliate (promoting the [@BetOnline_ag](https://x.com/BetOnline_ag) $500,000 survivor pool, $30 entry, buy-3-get-1-free early bird) — seen: 2026-08-30
 - [X] [4for4football](https://x.com/4for4football) — content creator (Jen Eakins breaking down three ways to attack the 4for4 Splash Survivor Pool and its guaranteed $100,035 grand prize) — seen: 2026-08-30
+- [X] [ForTheFans__FTF](https://x.com/ForTheFans__FTF) — competitor operator (Splash Sports partner "FOR THE FANS" launching NFL/NCAAF Survivor & Pick'em contests) — seen: 2026-09-01
+- [X] [B1GPodcast](https://x.com/B1GPodcast) — commissioner/operator (POC Survivor Pool relaunch, requires 2 teams picked in first 4 weeks) — seen: 2026-09-01
+- [X] [CuttyFromTheCut](https://x.com/CuttyFromTheCut) — ICP voice/commissioner (recruiting anonymous DMs for a survivor pool) — seen: 2026-09-01
+- [X] [kylemclovin1](https://x.com/kylemclovin1) — commissioner/ICP voice ($25 survivor pool, DM/text for Sleeper link) — seen: 2026-09-01
+- [X] [SalSports](https://x.com/SalSports) — commissioner/ICP voice (opened a 2nd survivor pool after the first filled fast, prize includes @26shirts merch) — seen: 2026-09-01
+- [X] [GuyBostonSports](https://x.com/GuyBostonSports) — content creator/operator (own NFL survivor pool live for 2026, $15 entry, up to $4K payout) — seen: 2026-09-01
+- [X] [VincentArtale](https://x.com/VincentArtale) — commissioner/ICP voice (recruiting for his CBS Sports picks pool) — seen: 2026-08-27, 2026-09-01
+- [X] [PatrickE_Vegas](https://x.com/PatrickE_Vegas) — content creator/analyst (Circa Survivor Year 7 pot tracking toward $25M; thread also drew Daqs_Pickem's tracker-tool comment) — seen: 2026-08-28, 2026-09-01
+- [Reddit] [u/unsafeus](https://www.reddit.com/user/unsafeus/) — ICP voice/commissioner (first-time survivor pool host in r/NFLSurvivor asking for the best platform for a 10-25 person cash pool; synced to Prospect Tracker) — seen: 2026-09-01
+- [Reddit] [u/Quangholio](https://www.reddit.com/user/Quangholio/) — adjacent competitor/tool creator (pitching Valuebet.app — free Survivor/Pick'em/Leaderboard pool hosting — in a comment) — seen: 2026-09-01
+- [Reddit] [u/bigroddy12](https://www.reddit.com/user/bigroddy12/) — ICP voice (knowledgeable community voice, warns against Splash Sports and against "guys shilling their own sites" in pool-recommendation threads) — seen: 2026-09-01
+- [Reddit] [u/the_sammiest](https://www.reddit.com/user/the_sammiest/) — ICP voice/commissioner (runs an "Upset Pool" variant, inviting others to join or copy it) — seen: 2026-09-01
+- [Reddit] [u/lowkeydank](https://www.reddit.com/user/lowkeydank/) — commissioner/ICP voice ($50 NFL survivor pool on Sleeper) — seen: 2026-09-01
+- [YouTube] [Fantasy Football Consultants](https://www.youtube.com/@FantasyFootballConsultants) — content creator (posted "2026 NFL Survivor Week 1 Picks and Strategy: How to win your NFL Survivor Pool") — seen: 2026-09-01
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
