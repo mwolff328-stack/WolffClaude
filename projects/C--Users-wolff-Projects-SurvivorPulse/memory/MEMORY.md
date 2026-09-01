@@ -55,7 +55,6 @@
 - [A helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md) — new call site broke.
 - [Two correct fixes can collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) — each suite green.
 - [jsdom normalizes inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md) — drops var() border.
-- [Removal tests need the most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md).
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) — invisible in diff.
 
 ## Shipping, environments, and infra
