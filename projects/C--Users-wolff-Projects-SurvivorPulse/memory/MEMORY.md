@@ -6,6 +6,7 @@
 - [Picking the SurvivorPulse Chrome browser](feedback_survivorpulse_chrome_browser_selection.md) — use switch_browser, not a deviceId list.
 
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) — MCP is fallback-only.
+- [Outreach link format](feedback_survivorpulse_outreach_link_format.md) — full https:// link in Discord/X body text.
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md) / [verify a reviewer's evidence](feedback_verify_a_reviewers_evidence_not_their_judgement.md) — re-fetch and re-check, don't trust the claim.
 - [Await vs fire-and-forget](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only if write IS the payload.
 - [A "completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
