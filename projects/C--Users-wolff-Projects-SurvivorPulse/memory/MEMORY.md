@@ -30,12 +30,11 @@
 - [Duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — winner varies by worker.
 - [Proving a flake fix without reproducing it](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the precursor.
 - [Relocating an entry point](feedback_relocating_an_entry_point_changes_its_threat_model.md) — changes its threat model.
-- [Verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md) — don't inherit from a peer.
+- [Verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md) / [a task premise may describe a sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md) — don't inherit unverified premises.
 - [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) — ONE re-survey story.
 - [Fetch and search before working](feedback_survivorpulse_fetch_and_search_before_work.md).
 - [Semantic dup guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) / [ledger timestamps unorderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md).
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by path.
-- [A task premise may describe a sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md).
 - [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) / [pkill by port not name](feedback_never_pkill_by_shared_entry_point.md) / [200 ≠ alive](feedback_a_200_is_not_proof_the_server_lived.md).
 - [Prefix-mounted guards](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — blind past the mount.
 - [No em dashes in drafts](feedback_no_em_dashes_in_drafts.md).
