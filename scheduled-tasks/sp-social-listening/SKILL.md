@@ -413,6 +413,11 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/freshT23](https://www.reddit.com/user/freshT23/) — flagged 2026-09-01
 - [Reddit] [u/unsafeus](https://www.reddit.com/user/unsafeus/) — flagged 2026-09-01
 - [X] [williamharnold](https://x.com/williamharnold) — flagged 2026-09-01
+- [X] [ChanceforGlory1](https://x.com/ChanceforGlory1) — flagged 2026-09-02
+- [Reddit] [u/IcyAccess9978](https://www.reddit.com/user/IcyAccess9978/) — flagged 2026-09-02
+- [X] [vegasfreepics](https://x.com/vegasfreepics) — flagged 2026-09-02
+- [X] [BackAftaThis](https://x.com/BackAftaThis) — flagged 2026-09-02
+- [Substack] The Eliminator (Kevin Ruger, eliminator.substack.com) — flagged 2026-09-02
 ```
 
 Each run, do this:
