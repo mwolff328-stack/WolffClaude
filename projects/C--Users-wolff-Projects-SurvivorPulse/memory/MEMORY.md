@@ -72,6 +72,7 @@
 - [Playwright teardown coverage](project_survivorpulse_playwright_teardown_coverage.md) — skips globalTimeout abort / [local flake-repro traps](project_survivorpulse_local_flake_repro_traps.md) — block the event loop, not CPU.
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) — two causes, one message / [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md) — stub one hash.
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md) / [clearAllRateLimits() is cross-process no-op in Stage 2c](project_survivorpulse_clearallratelimits_is_cross_process_noop_in_stage2c.md).
+- [A wrong /api path returns the SPA shell](project_survivorpulse_wrong_api_path_returns_spa_shell.md) — 200 + HTML, not 404; e2e/ IS typechecked.
 - [17 env-gated suites are invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md) — two invocation paths / [Drizzle wraps pg errors on .cause](project_survivorpulse_drizzle_wraps_pg_errors_on_cause.md) — error.code is always undefined.
 
 ## Engine and domain behaviour
