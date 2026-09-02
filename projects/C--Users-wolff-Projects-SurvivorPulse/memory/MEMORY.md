@@ -46,6 +46,7 @@
 ## Shipping, environments, and infra
 
 - [Pre-publish gate is CI-only](project_survivorpulse_prepublish_gate_mechanism.md) / [publish prerequisites](project_survivorpulse_publish_prerequisites.md) — re-verify dated items.
+- [The "~241 self-skip" SHIP caveat is obsolete](project_survivorpulse_ship_coverage_caveat_241_is_obsolete.md) — residual is 9, and 5 of those run in Stage 2c.
 - [A booting prod proves the unsafe-dev flag is off](project_survivorpulse_unsafe_dev_flag_is_self_proving.md) / [Replit deployment is autoscale](project_survivorpulse_replit_deployment_is_autoscale.md) — in-process cache goes stale.
 - [Stale SPA bundle after publish](project_survivorpulse_stale_spa_bundle_after_publish.md) — read the deployed bundle / [production smoke access](project_survivorpulse_production_smoke_access.md) — use host, not `current_database()`.
 - [Deployed dev app URL](project_survivorpulse_deployed_dev_url.md) — ask founder to refresh if stale / [legacy Repl is rollback-only](project_survivorpulse_legacy_repl_is_rollback_only.md) — survivorpulse.com serves v1.
