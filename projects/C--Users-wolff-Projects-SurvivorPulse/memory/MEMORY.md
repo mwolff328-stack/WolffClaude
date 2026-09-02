@@ -85,6 +85,7 @@
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md) / [clearAllRateLimits() is cross-process no-op in Stage 2c](project_survivorpulse_clearallratelimits_is_cross_process_noop_in_stage2c.md).
 - [A wrong /api path returns the SPA shell](project_survivorpulse_wrong_api_path_returns_spa_shell.md) — 200 + HTML, not 404; e2e/ IS typechecked.
 - [17 env-gated suites are invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md) — two invocation paths / [Drizzle wraps pg errors on .cause](project_survivorpulse_drizzle_wraps_pg_errors_on_cause.md) — error.code is always undefined.
+- [vitest exclude beats an explicit CLI filename](project_survivorpulse_vitest_exclude_beats_explicit_cli_filename.md) — *.integration.test.ts silently vanishes, no skip notice.
 
 ## Engine and domain behaviour
 
