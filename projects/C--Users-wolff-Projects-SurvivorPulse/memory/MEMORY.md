@@ -50,7 +50,7 @@
 - [Open access mode](project_survivorpulse_open_access_mode.md) — one constant hides gate + paywall / [beta launch site decisions](project_survivorpulse_beta_launch_site_decisions.md) — founder rulings.
 - [Paid-tier launch target](project_survivorpulse_paid_tier_launch_target.md) — ~2026-09-30/10-01, after Week 3 / [Moat Gap 3 wipeout read-out status](project_survivorpulse_moat_gap3_wipeout_readout.md) — SST-1497/1498, smaller than it looked.
 - [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — RESOLVED / [Replit edge forwards X-Forwarded-Host](project_survivorpulse_replit_edge_passes_forwarded_host.md) — not a mitigation.
-- [Schema drift kills the dev app](project_survivorpulse_schema_drift_takes_down_dev_app.md) / [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — first is commented out.
+- [Schema drift kills auth on whichever DB missed it](project_survivorpulse_schema_drift_takes_down_dev_app.md) — helium or local; signin 500 ≠ 401 / [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — first is commented out.
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) / [CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
 - [Bystander rule broke 2 distinctness tests](project_survivorpulse_bystander_rule_broke_two_distinctness_tests.md) / [Back Tester goldens re-baselined](project_survivorpulse_backtester_goldens_rebaselined_sst1342.md) — regen reintroduces bug.
 
