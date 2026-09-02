@@ -1,14 +1,16 @@
 ---
 name: project_survivorpulse_publish_prerequisites
-description: "What actually blocks a SurvivorPulse production publish — as of the 2026-08-24 publish the baseline is c98d9242 and NO real migration is pending; the only recurring step is deleting the ALLOW_UNSAFE_DEV_FEATURES deployment secret. Also carries the post-publish smoke recipe, the baseline-identification method (skip the 'Published your App' marker commit, use the real commit before it), and the two bundle-grep false negatives (backtick quoting, template literals)."
+description: "What actually blocks a SurvivorPulse production publish — as of the 2026-09-02 publish the baseline is eff67c7a and NO real migration is pending; the only recurring step is deleting the ALLOW_UNSAFE_DEV_FEATURES deployment secret. Also carries the post-publish smoke recipe, the baseline-identification method (walk 'Published your App' markers from the CURRENT tip backward to find the real last one, don't trust an old note's recorded baseline), and the two bundle-grep false negatives (backtick quoting, template literals)."
 metadata: 
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-08-25T00:34:32.369Z
+  modified: 2026-09-02T05:40:49.580Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
+
+**⚠️ This note went stale for 5+ publishes and nobody caught it until asked for a "comprehensive" verdict (2026-09-02).** It said baseline `c98d9242` (2026-08-24) while five more publishes had actually happened: `5885f9a6` (08-25 00:40), `67cb7dc1` (08-25 15:45), `2c8b46e1` (08-25 22:47), `9854cac5` (08-27 23:40), `84a36f3d` (08-30 04:42), `9b035dbf` (08-30 19:50), `82ad817f` (08-31 05:46), `92ee848a` (08-31 22:30) — eight markers, not zero. **Never trust this note's recorded baseline as current.** Before computing "commits since last publish," always re-derive it: `git log origin/2026-v1 --grep="Published your App" --format='%H %ci %s' | head -1` against the CURRENT tip, not against whatever SHA a memory file last recorded. Update this note every time you learn of a publish, not just when you happen to be the one aggregating a SHIP report.
 
 **Resolved — do NOT re-raise these** (older notes and `~/.claude/skills/pre-deploy/SKILL.md` still list them):
 - SST-941 (`picks.period` backfill): Done. Prod audit 2026-07-24 found 152 rows, 0 mismatched — nothing to apply.
