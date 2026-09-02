@@ -18,6 +18,7 @@
 - [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) / [verify the commit not the exit line](feedback_verify_the_commit_not_the_exit_line.md) — a green run can still lie.
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
+- [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — the instrument is wrong; stop hardening.
 - [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) / [naive fix is green too](feedback_survivorpulse_gate_page_not_viewer.md) — gate the page, not the viewer.
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — grep each / [guard the query you're reading](feedback_read_the_querys_own_loading_state.md) — a sibling's state lies.
 - [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) / [duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — winner varies by worker.
@@ -68,6 +69,7 @@
 
 - [Sandbox has no local Postgres](project_survivorpulse_sandbox_has_no_local_postgres.md) — needs targeted CI dispatch / [registerRoutes skips customSessionMiddleware](project_survivorpulse_customsessionmiddleware_not_in_registerroutes.md).
 - [Playwright/CI evidence traps](project_survivorpulse_playwright_ci_evidence_traps.md) — narrowed runs aren't controls / [dev preview runs an unbundled Vite server](project_survivorpulse_dev_preview_runs_vite_dev_server.md) — Playwright kills it.
+- [A queued gate is not a verified commit](project_survivorpulse_queued_gate_is_not_a_verified_commit.md) — concurrency cancels pending runs; dispatch on a fresh ref.
 - [E2E CI drift traps](project_survivorpulse_e2e_ci_drift_traps.md) — persistent DB masked months of drift / [E2E fixture provisioning](project_survivorpulse_e2e_fixture_provisioning.md) — ⚠️ REVERSED by SST-1213.
 - [Playwright teardown coverage](project_survivorpulse_playwright_teardown_coverage.md) — skips globalTimeout abort / [local flake-repro traps](project_survivorpulse_local_flake_repro_traps.md) — block the event loop, not CPU.
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) — two causes, one message / [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md) — stub one hash.
