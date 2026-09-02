@@ -64,6 +64,7 @@
 
 **A trustworthy live surface is the `sp-live-verify` skill, not memory — it loads every time.** Below: UI facts only.
 
+- [A hidden Chrome window swallows synthesized keys](feedback_a_hidden_chrome_window_swallows_synthesized_keys.md) — "Pressed 1 key" but nothing arrived.
 - [Chrome click coordinate traps](project_survivorpulse_chrome_click_coordinate_traps.md) — a resizing dialog re-centres / [compact-grid card layout trap](project_survivorpulse_compact_grid_card_layout_trap.md) — space-between crushes content.
 - [Hover shading over inline backgrounds](project_survivorpulse_hover_shade_over_inline_backgrounds.md) — loses to inline / [flex % height + Radix focus traps](project_survivorpulse_flex_percentage_height_and_radix_traps.md) — `h-full` degrades.
 - [position:fixed inside a dialog](project_survivorpulse_fixed_position_inside_dialog.md) — detaches, eats taps / [Radix outside-click arming race](project_survivorpulse_radix_outside_click_arming_race.md) — immediate click dropped.
