@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-09-02T05:40:49.580Z
+  modified: 2026-09-02T05:41:19.126Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -21,43 +21,59 @@ A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion
 - **SST-1079** `user_preferences` TABLE — APPLIED to prod.
 - The `ALLOW_UNSAFE_DEV_FEATURES` deployment-secret deletion was done: prod boots and serves, which it cannot do with the flag set (`server/envValidation.ts` fatal-exits first). **This is a free post-publish check — if the site is up, the secret was deleted.**
 
-**PUBLISHED 2026-08-24 — new baseline is `c98d9242`** (was `8308b085`). Compute the next
-unpublished batch from `c98d9242..origin/2026-v1` (5 commits remaining as of 2026-08-24:
-SST-1461 ROI drawer work + the SST-1330 CLAIMED-tooltip word-doubling fix), not from any
-older SHA. Shipped 24 commits: SST-1448 (Proposed-track pick-grid click gating), SST-1449,
-SST-1330 (CLAIMED badge reads `claimedByOtherEntry`), SST-1450 (Spec Mismatches admin module
-removed — see migration note below), SST-1451 (My Pools card elevation), SST-1446 (P&L routes
-extraction + support-session write guard), SST-1457 (Portfolio Overview elevation).
-**NO real migration** — the only `shared/schema.ts` diff in the whole range is a 22-line
-**comment block** (SST-1450, explaining why `spec_mismatch_snapshots` stays defined on purpose
-after its feature was removed, to keep the deprecation zero-migration and avoid a future
-`db:push` silently dropping the table) — zero actual column/table changes, verified via
-`git diff 8308b085..c98d9242 -- shared/schema.ts`.
+**PUBLISHED 2026-09-02 (~05:14 GMT) — new baseline is `eff67c7a`** (was `92ee848a`, the
+2026-08-31 22:30 UTC marker — itself never recorded here until this update, see the staleness
+warning above). Compute the next unpublished batch from `eff67c7a..origin/2026-v1`, not from
+`c98d9242` or any other older SHA this note may have said previously.
 
-**⚠️ Baseline-identification method — general going forward, not one-off.** Two "Published your
-App" Replit auto-commits landed in this range: `dad9b400` (2026-08-23 16:51:50 UTC) and
-`439b6c15` (2026-08-24 22:20:23 UTC). Both are pure Replit-platform markers that land **~2
-minutes AFTER** the real deploy finishes (confirmed: `dad9b400` sits 2 min after the
-already-recorded 2026-08-23 bundle `Last-Modified` of 16:49:45 GMT; `439b6c15` sits 2 min after
-this publish's bundle `Last-Modified` of 22:18:15 GMT) — they carry no real app-code changes of
-their own. **The baseline is always the last REAL commit immediately BEFORE the marker, never
-the marker itself.** Expect the bundle's `Last-Modified` to sit a couple of minutes before its
-own marker commit's timestamp; use that gap to identify which marker (if more than one exists
-in a range) corresponds to which publish.
+Shipped 61 commits across ten tickets since the prior actual publish: SST-1499 (Portfolio/ROI
+Phase 0), SST-780/781/782 (research extended to 10 real seasons), SST-1279 (characterization-test
+labeling), a landing-copy softening, SST-1502 (signup reduced to email+password), SST-1506
+(Portfolio/ROI Phase 1), SST-1501 (public no-login `/week-1` picks page), SST-1508 (Games & Odds
+full-sweep refresh + nightly cron), SST-1509 (a suite that ran in no CI stage, now wired into
+Stage 2c), SST-1507 (beta-access rate limiter re-scoped per visitor), SST-1512 (grooming docs),
+SST-1466 (a migration STATE-block correction), SST-1514 (boot-time DB-vs-schema drift tripwire —
+shipped while still **In Review**, not Done; see [[project_survivorpulse_ship_coverage_caveat_241_is_obsolete]]
+for the SHIP report that flagged this explicitly).
 
-Post-publish smoke, all green: prod bundle `Last-Modified` 22:18:15 GMT (`assets/index-lHZ3k5Wu.js`)
-vs tip commit (`c98d9242`) 21:44:10 UTC (deploy is NEWER, so it carries the code);
-`/api/seasons/current` 200 JSON; `/api/pools` and `/api/me` 401; site boots at all, which
-self-proves `ALLOW_UNSAFE_DEV_FEATURES` was deleted again for this publish.
+**NO real migration** — `shared/schema.ts` is byte-for-byte unchanged across the entire 61-commit
+range (`git diff 92ee848a..eff67c7a -- shared/schema.ts` returns nothing). The only `migrations/`
+touch is a comment-only STATE-block correction (SST-1466).
 
-<details><summary>Prior publish record (2026-08-23), kept for history</summary>
+Post-publish smoke, all green: prod bundle `Last-Modified` 2026-09-02 05:14:33 GMT
+(`assets/index-BV0Ehf4N.js`) vs tip commit (`eff67c7a`) 2026-09-02 04:32:34 UTC (deploy is
+~42 min NEWER, so it carries the code); `/api/seasons/current` 200 JSON; `/api/pools` and
+`/api/me` both 401; `/week-1` 200 with title "Week 1 NFL Survivor Pool Picks, Ranked |
+SurvivorPulse" (positive control proving SST-1501 specifically, not just "a" deploy, shipped);
+site boots at all, which self-proves `ALLOW_UNSAFE_DEV_FEATURES` was deleted again for this
+publish.
 
-**PUBLISHED 2026-08-23 — new baseline is `8308b085`** (was `4d0b9b5d`). Shipped SST-1439
-(Admin Support Mode) + SST-1438 (Season Grid Proposed-track clear), 11 commits.
-**NO migration was pending or applied** — zero schema/migration/`.sql` files in the whole range.
-Post-publish smoke, all green: prod bundle `Last-Modified` 16:49:45 GMT vs tip commit 08:01:15 UTC
-(deploy is NEWER, so it carries the code); `/api/seasons/current` 200 JSON; `/api/pools` and
-`/api/me` 401; site boots at all, which self-proves `ALLOW_UNSAFE_DEV_FEATURES` was deleted.
+<details><summary>Prior publish records (2026-08-23 through 2026-08-31), kept for history</summary>
+
+Eight publishes landed in the gap this note failed to track: `5885f9a6` (08-25 00:40 UTC),
+`67cb7dc1` (08-25 15:45), `2c8b46e1` (08-25 22:47), `9854cac5` (08-27 23:40), `84a36f3d`
+(08-30 04:42), `9b035dbf` (08-30 19:50), `82ad817f` (08-31 05:46), `92ee848a` (08-31 22:30) —
+none individually re-verified after the fact; listed here only so the marker list itself doesn't
+have to be re-derived from scratch next time.
+
+**PUBLISHED 2026-08-24 — baseline was `c98d9242`** (was `8308b085`). Shipped 24 commits:
+SST-1448 (Proposed-track pick-grid click gating), SST-1449, SST-1330 (CLAIMED badge reads
+`claimedByOtherEntry`), SST-1450 (Spec Mismatches admin module removed), SST-1451 (My Pools
+card elevation), SST-1446 (P&L routes extraction + support-session write guard), SST-1457
+(Portfolio Overview elevation). NO real migration — only a 22-line comment block in
+`shared/schema.ts` (SST-1450).
+
+**⚠️ Baseline-identification method — general going forward, not one-off.** "Published your
+App" Replit auto-commits are pure platform markers that land **~2 minutes AFTER** the real
+deploy finishes — they carry no real app-code changes of their own. **The baseline is always the
+last REAL commit immediately BEFORE the marker, never the marker itself.** Expect the bundle's
+`Last-Modified` to sit a couple of minutes before its own marker commit's timestamp; use that gap
+to identify which marker (if more than one exists in a range) corresponds to which publish. When
+several markers exist between your last known baseline and the current tip, walk backward from
+the current tip to the newest one — don't assume the oldest recorded marker is still the latest.
+
+**PUBLISHED 2026-08-23 — baseline was `8308b085`** (was `4d0b9b5d`). Shipped SST-1439 (Admin
+Support Mode) + SST-1438 (Season Grid Proposed-track clear), 11 commits. NO migration.
 
 </details>
 
