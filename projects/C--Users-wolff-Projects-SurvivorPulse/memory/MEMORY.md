@@ -19,6 +19,7 @@
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
 - [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — the instrument is wrong; stop hardening.
+- [Defer a guard that needs its own design](feedback_defer_a_guard_that_needs_its_own_design.md) — founder ruling; it belongs with the class story.
 - [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) / [naive fix is green too](feedback_survivorpulse_gate_page_not_viewer.md) — gate the page, not the viewer.
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — grep each / [guard the query you're reading](feedback_read_the_querys_own_loading_state.md) — a sibling's state lies.
 - [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) / [duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — winner varies by worker.
