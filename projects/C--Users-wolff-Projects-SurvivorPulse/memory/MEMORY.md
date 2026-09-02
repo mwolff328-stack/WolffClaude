@@ -26,6 +26,7 @@
 - [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) — grep each / [guard the query you're reading](feedback_read_the_querys_own_loading_state.md) — a sibling's state lies.
 - [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) / [duplicate vi.mock for one module](feedback_duplicate_vi_mock_same_module.md) — winner varies by worker.
 - [Proving a flake fix without reproducing it](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the precursor.
+- [A swinging TOTAL test count is not a flake](feedback_a_swinging_total_test_count_is_not_a_flake.md) — the files were being edited; checksum them.
 - [Relocating an entry point](feedback_relocating_an_entry_point_changes_its_threat_model.md) — changes its threat model.
 - [Verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md) / [a task premise may describe a sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md) — don't inherit unverified premises.
 - [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) — ONE re-survey story / [fetch and search before working](feedback_survivorpulse_fetch_and_search_before_work.md).
