@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: d80d5a6e-b36c-4612-9383-f66be9200837
-  modified: 2026-09-02T05:41:19.126Z
+  modified: 2026-09-02T05:41:28.194Z
 ---
 
 A green pre-publish gate is NOT SHIP on its own. Verified 2026-07-28 from Notion pages/comments + repo docs (no DB queried — see the wrong-host rule).
@@ -32,9 +32,9 @@ labeling), a landing-copy softening, SST-1502 (signup reduced to email+password)
 (Portfolio/ROI Phase 1), SST-1501 (public no-login `/week-1` picks page), SST-1508 (Games & Odds
 full-sweep refresh + nightly cron), SST-1509 (a suite that ran in no CI stage, now wired into
 Stage 2c), SST-1507 (beta-access rate limiter re-scoped per visitor), SST-1512 (grooming docs),
-SST-1466 (a migration STATE-block correction), SST-1514 (boot-time DB-vs-schema drift tripwire —
-shipped while still **In Review**, not Done; see [[project_survivorpulse_ship_coverage_caveat_241_is_obsolete]]
-for the SHIP report that flagged this explicitly).
+SST-1466 (a migration STATE-block correction), SST-1514 (boot-time DB-vs-schema drift tripwire — this one
+was gate-verified and pushed to `2026-v1` while still **In Review**, not Done, i.e. before any
+reviewer sign-off; the founder published anyway with that flagged explicitly in the SHIP report).
 
 **NO real migration** — `shared/schema.ts` is byte-for-byte unchanged across the entire 61-commit
 range (`git diff 92ee848a..eff67c7a -- shared/schema.ts` returns nothing). The only `migrations/`
