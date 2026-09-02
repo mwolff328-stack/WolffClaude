@@ -12,6 +12,7 @@
 - [A mutation harness edits the first match, not yours](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded a neighbour's route; req.ip "survived".
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
 - [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed.
+- [Injected fixtures can bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md) — move catch into the orchestrator / a fix's own tests can't catch an unstated intent regression.
 - [Paired assertions both go vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) / [an AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — orphan check beat 2 review rounds.
 - [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) / [by structural anchor](feedback_enumerate_by_the_structural_anchor.md).
 - [Check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) / [renaming for clarity can recreate the defect](feedback_renaming_for_clarity_can_recreate_the_defect.md).
