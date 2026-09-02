@@ -32,6 +32,7 @@
 - [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) — ONE re-survey story / [fetch and search before working](feedback_survivorpulse_fetch_and_search_before_work.md).
 - [Semantic dup guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) / [ledger timestamps unorderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md).
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by path.
+- [Parallel triage agents share the worktree](feedback_parallel_triage_agents_share_the_dispatching_sessions_worktree.md) — chain revert-test-restore atomically; re-verify HEAD after.
 - [Shared-resource outages get misattributed](feedback_shared_resource_outages_are_misattributed.md) / [pkill by port not name](feedback_never_pkill_by_shared_entry_point.md) / [200 ≠ alive](feedback_a_200_is_not_proof_the_server_lived.md).
 - [Prefix-mounted guards](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — blind past the mount / [no em dashes in drafts](feedback_no_em_dashes_in_drafts.md).
 - [Rely on self-learning, not monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md).
