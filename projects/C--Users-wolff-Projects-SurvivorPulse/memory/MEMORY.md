@@ -9,6 +9,7 @@
 - [A "completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof and +/- filter both miss MOVES.
+- [A mutation harness edits the first match, not yours](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded a neighbour's route; req.ip "survived".
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
 - [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed.
 - [Paired assertions both go vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) / [an AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md) — orphan check beat 2 review rounds.
