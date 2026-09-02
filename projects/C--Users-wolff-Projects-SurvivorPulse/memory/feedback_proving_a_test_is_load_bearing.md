@@ -1,11 +1,11 @@
 ---
 name: feedback-proving-a-test-is-load-bearing
-description: "How to prove a test actually guards its requirement — implement the closest WRONG version, revert against HEAD~1 with a printed invariant, assert the mechanism on fixed inputs, straddle the threshold, perform the real user action, land the guard before the fix, and check the RED is red for the RIGHT reason."
+description: "How to prove a test actually guards its requirement — implement the closest WRONG version, revert against HEAD~1 with a printed invariant, assert the mechanism on fixed inputs, straddle the threshold, perform the real user action, land the guard before the fix, check the RED is red for the RIGHT reason, and don't let a synthetic 'would catch it' meta-test that never renders the subject borrow a real guard's credibility."
 metadata: 
   node_type: memory
   type: feedback
   originSessionId: fa26fd53-3bfc-4421-99d2-4669e6b4fab0
-  modified: 2026-09-02T17:10:17.093Z
+  modified: 2026-09-02T17:10:39.899Z
 ---
 
 A green test proves nothing until it has been shown RED against code that is wrong
