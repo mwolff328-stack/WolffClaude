@@ -94,6 +94,7 @@
 - [Notion select options aren't auto-created](project_survivorpulse_notion_select_options_not_autocreated.md) — ALTER replaces ALL / [no branch protection, CI is advisory](project_survivorpulse_no_branch_protection_ci_advisory_only.md).
 - [Route auth is opt-in](project_survivorpulse_route_auth_is_opt_in.md) / [bearer token cookie](project_survivorpulse_session_cookie_is_a_bearer_token.md).
 - [client/src/content/ is governance-scanned](project_survivorpulse_content_dir_governance_scan.md) — exports must be plain data / [split route registration](project_survivorpulse_split_route_registration.md) — routes.ts AND index.ts.
+- [Workflow step names are parser markers](project_survivorpulse_workflow_step_names_are_parser_markers.md) — renaming a pre-publish stage fails Stage 1, not the stage you renamed.
 - [A dead page's route is still load-bearing](project_survivorpulse_dead_page_live_redirect_route.md) / [cockpit wrapper global-nav trap](project_survivorpulse_pool_cockpit_wrapper_global_nav_trap.md) — don't seed nav week.
 - [maxEntriesPerUser dual-mirror default](project_survivorpulse_max_entries_default_dual_mirror.md) — lives in 4 places / [admin pool marker](project_survivorpulse_admin_pool_classification.md) / [default-user-id trap](project_survivorpulse_default_user_id_ownership_trap.md).
 - [SST number is an auto-increment column](project_survivorpulse_notion_sst_id_is_auto_increment.md) — never invent one / [PickGrid.tsx is dead](project_survivorpulse_pickgrid_dead_seasongrid_shared.md) — SeasonGrid/WeekView shared.
