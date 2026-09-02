@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: fa26fd53-3bfc-4421-99d2-4669e6b4fab0
-  modified: 2026-08-23T16:30:45.817Z
+  modified: 2026-09-02T17:10:17.093Z
 ---
 
 A green test proves nothing until it has been shown RED against code that is wrong
@@ -321,6 +321,39 @@ overridden, the fixture is the deliverable: assert **both** directions (the case
 that must fire and the case that must not), or the "fix" is satisfiable by doing
 nothing — neutering the loop here failed 4 tests precisely because the control was
 there.
+
+## 10. A "would catch it" meta-test that never renders the subject proves nothing
+
+A regression test for a fix often gets a companion "fixture-can-violate-the-requirement"
+proof, per rule 7 in the Operating Model. The trap: writing that proof as a check on
+the REGEX/PATTERN in isolation — `expect('a known-bad literal string').toMatch(pattern)`
+— while naming it as if it proves the real, rendered component would be caught. It
+doesn't render anything, so it stays green through a revert that puts the actual bug
+back, which is exactly what a load-bearing test must not do.
+
+SST-1520 (2026-09-02), twice in one session, in two sibling test files
+(`landingScreenshotCaptionContrast.sst1520.test.tsx`,
+`landingWeek1PreviewLink.sst1520.test.tsx`): a test named `'would catch the exact
+regression this guards against'` did `expect('text-sm text-muted-foreground/70 mt-3').
+toMatch(/text-muted-foreground\/\d/)` — a synthetic literal, not the component's actual
+className. An independent code-reviewer reverted the real component's class back to the
+buggy `/70` value and re-ran: the PRIMARY assertion (querying the real rendered element)
+correctly went red, but this "meta-test" stayed green, because it was never wired to the
+component at all. The name claimed a guarantee the test never provided.
+
+**This is not the same disease as section 8a's tautology** (comparing the
+implementation against itself) — the regex here is independent of the source, so it
+isn't circular. It's a *scope* lie: a test that legitimately pins the checking
+MECHANISM (useful — it catches someone quietly weakening the regex later, e.g. dropping
+the `\d`) is named and commented as if it independently re-verifies the LIVE SUBJECT,
+which only the primary assertion actually does.
+
+**How to apply:** if a "would catch this" test's setup never renders/imports/exercises
+the real component under test, its name and comment must say exactly that — "pins the
+pattern, not the live component" — and should point to where the real RED-proof was
+actually performed (a manual revert-run-restore, logged in the commit/PR, since a
+literal-only check can't do it as a repeatable test). Don't let a synthetic sanity check
+borrow the rhetorical weight of a real regression guard.
 
 ---
 
