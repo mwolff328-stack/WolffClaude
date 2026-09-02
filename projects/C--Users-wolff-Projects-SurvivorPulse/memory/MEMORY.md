@@ -10,6 +10,7 @@
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof and +/- filter both miss MOVES.
 - [A mutation harness edits the first match, not yours](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded a neighbour's route; req.ip "survived".
+- [A guard can reproduce the defect it guards](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — it confirmed a narrower claim than the copy made.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
 - [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed.
 - [Injected fixtures can bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md) — move catch into the orchestrator / a fix's own tests can't catch an unstated intent regression.
