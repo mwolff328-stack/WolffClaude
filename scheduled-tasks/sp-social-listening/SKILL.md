@@ -322,7 +322,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [B1GPodcast](https://x.com/B1GPodcast) — commissioner/operator (POC Survivor Pool relaunch, requires 2 teams picked in first 4 weeks) — seen: 2026-09-01
 - [X] [CuttyFromTheCut](https://x.com/CuttyFromTheCut) — ICP voice/commissioner (recruiting anonymous DMs for a survivor pool) — seen: 2026-09-01
 - [X] [kylemclovin1](https://x.com/kylemclovin1) — commissioner/ICP voice ($25 survivor pool, DM/text for Sleeper link) — seen: 2026-09-01
-- [X] [SalSports](https://x.com/SalSports) — commissioner/ICP voice (opened a 2nd survivor pool after the first filled fast, prize includes @26shirts merch) — seen: 2026-09-01
+- [X] [SalSports](https://x.com/SalSports) — commissioner/ICP voice (opened a 2nd survivor pool after the first filled fast, prize includes @26shirts merch; opened a THIRD pool 2026-09-03, same @26shirts prize structure) — seen: 2026-09-01, 2026-09-03
 - [X] [GuyBostonSports](https://x.com/GuyBostonSports) — content creator/operator (own NFL survivor pool live for 2026, $15 entry, up to $4K payout) — seen: 2026-09-01
 - [X] [VincentArtale](https://x.com/VincentArtale) — commissioner/ICP voice (recruiting for his CBS Sports picks pool) — seen: 2026-08-27, 2026-09-01
 - [X] [PatrickE_Vegas](https://x.com/PatrickE_Vegas) — content creator/analyst (Circa Survivor Year 7 pot tracking toward $25M; thread also drew Daqs_Pickem's tracker-tool comment) — seen: 2026-08-28, 2026-09-01
