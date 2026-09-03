@@ -429,6 +429,8 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [vegasfreepics](https://x.com/vegasfreepics) — flagged 2026-09-02
 - [X] [BackAftaThis](https://x.com/BackAftaThis) — flagged 2026-09-02
 - [Substack] The Eliminator (Kevin Ruger, eliminator.substack.com) — flagged 2026-09-02
+- [Reddit] [u/Maleficent_Proof8091](https://www.reddit.com/user/Maleficent_Proof8091/) — flagged 2026-09-03
+- [Reddit] [u/delux279](https://www.reddit.com/user/delux279/) — flagged 2026-09-03
 ```
 
 Each run, do this:
