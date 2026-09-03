@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-08-25T04:34:04.342Z"
+    "lastUpdated": "2026-09-03T05:51:45.912Z"
   },
   "superpowers-marketplace": {
     "source": {
@@ -21,7 +21,7 @@
       "repo": "anthropics/skills"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\anthropic-agent-skills",
-    "lastUpdated": "2026-08-25T04:34:04.888Z"
+    "lastUpdated": "2026-09-03T05:51:46.539Z"
   },
   "finance-skills": {
     "source": {

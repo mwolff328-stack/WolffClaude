@@ -14,11 +14,11 @@
     "github@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\1fa02555b778",
-        "version": "1fa02555b778",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\f548531d7fc3",
+        "version": "f548531d7fc3",
         "installedAt": "2026-03-24T18:43:17.686Z",
-        "lastUpdated": "2026-08-25T04:34:05.071Z",
-        "gitCommitSha": "1fa02555b7787977c8a89e494b38bbba7b89f6b1"
+        "lastUpdated": "2026-09-03T05:51:46.747Z",
+        "gitCommitSha": "f548531d7fc334ef1219ed8f501573dbdb267a09"
       }
     ],
     "everything-claude-code@everything-claude-code": [
