@@ -10,6 +10,7 @@
 - [A "completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a ticket filing.
 - [Link "SurvivorPulse" sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof and +/- filter both miss MOVES.
+- [Edit tool writes back a stale cached copy](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing it with sed/python on one file silently reverts the shell edits.
 - [A mutation harness edits the first match, not yours](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded a neighbour's route; req.ip "survived".
 - [A guard can reproduce the defect it guards](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — it confirmed a narrower claim than the copy made.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
