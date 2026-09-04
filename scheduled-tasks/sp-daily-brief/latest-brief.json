@@ -1,42 +1,38 @@
 {
-  "date": "2026-09-03",
-  "weekday": "Thursday",
-  "notionTitle": "SurvivorPulse Daily - Thursday, 9/3/26",
+  "date": "2026-09-04",
+  "weekday": "Friday",
+  "notionTitle": "SurvivorPulse Daily - Friday, 9/4/26",
   "inProgress": [
-    {"id": "SST-601", "title": "Step 2 — Back Tester Integration", "owner": "Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
-    {"id": "SST-1446", "title": "Support Mode follow-ons: real-handler P&L route coverage, scanner extension, disabled write affordances", "owner": "Felix", "url": "https://app.notion.com/3c529ce5833d81609f89c7f05a121f2d"}
+    {"id": "SST-601", "title": "Step 2 — Back Tester Integration", "owner": "~Felix", "url": "https://app.notion.com/38829ce5833d8160bef4cab016e6a98c"},
+    {"id": "SST-1446", "title": "Support Mode follow-ons: real-handler P&L route coverage, scanner extension, disabled write affordances", "owner": "~Felix", "url": "https://app.notion.com/3c529ce5833d81609f89c7f05a121f2d"},
+    {"id": "SST-1543", "title": "BUG: Chalk single-entry wipeout exposure/elimination-alignment no longer reproduces published SST-782 figures", "owner": "~Felix", "url": "https://app.notion.com/3d029ce5833d81829c59cf96882489c2"},
+    {"id": "SST-1160", "title": "Splash Sports Payload Recon & Field-Size Decision Gate (In Review)", "owner": "Ann/Vlad/Felix", "url": "https://app.notion.com/3ae29ce5833d8140b9f4c6352debb555"},
+    {"id": "SST-1467", "title": "Google Account Integration (2.1): Connect Google from Account Settings (In Review)", "owner": "Ann/Deb/Felix/Vlad/Sky", "url": "https://app.notion.com/3c729ce5833d8190b9aad098c92ddbb6"},
+    {"id": "SST-1534", "title": "Surface effective-spread tier next to raw import in Data Import audit table (In Review)", "owner": "~Rita", "url": "https://app.notion.com/3d029ce5833d81429a77cfc8cd492ffa"},
+    {"id": "SST-1535", "title": "SST-1508 follow-up: scope Games & Odds Refresh to the selected season (In Review)", "owner": "~Felix", "url": "https://app.notion.com/3d029ce5833d81ee9dafc3886907ab96"}
   ],
   "blocked": [
-    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)", "blocker": "needs Replit console access to helium (dev DB) — same root cause as SST-1281", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
-    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: Data-audit spike", "blocker": "sandbox can't reach helium DB; needs someone with Replit shell/SQL console access — same root cause as SST-790", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"},
-    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control", "blocker": "reason not captured — needs logging (part of Reset-to-Auto cluster with SST-876, SST-881)", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
-    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation is non-deterministic", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
-    {"id": "SST-881", "title": "BUG: Season Grid shows stale/incoherent auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging (Reset-to-Auto cluster)", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
-    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy", "blocker": "copy-test candidate names on 3-5 founders before lock", "url": "https://app.notion.com/39c29ce5833d8146aa78f2fcf5cf52e6"},
-    {"id": "SST-1497", "title": "Game Plan: Live Wipeout-Risk Read-Out", "blocker": "needs founder/Marie Curie ruling on copy register (fact-only vs risk-tier language)", "url": "https://app.notion.com/3ce29ce5833d814aae36e16d695e3d6b"}
+    {"id": "SST-790", "title": "Pre-Build Verification: king_17/bigroddy12 Created-vs-Joined Entries (Helium)", "blocker": "Needs Replit console/SQL access to helium (dev-DB access blocker)", "url": "https://app.notion.com/39c29ce5833d81a3966dd12b40c952ae"},
+    {"id": "SST-1281", "title": "Proposed vs. Actual — Story 1: Data-audit spike", "blocker": "Same helium dev-DB access blocker — sandbox cannot reach helium, only reachable inside Replit container", "url": "https://app.notion.com/3b329ce5833d8157b53efee153528f8d"},
+    {"id": "SST-874", "title": "Game Plan Reset-to-Auto control (strategy-agnostic, restores what the grid shows)", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81bdaf4fe3119da88233"},
+    {"id": "SST-876", "title": "BUG: reset auto-pick recommendation is non-deterministic", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81f7814bd1e744fb526f"},
+    {"id": "SST-881", "title": "BUG: Season Grid shows stale/incoherent auto pick after Reset-to-Auto", "blocker": "reason not captured — needs logging", "url": "https://app.notion.com/39f29ce5833d81f7ac89dbd1d92869d9"},
+    {"id": "SST-799", "title": "Confidence Line + Archetype Label Copy (Copy-Tested, SST-782/783-Grounded)", "blocker": "Copy-test candidate names on 3-5 founders before lock", "url": "https://app.notion.com/39d29ce5833d8146aa78f2fcf5cf52e6"},
+    {"id": "SST-1497", "title": "Game Plan: Live Wipeout-Risk Read-Out for the Current Week's Pick Screen", "blocker": "Mockup gate — Deb must produce and founder must approve both-surface mockups before build; also awaiting Curie/founder ruling on copy register", "url": "https://app.notion.com/3ce29ce5833d814aae36e16d695e3d6b"}
   ],
   "needsYou": [
-    "Register the OAuth redirect URI for SST-1467 (Google Account link) in Google Cloud Console, then live-test with two real Google accounts (one matching, one not) and log the result on the ticket",
-    "Copy-test the SST-799 confidence-line/archetype names ('Play It Safe', 'Small Edge Off the Crowd', 'Zig While They Zag') on 3-5 founders before they lock",
-    "Rule on copy register for SST-1497's wipeout-risk read-out — fact-only like CorrelationBanner, or exempt risk-tier language",
-    "Grant Replit shell/SQL console access to helium (dev DB) — unblocks both SST-790 and SST-1281"
+    "Register the Google OAuth redirect URI in Google Cloud Console and live-test the link flow with 2 real Google accounts to clear SST-1467 for Done.",
+    "Get Replit console/shell SQL access to helium sorted — it's blocking both SST-790 and SST-1281.",
+    "Copy-test the confidence-line/archetype-label candidate names on 3-5 founders to unblock SST-799.",
+    "Rule on the wipeout-risk copy register (fact-only vs. risk language) for SST-1497, and plan to review Deb's mockups once delivered."
   ],
   "doneYesterday": [
-    {"id": "SST-1377", "title": "Backtesting Series (1.1): Article Shell + Series Hub Page", "url": "https://app.notion.com/3bf29ce5833d81a7aa00e1ee26ae1f53"},
-    {"id": "SST-1505", "title": "SECURITY: auth rate limiters keyed on attacker-controlled X-Forwarded-For", "url": "https://app.notion.com/3ce29ce5833d81bdab1cf84f0379c69c"},
-    {"id": "SST-1514", "title": "TECH DEBT: no DB-vs-schema.ts drift detection", "url": "https://app.notion.com/3cf29ce5833d819a8ed5decd101e8e64"},
-    {"id": "SST-1516", "title": "BUG: bootScheduleTypeHealthcheck swallows its own throw", "url": "https://app.notion.com/3cf29ce5833d81caa539d703c5f769f1"},
-    {"id": "SST-1517", "title": "Back Tester Lite: public no-login page", "url": "https://app.notion.com/3cf29ce5833d81539662ce814d88f742"},
-    {"id": "SST-1518", "title": "BUG: Games & Odds full sweep hangs forever (prod incident)", "url": "https://app.notion.com/3cf29ce5833d816a83f5d087d0ee9b6a"},
-    {"id": "SST-1519", "title": "BUG: schedulerService's pre-refresh healthcheck swallow", "url": "https://app.notion.com/3cf29ce5833d8114be61e17554055a5a"},
-    {"id": "SST-1520", "title": "Homepage entry point to public Week 1 picks page", "url": "https://app.notion.com/3cf29ce5833d8136b4cfee1f78e02226"},
-    {"id": "SST-1521", "title": "TECH DEBT: failed scheduled refresh never reaches admin dashboard", "url": "https://app.notion.com/3cf29ce5833d81609fd2ed3b218fbe39"},
-    {"id": "SST-1522", "title": "A11Y: role=radiogroup segmented controls missing arrow-key nav", "url": "https://app.notion.com/3cf29ce5833d8105af6bc40eceb7cbfe"},
-    {"id": "SST-1523", "title": "BUG: text-muted-foreground/70 fails WCAG AA contrast", "url": "https://app.notion.com/3cf29ce5833d81749286e3cc62aefe34"},
-    {"id": "SST-1527", "title": "Beta signup automation: Notion sync + Gmail welcome draft", "url": "https://app.notion.com/3cf29ce5833d81739ef6fc774a8d9ff3"},
-    {"id": "SST-1528", "title": "BUG: --sp-border-emphasis contrast fails WCAG 1.4.11", "url": "https://app.notion.com/3cf29ce5833d816da455f4d81ba740b2"},
-    {"id": "SST-1529", "title": "DECISION NEEDED: failed nightly refresh alert vs. pull-only badge", "url": "https://app.notion.com/3cf29ce5833d81dc8c84c984f4ad3cf0"},
-    {"id": "SST-1533", "title": "Bug: Enforce Week 1-17 restriction in Future Odds CSV importer", "url": "https://app.notion.com/3d029ce5833d819ab6aad4eb39808813"},
-    {"id": "SST-1536", "title": "BUG: Edit Games button never opens edit slide-over", "url": "https://app.notion.com/3d029ce5833d81c9b07fe7a6847e971c"}
+    {"id": "SST-1532", "title": "Collapse Back Tester Lite's inline OptionRow/OptionButton into the shared segmented radiogroup primitive", "url": "https://app.notion.com/3d029ce5833d8131970fc443a7dd0841"},
+    {"id": "SST-1537", "title": "Enhancement: Surface spread source, locked spread, and manual-override indicator in Games & Odds table", "url": "https://app.notion.com/3d029ce5833d81959b8afdd66d86a4b9"},
+    {"id": "SST-1538", "title": "Automate Pick Popularity nightly refresh from Yahoo + Admin on-demand Refresh button", "url": "https://app.notion.com/3d029ce5833d819dbb2dd59789149ea8"},
+    {"id": "SST-1539", "title": "4for4 Lookahead Spread: automated nightly refresh + on-demand admin refresh", "url": "https://app.notion.com/3d029ce5833d81c293bafe655aed83a9"},
+    {"id": "SST-1540", "title": "Home Page: Add Pool from Portfolio, sortable pool columns, 3-dot menu, section reorder", "url": "https://app.notion.com/3d029ce5833d815593ece8c8d5f48cf8"},
+    {"id": "SST-1541", "title": "Add Sleeper and ESPN to Pool Provider dropdown", "url": "https://app.notion.com/3d029ce5833d81859c11e6aef936ffeb"},
+    {"id": "SST-1550", "title": "BUG: full sweep silently lost mid-run when Replit autoscale recycles the instance holding it", "url": "https://app.notion.com/3d129ce5833d8184bd4fe9fcdb45afe9"}
   ]
 }
