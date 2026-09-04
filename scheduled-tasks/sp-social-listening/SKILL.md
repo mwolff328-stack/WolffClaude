@@ -434,6 +434,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Substack] The Eliminator (Kevin Ruger, eliminator.substack.com) — flagged 2026-09-02
 - [Reddit] [u/Maleficent_Proof8091](https://www.reddit.com/user/Maleficent_Proof8091/) — flagged 2026-09-03
 - [Reddit] [u/delux279](https://www.reddit.com/user/delux279/) — flagged 2026-09-03
+- [Substack] The Sports Commish (u/survivor_pool_comish, thesportscommish.substack.com) — flagged 2026-09-04
+- [Reddit] [u/Acrobatic_Town_9801](https://www.reddit.com/user/Acrobatic_Town_9801/) — flagged 2026-09-04
+- [Reddit] [u/AggravatingLine4246](https://www.reddit.com/user/AggravatingLine4246/) — flagged 2026-09-04
 ```
 
 Each run, do this:
