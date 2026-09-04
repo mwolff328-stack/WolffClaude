@@ -117,3 +117,4 @@
 - [My Strategy wizard deleted](project_survivorpulse_my_strategy_wizard_unreachable.md) / [TanStack Query keys hash by value](project_survivorpulse_tanstack_query_keys_hash_by_value.md).
 - [Support Mode is server-side now](project_survivorpulse_support_mode_is_server_side.md) / [glob in a comment breaks block strippers](project_survivorpulse_glob_in_comment_breaks_block_stripper.md).
 - [Beta outreach Notion databases](reference_beta_outreach_notion_databases.md) / [r/sportsbook, r/sportsbetting open fan-out targets](project_survivorpulse_sportsbook_subs_are_open_fanout_targets.md).
+- [jbf302 app-review reminder](project_survivorpulse_jbf302_app_review_reminder.md) — founder owes him a look + feedback, target weekend of 2026-09-05/06.
