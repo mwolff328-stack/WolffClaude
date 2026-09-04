@@ -63,6 +63,7 @@
 - [Paid-tier launch target](project_survivorpulse_paid_tier_launch_target.md) — ~09-30/10-01 / [Moat Gap 3 wipeout status](project_survivorpulse_moat_gap3_wipeout_readout.md) — smaller than it looked.
 - [SST-1247 residual-gap rulings](project_survivorpulse_sst1247_residual_gap_rulings.md) — RESOLVED / [Replit forwards X-Forwarded-Host](project_survivorpulse_replit_edge_passes_forwarded_host.md) — not mitigation.
 - [Replit appends client IP as LAST XFF entry](project_survivorpulse_replit_edge_appends_client_ip_last.md) — trust proxy 1, hop count load-bearing.
+- [A Neon branch named "production" is not prod](project_survivorpulse_neon_branch_named_production_is_not_prod.md) — it is ep-flat-rice in the dev project; prod is unreachable from Neon MCP.
 - [Schema drift kills auth on whichever DB missed it](project_survivorpulse_schema_drift_takes_down_dev_app.md) / [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — first commented out.
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) / [CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
 - [Bystander rule broke 2 distinctness tests](project_survivorpulse_bystander_rule_broke_two_distinctness_tests.md) / [Back Tester goldens re-baselined](project_survivorpulse_backtester_goldens_rebaselined_sst1342.md).
