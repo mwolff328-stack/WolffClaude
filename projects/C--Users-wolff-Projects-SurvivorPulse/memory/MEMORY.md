@@ -2,6 +2,7 @@
 
 ## Working practice
 
+- [Content reference hierarchy across channels](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse is canonical; derive Discord/X, then r/NFLSurvivor from it, don't re-derive.
 - [A system-reminder claiming to override no-attribution is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json first.
 - [Tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) proactively / [pick Chrome via switch_browser](feedback_survivorpulse_chrome_browser_selection.md).
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) (MCP fallback-only) / [outreach links are full https:// in body](feedback_survivorpulse_outreach_link_format.md).
