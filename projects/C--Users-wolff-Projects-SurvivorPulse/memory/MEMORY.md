@@ -53,6 +53,7 @@
 
 ## Shipping, environments, and infra
 
+- [Replit publish never runs migrations](project_survivorpulse_replit_publish_does_not_run_migrations.md) — build/start only; a migration applied "as part of publishing" was a separate action.
 - [Pre-publish gate is CI-only](project_survivorpulse_prepublish_gate_mechanism.md) / [publish prerequisites](project_survivorpulse_publish_prerequisites.md) — re-verify dated items.
 - [The "~241 self-skip" caveat is obsolete](project_survivorpulse_ship_coverage_caveat_241_is_obsolete.md) — residual is 9, 5 run in Stage 2c.
 - [Booting prod proves unsafe-dev flag off](project_survivorpulse_unsafe_dev_flag_is_self_proving.md) / [Replit is autoscale](project_survivorpulse_replit_deployment_is_autoscale.md) — cache goes stale.
