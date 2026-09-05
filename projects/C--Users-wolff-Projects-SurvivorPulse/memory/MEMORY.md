@@ -68,6 +68,7 @@
 - [Schema drift kills auth on whichever DB missed it](project_survivorpulse_schema_drift_takes_down_dev_app.md) / [.env has two DATABASE_URL lines](project_survivorpulse_env_database_url_two_lines.md) — first commented out.
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) / [CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
 - [Bystander rule broke 2 distinctness tests](project_survivorpulse_bystander_rule_broke_two_distinctness_tests.md) / [Back Tester goldens re-baselined](project_survivorpulse_backtester_goldens_rebaselined_sst1342.md).
+- [Discord CI webhook dead as of 2026-09-05](project_survivorpulse_discord_ci_webhook_dead_sst1571.md) — SST-1571, Blocked on founder rotating the secret.
 
 ## Verifying UI for real
 
