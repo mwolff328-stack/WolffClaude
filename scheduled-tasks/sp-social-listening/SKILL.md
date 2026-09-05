@@ -449,6 +449,15 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Substack] The Sports Commish (u/survivor_pool_comish, thesportscommish.substack.com) — flagged 2026-09-04
 - [Reddit] [u/Acrobatic_Town_9801](https://www.reddit.com/user/Acrobatic_Town_9801/) — flagged 2026-09-04
 - [Reddit] [u/AggravatingLine4246](https://www.reddit.com/user/AggravatingLine4246/) — flagged 2026-09-04
+- [Reddit] [u/RichCondition1501](https://www.reddit.com/user/RichCondition1501/) — flagged 2026-09-05
+- [Reddit] [u/ilikecilantro55](https://www.reddit.com/user/ilikecilantro55/) — flagged 2026-09-05
+- [Reddit] [u/juleptime](https://www.reddit.com/user/juleptime/) — flagged 2026-09-05
+- [Reddit] [u/Peak_District_hill](https://www.reddit.com/user/Peak_District_hill/) — flagged 2026-09-05
+- [Reddit] [u/lowkeydank](https://www.reddit.com/user/lowkeydank/) — flagged 2026-09-05
+- [X] [Confident2Death](https://x.com/Confident2Death) — flagged 2026-09-05
+- [X] [JacobABigelow](https://x.com/JacobABigelow) — flagged 2026-09-05
+- [X] [TheDonDrew](https://x.com/TheDonDrew) — flagged 2026-09-05
+- [X] [christianserino](https://x.com/christianserino) — flagged 2026-09-05
 ```
 
 Each run, do this:
