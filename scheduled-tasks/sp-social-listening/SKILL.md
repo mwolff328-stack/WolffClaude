@@ -318,7 +318,7 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [FLKeysBeachBum](https://x.com/FLKeysBeachBum) — ICP voice (enthusiastic player in the Hard Rock Bet $2M NFL survivor pool, publicly asking why it starts at Week 4 instead of Week 1) — seen: 2026-08-30
 - [X] [gfienberg17](https://x.com/gfienberg17) — competitor / affiliate (promoting the [@BetOnline_ag](https://x.com/BetOnline_ag) $500,000 survivor pool, $30 entry, buy-3-get-1-free early bird) — seen: 2026-08-30
 - [X] [4for4football](https://x.com/4for4football) — content creator (Jen Eakins breaking down three ways to attack the 4for4 Splash Survivor Pool and its guaranteed $100,035 grand prize) — seen: 2026-08-30
-- [X] [ForTheFans__FTF](https://x.com/ForTheFans__FTF) — competitor operator (Splash Sports partner "FOR THE FANS" launching NFL/NCAAF Survivor & Pick'em contests) — seen: 2026-09-01
+- [X] [ForTheFans__FTF](https://x.com/ForTheFans__FTF) — competitor operator (Splash Sports partner "FOR THE FANS" launching NFL/NCAAF Survivor & Pick'em contests) — seen: 2026-09-01, 2026-09-05
 - [X] [B1GPodcast](https://x.com/B1GPodcast) — commissioner/operator (POC Survivor Pool relaunch, requires 2 teams picked in first 4 weeks) — seen: 2026-09-01
 - [X] [CuttyFromTheCut](https://x.com/CuttyFromTheCut) — ICP voice/commissioner (recruiting anonymous DMs for a survivor pool) — seen: 2026-09-01
 - [X] [kylemclovin1](https://x.com/kylemclovin1) — commissioner/ICP voice ($25 survivor pool, DM/text for Sleeper link) — seen: 2026-09-01
