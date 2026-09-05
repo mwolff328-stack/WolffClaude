@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-05T16:08:20.380Z",
+      "updatedAt": "2026-09-05T16:08:37.098Z",
+      "id": "task-mtokuh7g-8coa1q",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Stop Gate Review",
+      "workspaceRoot": "C:\\Users\\wolff",
+      "jobClass": "task",
+      "summary": "ALLOW: The previous turn reports a tracker field option update, not code changes requiring review.",
+      "write": false,
+      "sessionId": "82ca87e0-d1ce-4693-8b54-936d85de48ed",
+      "status": "completed",
+      "startedAt": "2026-09-05T16:08:20.754Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtokuh7g-8coa1q.log",
+      "threadId": "01a07254-0e75-7a13-be17-00e47cde4a5b",
+      "turnId": "01a07254-15c2-7562-a3e8-6e156ae0c851",
+      "completedAt": "2026-09-05T16:08:36.720Z"
+    },
+    {
       "createdAt": "2026-09-05T15:38:52.204Z",
       "updatedAt": "2026-09-05T15:39:01.721Z",
       "id": "task-mtojskvg-7wwkyo",
