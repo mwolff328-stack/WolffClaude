@@ -355,6 +355,18 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [SurvivorBowl586](https://x.com/SurvivorBowl586) — content creator (King of the Hill CFB Survivor podcast tied to [@586SportsS](https://x.com/586SportsS); also has its own [YouTube channel](https://www.youtube.com/@SurvivorBowl586) posting the same episodes) — seen: 2026-09-03
 - [X] [MagicSportsGuy](https://x.com/MagicSportsGuy) — adjacent competitor / tool creator ("NFL Survivor Map is LIVE" — free win-odds/spread survivor grid pulling live Polymarket data, Splash Survivor mode, CSV upload for statrankings+ subscribers) — seen: 2026-09-02
 - [YouTube] [Teacher Talking Sports](https://www.youtube.com/@teachertalkingsports) — content creator (posted "Week 1 NFL Survivor: Who are the best choices?") — seen: 2026-09-02
+- [X] [Confident2Death](https://x.com/Confident2Death) — commissioner / ICP voice ($50 entry, 3-max-entries NFL Survivor Pool, current pot $2K, recruiting on X; synced to Prospect Tracker) — seen: 2026-09-05
+- [X] [BoxDsportsApp](https://x.com/BoxDsportsApp) — adjacent competitor / tool (pitching a commissioner-focused survivor pool hosting app — custom rules, multiple entries, custom pick deadlines) — seen: 2026-09-05
+- [X] [DepaolaSal](https://x.com/DepaolaSal) — affiliate/promoter (same-day tweet amplifying BoxDsportsApp's "create the Survivor pool you've always dreamed of" pitch) — seen: 2026-09-05
+- [X] [JacobABigelow](https://x.com/JacobABigelow) — commissioner / ICP voice (publicly recruiting DMs for an NFL survivor pool; synced to Prospect Tracker) — seen: 2026-09-05
+- [X] [TheDonDrew](https://x.com/TheDonDrew) — commissioner / ICP voice (running his 7th annual $25 buy-in, winner-take-all NFL survivor pool; synced to Prospect Tracker) — seen: 2026-09-05
+- [X] [christianserino](https://x.com/christianserino) — ICP voice / season-path planner (replied to [@audavidb](https://x.com/audavidb)/[@SurvivorSweat](https://x.com/SurvivorSweat) that he's already mapped out his full season for a survivor pool; synced to Prospect Tracker) — seen: 2026-09-05
+- [X] [TitanicGambler](https://x.com/TitanicGambler) — ICP voice (pain-point observation: "most of the picks/survivor contests you see folks pushing on discord/Twitter/IG/other socials give a percentage of the prize pool to the person pushing it" — trust/kickback-scheme awareness) — seen: 2026-09-05
+- [X] [RotoBaller](https://x.com/RotoBaller) — affiliate/promoter (parent account of [@RotoBallerNFL](https://x.com/RotoBallerNFL), already in standing watch; posted "Free Survivor Pool tool for optimal picks") — seen: 2026-09-05
+- [Reddit] [u/juleptime](https://www.reddit.com/user/juleptime/) — ICP voice / in-market buyer (asked [r/Saints](https://www.reddit.com/r/Saints/comments/1w7ldo9/sleeper_survivor_leagues/) for a survivor pool or chopped league to join; synced to Prospect Tracker) — seen: 2026-09-05
+- [Reddit] [u/Peak_District_hill](https://www.reddit.com/user/Peak_District_hill/) — commissioner (running a UK NFL survivor pool, $5 buy-in on TeamStake via Sleeper; synced to Prospect Tracker) — seen: 2026-09-05
+- [Reddit] [u/ilikecilantro55](https://www.reddit.com/user/ilikecilantro55/) — ICP voice (playing a "pick the loser" survivor variant, asking r/NFLSurvivor for strategy tips; synced to Prospect Tracker) — seen: 2026-09-05
+- [Reddit] [real_bookie](https://www.reddit.com/user/real_bookie/) — competitor / bookie network (pay-per-head bookie account in r/bestpayperhead offering a free NFL Survivor Pool entry, $2,000 prize, to players with a positive balance by Sunday — a PPH-specific customer-retention mechanic) — seen: 2026-09-05
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
