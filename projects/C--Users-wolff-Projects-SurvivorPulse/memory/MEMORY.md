@@ -11,6 +11,7 @@
 - [A "completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a filing.
 - [Link SurvivorPulse sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
 - [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof and diff filter both miss MOVES.
+- [Mutation-test cleanup needs a backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) — git checkout on the un-backed-up file wipes uncommitted work.
 - [Edit tool writes back stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing with sed/python reverts shell edits.
 - [Mutation harness edits first match](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded neighbour's route.
 - [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower claim than copy made.
