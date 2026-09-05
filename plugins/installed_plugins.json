@@ -14,10 +14,10 @@
     "github@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\f548531d7fc3",
-        "version": "f548531d7fc3",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\github\\85cce0381e78",
+        "version": "85cce0381e78",
         "installedAt": "2026-03-24T18:43:17.686Z",
-        "lastUpdated": "2026-09-03T05:51:46.747Z",
+        "lastUpdated": "2026-09-05T15:20:08.609Z",
         "gitCommitSha": "f548531d7fc334ef1219ed8f501573dbdb267a09"
       }
     ],
@@ -34,11 +34,21 @@
     "neon@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.1.2",
-        "version": "1.1.2",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\claude-plugins-official\\neon\\1.2.0",
+        "version": "1.2.0",
         "installedAt": "2026-07-24T00:53:40.252Z",
-        "lastUpdated": "2026-08-12T19:25:43.721Z",
-        "gitCommitSha": "af27b52659c3c5bbf05d6c626b166163eb351e19"
+        "lastUpdated": "2026-09-05T15:20:17.209Z",
+        "gitCommitSha": "4d02514f89ec203ec0f603882f90d468ff8c44f8"
+      }
+    ],
+    "codex@openai-codex": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\wolff\\.claude\\plugins\\cache\\openai-codex\\codex\\1.0.6",
+        "version": "1.0.6",
+        "installedAt": "2026-09-05T15:13:38.148Z",
+        "lastUpdated": "2026-09-05T15:13:38.148Z",
+        "gitCommitSha": "db52e28f4d9ded852ab3942cea316258ae4ef346"
       }
     ]
   }

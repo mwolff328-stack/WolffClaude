@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": true
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-05T15:38:52.204Z",
+      "updatedAt": "2026-09-05T15:39:01.721Z",
+      "id": "task-mtojskvg-7wwkyo",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Stop Gate Review",
+      "workspaceRoot": "C:\\Users\\wolff",
+      "jobClass": "task",
+      "summary": "ALLOW: The previous turn only reported setup completion; no reviewable code changes.",
+      "write": false,
+      "sessionId": "738227d4-d187-4349-87f7-41aaff21606e",
+      "status": "completed",
+      "startedAt": "2026-09-05T15:38:52.261Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtojskvg-7wwkyo.log",
+      "threadId": "01a07239-060b-7d23-8587-65b9a52cf08b",
+      "turnId": "01a07239-09b1-7230-bf0c-f2641a6f00d2",
+      "completedAt": "2026-09-05T15:39:01.595Z"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-09-03T05:51:45.912Z"
+    "lastUpdated": "2026-09-05T15:20:08.428Z"
   },
   "superpowers-marketplace": {
     "source": {
@@ -21,7 +21,7 @@
       "repo": "anthropics/skills"
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\anthropic-agent-skills",
-    "lastUpdated": "2026-09-03T05:51:46.539Z"
+    "lastUpdated": "2026-09-05T15:20:08.328Z"
   },
   "finance-skills": {
     "source": {
@@ -38,5 +38,13 @@
     },
     "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\everything-claude-code",
     "lastUpdated": "2026-06-09T12:00:42.093Z"
+  },
+  "openai-codex": {
+    "source": {
+      "source": "git",
+      "url": "https://github.com/openai/codex-plugin-cc.git"
+    },
+    "installLocation": "C:\\Users\\wolff\\.claude\\plugins\\marketplaces\\openai-codex",
+    "lastUpdated": "2026-09-05T15:13:26.013Z"
   }
 }
