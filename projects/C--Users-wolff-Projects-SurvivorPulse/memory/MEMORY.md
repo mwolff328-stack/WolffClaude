@@ -69,6 +69,7 @@
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) / [CRLF churn](project_survivorpulse_ca1_snapshot_crlf_churn.md) — no regen.
 - [Bystander rule broke 2 distinctness tests](project_survivorpulse_bystander_rule_broke_two_distinctness_tests.md) / [Back Tester goldens re-baselined](project_survivorpulse_backtester_goldens_rebaselined_sst1342.md).
 - [Discord CI webhook dead as of 2026-09-05](project_survivorpulse_discord_ci_webhook_dead_sst1571.md) — SST-1571, Blocked on founder rotating the secret.
+- [GH Actions permissions:{} breaks checkout](project_survivorpulse_gh_actions_permissions_checkout_trap.md) — SST-1569; verify workflow YAML by live-dispatching, not reading.
 
 ## Verifying UI for real
 
