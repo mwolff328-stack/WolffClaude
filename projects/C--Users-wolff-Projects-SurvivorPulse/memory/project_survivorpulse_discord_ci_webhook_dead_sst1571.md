@@ -5,11 +5,11 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 0f0942e8-7cdd-4788-ace7-11b8feb5f188
-  modified: 2026-09-05T22:57:24.205Z
+  modified: 2026-09-05T22:57:30.569Z
 ---
 
 The `secrets.DISCORD_WEBHOOK_URL` GitHub repo secret points at a deleted/rotated Discord
-webhook. Discovered 2026-09-05 during live verification of [[project_survivorpulse_sst1569... ]]
+webhook. Discovered 2026-09-05 during live verification of SST-1569
 (CI notification tech-debt fix): dispatching the new `ci-cancellation-sweep.yml` against real
 run history produced 9/9 `Discord post failed: 404 {"message": "Unknown Webhook", "code": 10015}`
 errors (run 33995896694). Telegram notifications worked fine in the same test — Discord-only
