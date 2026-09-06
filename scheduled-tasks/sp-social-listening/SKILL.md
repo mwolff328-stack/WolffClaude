@@ -469,6 +469,14 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [JacobABigelow](https://x.com/JacobABigelow) — flagged 2026-09-05
 - [X] [TheDonDrew](https://x.com/TheDonDrew) — flagged 2026-09-05
 - [X] [christianserino](https://x.com/christianserino) — flagged 2026-09-05
+- [X] [Siscofarms](https://x.com/Siscofarms) — flagged 2026-09-06
+- [X] [ShariGeller](https://x.com/ShariGeller) — flagged 2026-09-06
+- [X] [nagelbagels](https://x.com/nagelbagels) — flagged 2026-09-06
+- [Reddit] [u/No_Consequence_5887](https://www.reddit.com/user/No_Consequence_5887/) — flagged 2026-09-06
+- [Reddit] [u/Usual-Roll-9283](https://www.reddit.com/user/Usual-Roll-9283/) — flagged 2026-09-06
+- [Reddit] [u/HaveACreamyDay](https://www.reddit.com/user/HaveACreamyDay/) — flagged 2026-09-06
+- [Reddit] [u/MindlessExtreme5818](https://www.reddit.com/user/MindlessExtreme5818/) — flagged 2026-09-06
+- [Reddit] [u/Cosmic_Charlie_5](https://www.reddit.com/user/Cosmic_Charlie_5/) — flagged 2026-09-06
 ```
 
 Each run, do this:
