@@ -16,6 +16,7 @@
 - [Mutation-test cleanup needs a backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) — git checkout on the un-backed-up file wipes uncommitted work.
 - [Edit tool writes back stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing with sed/python reverts shell edits.
 - [Mutation harness edits first match](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded neighbour's route.
+- [A mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) — check WHICH assertion failed; duplicate direction and nested-block placement.
 - [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower claim than copy made.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
 - [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed.
