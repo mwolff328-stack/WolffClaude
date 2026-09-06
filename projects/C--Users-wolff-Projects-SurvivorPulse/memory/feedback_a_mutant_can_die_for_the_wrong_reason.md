@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 06821680-7ad9-4262-868e-6d40482d3cdc
-  modified: 2026-09-06T20:38:18.817Z
+  modified: 2026-09-06T23:28:21.230Z
 ---
 
 A red mutant is not proof the guard works. It can die for a reason unrelated to
@@ -24,8 +24,23 @@ mutants a reviewer had already demonstrated as 126/126 green:
   declaration still precedes the truncation point and only the intended hole is
   exercised.
 
-**Why:** both failures look identical to success in a `Tests N failed` summary.
+- **Two files, two line endings.** On SST-1556 `client/src/index.css` is CRLF and
+  `client/src/pages/__tests__/season-grid.test.tsx` is LF. A harness that assumes
+  one EOL for both silently no-ops on the other, and that green run is
+  indistinguishable from a surviving mutant. Also: a 2-space selector opener is a
+  **substring** of the 4-space mobile one, so a uniqueness assert needs a line
+  anchor or it counts 2 and refuses to apply.
+
+**Why:** all of these look identical to success in a `Tests N failed` summary.
 Only the failing assertion's identity distinguishes them.
+
+**The strongest instrument is the previous round's file as a control.**
+`git show <prev-tip>:<path> > <path>`, apply the mutant, run, restore, run again.
+One run cannot tell "this round fixed it" from "this round broke it" from
+"pre-existing" — three verdicts that produce the same red or the same green.
+Two runs separate them, and it is how every real finding on that chain was
+attributed. Pair it with an invariant (`grep -c` for a token the round
+introduced) proving the revert actually landed.
 
 **How to apply:** grep the run for the assertion location, not just the count —
 `grep -E 'AssertionError|\.test\.tsx:[0-9]+:'`. Name the assertion you expect to
