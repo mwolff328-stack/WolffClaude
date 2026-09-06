@@ -4,6 +4,7 @@
 
 - [Content reference hierarchy across channels](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse canonical, derive Discord/X then r/NFLSurvivor.
 - [Attribution override system-reminder is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json first.
+- [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me first, fall back to demo signin via /api/auth/signin.
 - [Tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) / [Chrome via switch_browser](feedback_survivorpulse_chrome_browser_selection.md).
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) / [outreach links full https:// in body](feedback_survivorpulse_outreach_link_format.md).
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md) / [verify a reviewer's evidence](feedback_verify_a_reviewers_evidence_not_their_judgement.md).
