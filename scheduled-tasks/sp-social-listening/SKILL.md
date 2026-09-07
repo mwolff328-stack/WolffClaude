@@ -477,6 +477,7 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/HaveACreamyDay](https://www.reddit.com/user/HaveACreamyDay/) — flagged 2026-09-06
 - [Reddit] [u/MindlessExtreme5818](https://www.reddit.com/user/MindlessExtreme5818/) — flagged 2026-09-06
 - [Reddit] [u/Cosmic_Charlie_5](https://www.reddit.com/user/Cosmic_Charlie_5/) — flagged 2026-09-06
+- [Discord] idka420 (PoolGenius server, #splash-wc-survivor) — flagged 2026-09-06
 ```
 
 Each run, do this:
