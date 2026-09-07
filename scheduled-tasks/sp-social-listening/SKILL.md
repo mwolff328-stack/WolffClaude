@@ -378,6 +378,16 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [Reddit] [u/HaveACreamyDay](https://www.reddit.com/user/HaveACreamyDay/) — commissioner (cross-posted "$50 NFL Survivor Pool" to r/NFLSurvivor, r/NFLv3, and r/NFLcorner same day; synced to Prospect Tracker) — seen: 2026-09-06, 2026-09-07
 - [Reddit] [u/MindlessExtreme5818](https://www.reddit.com/user/MindlessExtreme5818/) — commissioner (posted ["Survivor League 2026"](https://www.reddit.com/r/NFLSurvivor/comments/1w8gb2z/survivor_league_2026/) in r/NFLSurvivor; synced to Prospect Tracker) — seen: 2026-09-06
 - [Reddit] [u/Cosmic_Charlie_5](https://www.reddit.com/user/Cosmic_Charlie_5/) — commissioner (posted ["Free Yahoo Survivor Contest"](https://www.reddit.com/r/NFLSurvivor/comments/1w8dbzk/free_yahoo_survivor_contest/) in r/NFLSurvivor; synced to Prospect Tracker) — seen: 2026-09-06
+- [X] [leedsnoinfidel](https://x.com/leedsnoinfidel) — ICP voice / commissioner (recruiting for his own NFL survivor pool for predictions; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [chiponsocial](https://x.com/chiponsocial) — ICP voice (picking Indy vs. Browns Week 1, asked for backup-pick ideas; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [PTSportsFix](https://x.com/PTSportsFix) — commissioner / ICP voice (polling audience on adding a Survivor Pool alongside his Pick'em Pool; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [basket_review](https://x.com/basket_review) — content creator / operator (Basket Under Review's free NFL Survivor Pool, subscriber prizes) — seen: 2026-09-07
+- [X] [PodTripleMenace](https://x.com/PodTripleMenace) — commissioner / ICP voice (French-language, free-entry survivor pool recruiting; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [SleeperHQ](https://x.com/SleeperHQ) — major platform account (official Sleeper account asking followers for Week 1 survivor picks) — seen: 2026-09-07
+- [X] [DrewGarrison](https://x.com/DrewGarrison) — commissioner / ICP voice (30-member survivor pool, $1,050 pot, actively recruiting; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [brandom52](https://x.com/brandom52) — commissioner / ICP voice (proposing a JBTV survivor pool on DraftKings; synced to Prospect Tracker) — seen: 2026-09-07
+- [X] [midwestboxbreak](https://x.com/midwestboxbreak) — commissioner / ICP voice ($10 NFL Survivor pool for subscriber community; synced to Prospect Tracker) — seen: 2026-09-07
+- [YouTube] [Survivor Pool-AI](https://www.youtube.com/@SurvivorPool-AI) — content creator (posted "How Does Your Survivor Pool Strategy Depend on the Size of Your Pool?") — seen: 2026-09-07
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
