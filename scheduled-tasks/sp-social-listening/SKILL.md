@@ -488,6 +488,13 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/MindlessExtreme5818](https://www.reddit.com/user/MindlessExtreme5818/) — flagged 2026-09-06
 - [Reddit] [u/Cosmic_Charlie_5](https://www.reddit.com/user/Cosmic_Charlie_5/) — flagged 2026-09-06
 - [Discord] idka420 (PoolGenius server, #splash-wc-survivor) — flagged 2026-09-06
+- [X] [leedsnoinfidel](https://x.com/leedsnoinfidel) — flagged 2026-09-07
+- [X] [chiponsocial](https://x.com/chiponsocial) — flagged 2026-09-07
+- [X] [PTSportsFix](https://x.com/PTSportsFix) — flagged 2026-09-07
+- [X] [PodTripleMenace](https://x.com/PodTripleMenace) — flagged 2026-09-07
+- [X] [DrewGarrison](https://x.com/DrewGarrison) — flagged 2026-09-07
+- [X] [brandom52](https://x.com/brandom52) — flagged 2026-09-07
+- [X] [midwestboxbreak](https://x.com/midwestboxbreak) — flagged 2026-09-07
 ```
 
 Each run, do this:
