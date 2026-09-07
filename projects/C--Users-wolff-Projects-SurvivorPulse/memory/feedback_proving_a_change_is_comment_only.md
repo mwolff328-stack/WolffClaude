@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 066c9c89-8b11-4632-8f1b-4c9983b1b616
-  modified: 2026-08-01T21:30:02.639Z
+  modified: 2026-09-07T00:32:07.473Z
 ---
 
 To claim a commit is comment-only, the obvious check is to filter the diff's `+`/`-`
@@ -43,6 +43,18 @@ strip-and-compare — and report the code-line count on both sides, since that i
 evidence. A line-anchored filter that flags code you know you did not touch is a
 signal the method is wrong, not that the change is.
 
+**Decode the "before" side explicitly as utf-8.** Strip-and-compare has its own false
+negative on Windows: Python's `subprocess.run(..., text=True)` decodes `git show`
+through the **cp1252** locale while the worktree file is read as utf-8, so every line
+containing an em dash (or any non-cp1252 char) compares unequal. On SST-1556
+(2026-09-06) that reported a genuinely comment-only edit as a code change across ~40
+lines. Use `capture_output=True` without `text`, then `.stdout.decode("utf-8")`.
+Sanity-check by counting em dashes and U+FFFD on both sides — equal em-dash counts and
+zero replacement chars prove the decode held. Same class as the method above: an
+instrument that flags code you know you did not touch is usually broken, not right.
+
 Related: [[feedback_confirm_the_check_covers_what_you_changed]] (a green check whose
 include globs miss your files), [[feedback_proving_a_test_is_load_bearing]] (printed
-invariants proving a revert or mutation actually landed).
+invariants proving a revert or mutation actually landed),
+[[feedback_a_mutant_can_die_for_the_wrong_reason]] (the same "verify your own
+instrument" discipline applied to mutation testing).
