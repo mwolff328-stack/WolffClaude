@@ -28,6 +28,8 @@
 - [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) / [verify commit not exit line](feedback_verify_the_commit_not_the_exit_line.md).
 - [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
 - [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
+- [A test named for a spec item claims it](feedback_a_test_named_for_a_spec_item_claims_it.md) — green + cited AC = looks done while violating it.
+- [A groomed AC can assert a false codebase fact](feedback_a_groomed_ac_can_assert_a_false_codebase_fact.md) — re-run embedded greps, especially negative ones.
 - [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — instrument is wrong, stop hardening.
 - [Defer a guard needing its own design](feedback_defer_a_guard_that_needs_its_own_design.md) — founder ruling.
 - [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) / [gate the page not the viewer](feedback_survivorpulse_gate_page_not_viewer.md).
