@@ -98,6 +98,8 @@
 - [Worktree prune "Permission denied"](project_survivorpulse_worktree_prune_readonly_attr.md) / [openid-client PKCE broken in tests](project_survivorpulse_openid_client_pkce_broken_in_tests.md).
 - [tsc excludes tests/ entirely](project_survivorpulse_tsc_excludes_tests_directory.md) / [clearAllRateLimits() no-op in Stage 2c](project_survivorpulse_clearallratelimits_is_cross_process_noop_in_stage2c.md).
 - [Wrong /api path returns the SPA shell](project_survivorpulse_wrong_api_path_returns_spa_shell.md) — 200+HTML not 404.
+- [Unit config disables the DB host guard](project_survivorpulse_unit_config_disables_db_host_guard.md) — SKIP_DB_GUARD=1 project-wide; 3 ungated files write to any real DB every npm test.
+- [SUPPORTED_SEASONS is narrower than games](project_survivorpulse_supported_seasons_narrower_than_games.md) — [2021..2026], pools-only; games hold 2016+.
 - [17 env-gated suites invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md) / [Drizzle wraps pg errors on .cause](project_survivorpulse_drizzle_wraps_pg_errors_on_cause.md).
 - [vitest exclude beats explicit CLI filename](project_survivorpulse_vitest_exclude_beats_explicit_cli_filename.md) — silently vanishes.
 
