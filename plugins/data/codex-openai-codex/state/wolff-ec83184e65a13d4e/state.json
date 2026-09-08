@@ -5,25 +5,25 @@
   },
   "jobs": [
     {
-      "createdAt": "2026-09-08T12:43:51.302Z",
-      "updatedAt": "2026-09-08T12:44:17.179Z",
-      "id": "task-mtsnv2bq-u6gd7h",
+      "createdAt": "2026-09-08T13:04:31.729Z",
+      "updatedAt": "2026-09-08T13:04:44.077Z",
+      "id": "task-mtsolng1-pcwkhj",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Stop Gate Review",
       "workspaceRoot": "C:\\Users\\wolff",
       "jobClass": "task",
-      "summary": "ALLOW: The previous turn only renamed a session and made no code changes.",
+      "summary": "ALLOW: The previous turn reported a daily brief and Notion write, with no code changes to review.",
       "write": false,
-      "sessionId": "0204b9c9-2129-42ee-b8d7-1c1f45c6ea9b",
+      "sessionId": "a2180d36-a811-49fb-a605-254cda573ea9",
       "status": "completed",
-      "startedAt": "2026-09-08T12:43:51.593Z",
+      "startedAt": "2026-09-08T13:04:31.867Z",
       "phase": "done",
       "pid": null,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsnv2bq-u6gd7h.log",
-      "threadId": "01a0810b-fc22-7943-a09a-221092b3a96a",
-      "turnId": "01a0810c-146b-7470-bab8-78f17b75e313",
-      "completedAt": "2026-09-08T12:44:15.416Z"
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsolng1-pcwkhj.log",
+      "threadId": "01a0811e-d682-75a0-a14e-740473dea126",
+      "turnId": "01a0811e-de0e-7990-a498-cb759569b8e5",
+      "completedAt": "2026-09-08T13:04:43.877Z"
     }
   ]
 }
