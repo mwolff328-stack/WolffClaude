@@ -3,5 +3,27 @@
   "config": {
     "stopReviewGate": true
   },
-  "jobs": []
+  "jobs": [
+    {
+      "createdAt": "2026-09-08T15:49:15.201Z",
+      "updatedAt": "2026-09-08T15:49:33.960Z",
+      "id": "task-mtsuhhkx-8y2enu",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Stop Gate Review",
+      "workspaceRoot": "C:\\Users\\wolff",
+      "jobClass": "task",
+      "summary": "ALLOW: The previous turn updated planning records and stories, not code; no code review is required.",
+      "write": false,
+      "sessionId": "ab331b96-58c6-47ee-86ed-ff798c61c975",
+      "status": "completed",
+      "startedAt": "2026-09-08T15:49:15.416Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsuhhkx-8y2enu.log",
+      "threadId": "01a081b5-b82b-7060-9751-e1c43ee1f936",
+      "turnId": "01a081b5-c67b-7823-90fc-28c314648b56",
+      "completedAt": "2026-09-08T15:49:33.615Z"
+    }
+  ]
 }
