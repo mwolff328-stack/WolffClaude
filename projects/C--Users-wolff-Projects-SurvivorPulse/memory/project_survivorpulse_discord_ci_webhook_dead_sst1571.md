@@ -1,12 +1,25 @@
 ---
 name: project_survivorpulse_discord_ci_webhook_dead_sst1571
-description: "The shared DISCORD_WEBHOOK_URL GitHub secret is dead (404 Unknown Webhook) as of 2026-09-05 — SST-1571, blocked on founder action."
+description: "SST-1571 (dead Discord CI webhook) — RESOLVED 2026-09-08, founder rotated the secret, verified live against real CI activity."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 0f0942e8-7cdd-4788-ace7-11b8feb5f188
-  modified: 2026-09-05T22:57:30.569Z
+  modified: 2026-09-08T13:57:54.146Z
 ---
+
+**RESOLVED 2026-09-08.** Founder rotated the webhook. Verified against real GitHub Actions
+activity on 2026-v1 (not a synthetic/dry-run test): two genuine Playwright CI runs posted
+"✅ E2E Passed" and a re-dispatch of `ci-cancellation-sweep.yml` found 2 real cancelled-while-
+pending runs and posted both — 4/4 notifications confirmed landed in #infra by directly
+reading the channel via the `discord-reader` MCP tool (not just absence-of-error in CI logs),
+independently re-checked by a second pass (Vlad). Ticket moved to Done. Also corrected in the
+process: #infra (1491786035980537978) is genuinely the documented target per the
+`survivorpulse-infra` skill, but that same channel is ALSO where a separate personal-automation
+bot ("Luigi", OpenClaw-based) posts its own unrelated cron-job status updates — the two systems
+share a channel but not a posting mechanism. No CI embeds appeared anywhere in 100 scanned
+messages before the fix, consistent with a long-silent outage. The rest of this file is the
+original incident record, kept for context.
 
 The `secrets.DISCORD_WEBHOOK_URL` GitHub repo secret points at a deleted/rotated Discord
 webhook. Discovered 2026-09-05 during live verification of SST-1569
