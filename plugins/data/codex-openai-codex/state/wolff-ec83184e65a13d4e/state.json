@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-08T16:30:54.817Z",
-      "updatedAt": "2026-09-08T16:31:32.809Z",
+      "updatedAt": "2026-09-08T16:31:37.404Z",
       "id": "task-mtsvz2ao-vk38i1",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Stop Gate Review",
       "workspaceRoot": "C:\\Users\\wolff",
       "jobClass": "task",
-      "summary": "Stop-gate review of previous Claude turn",
+      "summary": "ALLOW: The previous turn only reported test guidance and coordination; it made no direct code edits.",
       "write": false,
       "sessionId": "ab331b96-58c6-47ee-86ed-ff798c61c975",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-08T16:30:55.620Z",
-      "phase": "finalizing",
-      "pid": 53676,
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsvz2ao-vk38i1.log",
       "threadId": "01a081dc-2724-7c62-b445-1ce8fa4bbba2",
-      "turnId": "01a081dc-388a-7713-a8b6-3b10ffa54a49"
+      "turnId": "01a081dc-388a-7713-a8b6-3b10ffa54a49",
+      "completedAt": "2026-09-08T16:31:36.634Z"
     },
     {
       "createdAt": "2026-09-08T16:23:11.236Z",
@@ -46,3 +47,4 @@
       "completedAt": "2026-09-08T16:23:52.563Z"
     }
   ]
+}
