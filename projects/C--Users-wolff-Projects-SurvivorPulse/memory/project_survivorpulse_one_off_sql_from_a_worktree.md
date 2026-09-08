@@ -58,3 +58,40 @@ server/index.ts` should log `[SCHEMA_DRIFT_CHECK] No missing schema.` and reach
 `npm run dev` hangs in `setupVite` and never reaches `listen`, so a clean drift check
 alone would leave you with no port to confirm. Verified 2026-09-08 applying SST-1544's
 Opening-popularity migration.
+
+## Proving a column exists on helium, which you cannot connect to
+
+helium (the deployed dev app's DB) is reachable only from inside the Replit container,
+so no local SQL check says anything about it. You do not need the founder to run a
+console query — **a route backed by a bare Drizzle `.select()` is a column-existence
+probe.** `.select()` with no argument names EVERY column in `shared/schema.ts`, and a
+SELECT naming a column the database lacks fails at **plan time** with Postgres 42703,
+regardless of how many rows match. So a 200 proves the column is there, and an empty
+result set cannot mask a missing one.
+
+Two conditions make the 200 load-bearing, and both must be checked in the source before
+citing it — otherwise this is just "no error happened", which is not evidence:
+1. The storage method really uses a bare `.select()` (not an explicit column list, which
+   would omit the new column and prove nothing).
+2. The call is not wrapped in an inner `catch` that swallows the rejection and still
+   returns 200. A bare `Promise.all` feeding an outer catch is fine — the rejection
+   surfaces as an error status.
+
+Worked example, 2026-09-08, settling whether helium had SST-1544's two
+`opening_popularity_percentage` columns: `GET /api/pick-popularity` returned rows whose
+key set included `openingPopularityPercentage`, and
+`GET /api/pools/:poolId/pick-popularity/effective` — the route reading BOTH
+`pick_popularity` and `user_pool_pick_popularity_overrides` — returned 200 across three
+pools. Both columns confirmed present, contradicting the migration's own authoring
+commit, which had said "Not yet applied to any database".
+
+**What this technique CANNOT see:** nullability, CHECK constraints, defaults, indexes.
+`schemaDriftCheck` compares column NAMES only, so the boot check is blind to them too. A
+migration whose `ADD COLUMN`s ran but whose `DROP NOT NULL` did not will pass every probe
+here and still fail at runtime on the first write that relies on the relaxed column. Say
+so explicitly rather than reporting the whole migration as verified.
+
+Reach it with the founder's real session via `mcp__claude-in-chrome__*` and
+`javascript_tool` + `fetch(..., {credentials:'include'})` — a plain `curl` from Bash
+returns `UNAUTHORIZED` because it carries no session cookie, which is the wrong surface,
+not the app being down (see [[project_survivorpulse_deployed_dev_url]]).

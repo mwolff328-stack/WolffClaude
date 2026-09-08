@@ -94,7 +94,7 @@
 ## Test infrastructure
 
 - [Sandbox has no local Postgres](project_survivorpulse_sandbox_has_no_local_postgres.md).
-- [One-off SQL from a worktree](project_survivorpulse_one_off_sql_from_a_worktree.md) — cwd at the main checkout + `node --input-type=module -e`; the dev DB IS reachable when Neon MCP is down.
+- [Checking what is really in a DB](project_survivorpulse_one_off_sql_from_a_worktree.md) — one-off SQL on the dev DB when Neon MCP is down; a bare Drizzle `.select()` route proves a column exists on unreachable helium (blind to nullability/constraints).
 - [Playwright/CI evidence traps](project_survivorpulse_playwright_ci_evidence_traps.md), Playwright kills it.
 - [A queued gate isn't a verified commit](project_survivorpulse_queued_gate_is_not_a_verified_commit.md) — concurrency cancels pending runs.
 - [E2E CI drift traps](project_survivorpulse_e2e_ci_drift_traps.md) — ⚠️ REVERSED by SST-1213.
