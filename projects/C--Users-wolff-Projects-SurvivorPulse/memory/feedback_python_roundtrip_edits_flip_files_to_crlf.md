@@ -35,6 +35,18 @@ sibling trap in CA1 snapshots (different cause, same symptom class), and
   convert back afterwards: read `rb`, `b.replace(b'\r\n', b'\n')`, write `wb`.
 - **Read git's stderr warnings**, do not filter to just `--stat`. A
   `CRLF will be replaced by LF` line naming a file you just edited is the tell.
-- Verify before committing: `grep -c $'\r' <file>` should be 0 in this repo, and
-  `git diff --stat 2>&1 | grep "CRLF will be replaced"` should print nothing for
-  files you touched.
+- **Verify with a BYTE COUNT, not `grep -c $'\r'`** — that check is unreliable and
+  cost real time on 2026-09-08. Run bare it is correct, but nested inside command
+  substitution within double quotes — `echo "check: $(grep -c $'\r' "$f")"` — the
+  ANSI-C `$'\r'` degrades and grep matches EVERY line, so it reports the file's
+  total line count. That reads as "the whole file is CRLF" on a file that is pure
+  LF. It produced a false alarm twice in one session, and the "fix" (`tr -d '\r'`)
+  was a no-op on an already-clean file. Use instead:
+  `od -An -tx1 -v <file> | tr ' ' '\n' | grep -c '^0d$'` (expect 0), cross-checked
+  with `git diff --numstat` — a whole-file ending flip shows as every line
+  changed, whereas a real three-line edit shows three. If the two disagree,
+  believe the byte count.
+- `git diff --stat 2>&1 | grep "CRLF will be replaced"` should print nothing for
+  files you touched. Note the converse warning, `LF will be replaced by CRLF the
+  next time Git touches it`, is NOT a problem — it is just `core.autocrlf` on a
+  correctly-LF working copy, and mistaking it for damage is its own false alarm.
