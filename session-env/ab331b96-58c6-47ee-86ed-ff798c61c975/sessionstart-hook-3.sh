@@ -1,3 +1,6 @@
 export CODEX_COMPANION_SESSION_ID='ab331b96-58c6-47ee-86ed-ff798c61c975'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff\ab331b96-58c6-47ee-86ed-ff798c61c975.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='ab331b96-58c6-47ee-86ed-ff798c61c975'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff\ab331b96-58c6-47ee-86ed-ff798c61c975.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
