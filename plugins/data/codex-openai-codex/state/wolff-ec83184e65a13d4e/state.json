@@ -6,7 +6,7 @@
   "jobs": [
     {
       "createdAt": "2026-09-08T16:30:54.817Z",
-      "updatedAt": "2026-09-08T16:30:58.116Z",
+      "updatedAt": "2026-09-08T16:31:32.809Z",
       "id": "task-mtsvz2ao-vk38i1",
       "kind": "task",
       "kindLabel": "rescue",
@@ -18,9 +18,11 @@
       "sessionId": "ab331b96-58c6-47ee-86ed-ff798c61c975",
       "status": "running",
       "startedAt": "2026-09-08T16:30:55.620Z",
-      "phase": "starting",
+      "phase": "finalizing",
       "pid": 53676,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsvz2ao-vk38i1.log"
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsvz2ao-vk38i1.log",
+      "threadId": "01a081dc-2724-7c62-b445-1ce8fa4bbba2",
+      "turnId": "01a081dc-388a-7713-a8b6-3b10ffa54a49"
     },
     {
       "createdAt": "2026-09-08T16:23:11.236Z",
@@ -44,4 +46,3 @@
       "completedAt": "2026-09-08T16:23:52.563Z"
     }
   ]
-}
