@@ -56,6 +56,7 @@
 - [A new error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md) / [helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md).
 - [Two correct fixes collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) / [jsdom normalises inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md).
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) / [shape change needs a shape grep](feedback_a_shape_change_needs_a_shape_grep_not_a_name_grep.md).
+- [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use an explicit src:dst refspec for scratch branches.
 
 ## Shipping, environments, and infra
 
