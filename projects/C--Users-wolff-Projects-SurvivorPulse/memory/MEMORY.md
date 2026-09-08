@@ -2,62 +2,62 @@
 
 ## Working practice
 
-- [Content reference hierarchy across channels](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse canonical, derive Discord/X then r/NFLSurvivor.
-- [Attribution override system-reminder is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json first.
-- [Multi-approver defer is not a stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route the named open question to the other approver.
-- [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me first, fall back to demo signin via /api/auth/signin.
+- [Content ref hierarchy](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse canonical → Discord/X → r/NFLSurvivor.
+- [Attribution-override reminder is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json.
+- [Multi-approver defer ≠ stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route to the other approver.
+- [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me, fall back to demo signin.
 - [Tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) / [Chrome via switch_browser](feedback_survivorpulse_chrome_browser_selection.md).
 - [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) / [outreach links full https:// in body](feedback_survivorpulse_outreach_link_format.md).
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md) / [verify a reviewer's evidence](feedback_verify_a_reviewers_evidence_not_their_judgement.md).
 - [Await vs fire-and-forget](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only if write IS the payload.
-- [A "completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a filing.
-- [Link SurvivorPulse sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
-- [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof and diff filter both miss MOVES.
-- [Mutation-test cleanup needs a backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) — git checkout on the un-backed-up file wipes uncommitted work.
-- [Edit tool writes back stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing with sed/python reverts shell edits.
-- [Mutation harness edits first match](feedback_mutation_harness_edits_the_first_match_not_yours.md) — graded neighbour's route.
-- [A mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) — check WHICH assertion failed; duplicate direction and nested-block placement.
-- [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower claim than copy made.
+- ["Completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a filing.
+- [Link sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
+- [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) / [comment-only diffs](feedback_proving_a_change_is_comment_only.md) — RED-proof, diff filter both miss MOVES.
+- [Mutation cleanup needs a backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) — checkout on un-backed file wipes work.
+- [Edit tool writes back stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing with sed/python reverts edits.
+- [Mutation harness edits first match](feedback_mutation_harness_edits_the_first_match_not_yours.md) — not necessarily yours.
+- [A mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) — check WHICH assertion failed.
+- [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower than copy claimed.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
-- [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 mutants killed.
+- [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) / [wire-reached assertion](feedback_a_source_guard_must_assert_the_wire_is_reached.md) — 0/109 killed.
 - [Injected fixtures bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md) — move catch into orchestrator.
-- [Paired assertions both vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) / [AC with no test citing it](feedback_an_ac_with_no_test_citing_it.md).
+- [Paired assertions both vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) / [AC with no citing test](feedback_an_ac_with_no_test_citing_it.md).
 - [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) / [by structural anchor](feedback_enumerate_by_the_structural_anchor.md).
 - [Check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) / [renaming can recreate a defect](feedback_renaming_for_clarity_can_recreate_the_defect.md).
 - [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) / [confirm check covers what changed](feedback_confirm_the_check_covers_what_you_changed.md).
 - [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) / [verify commit not exit line](feedback_verify_the_commit_not_the_exit_line.md).
-- [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md) — not the fixture.
-- [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [fail 4 ways](feedback_source_scanning_guards_need_three_meta_tests.md).
-- [A test named for a spec item claims it](feedback_a_test_named_for_a_spec_item_claims_it.md) — green + cited AC = looks done while violating it.
-- [A groomed AC can assert a false codebase fact](feedback_a_groomed_ac_can_assert_a_false_codebase_fact.md) — re-run embedded greps, especially negative ones.
-- [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — instrument is wrong, stop hardening.
+- [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md), not the fixture.
+- [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) / [need three meta tests](feedback_source_scanning_guards_need_three_meta_tests.md).
+- [A test named for a spec item claims it](feedback_a_test_named_for_a_spec_item_claims_it.md) — green + cited AC can still violate it.
+- [A groomed AC can assert a false fact](feedback_a_groomed_ac_can_assert_a_false_codebase_fact.md) — re-run embedded greps.
+- [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — wrong instrument, stop hardening.
 - [Defer a guard needing its own design](feedback_defer_a_guard_that_needs_its_own_design.md) — founder ruling.
 - [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) / [gate the page not the viewer](feedback_survivorpulse_gate_page_not_viewer.md).
-- [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) / [guard the query's own loading state](feedback_read_the_querys_own_loading_state.md).
-- [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) / [duplicate vi.mock same module](feedback_duplicate_vi_mock_same_module.md).
-- [Proving a flake fix without reproducing it](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the precursor.
-- [A swinging TOTAL test count isn't a flake](feedback_a_swinging_total_test_count_is_not_a_flake.md) — checksum the files.
-- [Relocating an entry point](feedback_relocating_an_entry_point_changes_its_threat_model.md) — changes threat model.
+- [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) / [guard the query's loading state](feedback_read_the_querys_own_loading_state.md).
+- [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) / [duplicate vi.mock](feedback_duplicate_vi_mock_same_module.md).
+- [Proving a flake fix without reproducing](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the precursor.
+- [A swinging TOTAL count isn't a flake](feedback_a_swinging_total_test_count_is_not_a_flake.md) — checksum the files.
+- [Relocating an entry point](feedback_relocating_an_entry_point_changes_its_threat_model.md) changes its threat model.
 - [Verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md) / [premise may describe a sibling branch](feedback_task_premise_may_describe_an_unmerged_sibling_branch.md).
 - [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) / [fetch and search before working](feedback_survivorpulse_fetch_and_search_before_work.md).
-- [Semantic dup guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) / [ledger timestamps unorderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md).
+- [Semantic dups guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) / [ledger timestamps unorderable](feedback_survivorpulse_claim_ledger_timestamps_are_not_orderable.md).
 - [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by path.
 - [Parallel triage agents share the worktree](feedback_parallel_triage_agents_share_the_dispatching_sessions_worktree.md) — chain atomically, re-verify HEAD.
-- [Shared-resource outages misattributed](feedback_shared_resource_outages_are_misattributed.md) / [pkill by port not name](feedback_never_pkill_by_shared_entry_point.md) / [200 ≠ alive](feedback_a_200_is_not_proof_the_server_lived.md).
-- [Prefix-mounted guards](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) — blind past mount / [no em dashes in drafts](feedback_no_em_dashes_in_drafts.md).
+- [Shared-resource outages misattributed](feedback_shared_resource_outages_are_misattributed.md) / [pkill by port](feedback_never_pkill_by_shared_entry_point.md) / [200 ≠ alive](feedback_a_200_is_not_proof_the_server_lived.md).
+- [Prefix-mounted guards blind past mount](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) / [no em dashes in drafts](feedback_no_em_dashes_in_drafts.md).
 - [Rely on self-learning, not monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md).
 - [A doc saying code was deleted isn't evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md) / [verify fix site is live](feedback_verify_fix_site_is_live_before_citing_it.md).
 - [Staged ticket headers rot into instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md) / [AC can launder an ungroomed commit](feedback_an_ac_can_launder_an_ungroomed_commit_into_a_decision.md).
-- [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) / [rounding destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) / [value in output isn't a constant](feedback_a_value_in_output_is_not_a_constant.md).
-- [Ticket's Proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) / [validated identifiers still carry wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md).
+- [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) / [rounding destroys ordering](feedback_rounding_a_display_input_destroys_ordering.md) / [value isn't a constant](feedback_a_value_in_output_is_not_a_constant.md).
+- [Bug ticket's resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) / [validated ids still carry wildcards](feedback_validated_identifiers_still_carry_sql_wildcards.md).
 - [Tests that win an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) / [removal tests need most-rendered state](feedback_removal_tests_need_the_most_rendered_state.md).
-- [Assert after the effect, not before](feedback_assert_after_the_effect_not_before_it.md) / [a third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md).
+- [Assert after the effect, not before](feedback_assert_after_the_effect_not_before_it.md) / [third verdict can silence a signal](feedback_a_third_verdict_can_silence_a_signal.md).
 - [A premise at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) / [harness disagreement is evidence](feedback_a_harness_disagreement_is_evidence_about_the_harness.md) / [reviewer race on reverts](feedback_concurrent_reviewer_agents_race_on_shared_file_reverts.md).
-- [A new error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md) / [helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md).
+- [New error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md) / [helper can implement half a rule](feedback_a_helper_can_implement_half_a_rule.md).
 - [Two correct fixes collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) / [jsdom normalises inline styles](feedback_jsdom_normalises_inline_styles_two_traps.md).
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md) / [shape change needs a shape grep](feedback_a_shape_change_needs_a_shape_grep_not_a_name_grep.md).
-- [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use an explicit src:dst refspec for scratch branches.
-- [Check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) — a backfill run looks identical to test-data/corruption.
+- [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use explicit src:dst refspec.
+- [Check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) — backfills look like corruption.
 
 ## Shipping, environments, and infra
 
