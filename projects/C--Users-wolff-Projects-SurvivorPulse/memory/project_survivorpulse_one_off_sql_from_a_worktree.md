@@ -1,6 +1,6 @@
 ---
 name: project_survivorpulse_one_off_sql_from_a_worktree
-description: How to run one-off SQL against the local Neon dev DB from a worktree session when the Neon MCP tools are down — without writing a scratch file into the shared main checkout
+description: How to check what is actually in a SurvivorPulse database — one-off SQL against the local Neon dev DB from a worktree when Neon MCP is down, and how to prove a column exists on helium, which no local check can reach
 metadata: 
   node_type: memory
   type: project
