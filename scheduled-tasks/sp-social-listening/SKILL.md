@@ -500,6 +500,10 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [DrewGarrison](https://x.com/DrewGarrison) — flagged 2026-09-07
 - [X] [brandom52](https://x.com/brandom52) — flagged 2026-09-07
 - [X] [midwestboxbreak](https://x.com/midwestboxbreak) — flagged 2026-09-07
+- [Reddit] [u/itsjuxtagame](https://www.reddit.com/user/itsjuxtagame/) — flagged 2026-09-08
+- [Reddit] [u/BallsvilleGame](https://www.reddit.com/user/BallsvilleGame/) — flagged 2026-09-08
+- [Reddit] [u/Burners_Burner](https://www.reddit.com/user/Burners_Burner/) — flagged 2026-09-08
+- [X] [brianbuck13](https://x.com/brianbuck13) — flagged 2026-09-08
 ```
 
 Each run, do this:
