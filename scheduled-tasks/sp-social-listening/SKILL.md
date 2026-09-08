@@ -388,6 +388,11 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [brandom52](https://x.com/brandom52) — commissioner / ICP voice (proposing a JBTV survivor pool on DraftKings; synced to Prospect Tracker) — seen: 2026-09-07
 - [X] [midwestboxbreak](https://x.com/midwestboxbreak) — commissioner / ICP voice ($10 NFL Survivor pool for subscriber community; synced to Prospect Tracker) — seen: 2026-09-07
 - [YouTube] [Survivor Pool-AI](https://www.youtube.com/@SurvivorPool-AI) — content creator (posted "How Does Your Survivor Pool Strategy Depend on the Size of Your Pool?") — seen: 2026-09-07
+- [Reddit] [u/itsjuxtagame](https://www.reddit.com/user/itsjuxtagame/) — ICP voice (posted ["New to Survivor Pools Here"](https://www.reddit.com/r/NFLSurvivor/comments/1w9x9eb/new_to_survivor_pools_here/) in r/NFLSurvivor, drew 9 comments; synced to Prospect Tracker) — seen: 2026-09-08
+- [Reddit] [u/BallsvilleGame](https://www.reddit.com/user/BallsvilleGame/) — commissioner (posted ["$20 Survivor pool. Winner takes all. Pot now $6,400"](https://www.reddit.com/r/findaleague/comments/1wa6vu8/20_survivor_pool_winner_takes_all_pot_now_6400/) in r/findaleague; synced to Prospect Tracker) — seen: 2026-09-08
+- [Reddit] [u/dfletch15](https://www.reddit.com/user/dfletch15/) — adjacent competitor / tool creator (cross-posted "Who's down to try a new pick'em/survivor pool game?" to [r/findaleague](https://www.reddit.com/r/findaleague/comments/1waaewt/looking_for_anyone_interesting_in_trying_a_new/), r/Dallas_Cowboys, and r/NFLv2 same day) — seen: 2026-09-08
+- [Reddit] [u/Burners_Burner](https://www.reddit.com/user/Burners_Burner/) — ICP voice / commissioner (asked u/Cold_Issue_5093 for a strategy recommendation for his own 20-person league with 1 buyback, in the comments of Michael's own [Series 2 r/NFLSurvivor thread](https://www.reddit.com/r/NFLSurvivor/comments/1vuvpun/i_analyzed_5_seasons_of_survivor_pool_pick/p7rv093/); synced to Prospect Tracker) — seen: 2026-09-08
+- [X] [brianbuck13](https://x.com/brianbuck13) — commissioner / ICP voice (recruiting for a low-stakes $20 knockout pool on X; synced to Prospect Tracker) — seen: 2026-09-08
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
