@@ -78,6 +78,7 @@
 - [Discord CI webhook dead as of 2026-09-05](project_survivorpulse_discord_ci_webhook_dead_sst1571.md) — SST-1571, Blocked on founder rotating the secret.
 - [GH Actions permissions:{} breaks checkout](project_survivorpulse_gh_actions_permissions_checkout_trap.md) — SST-1569; verify workflow YAML by live-dispatching, not reading.
 - [curl status-check needs a set +e wrapper](project_survivorpulse_curl_status_check_needs_set_e_wrapper.md) — SST-1572; bash -e aborts before the diagnostic on a transport failure; continue-on-error also needs a $GITHUB_STEP_SUMMARY write to stay visible.
+- [SST-1564 Beta Testers backfill gap](project_survivorpulse_sst1564_beta_testers_backfill_gap.md) — batch of 13 backfilled rows on 2026-09-07 is real, not test data; their Date Redeemed ≠ true signup date.
 
 ## Verifying UI for real
 
