@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='e2e3a898-7552-49a3-8408-c21ed2a12d2f'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-affectionate-ramanujan-48cb35\e2e3a898-7552-49a3-8408-c21ed2a12d2f.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
