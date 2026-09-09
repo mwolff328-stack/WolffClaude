@@ -5,27 +5,6 @@
   },
   "jobs": [
     {
-      "createdAt": "2026-09-09T13:03:21.885Z",
-      "updatedAt": "2026-09-09T13:03:39.943Z",
-      "id": "task-mtu4007x-aq2tes",
-      "kind": "task",
-      "kindLabel": "rescue",
-      "title": "Codex Stop Gate Review",
-      "workspaceRoot": "C:\\Users\\wolff",
-      "jobClass": "task",
-      "summary": "ALLOW: The previous turn only renamed a session and made no code changes.",
-      "write": false,
-      "sessionId": "bb3f5212-e1bb-44c3-977e-eb1ede6214a3",
-      "status": "completed",
-      "startedAt": "2026-09-09T13:03:22.050Z",
-      "phase": "done",
-      "pid": null,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtu4007x-aq2tes.log",
-      "threadId": "01a08644-2984-78b3-a522-01fc2b550da1",
-      "turnId": "01a08644-3b8e-7520-adeb-f2d9e85a5a52",
-      "completedAt": "2026-09-09T13:03:39.369Z"
-    },
-    {
       "createdAt": "2026-09-08T16:50:51.051Z",
       "updatedAt": "2026-09-08T16:51:25.619Z",
       "id": "task-mtswopbe-mg2eeb",
