@@ -79,6 +79,7 @@
 - [GH Actions permissions:{} breaks checkout](project_survivorpulse_gh_actions_permissions_checkout_trap.md) — SST-1569, verify by live-dispatching.
 - [curl status-check needs set +e wrapper](project_survivorpulse_curl_status_check_needs_set_e_wrapper.md) — SST-1572, bash -e hides the diagnostic.
 - [SST-1564 Beta Testers backfill gap](project_survivorpulse_sst1564_beta_testers_backfill_gap.md) — 2026-09-07's 13-row batch is real, not test data.
+- [Stale node_modules per environment](project_survivorpulse_stale_node_modules_per_environment.md) — ERR_MODULE_NOT_FOUND for a listed dep means run npm install there, not a code bug.
 
 ## Verifying UI for real
 
