@@ -106,6 +106,7 @@
 - [SUPPORTED_SEASONS narrower than games](project_survivorpulse_supported_seasons_narrower_than_games.md) — [2021..2026] pools-only; games hold 2016+.
 - [17 env-gated suites invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md).
 - [vitest exclude beats explicit CLI filename](project_survivorpulse_vitest_exclude_beats_explicit_cli_filename.md) — silently vanishes.
+- [vi.mock TDZ pattern + typescript@7 has no compiler API](project_survivorpulse_vimock_tdz_pattern_and_typescript7_no_compiler_api.md) — babel traverse gotchas, deferred list.
 
 ## Engine and domain behaviour
 
