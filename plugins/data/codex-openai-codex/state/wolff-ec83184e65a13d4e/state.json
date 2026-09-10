@@ -6,21 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-10T13:04:28.438Z",
-      "updatedAt": "2026-09-10T13:04:28.895Z",
+      "updatedAt": "2026-09-10T13:04:44.302Z",
       "id": "task-mtvjha8m-2gsl9e",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Stop Gate Review",
       "workspaceRoot": "C:\\Users\\wolff",
       "jobClass": "task",
-      "summary": "Stop-gate review of previous Claude turn",
+      "summary": "ALLOW: The previous turn delivered a status brief and made no direct code changes.",
       "write": false,
       "sessionId": "1a34f5cd-f600-4732-97b6-12d50b2c8af6",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-10T13:04:28.600Z",
-      "phase": "starting",
-      "pid": 41144,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtvjha8m-2gsl9e.log"
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtvjha8m-2gsl9e.log",
+      "threadId": "01a08b6b-84b0-7201-841f-125cf84508d8",
+      "turnId": "01a08b6b-8e45-7751-8ed0-5eeb66fd7aef",
+      "completedAt": "2026-09-10T13:04:43.924Z"
     },
     {
       "createdAt": "2026-09-09T14:52:33.290Z",
@@ -187,8 +190,4 @@
       "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsvp4lf-g7goua.log",
       "threadId": "01a081d5-119c-7182-ab38-5d929efa0598",
-      "turnId": "01a081d5-261a-7a12-bdac-c8e990556094",
-      "completedAt": "2026-09-08T16:23:52.563Z"
-    }
-  ]
-}
+      "turnId": "01a081d5-261a
