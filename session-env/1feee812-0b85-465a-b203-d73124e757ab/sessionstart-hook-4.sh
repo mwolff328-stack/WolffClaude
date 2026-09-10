@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='1feee812-0b85-465a-b203-d73124e757ab'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-vibrant-rosalind-2314e0\1feee812-0b85-465a-b203-d73124e757ab.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
