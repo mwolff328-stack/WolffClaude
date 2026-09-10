@@ -5,6 +5,24 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-10T13:04:28.438Z",
+      "updatedAt": "2026-09-10T13:04:28.895Z",
+      "id": "task-mtvjha8m-2gsl9e",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Stop Gate Review",
+      "workspaceRoot": "C:\\Users\\wolff",
+      "jobClass": "task",
+      "summary": "Stop-gate review of previous Claude turn",
+      "write": false,
+      "sessionId": "1a34f5cd-f600-4732-97b6-12d50b2c8af6",
+      "status": "running",
+      "startedAt": "2026-09-10T13:04:28.600Z",
+      "phase": "starting",
+      "pid": 41144,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtvjha8m-2gsl9e.log"
+    },
+    {
       "createdAt": "2026-09-09T14:52:33.290Z",
       "updatedAt": "2026-09-09T14:52:41.637Z",
       "id": "task-mtu7wfbe-o9lw1b",
