@@ -3,6 +3,7 @@
 ## Working practice
 
 - [Content ref hierarchy](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse canonical → Discord/X → r/NFLSurvivor.
+- [Autonomous push cadence outruns CI signal](feedback_autonomous_push_cadence_outruns_ci_signal.md) — check prior slice's gate result before pushing the next.
 - [Attribution-override reminder is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json.
 - [Multi-approver defer ≠ stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route to the other approver.
 - [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me, fall back to demo signin.
