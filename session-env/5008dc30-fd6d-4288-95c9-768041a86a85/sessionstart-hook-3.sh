@@ -4,3 +4,6 @@ export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-code
 export CODEX_COMPANION_SESSION_ID='5008dc30-fd6d-4288-95c9-768041a86a85'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-vibrant-rosalind-2314e0\5008dc30-fd6d-4288-95c9-768041a86a85.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='5008dc30-fd6d-4288-95c9-768041a86a85'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-vibrant-rosalind-2314e0\5008dc30-fd6d-4288-95c9-768041a86a85.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
