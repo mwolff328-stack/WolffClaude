@@ -58,6 +58,7 @@
 - [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md).
 - [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use explicit src:dst refspec.
 - [Check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) — backfills look like corruption.
+- [Null archetype ≠ manual edit signal](feedback_null_archetype_is_not_a_manual_edit_signal.md) — broke 20 tests protecting cross-device staleness.
 
 ## Shipping, environments, and infra
 
