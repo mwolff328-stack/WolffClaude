@@ -59,6 +59,7 @@
 - [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use explicit src:dst refspec.
 - [Check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) — backfills look like corruption.
 - [Null archetype ≠ manual edit signal](feedback_null_archetype_is_not_a_manual_edit_signal.md) — broke 20 tests protecting cross-device staleness.
+- [Verify field-wide % via full-field sum](feedback_survivorpulse_verify_field_wide_percentages_via_full_field_sum.md) — one pick/week, not one pick/game; per-matchup sums are meaningless.
 
 ## Shipping, environments, and infra
 
