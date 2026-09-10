@@ -519,6 +519,19 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/BallsvilleGame](https://www.reddit.com/user/BallsvilleGame/) — flagged 2026-09-08
 - [Reddit] [u/Burners_Burner](https://www.reddit.com/user/Burners_Burner/) — flagged 2026-09-08
 - [X] [brianbuck13](https://x.com/brianbuck13) — flagged 2026-09-08
+- [Reddit] [u/Usual-Roll-9283](https://www.reddit.com/user/Usual-Roll-9283/) — flagged 2026-09-10
+- [X] [SeanHrycyk](https://x.com/SeanHrycyk) — flagged 2026-09-10
+- [Reddit] [u/aapellazari](https://www.reddit.com/user/aapellazari/) — flagged 2026-09-10
+- [Reddit] [u/IamEu4ic](https://www.reddit.com/user/IamEu4ic/) — flagged 2026-09-10
+- [Reddit] [u/gera815gggg](https://www.reddit.com/user/gera815gggg/) — flagged 2026-09-10
+- [Reddit] [u/DocoLice](https://www.reddit.com/user/DocoLice/) — flagged 2026-09-10
+- [Reddit] [u/BrozoBuckets](https://www.reddit.com/user/BrozoBuckets/) — flagged 2026-09-10
+- [X] [dangkopool](https://x.com/dangkopool) — flagged 2026-09-10
+- [X] [XrayDFS](https://x.com/XrayDFS) — flagged 2026-09-10
+- [X] [tomandmartys](https://x.com/tomandmartys) — flagged 2026-09-10
+- [X] [DQUANPICKS](https://x.com/DQUANPICKS) — flagged 2026-09-10
+- [X] [ESabro3](https://x.com/ESabro3) — flagged 2026-09-10
+- [X] [ReidRooney](https://x.com/ReidRooney) — flagged 2026-09-10
 ```
 
 Each run, do this:
