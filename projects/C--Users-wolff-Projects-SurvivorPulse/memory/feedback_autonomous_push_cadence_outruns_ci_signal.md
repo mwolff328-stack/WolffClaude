@@ -4,7 +4,7 @@ description: "Stacking multiple autonomous slice pushes without checking the pri
 metadata:
   type: feedback
   originSessionId: investigation-2026-09-10-sst1622-ci-gap
-  modified: 2026-09-10T13:08:07.891Z
+  modified: 2026-09-10T13:15:23.519Z
 ---
 
 When landing a multi-slice ticket via the autonomous push flow (CLAUDE.md's "Autonomous Operation" section, `sp-autonomous`), do not push slice N+1 without first checking whether slice N's `pre-publish.yml` push-triggered run (see [[project_survivorpulse_prepublish_gate_mechanism]]) completed and passed — or at minimum, treat two consecutive red CI-failed alerts (Telegram/Discord, fired `if: always()` on every run) on the same branch as a hard stop requiring investigation before continuing.
@@ -14,3 +14,5 @@ When landing a multi-slice ticket via the autonomous push flow (CLAUDE.md's "Aut
 So the gate worked exactly as designed, repeatedly, with active alerting. What actually happened is that slices 8 through 13 kept getting pushed on the documented ~15-20 minute autonomous cadence while the gate takes ~26 minutes per run and the push-triggered runs were furthermore getting `cancelled` by their own concurrency group (`pre-publish-push` allows one running + one pending only) during the burst — so there was never a clean moment where a session paused, looked at a red gate result for the ticket it was actively working, and stopped to fix it before continuing. The regression was visible in CI the whole time; nobody was positioned to see it because the push cadence didn't include a look-back step.
 
 **How to apply:** Before pushing the next slice of a ticket that already has commits on `2026-v1`, run `gh run list --workflow=pre-publish.yml --limit 3 --json headSha,status,conclusion` and confirm the most recent *completed* run for a commit in this ticket is `success` — not just "was it dispatched," since a `cancelled` conclusion during a fast push burst proves nothing either way (see the existing "fast run of concurrent pushes" note in [[project_survivorpulse_prepublish_gate_mechanism]]). If the most recent completed run for this ticket's commits is `failure`, stop and diagnose before landing more slices on top — don't assume it's stale or someone else's problem, and don't rely on remembering to circle back later. This applies most when working a ticket slice-by-slice in one continuous session, exactly the shape SST-1548 took.
+
+**Filed as SST-1623** (Tech Debt / DevOps / Backlog, 2026-09-10) — proposes adding this check as an explicit step to CLAUDE.md's Autonomous Operation section and/or the `sp-autonomous` skill.
