@@ -68,9 +68,9 @@ In this mode, treat the session itself as the "dense content" to simplify:
 2. **Find the one sentence.** What's the single thing that happened, in outcome terms a non-engineer cares about ("the payout screen now shows split-pot winners correctly" — not "refactored `computePayouts` in `poolSettlement.ts`").
 3. **Apply the seven principles above** to that material: lead with what changed and why it matters before naming the technical mechanism; use one concrete before/after example instead of listing every file; replace jargon (function names, library names, error types) with what they *do* in plain terms; if a fix mattered because of a specific bug, tell that story briefly rather than the diff.
 4. **Skip the internal narration.** Tool-call sequencing, retries, dead ends that were abandoned, and exploratory reads are process — leave them out unless one caused a real decision the user should know about (e.g. "I found X was already handled elsewhere, so I only needed to change Y").
-5. **Structure:** a short paragraph or a few bullets — what changed, why it matters to them, anything they need to decide or do next. Skip the Step 4/Step 5 diff-and-confirm dance below; this mode outputs directly, since there's no original text to preserve a before/after of.
+5. **Structure it for skimming (Principle 8):** bullets under bolded lead-ins — **what changed**, **why it matters**, **what's next / caveats** — each its own group, not paragraphs the user has to read end-to-end to find the point. Skip the Step 4/Step 5 diff-and-confirm dance below; this mode outputs directly, since there's no original text to preserve a before/after of.
 
-The non-technical test (Principle 7) still applies: could someone with zero engineering background read this recap and understand what happened and why it matters to them?
+The non-technical test (Principle 7) still applies: could someone with zero engineering background read this recap and understand what happened and why it matters to them? So does the skim test: could they get the shape of it from the bullets and bold alone?
 
 ---
 
