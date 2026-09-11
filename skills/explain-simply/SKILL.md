@@ -111,3 +111,4 @@ Ground rules specific to this mode:
 - Did I keep the part that actually matters, or did I simplify it into being wrong?
 - Can I cut anything without losing meaning?
 - If I used an analogy, did I map it and note where it breaks?
+- Can someone skim this in five seconds via bullets and bold alone and get the shape of the answer?
