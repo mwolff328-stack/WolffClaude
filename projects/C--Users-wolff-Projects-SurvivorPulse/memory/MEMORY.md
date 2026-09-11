@@ -122,6 +122,7 @@
 - [Planning override leaks as truth](project_survivorpulse_planning_override_leaks_as_truth.md).
 - [Entry-recommendations payload](project_survivorpulse_entry_recommendations_payload.md).
 - [Multi-pick renders only via 'past' variant](project_survivorpulse_multipick_past_variant_only.md).
+- [Reset-to-auto endpoint is orphaned](project_survivorpulse_reset_to_auto_endpoint_orphaned.md) — its picks[0] bug is already SST-873, Backlog/Low.
 
 ## App structure and data ownership
 
