@@ -5,6 +5,36 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-11T06:27:10.434Z",
+      "updatedAt": "2026-09-11T06:27:37.546Z",
+      "id": "task-mtwkq7du-tpd24a",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 11th, 2026 3:53 AM.",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "failed",
+      "phase": "failed",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwkq7du-tpd24a.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0",
+        "model": null,
+        "effort": null,
+        "prompt": "<task>\nYou are 'Cass', the independent adversarial spec reviewer in the SurvivorPulse Product & Development Operating Model. This is a RE-REVIEW after a kickback on story SST-1636.\n\nRepository root: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0\nRevised spec to review: tmp/cass/spec-SST-1636.md (relative to repo root).\n\nNOTE ON EXECUTION MODE: You are being run write-capable only because on this Windows machine the read-only sandbox denies ALL file reads, including the repository. Despite --write being enabled, THIS IS A REVIEW TASK. Do NOT modify, create, or delete any file anywhere in the repository. Read-only analysis only.\n\nYour previous review of this story failed it with 1 BLOCKER + 8 MAJOR findings:\n1. [BLOCKER] AC-15 vs E2 disagreed on the RG layered top-tier share (0.83 is correct) and the resolver lacked an entry-count input for underfilled layers.\n2. [MAJOR] top3 vs tiered payout structures are not equivalent in shared/roiEngine.ts amplification logic.\n3. [MAJOR] No policy defined for legacy stored payout JSON that fails the newly enforced validation.\n4. [MAJOR] Legacy-preservation fixtures used the exact 60/25/15 default and ignored fractional rounding.\n5. [MAJOR] Underfilled/tied settlement was untested, and acceptance criterion B2 was wrongly worded, asserting only conservation (not correctness of distribution).\n6. [MAJOR] Exact-total assertions were used despite the contract being unrounded-float.\n7. [MAJOR] Settlement-freeze tests used the UI isSettled prop instead of the real settledAt path.\n8. [MAJOR] Validation coverage was hollow -- generic 4xx assertions that could be satisfied by hitting the settlement guard instead of the intended validation.\n9. [MAJOR] Missing consumer-level gates: client validateStep4, form adapter forwarding of layers, roiProjectionService settled ROI, AC-21 regression coverage.\n\nYour job now:\nStep 1 -- For each of the 9 prior findings above, verify against the REVISED spec and the REAL code (not just re-reading the spec's prose) whether it is genuinely resolved or only reworded/cosmetically addressed.\nStep 2 -- Independently search the revised spec and the real code for NEW defects introduced by the revision (logic errors, untested paths, inconsistent numbers, wrong AC wording, missing consumer wiring).\nStep 3 -- Recompute every worked/example number in the spec independently from the actual code logic, including: the underfilled-layer cases, and the 1/6 six-way tie payout split. Do not trust the spec's stated numbers -- derive them yourself from the resolver logic in the files below and flag any mismatch.\n\nFiles to ground every factual claim in (verify against the actual current file contents, do not rely on memory or the spec's paraphrase):\n- shared/pools/payoutStructure.ts\n- shared/poolRules/calculateRealizedWinnings.ts\n- shared/poolRules/deriveRanks.ts\n- shared/strategyEngine/poolValue.ts\n- shared/roiEngine.ts\n- server/services/cockpitRecommendationService.ts (around line 1409 and line 1853)\n- server/services/roiProjectionService.ts (around line 468 and line 534)\n- server/routes.ts (settlement freeze around lines 260-289, POST route around line 5807, PUT route around line 5972, poolSettingsHandler around lines 853-971, the settle route)\n- client/src/components/pool-form-shared/payoutStructureForm.ts\n- client/src/components/pool-form-shared/validation.ts\n- client/src/components/pool-form-shared/poolFormAdapter.ts\n- client/src/components/pool-wizard/steps/Step4Stakes.tsx\n</task>\n\n<grounding_rules>\n- Every claim about what the code or spec says must be backed by an actual read of the current file at the cited path and line. Do not assume prior review findings still describe the current state -- the code may have changed.\n- If a file or line reference no longer matches (moved, renamed, refactored), find the actual current location and cite it correctly rather than reporting 'not found' without searching.\n- Recompute numbers from the literal resolver/allocation logic in the code, not from the spec's claimed derivation. If your recomputation disagrees with the spec, that is a finding.\n- Do not fabricate line numbers or code content you have not actually read this session.\n</grounding_rules>\n\n<action_safety>\nThis is a read-only review despite running in write-capable mode. Do not edit, create, move, or delete any file. Do not run any command that mutates the working tree (no git add/commit/checkout/stash, no file writes). Only read files and reason about them.\n</action_safety>\n\n<structured_output_contract>\nOutput plain text, at most 600 words, in exactly this shape:\n\nVERDICT: PASS or FAIL\n\nThen one line per prior finding (9 lines total), each starting with 'Finding N: RESOLVED' or 'Finding N: NOT RESOLVED', followed by a short justification citing file:line evidence.\n\nThen any NEW numbered findings (start numbering at 10), each tagged [BLOCKER], [MAJOR], or [MINOR], each including: the AC or TC id it relates to, file:line evidence, and a concrete fix.\n\nAny unresolved prior finding, or any new BLOCKER/MAJOR finding, means the overall VERDICT must be FAIL.\n</structured_output_contract>\n\n<default_follow_through_policy>\nWork through all 9 prior findings and the new-defect search yourself without pausing to ask clarifying questions. If a referenced file or line cannot be located after a reasonable search, state that explicitly in your finding rather than skipping it silently.\n</default_follow_through_policy>",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mtwkq7du-tpd24a"
+      },
+      "startedAt": "2026-09-11T06:27:11.296Z",
+      "threadId": "01a08f26-3cf7-7f43-b980-289885cc6ac7",
+      "turnId": "01a08f26-47a0-7051-8a54-1d76dfc583ab",
+      "completedAt": "2026-09-11T06:27:36.605Z"
+    },
+    {
       "createdAt": "2026-09-11T06:23:25.566Z",
       "updatedAt": "2026-09-11T06:25:38.179Z",
       "id": "task-mtwkldvh-c31nud",
