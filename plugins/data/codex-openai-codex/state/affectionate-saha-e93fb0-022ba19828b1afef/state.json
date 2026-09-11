@@ -6,7 +6,7 @@
   "jobs": [
     {
       "createdAt": "2026-09-11T11:12:15.354Z",
-      "updatedAt": "2026-09-11T11:12:30.196Z",
+      "updatedAt": "2026-09-11T11:12:33.156Z",
       "id": "task-mtwuwtmh-66ix8i",
       "kind": "task",
       "kindLabel": "rescue",
@@ -21,7 +21,8 @@
       "phase": "starting",
       "pid": 77836,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwuwtmh-66ix8i.log",
-      "threadId": "01a0902b-3ecd-75a1-82c1-0a6026d46752"
+      "threadId": "01a0902b-3ecd-75a1-82c1-0a6026d46752",
+      "turnId": "01a0902b-4c50-7191-b724-2e42b8de3c1b"
     },
     {
       "createdAt": "2026-09-11T11:05:14.932Z",
