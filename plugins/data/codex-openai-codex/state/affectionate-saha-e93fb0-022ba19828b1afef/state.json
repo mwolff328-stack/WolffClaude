@@ -5,6 +5,24 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-11T11:05:14.932Z",
+      "updatedAt": "2026-09-11T11:05:19.146Z",
+      "id": "task-mtwunt84-mgqoxg",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "IMPORTANT CONSTRAINT: This is a REVIEW-ONLY task. --write mode is enabled ONLY because on thi...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "startedAt": "2026-09-11T11:05:15.079Z",
+      "phase": "starting",
+      "pid": 9096,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwunt84-mgqoxg.log"
+    },
+    {
       "createdAt": "2026-09-11T10:59:31.847Z",
       "updatedAt": "2026-09-11T11:02:38.363Z",
       "id": "task-mtwugghz-c82a8g",
