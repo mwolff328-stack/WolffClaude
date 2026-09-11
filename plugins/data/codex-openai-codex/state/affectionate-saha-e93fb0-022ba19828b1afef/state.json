@@ -6,19 +6,19 @@
   "jobs": [
     {
       "createdAt": "2026-09-11T17:31:19.747Z",
-      "updatedAt": "2026-09-11T17:31:35.191Z",
+      "updatedAt": "2026-09-11T17:32:33.272Z",
       "id": "task-mtx8gbb7-lx2piw",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
       "jobClass": "task",
-      "summary": "<task> Run a genuine, write-capable, REVIEW-ONLY Codex pass on SurvivorPulse ticket SST-1583,...",
+      "summary": "Wrote `result.txt` at the requested path: **VERDICT: FAIL — 1 environmental BLOCKER**.",
       "write": true,
       "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
-      "status": "running",
-      "phase": "running",
-      "pid": 55540,
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtx8gbb7-lx2piw.log",
       "request": {
         "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0",
@@ -31,7 +31,8 @@
       },
       "startedAt": "2026-09-11T17:31:20.135Z",
       "threadId": "01a09186-2a01-7882-b510-c15bec02d447",
-      "turnId": "01a09186-2fa5-7871-941f-08fcd891704e"
+      "turnId": "01a09186-2fa5-7871-941f-08fcd891704e",
+      "completedAt": "2026-09-11T17:32:33.011Z"
     },
     {
       "createdAt": "2026-09-11T17:28:19.435Z",
