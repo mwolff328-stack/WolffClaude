@@ -31,6 +31,16 @@ For a genuinely complex topic, this shape works well. Bend it freely to fit — 
 
 Keep it to a few short paragraphs. The whole thing should be readable in well under a minute. If the topic is deep, give the short version and offer to go deeper rather than dumping everything at once.
 
+## Format for skimming
+
+Michael reads these to skim, not to read word-for-word — the formatting has to carry as much of the meaning as the words do.
+
+- **Default to bullets over paragraphs.** Each arc step (gist, anchor, mechanism, caveat) is usually its own bullet or short bulleted group, not a paragraph you have to read fully to find the point. Prose is fine for a single-sentence gist or a short analogy that needs to flow, but reach for bullets whenever there's more than one thing to track.
+- **Bold the load-bearing words in every bullet** — the gist sentence itself, the term being introduced, the one number or name that matters, the caveat's actual risk. Not the whole sentence — bold is a signpost, and everything bold is nothing bold. One to a few words per bullet, max.
+- **One idea per bullet.** If a bullet needs "and" to hold two separate points, split it.
+- **Use a header or a bolded lead-in** ("**The fix:**", "**Why it matters:**") when a response has more than one section, so the shape is visible before reading a word of content.
+- This is about layout, not padding — don't add bullets or bold to a one-line answer just to have structure. A single-sentence gist stays a single sentence.
+
 ## Core principles
 
 ### Use one running example — and reuse it
