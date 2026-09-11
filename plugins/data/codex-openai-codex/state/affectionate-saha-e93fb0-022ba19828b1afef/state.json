@@ -5,6 +5,35 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-11T06:23:25.566Z",
+      "updatedAt": "2026-09-11T06:23:54.244Z",
+      "id": "task-mtwkldvh-c31nud",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "<role> You are \"Cass\", the independent adversarial spec reviewer in the SurvivorPulse Product...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "running",
+      "pid": 87296,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwkldvh-c31nud.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0",
+        "model": null,
+        "effort": null,
+        "prompt": "<role>\nYou are \"Cass\", the independent adversarial spec reviewer in the SurvivorPulse Product & Development Operating Model. This is a RE-REVIEW after a kickback.\n</role>\n\n<task>\nYour previous review failed this story with 9 MAJOR findings:\n1. add/derive-value contract contradicted by TC-13/TC-15.\n2. the list READ endpoint wrongly placed under /api/admin + missing role matrix / AC-22 tests.\n3. removal racing pool assignment + stale forms assigning removed values.\n4. concurrent admin edits silently overwriting one JSON blob.\n5. corrupt-flag behaviour unspecified / silent default masking damage.\n6. tests targeting the obsolete pools-hub.tsx instead of the live client/src/pages/pools.tsx + label search.\n7. static fixtures letting a replacement hardcoded map pass.\n8. label validation (types, trim, length, safe rendering, edit collisions) missing.\n9. in-use boundary coverage (owner/status/test classification, case, other-text, both provider fields).\n\nFirst verify each prior finding is genuinely resolved (not just reworded) — including whether the accepted-risk decision on the remove-vs-assign race (finding 3) is stated clearly and safe. Then look for NEW defects introduced by the revision (the spec grew to 53 ACs / 44 TCs).\n</task>\n\n<repository>\nWorking directory / repository: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0\nRevised spec (relative to repo root): tmp/cass/spec-SST-1634.md\n</repository>\n\n<grounding_rules>\nVerify every factual claim against the real code, not against the spec's own description of the code. At minimum inspect:\n- server/routes.ts pool write paths around lines ~5755, ~5897, ~6056\n- server/storage.ts getSystemFlagValue/setSystemFlagValue around line ~6523\n- shared/schema.ts systemFlags + pools table definitions\n- server/middleware/customAuth.ts\n- tests/adminRoutesRequireAdminGuard.test.ts\n- client/src/router-v1.tsx\n- client/src/pages/pools.tsx\n- client/src/components/pool-wizard/steps/Step1Basics.tsx\n- client/src/components/pool-wizard/steps/Step6Review.tsx\n- client/src/admin/adminNav.ts\n\nDo not accept the spec's claims about line numbers, endpoint locations, contract behavior, or test targets at face value — open the actual files and confirm. If a cited file:line does not say what the spec claims, that is evidence for a finding, not something to silently correct.\n</grounding_rules>\n\n<action_safety>\nThis is a REVIEW ONLY. Do not modify, create, or delete any file anywhere in the repository. Only read files to verify claims. A write-capable run is being used solely because on this Windows machine the read-only sandbox denies ALL file reads, including the repository — write mode is needed just to get read access, not to make edits.\n</action_safety>\n\n<structured_output_contract>\nPlain text, <= 600 words total. Exact shape:\n\nVERDICT: PASS or FAIL\n\nThen one line per prior finding (1 through 9), each stating RESOLVED or NOT RESOLVED and a brief why, grounded in the actual code/spec text you inspected.\n\nThen any NEW numbered findings, each tagged [BLOCKER], [MAJOR], or [MINOR], with an AC/TC id, file:line evidence, and a concrete fix.\n\nAny unresolved prior finding or any new BLOCKER/MAJOR finding means the overall VERDICT must be FAIL.\n</structured_output_contract>",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mtwkldvh-c31nud"
+      },
+      "startedAt": "2026-09-11T06:23:26.564Z",
+      "threadId": "01a08f22-bf5c-78b3-8a4a-cf23c585cf2f",
+      "turnId": "01a08f22-c8da-7490-9a3a-5a3c7d50be21"
+    },
+    {
       "createdAt": "2026-09-11T06:16:51.113Z",
       "updatedAt": "2026-09-11T06:20:24.057Z",
       "id": "task-mtwkcxig-obyc79",
