@@ -1,3 +1,6 @@
 export CODEX_COMPANION_SESSION_ID='fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-affectionate-saha-e93fb0\fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-affectionate-saha-e93fb0\fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
