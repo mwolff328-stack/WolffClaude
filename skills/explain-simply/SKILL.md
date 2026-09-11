@@ -97,6 +97,8 @@ Adapt the default arc to that material instead of a concept:
 3. **The mechanism, briefly.** What was actually done, mapped back to the anchor if you used one, technical terms introduced only after the plain version — and only the terms the user would actually need (a file name or library only matters if they'll refer back to it).
 4. **The one caveat, if real.** Anything they need to know, decide, or watch for — a tradeoff made, something still not done, a risk introduced. Skip if there isn't one.
 
+A session recap is almost always a bullet list, not a paragraph — **what changed**, **why it matters**, and **what's next / any caveat** each get their own bolded lead-in and bullets underneath, per "Format for skimming" above. Reach for prose only for a one-line gist or a single trivial change.
+
 Ground rules specific to this mode:
 - **Only report what actually happened.** This isn't a hypothetical explanation — pull from the real sequence of edits, commands, and outcomes in the conversation. Don't pad with things that were considered but not done, unless the decision *not* to do them is itself the useful part.
 - **One example, not a changelog.** If several files changed for the same reason, explain the reason once with one concrete example, not a per-file list.
