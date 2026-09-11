@@ -76,6 +76,23 @@ Notice the "just right" version keeps the real ideas (limited space, staleness) 
 
 See how the book-index analogy maps part-for-part (word → column value, page number → row location), the real term "B-tree" arrives *after* the intuition, and the caveat kills the exact misconception the analogy might plant (that the index is static).
 
+## Explaining session work
+
+Sometimes there's no external concept to explain — the user wants **what just happened in this conversation** recapped in plain terms: files changed, decisions made, bugs found and fixed, why it matters to them.
+
+Adapt the default arc to that material instead of a concept:
+
+1. **Gist first.** One sentence: what actually changed, in terms of the outcome a non-engineer would notice or care about — not the name of the function or file.
+2. **Anchor it.** If a real-life analogy genuinely helps (e.g. "the app was calculating everyone's payout the same way even when some people had different splits — like a restaurant splitting the bill evenly even though one person ordered a lot more"), use one. If the work is simple enough that an anchor would be overkill, skip it — scale the effort to the difficulty, per the rule above.
+3. **The mechanism, briefly.** What was actually done, mapped back to the anchor if you used one, technical terms introduced only after the plain version — and only the terms the user would actually need (a file name or library only matters if they'll refer back to it).
+4. **The one caveat, if real.** Anything they need to know, decide, or watch for — a tradeoff made, something still not done, a risk introduced. Skip if there isn't one.
+
+Ground rules specific to this mode:
+- **Only report what actually happened.** This isn't a hypothetical explanation — pull from the real sequence of edits, commands, and outcomes in the conversation. Don't pad with things that were considered but not done, unless the decision *not* to do them is itself the useful part.
+- **One example, not a changelog.** If several files changed for the same reason, explain the reason once with one concrete example, not a per-file list.
+- **Leave out the process noise.** Dead ends, retries, and exploratory reads that didn't lead anywhere aren't part of the explanation unless they explain a decision the user needs to know about.
+- Still obey "be ruthlessly short" — a session recap is exactly the kind of thing that's tempting to over-document. Resist it.
+
 ## Before you send it, check
 - Could someone who didn't already know this follow it? (Not: is it technically complete.)
 - Is there one clear anchor — an example or analogy — carrying the intuition?
