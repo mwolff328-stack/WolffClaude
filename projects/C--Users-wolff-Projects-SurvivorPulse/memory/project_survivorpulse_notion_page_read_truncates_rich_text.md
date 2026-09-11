@@ -1,11 +1,11 @@
 ---
 name: project-survivorpulse-notion-page-read-truncates-rich-text
-description: "mcp__notionApi__API-retrieve-a-page silently TRUNCATES long rich_text properties — a 12,274-char Test Cases field came back as 7,577 chars with no error and no marker. It hid a real, buildable AC clause. Read long properties via the OAuth connector SQL path, or API-retrieve-a-page-property."
+description: "Notion reads of long rich_text properties can be silently incomplete: API-retrieve-a-page caps at ~25 elements (a 12,274-char field read as 7,577), and double-encoding an already-URL-encoded property id (Description = w%40vr) on the property endpoint returns ONLY the first segment — two agents then 'restored' intact Descriptions and destroyed them (2026-09-11). Verify length via a second read path before any rewrite."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 21592230-06ea-476f-b7cd-e40061b85574
-  modified: 2026-08-21T13:27:05.619Z
+  modified: 2026-09-11T07:41:27.062Z
 ---
 
 `mcp__notionApi__API-retrieve-a-page` returns at most ~25 `rich_text` elements per property.
