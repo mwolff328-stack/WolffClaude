@@ -5,6 +5,33 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-11T10:59:31.847Z",
+      "updatedAt": "2026-09-11T10:59:32.854Z",
+      "id": "task-mtwugghz-c82a8g",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "<role> You are \"Cass\", the independent adversarial spec reviewer in the SurvivorPulse Product...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "starting",
+      "pid": 78032,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwugghz-c82a8g.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0",
+        "model": null,
+        "effort": null,
+        "prompt": "<role>\nYou are \"Cass\", the independent adversarial spec reviewer in the SurvivorPulse Product & Development Operating Model. This is the GENUINE Codex pass on a FINAL spec. Earlier rounds were reviewed by a substitute adversarial reviewer on a different model while your quota was exhausted. Your job is to catch what that reviewer missed.\n</role>\n\n<task>\nReview SST-1636, which changes pool payout structures:\n- add 'split_pot', where the rank-1 group splits 100%;\n- add 'layered', where overlapping top-N cohorts each split a flat pct and winners split the remainder (e.g. Top 10 split 10%, Top 5 split another 10%, winners split the rest);\n- remove \"Top 3\" as a selectable option while keeping 'top3' as a legal stored type;\n- require a declared Field Size for layered pools;\n- give netRoi as null when the field size is only a tier-3 estimate.\n\nFind defects that would cause a wrong build or a wrong settlement, or tests that cannot fail:\n- ACs that contradict each other or the code;\n- math errors in the layered per-position table or tie handling;\n- float edge cases;\n- missing write paths;\n- client/server parity gaps;\n- fixtures that cannot violate their requirement;\n- rule-8 call-site gaps.\n\nSlice 1 (the shared/ pure logic) has already been implemented in this worktree. You may use it as evidence about the spec's feasibility, but you are reviewing the SPEC.\n</task>\n\n<repository>\nWorking directory / repository: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0\nSpec (relative to repo root): tmp/cass/final-spec-SST-1636.md\n</repository>\n\n<grounding_rules>\nVerify every factual claim against the real code, not against the spec's own description of it. At minimum inspect:\n- shared/pools/payoutStructure.ts\n- shared/poolRules/calculateRealizedWinnings.ts\n- shared/strategyEngine/poolValue.ts\n- shared/roiEngine.ts\n- server/routes.ts pool write paths, around lines ~5755, ~5897 and ~6056\n- server/services/roiProjectionService.ts\n- server/services/cockpitRecommendationService.ts, around ~1409\n- client/src/components/pool-wizard/steps/Step4Stakes.tsx\n- client/src/components/pool-form-shared/, the payout form and adapter\n\nDo not take the spec's line numbers, contracts or test targets at face value. If a cited file:line does not say what the spec claims, that is a finding.\n</grounding_rules>\n\n<action_safety>\nThis is a REVIEW ONLY. Do not modify, create or delete any file. The run is write-capable only because on this Windows machine the read-only sandbox denies ALL file reads.\n</action_safety>\n\n<structured_output_contract>\nPlain text, at most 700 words. Exact shape:\n\nVERDICT: PASS or FAIL\n\nThen numbered findings, each tagged [BLOCKER], [MAJOR] or [MINOR], with an AC/TC id, file:line evidence and a concrete fix. If there are no findings, write \"No findings\" plus the three riskiest areas you checked and why they hold.\n\nAny BLOCKER or MAJOR means FAIL.\n</structured_output_contract>",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mtwugghz-c82a8g"
+      },
+      "startedAt": "2026-09-11T10:59:32.452Z"
+    },
+    {
       "createdAt": "2026-09-11T10:53:33.552Z",
       "updatedAt": "2026-09-11T10:57:09.596Z",
       "id": "task-mtwu8s1c-yyv7vk",
