@@ -123,6 +123,8 @@
 - [Entry-recommendations payload](project_survivorpulse_entry_recommendations_payload.md).
 - [Multi-pick renders only via 'past' variant](project_survivorpulse_multipick_past_variant_only.md).
 - [Reset-to-auto endpoint is orphaned](project_survivorpulse_reset_to_auto_endpoint_orphaned.md) — its picks[0] bug is already SST-873, Backlog/Low.
+- [picks.isCorrect rarely written false](project_survivorpulse_picks_iscorrect_rarely_written_false.md) — only 2 writers in the whole codebase; don't derive elimination from it.
+- [Portfolio Context now uses shared predicate](project_survivorpulse_portfolio_context_derived_from_shared_predicate.md) — SST-1642; grep all 4 call sites before changing evaluateElimination's contract.
 
 ## App structure and data ownership
 
