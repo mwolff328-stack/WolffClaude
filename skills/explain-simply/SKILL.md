@@ -7,6 +7,8 @@ description: Explain complex, abstract, or technical topics clearly — short, p
 
 Turn a hard idea into an explanation someone actually walks away understanding — short, plain, and still true. The goal is the reader's *understanding*, not a display of your knowledge.
 
+**Drafting public-facing content under Michael's name or the SurvivorPulse brand?** Use `authentic-tone-of-voice` as the outer frame and pull in only this skill's content-clarity principles (plain-before-jargon, one anchor, name results straight) — not the "Format for skimming" bullets/bold guidance below, which conflicts with that voice's prose rhythm. See "When the Content Is Technical or Jargon-Heavy" in that skill.
+
 ## The balance you're aiming for
 
 Every explanation fails in one of two directions. Steer between them:
