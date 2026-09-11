@@ -9,14 +9,8 @@ A hook or automation that commits on every session start (or at similarly high f
 
 ## Solution
 
-For any repo with a frequent auto-commit or auto-sync hook:
+For any repo with a frequent auto-commit or auto-sync hook, do the following. Check repo Settings, then Actions, then General, then Usage, periodically, especially once a hook is committing multiple times per session or per day. Don't wait for a failure to look. Set an explicit, shorter artifact and log retention policy rather than relying on GitHub's defaults, so old run data ages out faster. Question whether every auto-sync commit needs to trigger a workflow at all; path filters or a skip-ci marker on routine sync commits can cut runs dramatically without losing real CI coverage. If quota is already tight, squash or batch auto-sync commits, for example one commit per session instead of one per file, instead of committing on every change.
 
-1. Check repo Settings > Actions > General > Usage periodically, especially once a hook is committing multiple times per session or per day. Don't wait for a failure to look.
-2. 2. Set an explicit, shorter artifact/log retention policy rather than relying on GitHub's defaults, so old run data ages out faster.
-   3. 3. Question whether every auto-sync commit needs to trigger a workflow at all. Path filters or `[skip ci]` on routine sync commits can cut runs dramatically without losing real CI coverage.
-      4. 4. If quota is already tight, squash or batch auto-sync commits (e.g. one commit per session instead of one per file) instead of committing on every change.
-        
-         5. ## When to Use
-        
-         6. Activate when a scheduled task or session hook reports "storage near quota" or "Actions usage high," or when setting up any new auto-commit/auto-sync hook from scratch. Build the retention/frequency policy in up front instead of discovering the ceiling later.
-         7. 
+## When to Use
+
+Activate when a scheduled task or session hook reports "storage near quota" or "Actions usage high," or when setting up any new auto-commit or auto-sync hook from scratch. Build the retention and frequency policy in up front instead of discovering the ceiling later.
