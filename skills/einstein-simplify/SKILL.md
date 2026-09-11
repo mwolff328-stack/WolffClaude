@@ -94,6 +94,7 @@ Flag every instance of:
 - Multiple concepts enumerated shallowly
 - Jargon defined rather than replaced
 - A key insight rushed past without pause
+- A chat-facing answer (not a script) written as dense paragraphs instead of skimmable bullets/bold (Principle 8)
 
 ### Step 3: Rewrite
 
