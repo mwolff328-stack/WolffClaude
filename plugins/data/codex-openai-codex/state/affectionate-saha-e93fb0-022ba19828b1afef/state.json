@@ -6,7 +6,7 @@
   "jobs": [
     {
       "createdAt": "2026-09-11T11:05:14.932Z",
-      "updatedAt": "2026-09-11T11:05:19.146Z",
+      "updatedAt": "2026-09-11T11:05:31.761Z",
       "id": "task-mtwunt84-mgqoxg",
       "kind": "task",
       "kindLabel": "rescue",
@@ -18,9 +18,11 @@
       "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
       "status": "running",
       "startedAt": "2026-09-11T11:05:15.079Z",
-      "phase": "starting",
+      "phase": "running",
       "pid": 9096,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwunt84-mgqoxg.log"
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwunt84-mgqoxg.log",
+      "threadId": "01a09024-b5f0-7160-b788-6df0376d8941",
+      "turnId": "01a09024-bedf-7d43-8e5d-a2c8e88d644c"
     },
     {
       "createdAt": "2026-09-11T10:59:31.847Z",
