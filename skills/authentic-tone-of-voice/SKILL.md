@@ -63,6 +63,12 @@ More generally: watch for elaborate, image-heavy descriptive phrases standing in
 - No hashtags
 - No generic closings ("Best regards," "In summary"). End on a real line, the way he ends: "I miss you little bro."
 
+## When the Content Is Technical or Jargon-Heavy
+
+For SurvivorPulse research findings or any public content that has to explain a real mechanism (a strategy, a metric, a methodology point) to a non-expert reader, pull in the `explain-simply` skill's *content-clarity* principles — lead with the plain idea before the term, use one concrete anchor/analogy instead of stacking jargon, name a result straight instead of dressing it up — and write the result in Michael's voice from this file.
+
+Do NOT pull in `explain-simply`'s formatting guidance (bullets, bold, headers for skimming). That skill defaults to a skimmable, bulleted chat-answer format, which directly conflicts with this voice's rhythm rules above: short prose paragraphs, no numbered lists unless a genuine how-to, no bolded-term-plus-dash definitions (an explicit "almost me" AI tell in this file). When the two skills' guidance conflicts on formatting, this file wins — `explain-simply` is the source for *how to make an idea clear*, not for *how the piece is laid out*.
+
 ## Examples of Good Output
 (These are Michael's actual sentences. This is the target.)
 
