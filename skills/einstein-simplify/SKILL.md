@@ -46,6 +46,16 @@ Every explanation has one moment where the mechanism clicks. Find it. Give it a 
 **7. The non-technical test**
 After every rewrite section, ask internally: could a smart person with zero domain background follow this? If no — simplify further. If yes — move on.
 
+**8. Format for skimming (when the output is a chat answer, not a script)**
+When the rewritten content is something Michael reads directly in chat — as opposed to a script, presentation, or transcript meant to be spoken aloud to someone else — lean on layout, not just prose, to make it skimmable:
+
+- **Default to bullets over paragraphs** once there's more than one point to track. A single gist sentence or a flowing analogy can stay prose; a list of concepts, changes, or steps should not.
+- **Bold the load-bearing words** in each bullet or paragraph — the term being introduced, the one number that matters, the actual takeaway — not the whole sentence. Bold is a signpost; overusing it erases the signal.
+- **One idea per bullet.** Split anything joined by "and" into two ideas.
+- **Lead sections with a bolded tag** ("**The fix:**", "**Why it matters:**") so the shape of the answer is visible before reading the content.
+
+This principle does NOT apply to the actual rewritten script/presentation text itself in Step 4/5 below — spoken content should still read as natural prose a person can say aloud. It applies to how *you*, in chat, present the explanation, the diff, or a session recap.
+
 ---
 
 ## Summarizing session work
