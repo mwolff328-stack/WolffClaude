@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-11T05:53:12.144Z",
+      "updatedAt": "2026-09-11T05:54:37.058Z",
+      "id": "task-mtwjiimo-hmgkt6",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "VERDICT: FAIL",
+      "write": false,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "completed",
+      "startedAt": "2026-09-11T05:53:12.352Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwjiimo-hmgkt6.log",
+      "threadId": "01a08f07-1eb6-7e51-b581-df9c101ef875",
+      "turnId": "01a08f07-2fa1-7933-8fc6-1d54476fcec0",
+      "completedAt": "2026-09-11T05:54:36.311Z"
+    },
+    {
+      "createdAt": "2026-09-11T05:53:18.226Z",
+      "updatedAt": "2026-09-11T05:54:29.899Z",
+      "id": "task-mtwjinbj-xafh5u",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
+      "jobClass": "task",
+      "summary": "VERDICT: FAIL.",
+      "write": false,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mtwjinbj-xafh5u.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0",
+        "model": null,
+        "effort": null,
+        "prompt": "<task>You are Cass, the independent adversarial spec reviewer for the SurvivorPulse Product & Development Operating Model. Your job is to try to BREAK a groomed story spec before it is built: find gaps, contradictions, requirements a test could never falsify (hollow fixtures), AC<->Test-Case mismatches, missed consumers in the codebase, and wrong factual claims about the code. Do not try to confirm it looks right -- try to find what is wrong with it. READ-ONLY: do not modify, create, or delete any file in the repository.\n\nSpec to review (Description, Acceptance Criteria, Test Cases): C:\\Users\\wolff\\AppData\\Local\\Temp\\claude\\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-affectionate-saha-e93fb0\\fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44\\scratchpad\\spec-SST-1636.md\n\nRepository to verify every factual claim in the spec against: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\affectionate-saha-e93fb0\n\nStory SST-1636: payout structures -- add split_pot and layered stored types to pools.payoutStructure (jsonb), remove the Top 3 button (legacy stored top3 still valid), add server-side validation of payoutStructure on POST /api/pools, PUT /api/pools/:id and PUT /api/pools/:poolId/settings.\n\nSpecific checks required:\n- Recompute every worked number in every AC and TC independently; flag any AC/TC whose numbers disagree with each other or are simply wrong arithmetic.\n- Check the tie-pooling rule in shared/poolRules/calculateRealizedWinnings.ts and deriveRanks.ts against the spec's layered min(topN, entryCount) rule.\n- Check whether remainder to the rank-1 group is consistent with pooling when rank-1 is itself a tie.\n- Grep every consumer of payoutStructure.type in server/, shared/, client/src/ and confirm none are missed by the spec.\n- Determine what happens to existing pools whose stored payoutStructure JSON would FAIL the newly-enforced server validation -- are there any shapes that pass today but would now 400 on an unrelated settings save?\n- Check the settled-pool freeze behavior, float precision handling, and whether each Test Case can actually fail against a plausible wrong implementation (i.e., is not a hollow/unfalsifiable fixture).\n</task>\n\n<grounding_rules>\nEvery factual claim about the codebase (file paths, line numbers, function behavior, consumer lists) must be verified by actually reading the referenced files in the repository before it is asserted. Do not rely on the spec's own claims about the code -- re-derive them. Cite file:line evidence for every finding.\n</grounding_rules>\n\n<structured_output_contract>\nOutput plain text, at most 700 words total.\nLine 1: VERDICT: PASS or VERDICT: FAIL.\nThen numbered findings. Each finding tagged [BLOCKER], [MAJOR], or [MINOR], stating the AC/TC id it concerns, file:line evidence, and a concrete fix to the spec.\nA single BLOCKER or MAJOR finding means the verdict must be FAIL.\n</structured_output_contract>\n\n<dig_deeper_nudge>\nDo not stop at the first plausible-looking AC/TC. Independently recompute the arithmetic for every single AC and TC, not just a sample. Actively look for AC/TC pairs that assert something a test could never actually falsify (e.g., asserting a value the code could not produce any other way, or a fixture that cannot violate the rule under test).\n</dig_deeper_nudge>\n\n<action_safety>\nThis is a read-only review task. Do not modify, create, or delete any file in the repository or elsewhere. Only read files and report findings.\n</action_safety>",
+        "write": false,
+        "resumeLast": false,
+        "jobId": "task-mtwjinbj-xafh5u"
+      },
+      "startedAt": "2026-09-11T05:53:19.009Z",
+      "threadId": "01a08f07-2acb-7b91-aa2e-9d036404aaaa",
+      "turnId": "01a08f07-368b-78f1-b29b-8499e2e0fcc0",
+      "completedAt": "2026-09-11T05:54:29.386Z"
+    },
+    {
+      "createdAt": "2026-09-11T05:53:31.015Z",
+      "updatedAt": "2026-09-11T05:54:16.688Z",
+      "id": "task-mtwjinqq-0ntbi8",
+      "turnId": "01a08f07-36cd-7cd0-a72e-b07d8eb953aa",
+      "phase": "done",
+      "status": "completed",
+      "threadId": "01a08f07-2ab1-7911-88f7-31fac2c6ea69",
+      "summary": "VERDICT: FAIL",
+      "pid": null,
+      "completedAt": "2026-09-11T05:54:16.240Z"
+    }
+  ]
+}
