@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='b68fc9a1-5414-43ed-a7b4-36b1f669733e'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-mystifying-heyrovsky-8d4f8b\b68fc9a1-5414-43ed-a7b4-36b1f669733e.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
