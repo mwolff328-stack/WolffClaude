@@ -48,6 +48,22 @@ After every rewrite section, ask internally: could a smart person with zero doma
 
 ---
 
+## Summarizing session work
+
+Sometimes there's no pasted content to rewrite — the user wants the **current conversation's actual work** (files touched, code written, commands run, decisions made, problems hit) recapped in plain terms, e.g. "summarize what you did", "explain your work in plain English", "what did you just build, for a non-technical person."
+
+In this mode, treat the session itself as the "dense content" to simplify:
+
+1. **Gather the raw material first.** Review what actually happened in this conversation — which files were changed and why, what commands were run, what broke and got fixed, what decisions were made and the reasoning. Don't guess or pad; only summarize things that actually occurred.
+2. **Find the one sentence.** What's the single thing that happened, in outcome terms a non-engineer cares about ("the payout screen now shows split-pot winners correctly" — not "refactored `computePayouts` in `poolSettlement.ts`").
+3. **Apply the seven principles above** to that material: lead with what changed and why it matters before naming the technical mechanism; use one concrete before/after example instead of listing every file; replace jargon (function names, library names, error types) with what they *do* in plain terms; if a fix mattered because of a specific bug, tell that story briefly rather than the diff.
+4. **Skip the internal narration.** Tool-call sequencing, retries, dead ends that were abandoned, and exploratory reads are process — leave them out unless one caused a real decision the user should know about (e.g. "I found X was already handled elsewhere, so I only needed to change Y").
+5. **Structure:** a short paragraph or a few bullets — what changed, why it matters to them, anything they need to decide or do next. Skip the Step 4/Step 5 diff-and-confirm dance below; this mode outputs directly, since there's no original text to preserve a before/after of.
+
+The non-technical test (Principle 7) still applies: could someone with zero engineering background read this recap and understand what happened and why it matters to them?
+
+---
+
 ## Workflow
 
 ### Step 1: Identify the audience gap
