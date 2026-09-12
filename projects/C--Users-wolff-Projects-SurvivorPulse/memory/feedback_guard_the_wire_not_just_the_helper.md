@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 449fbd91-3ff9-4db3-9f9b-2f5cba2d44a7
-  modified: 2026-08-23T16:31:18.560Z
+  modified: 2026-09-12T23:22:16.677Z
 ---
 
 Testing the FUNCTION and testing the WIRE that reaches it are different jobs. A
@@ -203,3 +203,46 @@ the same. Nothing observable changes except the thing nobody asserted.
 
 Related: [[feedback_a_helper_can_implement_half_a_rule]],
 [[feedback_proving_a_test_is_load_bearing]].
+
+---
+
+## Recurrence, 2026-09-12 (SST-1644) — the call-site test that hand-rolls the wire instead of driving it
+
+A "call-site proof" test was added to satisfy Operating Model rule 8 (a fix isn't proven
+until its call site is proven): it called `ForwardAdapter.buildInput()` for real, then fed
+the resulting `TeamWeekData[]` into `buildGreedyPath` by hand-mapping each field itself
+(`{ teamId: r.teamId, winProb: r.winProb, futureValueNorm: r.futureValueNorm, ... }`). It
+passed, RED-proofed cleanly against the intended defect, and read as exactly the kind of
+test this rule asks for.
+
+An independent code-reviewer's re-review found it wasn't. The REAL production wire —
+`shared/strategyEngine/engine.ts`'s `buildPathsForConfig`, called from the exported
+`runStrategyEngine` — does its OWN separate `TeamWeekData` → `GreedyTeamRow` mapping
+(one line: `futureValueNorm: row.futureValueNorm`). The reviewer mutated ONLY that
+production line to `1 - row.futureValueNorm` — reintroducing this ticket's exact defect
+at the site it actually ships from — and it broke **0 of 963 tests** in `tests/strategyEngine/`.
+The hand-rolled test's own mapping was correct and had nothing to do with whether the real
+one was.
+
+**Why this is the same shape as the rest of this file, one level removed:** every prior
+recurrence here was "the helper is tested but the wire calling it isn't." This one is "the
+test file re-implements the wire's own logic instead of driving the wire" — a subtler
+version, because the test genuinely exercises real production code (`ForwardAdapter`) on
+one side, which makes it *feel* like an end-to-end proof. The gap is in the middle: the
+one line that connects the two real systems was replaced by the test's own copy of what
+that line is supposed to do.
+
+**How to apply:** when a call-site proof spans two real subsystems, check whether the test
+constructs the ADAPTER SHAPE between them itself, or drives the actual function that
+performs that adaptation in production. If a fixture output from subsystem A only reaches
+subsystem B by way of test-file code written to look like the real glue, mutate the REAL
+glue (not the test's copy of it) and confirm the test still catches it — exactly the same
+mutate-the-call-site-and-rerun discipline as everywhere else in this file, applied one hop
+further out. The fix here: find the actual exported entry point (`runStrategyEngine`) and
+drive the whole pipeline through it, asserting on its real output shape
+(`candidate.pickPath.chosenTeams[0]`), so the test cannot pass without the real glue line
+being correct.
+
+Related: [[feedback_shared_function_callers_can_disagree_on_field_convention]] — the
+sibling lesson from the same ticket, about the field this wire carries having two
+incompatible conventions depending on which caller supplies it.
