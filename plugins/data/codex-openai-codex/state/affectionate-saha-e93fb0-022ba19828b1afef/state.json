@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-12T09:41:35.084Z",
-      "updatedAt": "2026-09-12T09:44:48.007Z",
+      "updatedAt": "2026-09-12T09:45:58.519Z",
       "id": "task-mty742jw-qc5le5",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/affectionate-saha-e93fb0",
       "jobClass": "task",
-      "summary": "<task> Perform a FULL FRESH adversarial review (Cass role, SurvivorPulse Operating Model) of ...",
+      "summary": "The known multi-row gap is still present, and TC-152 explicitly defers it. Its new “full-chain” proof also starts at `PoolHistory`, so it cannot detect a revert in the upstream page it never renders. I’m checking the engine wiring and write paths for similar gaps.",
       "write": true,
       "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
-      "status": "running",
+      "status": "failed",
       "startedAt": "2026-09-12T09:41:35.173Z",
-      "phase": "verifying",
-      "pid": 52096,
+      "phase": "failed",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\affectionate-saha-e93fb0-022ba19828b1afef\\jobs\\task-mty742jw-qc5le5.log",
       "threadId": "01a094fe-6e56-76c3-ad1e-dcd3facf9239",
-      "turnId": "01a094fe-72d9-70f1-bcb8-ffb4c292366b"
+      "turnId": "01a094fe-72d9-70f1-bcb8-ffb4c292366b",
+      "completedAt": "2026-09-12T09:45:58.296Z"
     },
     {
       "createdAt": "2026-09-12T08:28:02.173Z",
