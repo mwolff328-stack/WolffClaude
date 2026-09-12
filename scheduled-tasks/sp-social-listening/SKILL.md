@@ -408,6 +408,16 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [DQUANPICKS](https://x.com/DQUANPICKS) — commissioner / ICP voice (recruiting via DM for his own survivor pool; synced to Prospect Tracker) — seen: 2026-09-09
 - [X] [ESabro3](https://x.com/ESabro3) — commissioner / ICP voice ($40 buy-in, no-revivals NFL survivor pool; synced to Prospect Tracker) — seen: 2026-09-10
 - [X] [ReidRooney](https://x.com/ReidRooney) — commissioner / ICP voice (runs a community survivor pool via Splash Sports, excited about this year's $1.8M prize pool; synced to Prospect Tracker) — seen: 2026-09-09
+- [X] [huntermarvel15](https://x.com/huntermarvel15) — content creator (promoting "Survive & Advance," his own NFL survivor pool content/analysis series, cross-posted to Substack at [mlbdatawarehouse.com](https://www.mlbdatawarehouse.com/p/survive-and-advance-week-1)) — seen: 2026-09-12
+- [X] [bolts_kanrinin](https://x.com/bolts_kanrinin) — content creator (Japanese-language survivor pool strategy post on the Pittsburgh spread move, #いちたすにたすサバイバル hashtag) — seen: 2026-09-12
+- [X] [LVLupPropsApp](https://x.com/LVLupPropsApp) — competitor operator (repeatedly promoting its own "$1,500 Prop Survivor" contest alongside a Pick'Em prop game) — seen: 2026-09-12
+- [X] [ThisGirlBetz](https://x.com/ThisGirlBetz) — commissioner / ICP voice (running a free Survival Pool sponsored by [@DivvyBet](https://x.com/DivvyBet), $500 prize once it hits 50 entrants; synced to Prospect Tracker) — seen: 2026-09-12
+- [X] [OC15K](https://x.com/OC15K) — commissioner / ICP voice ($20-entry 2026 Last Second NFL Survivor Pool, Sat/Sun/Mon games only, buyback allowed; synced to Prospect Tracker) — seen: 2026-09-12
+- [X] [StoolCryptoCzar](https://x.com/StoolCryptoCzar) — ICP voice / in-market buyer (asked [@CircaSports](https://x.com/CircaSports) how to reach a live person to discuss survivor pool details; synced to Prospect Tracker) — seen: 2026-09-12
+- [Reddit] [u/McClernan12](https://www.reddit.com/user/McClernan12/) — ICP voice (posted ["Falcons @ Steelers - Thoughts?"](https://www.reddit.com/r/NFLSurvivor/comments/1wdobgz/falcons_steelers_thoughts/) in r/NFLSurvivor, drew 11 comments; synced to Prospect Tracker) — seen: 2026-09-12
+- [Reddit] [u/AdmirableCommon5177](https://www.reddit.com/user/AdmirableCommon5177/) — ICP voice / commissioner (runs a medium-sized Sleeper survivor pool with friends/coworkers, asked [r/SleeperApp](https://www.reddit.com/r/SleeperApp/comments/1wdvf8w/can_you_disable_chat_in_a_survivor_pool/) how to disable chat; synced to Prospect Tracker) — seen: 2026-09-12
+- [Reddit] [u/Don_Muraco](https://www.reddit.com/user/Don_Muraco/) — ICP voice (posted [Week 1 pick reasoning](https://www.reddit.com/r/SportsJunkies/comments/1wdk0a0/jaguars_survivor_pool/) on Jaguars vs Browns in r/SportsJunkies; synced to Prospect Tracker) — seen: 2026-09-12
+- [Reddit] [u/kverdone](https://www.reddit.com/user/kverdone/) — adjacent competitor / affiliate (posted ["$100K NFL Survivor Pool"](https://www.reddit.com/r/findaleague/comments/1wdj7zf/100k_nfl_survivor_pool/) in r/findaleague promoting TheSZN hosting platform) — seen: 2026-09-12
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
