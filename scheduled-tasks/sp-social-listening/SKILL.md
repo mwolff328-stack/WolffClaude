@@ -542,6 +542,12 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [DQUANPICKS](https://x.com/DQUANPICKS) — flagged 2026-09-10
 - [X] [ESabro3](https://x.com/ESabro3) — flagged 2026-09-10
 - [X] [ReidRooney](https://x.com/ReidRooney) — flagged 2026-09-10
+- [Reddit] [u/McClernan12](https://www.reddit.com/user/McClernan12/) — flagged 2026-09-12
+- [Reddit] [u/AdmirableCommon5177](https://www.reddit.com/user/AdmirableCommon5177/) — flagged 2026-09-12
+- [Reddit] [u/Don_Muraco](https://www.reddit.com/user/Don_Muraco/) — flagged 2026-09-12
+- [X] [StoolCryptoCzar](https://x.com/StoolCryptoCzar) — flagged 2026-09-12
+- [X] [ThisGirlBetz](https://x.com/ThisGirlBetz) — flagged 2026-09-12
+- [X] [OC15K](https://x.com/OC15K) — flagged 2026-09-12
 ```
 
 Each run, do this:
