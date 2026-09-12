@@ -146,3 +146,4 @@
 - [jbf302 app-review reminder](project_survivorpulse_jbf302_app_review_reminder.md) — founder owes him a look, target 2026-09-05/06.
 - [Gambling domains blocked at browser-tool layer](project_survivorpulse_gambling_domains_blocked_at_browser_tool_layer.md) — betonline.ag refused on claude-in-chrome and Browser pane alike, even live-logged-in; ask user for screenshots instead.
 - [Cass Codex needs --write + quota budget](feedback_cass_codex_needs_write_mode_and_quota_budget.md) — read-only sandbox denies all reads on Windows; ~10 runs exhausted quota 4h.
+- [Codex sandbox blocks outbound Notion fetch](feedback_codex_sandbox_blocks_outbound_network_to_notion.md) — orchestrator dumps spec first, Codex reviews the pre-dumped file.
