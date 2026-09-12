@@ -21,7 +21,8 @@
 - [A mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) — check WHICH assertion failed.
 - [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower than copy claimed.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
-- [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0/109 killed.
+- [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0/109 killed; SST-1644: 0/963, test hand-rolled the wire instead of driving it.
+- [Shared function callers can disagree on field convention](feedback_shared_function_callers_can_disagree_on_field_convention.md) — SST-1644: two callers already pre-inverted, a third didn't.
 - [Injected fixtures bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md) — move catch into orchestrator.
 - [Paired assertions both vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md).
 - [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md).
