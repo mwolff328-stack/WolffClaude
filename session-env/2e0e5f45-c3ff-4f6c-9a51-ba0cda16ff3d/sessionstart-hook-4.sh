@@ -13,3 +13,6 @@ export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-code
 export CODEX_COMPANION_SESSION_ID='2e0e5f45-c3ff-4f6c-9a51-ba0cda16ff3d'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-pick-rankings-no-strategy-dd107a\2e0e5f45-c3ff-4f6c-9a51-ba0cda16ff3d.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='2e0e5f45-c3ff-4f6c-9a51-ba0cda16ff3d'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-pick-rankings-no-strategy-dd107a\2e0e5f45-c3ff-4f6c-9a51-ba0cda16ff3d.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
