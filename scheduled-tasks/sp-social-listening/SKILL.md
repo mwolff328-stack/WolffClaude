@@ -553,6 +553,11 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [StoolCryptoCzar](https://x.com/StoolCryptoCzar) — flagged 2026-09-12
 - [X] [ThisGirlBetz](https://x.com/ThisGirlBetz) — flagged 2026-09-12
 - [X] [OC15K](https://x.com/OC15K) — flagged 2026-09-12
+- [X] [LastMenPod](https://x.com/LastMenPod) — flagged 2026-09-13
+- [X] [PatrickE_Vegas](https://x.com/PatrickE_Vegas) — flagged 2026-09-13
+- [X] [ABLeague_](https://x.com/ABLeague_) — flagged 2026-09-13
+- [X] [Brodie_Bets](https://x.com/Brodie_Bets) — flagged 2026-09-13
+- [X] [AQfresh](https://x.com/AQfresh) — flagged 2026-09-13
 ```
 
 Each run, do this:
