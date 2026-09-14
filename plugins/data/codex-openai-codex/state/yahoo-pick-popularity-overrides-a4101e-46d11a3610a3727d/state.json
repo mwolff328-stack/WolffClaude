@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-14T16:26:33.995Z",
-      "updatedAt": "2026-09-14T16:26:44.547Z",
+      "updatedAt": "2026-09-14T16:28:13.426Z",
       "id": "task-mu1ggl1n-jj7mwd",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Resume",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
       "jobClass": "task",
-      "summary": "Round 6 re-review of SST-1646, following your round-5 kickback (findings 1-4). Do not modify ...",
+      "summary": "Round 6 fixes the original disjoint-team loss and the probe timing, but the merge still reintroduces resolved teams, and some test assertions remain inconsistent or incomplete.",
       "write": true,
       "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-14T16:26:34.090Z",
-      "phase": "running",
-      "pid": 51576,
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu1ggl1n-jj7mwd.log",
       "threadId": "01a0a07f-4183-7b71-9d97-17bbccccc5cb",
-      "turnId": "01a0a0bd-ef80-76f1-a5ac-b059e0a3f975"
+      "turnId": "01a0a0bd-ef80-76f1-a5ac-b059e0a3f975",
+      "completedAt": "2026-09-14T16:28:13.269Z"
     },
     {
       "createdAt": "2026-09-14T15:56:40.295Z",
