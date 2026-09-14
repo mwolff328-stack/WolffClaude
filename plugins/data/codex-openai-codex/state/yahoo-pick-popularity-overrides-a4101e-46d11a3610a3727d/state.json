@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-14T14:29:41.382Z",
+      "updatedAt": "2026-09-14T14:31:06.715Z",
+      "id": "task-mu1caa2u-7hziz7",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Resume",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
+      "jobClass": "task",
+      "summary": "Three round-1 findings are closed; two remain open. Two additional defects affect the revised fixtures. Spec line references below refer to `tmp/cass/sst1646-spec-round2.md`; code references were re-read this round.",
+      "write": true,
+      "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
+      "status": "completed",
+      "startedAt": "2026-09-14T14:29:41.551Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu1caa2u-7hziz7.log",
+      "threadId": "01a0a03e-693c-7730-89d3-58a4a80ca195",
+      "turnId": "01a0a052-f7a5-7f91-9220-c2580cad7468",
+      "completedAt": "2026-09-14T14:31:06.508Z"
+    },
+    {
       "createdAt": "2026-09-14T14:07:16.734Z",
       "updatedAt": "2026-09-14T14:09:02.630Z",
       "id": "task-mu1bhgji-gecktr",
