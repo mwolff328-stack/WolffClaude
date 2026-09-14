@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-14T18:25:48.203Z",
+      "updatedAt": "2026-09-14T18:28:21.879Z",
+      "id": "task-mu1kpx9n-d06avw",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Resume",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
+      "jobClass": "task",
+      "summary": "Read the full round-10 spec and both live components. No files were modified. **The core mechanism remains coherent, but the TC-22 ordering and numeric-trace fixes are incomplete.**",
+      "write": true,
+      "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
+      "status": "completed",
+      "startedAt": "2026-09-14T18:25:48.295Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu1kpx9n-d06avw.log",
+      "threadId": "01a0a07f-4183-7b71-9d97-17bbccccc5cb",
+      "turnId": "01a0a12b-1a52-7ec2-90ad-d3d4242f916f",
+      "completedAt": "2026-09-14T18:28:21.686Z"
+    },
+    {
       "createdAt": "2026-09-14T18:10:38.126Z",
       "updatedAt": "2026-09-14T18:12:17.170Z",
       "id": "task-mu1k6f1q-1h7e6e",
