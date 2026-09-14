@@ -126,13 +126,30 @@ label it as retro-written.
    Set `Assigned To Agent`. Status → `Grooming`.
 2. **Groom in parallel.** Ann writes **Description + Acceptance Criteria**; Vlad writes **Test Cases**.
    Conditional specs, each required when the story touches that domain: Deb (UI spec/mockups),
-   Stan (research/algorithm/calculation), Rita (integration), Sky (user-facing copy).
+   Stan (research/algorithm/calculation), Rita (integration), Sky (user-facing copy). Every persona
+   grooming/re-vote prompt must say "Do NOT change Status or Assigned To Agent — the orchestrator
+   moves the story"; persona agents otherwise advance stories to Ready on their own (observed
+   2026-09-11: Ann agents moved 3 of 4 stories to Ready right after writing AC, before Vlad's Test
+   Cases, conditional specs, Cass, or any gate vote existed — the orchestrator had to revert Status
+   each time).
 3. **All grooming content goes in the database property fields, never the page body.** Page body is
    for supplemental material only. This is checked at three gates and is the single most common
    grooming defect.
-4. **Approval gate — Pam + Deb + Felix must all approve**, each with a verdict comment. Before any
-   vote, run the pre-vote field check (Description, AC, Test Cases populated, in property fields).
-   A kickback keeps the story in `Grooming` and returns it to Ann or Vlad.
+4. Approval gate — Pam + Deb + Felix + Cass must ALL approve (Operating Model §4.2). Run Cass via
+   codex:codex-rescue phrased as a WRITE-CAPABLE task ("use --write … this is still a review, do not
+   modify any file") — the read-only sandbox denies all reads on the founder's Windows machine. Copy
+   the spec (Description/AC/TC dumped via the Notion REST API) into the worktree's gitignored
+   `tmp/cass/`; paths outside the repo are denied. Codex jobs usually return "started in the
+   background" — collect with `node <codex plugin>/scripts/codex-companion.mjs status <id> --wait`
+   then `result <id>`. Budget Cass: fix every reviewer's findings in ONE round before re-running
+   Cass; ~10 runs exhausted the quota for ~4h on 2026-09-11. If the quota is exhausted, a clearly
+   labelled substitute adversarial review on a different model may unblock Ready, but a genuine
+   Codex Cass pass is still required before Done. Before any vote, run the pre-vote field check
+   (Description, AC, Test Cases populated, in property fields). A kickback keeps the story in
+   `Grooming` and returns it to Ann or Vlad. Tell persona agents to keep each Notion comment
+   < 3,800 chars (split into (1/2),(2/2)); when reading a teammate's long comment use
+   `mcp__notionApi__API-retrieve-a-comment`, not `notion-get-comments` (a Felix architecture comment
+   on SST-1583 was silently truncated around ~4k chars by the latter, losing its conclusion).
 5. On unanimous approval → Status `Ready`.
 
 Running the gate against your own work is not theater. If Ann's AC are thin or Vlad's Test Cases
