@@ -5,6 +5,26 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-14T17:49:37.301Z",
+      "updatedAt": "2026-09-14T17:49:53.001Z",
+      "id": "task-mu1jfe6t-xun5od",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Resume",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
+      "jobClass": "task",
+      "summary": "<task> Round 8 re-review of SST-1646. This is a REVIEW task only, do not modify any file, eve...",
+      "write": true,
+      "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
+      "status": "running",
+      "startedAt": "2026-09-14T17:49:37.389Z",
+      "phase": "running",
+      "pid": 36460,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu1jfe6t-xun5od.log",
+      "threadId": "01a0a07f-4183-7b71-9d97-17bbccccc5cb",
+      "turnId": "01a0a109-f8be-7b80-8dda-a924056dce1d"
+    },
+    {
       "createdAt": "2026-09-14T17:00:06.620Z",
       "updatedAt": "2026-09-14T17:02:10.776Z",
       "id": "task-mu1hnpzw-7odzjx",
