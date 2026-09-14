@@ -559,6 +559,8 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [ABLeague_](https://x.com/ABLeague_) — flagged 2026-09-13
 - [X] [Brodie_Bets](https://x.com/Brodie_Bets) — flagged 2026-09-13
 - [X] [AQfresh](https://x.com/AQfresh) — flagged 2026-09-13
+- [Reddit] [u/mobgod](https://www.reddit.com/user/mobgod/) — flagged 2026-09-14
+- [Reddit] [pickemGURU](https://www.reddit.com/user/pickemGURU/) — flagged 2026-09-14
 ```
 
 Each run, do this:
