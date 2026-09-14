@@ -1,7 +1,0 @@
-{
-  "endpoint": "pipe:\\\\.\\pipe\\cxc-qqDCFv-codex-app-server",
-  "pidFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-qqDCFv\\broker.pid",
-  "logFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-qqDCFv\\broker.log",
-  "sessionDir": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-qqDCFv",
-  "pid": 45756
-}
