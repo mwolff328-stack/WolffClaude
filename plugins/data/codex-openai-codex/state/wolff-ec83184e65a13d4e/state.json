@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-14T13:25:50.567Z",
+      "updatedAt": "2026-09-14T13:25:58.859Z",
+      "id": "task-mu1a067b-ywywtr",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Stop Gate Review",
+      "workspaceRoot": "C:\\Users\\wolff",
+      "jobClass": "task",
+      "summary": "ALLOW: The previous turn reported a Discord scan and updates to Notion and tracking notes, with no code changes to review.",
+      "write": false,
+      "sessionId": "9d23ff69-6dd3-45b3-9f4f-e9ac5bbe775b",
+      "status": "completed",
+      "startedAt": "2026-09-14T13:25:50.674Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mu1a067b-ywywtr.log",
+      "threadId": "01a0a018-792f-7500-bb43-df81b807710d",
+      "turnId": "01a0a018-7d86-7ae0-baf3-d75f7843cf1b",
+      "completedAt": "2026-09-14T13:25:58.531Z"
+    },
+    {
       "createdAt": "2026-09-14T13:20:52.103Z",
       "updatedAt": "2026-09-14T13:21:02.502Z",
       "id": "task-mu19trwn-o85rdg",
@@ -24,27 +45,6 @@
       "threadId": "01a0a013-eee3-7af3-b961-243688eb80f8",
       "turnId": "01a0a013-f3f6-7913-9eb0-e920d425f002",
       "completedAt": "2026-09-14T13:21:02.344Z"
-    },
-    {
-      "createdAt": "2026-09-14T13:16:53.036Z",
-      "updatedAt": "2026-09-14T13:17:07.158Z",
-      "id": "task-mu19onfw-9f4poq",
-      "kind": "task",
-      "kindLabel": "rescue",
-      "title": "Codex Stop Gate Review",
-      "workspaceRoot": "C:\\Users\\wolff",
-      "jobClass": "task",
-      "summary": "ALLOW: The previous turn only renamed a session and made no code changes.",
-      "write": false,
-      "sessionId": "d6e52c48-b6ba-421e-9bc4-8716f18f069b",
-      "status": "completed",
-      "startedAt": "2026-09-14T13:16:53.153Z",
-      "phase": "done",
-      "pid": null,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mu19onfw-9f4poq.log",
-      "threadId": "01a0a010-52c4-7353-81e6-f5c3f4ee371e",
-      "turnId": "01a0a010-5aec-7010-8ee0-0362fcfc04da",
-      "completedAt": "2026-09-14T13:17:06.895Z"
     },
     {
       "createdAt": "2026-09-14T13:05:17.670Z",
@@ -1021,27 +1021,6 @@
       "threadId": "01a081e2-518e-7833-9c8a-63a7e0a330d6",
       "turnId": "01a081e2-64e6-7cd1-814c-36abeb86a14f",
       "completedAt": "2026-09-08T16:38:21.728Z"
-    },
-    {
-      "createdAt": "2026-09-08T16:30:54.817Z",
-      "updatedAt": "2026-09-08T16:31:37.404Z",
-      "id": "task-mtsvz2ao-vk38i1",
-      "kind": "task",
-      "kindLabel": "rescue",
-      "title": "Codex Stop Gate Review",
-      "workspaceRoot": "C:\\Users\\wolff",
-      "jobClass": "task",
-      "summary": "ALLOW: The previous turn only reported test guidance and coordination; it made no direct code edits.",
-      "write": false,
-      "sessionId": "ab331b96-58c6-47ee-86ed-ff798c61c975",
-      "status": "completed",
-      "startedAt": "2026-09-08T16:30:55.620Z",
-      "phase": "done",
-      "pid": null,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mtsvz2ao-vk38i1.log",
-      "threadId": "01a081dc-2724-7c62-b445-1ce8fa4bbba2",
-      "turnId": "01a081dc-388a-7713-a8b6-3b10ffa54a49",
-      "completedAt": "2026-09-08T16:31:36.634Z"
     }
   ]
 }

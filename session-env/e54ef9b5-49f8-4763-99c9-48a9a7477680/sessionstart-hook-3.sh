@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='e54ef9b5-49f8-4763-99c9-48a9a7477680'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse\e54ef9b5-49f8-4763-99c9-48a9a7477680.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
