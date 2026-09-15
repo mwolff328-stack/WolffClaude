@@ -1,6 +1,6 @@
 ---
 name: sp-week2-pick-data-check
-description: One-time check (starting 2026-09-14, after week 1 ends) for whether Yahoo pick-distribution data has posted for week 2 on SurvivorPulse; verifies the SST-1581 revision 2 opening-value capture fix if so, re-arms itself if not.
+description: Twice-daily check (9:17am/9:17pm) for whether Yahoo pick-distribution data has posted for week 2 on SurvivorPulse; verifies the SST-1581 revision 2 opening-value capture fix once it has, and keeps checking until then.
 ---
 
 SST-1581 revision 2 follow-up: SurvivorPulse's deployed dev app shipped a fix (commit 969fee2b on branch 2026-v1, repo mwolff328-stack/SurvivorPulse) so the Weekly Rankings "Notes" column's opening-value capture (captureMissingOpeningSnapshots, in server/services/publicWeekPicksService.ts) uses each game's TRUE opening win probability rather than whatever win probability happens to be live when capture fires. This was proven correct on week 1 (with a manual data correction for week 1 itself, since the bug had already shipped bad data before the fix landed), but week 2 is the first week the mechanism fix gets to run for real, once Yahoo pick-distribution data posts for that week. The check is gated on Yahoo data posting because that's the trigger for captureMissingOpeningSnapshots to fire for a week at all.
