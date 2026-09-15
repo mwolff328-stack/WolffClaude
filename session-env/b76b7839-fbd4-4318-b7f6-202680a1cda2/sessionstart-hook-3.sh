@@ -1,3 +1,6 @@
 export CODEX_COMPANION_SESSION_ID='b76b7839-fbd4-4318-b7f6-202680a1cda2'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse\b76b7839-fbd4-4318-b7f6-202680a1cda2.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='b76b7839-fbd4-4318-b7f6-202680a1cda2'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse\b76b7839-fbd4-4318-b7f6-202680a1cda2.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
