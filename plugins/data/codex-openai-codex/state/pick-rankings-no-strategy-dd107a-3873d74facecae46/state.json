@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-16T01:17:24.675Z",
+      "updatedAt": "2026-09-16T01:19:05.087Z",
+      "id": "task-mu3ev3ur-rm7kvu",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pick-rankings-no-strategy-dd107a",
+      "jobClass": "task",
+      "summary": "1. **Partially; not Ready yet.** Duplicate local/self-notification invalidations only evict again, assuming synchronous generation-bump/discard. The real hole is commit-before-NOTIFY: current writes commit separately (`server/storage.ts:1922–1928,2025–2044`). A crash or notification failure afterward leaves healthy peers stale; their outage-only fallback need not activate. Couple notification transactionally to writes. After reconnect, commit LISTEN before flushing caches/in-flight work: missed notifications are not replayed ([PostgreSQL LISTEN](https://www.postgresql.org/docs/18/sql-listen.html)).",
+      "write": true,
+      "sessionId": "dedfca8e-b67e-44c6-bdf5-3a7cbc2b39bf",
+      "status": "completed",
+      "startedAt": "2026-09-16T01:17:24.815Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pick-rankings-no-strategy-dd107a-3873d74facecae46\\jobs\\task-mu3ev3ur-rm7kvu.log",
+      "threadId": "01a0a7ca-4cf0-7282-99cd-3d25db866c83",
+      "turnId": "01a0a7ca-522c-7c51-9aef-62edb94c0e03",
+      "completedAt": "2026-09-16T01:19:04.806Z"
+    },
+    {
       "createdAt": "2026-09-16T01:00:27.299Z",
       "updatedAt": "2026-09-16T01:01:56.820Z",
       "id": "task-mu3e9aub-lvteuv",
