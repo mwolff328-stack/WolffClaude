@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-18T02:47:38.998Z",
-      "updatedAt": "2026-09-18T02:47:56.099Z",
+      "updatedAt": "2026-09-18T02:48:16.528Z",
       "id": "task-mu6cyuwm-j1cakx",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
       "jobClass": "task",
-      "summary": "--help",
+      "summary": "Describe what you want done, for example:",
       "write": false,
       "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-18T02:47:39.173Z",
-      "phase": "running",
-      "pid": 16912,
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu6cyuwm-j1cakx.log",
       "threadId": "01a0b269-aba9-7253-8692-a5c725434fc0",
-      "turnId": "01a0b269-b4e9-76d0-b38f-4024717c7786"
+      "turnId": "01a0b269-b4e9-76d0-b38f-4024717c7786",
+      "completedAt": "2026-09-18T02:48:16.156Z"
     },
     {
       "createdAt": "2026-09-18T02:33:44.275Z",
