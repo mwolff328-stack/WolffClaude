@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-18T02:33:44.275Z",
-      "updatedAt": "2026-09-18T02:36:33.387Z",
+      "updatedAt": "2026-09-18T02:37:03.828Z",
       "id": "task-mu6cgytv-ifdhap",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
       "jobClass": "task",
-      "summary": "<task> You are Cass, the adversarial grooming reviewer (4th approval-gate vote, alongside Pam...",
+      "summary": "KICKBACK",
       "write": true,
       "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-18T02:33:44.348Z",
-      "phase": "running",
-      "pid": 36700,
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu6cgytv-ifdhap.log",
       "threadId": "01a0b25c-ecc1-7631-831c-3062e3ffca6b",
-      "turnId": "01a0b25c-f2c7-74f3-a6a6-2284eda00818"
+      "turnId": "01a0b25c-f2c7-74f3-a6a6-2284eda00818",
+      "completedAt": "2026-09-18T02:37:03.663Z"
     },
     {
       "createdAt": "2026-09-14T18:40:02.399Z",
