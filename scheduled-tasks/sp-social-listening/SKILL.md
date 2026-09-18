@@ -575,6 +575,8 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [pickemGURU](https://www.reddit.com/user/pickemGURU/) — flagged 2026-09-14
 - [X] [Survivor_HQ](https://x.com/Survivor_HQ) — flagged 2026-09-16
 - [Reddit] [u/ExistingManagerTx](https://www.reddit.com/user/ExistingManagerTx/) — flagged 2026-09-16
+- [X] [LVLupPropsApp](https://x.com/LVLupPropsApp) — flagged 2026-09-18
+- [X] [ChinosCorner](https://x.com/ChinosCorner) — flagged 2026-09-18
 ```
 
 Each run, do this:
