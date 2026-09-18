@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-18T13:57:40.616Z",
+      "updatedAt": "2026-09-18T13:58:20.927Z",
+      "id": "task-mu70wio8-l9quoz",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/quizzical-pasteur-c97352",
+      "jobClass": "task",
+      "summary": "<task>You are Cass, the Adversarial Reviewer for SurvivorPulse (per docs/OPERATING_MODEL.md: ...",
+      "write": false,
+      "sessionId": "2f5b8197-8e9b-43c3-a945-99da578f0bda",
+      "status": "running",
+      "startedAt": "2026-09-18T13:57:40.763Z",
+      "phase": "investigating",
+      "pid": 15832,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\quizzical-pasteur-c97352-b5b2e9f5e49c041c\\jobs\\task-mu70wio8-l9quoz.log",
+      "threadId": "01a0b4cf-15ff-7283-8919-ab668d7aa93c",
+      "turnId": "01a0b4cf-1d0f-7993-92e7-8cddb6e772e6"
+    }
+  ]
+}
