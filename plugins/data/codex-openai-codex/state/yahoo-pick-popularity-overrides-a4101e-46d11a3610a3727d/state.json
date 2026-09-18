@@ -6,7 +6,7 @@
   "jobs": [
     {
       "createdAt": "2026-09-18T02:33:44.275Z",
-      "updatedAt": "2026-09-18T02:33:50.712Z",
+      "updatedAt": "2026-09-18T02:33:52.544Z",
       "id": "task-mu6cgytv-ifdhap",
       "kind": "task",
       "kindLabel": "rescue",
@@ -21,7 +21,8 @@
       "phase": "starting",
       "pid": 36700,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu6cgytv-ifdhap.log",
-      "threadId": "01a0b25c-ecc1-7631-831c-3062e3ffca6b"
+      "threadId": "01a0b25c-ecc1-7631-831c-3062e3ffca6b",
+      "turnId": "01a0b25c-f2c7-74f3-a6a6-2284eda00818"
     },
     {
       "createdAt": "2026-09-14T18:40:02.399Z",
