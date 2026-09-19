@@ -73,6 +73,7 @@
 - [Pre-publish gate is CI-only](project_survivorpulse_prepublish_gate_mechanism.md) — re-verify dated items.
 - [GitHub Actions budget exhaustion signature](project_survivorpulse_github_actions_budget_exhaustion_signature.md) — every run red in 3-6s with zero steps = billing, not code; blocks gate + Replit Sync.
 - [Local test substitute when CI is down](project_survivorpulse_local_test_substitute_when_ci_is_down.md) — npm run test:unit broken on Windows; use vitest related; full suite too slow.
+- [Gate job timeout reads as cancelled](project_survivorpulse_pre_publish_gate_job_timeout_reads_as_cancelled.md) — 45-min limit killed a healthy run 9/19; bumped to 60 (SST-1692); check job ran ~45min.
 - [Ship-coverage 241 caveat obsolete](project_survivorpulse_ship_coverage_caveat_241_is_obsolete.md) — residual is 9, 5 run in Stage 2c.
 - [Booting prod proves unsafe-dev flag off](project_survivorpulse_unsafe_dev_flag_is_self_proving.md) — cache goes stale.
 - [Stale SPA bundle after publish](project_survivorpulse_stale_spa_bundle_after_publish.md) — use host not current_database().
