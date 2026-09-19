@@ -5,6 +5,26 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-19T08:30:49.004Z",
+      "updatedAt": "2026-09-19T08:32:51.413Z",
+      "id": "task-mu84o0x8-peplaw",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/yahoo-pick-popularity-overrides-a4101e",
+      "jobClass": "task",
+      "summary": "You are Cass, adversarial grooming reviewer, 4th approval-gate vote. RE-REVIEW SurvivorPulse ...",
+      "write": true,
+      "sessionId": "c9ab76e2-3a95-49c9-bce6-b72b1b340791",
+      "status": "running",
+      "startedAt": "2026-09-19T08:30:49.085Z",
+      "phase": "running",
+      "pid": 46144,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\yahoo-pick-popularity-overrides-a4101e-46d11a3610a3727d\\jobs\\task-mu84o0x8-peplaw.log",
+      "threadId": "01a0b8ca-276f-77c3-ad3e-3b4b8101904f",
+      "turnId": "01a0b8ca-2b8f-73b0-bc11-290a7b858157"
+    },
+    {
       "createdAt": "2026-09-19T07:35:16.560Z",
       "updatedAt": "2026-09-19T07:38:51.387Z",
       "id": "task-mu82ollc-lkv80e",
