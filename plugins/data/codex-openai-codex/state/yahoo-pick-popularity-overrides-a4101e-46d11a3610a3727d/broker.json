@@ -1,7 +1,7 @@
 {
-  "endpoint": "pipe:\\\\.\\pipe\\cxc-W8eMRF-codex-app-server",
-  "pidFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-W8eMRF\\broker.pid",
-  "logFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-W8eMRF\\broker.log",
-  "sessionDir": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-W8eMRF",
-  "pid": 44568
+  "endpoint": "pipe:\\\\.\\pipe\\cxc-fe7sWy-codex-app-server",
+  "pidFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-fe7sWy\\broker.pid",
+  "logFile": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-fe7sWy\\broker.log",
+  "sessionDir": "C:\\Users\\wolff\\AppData\\Local\\Temp\\cxc-fe7sWy",
+  "pid": 44432
 }
