@@ -117,6 +117,7 @@
 - [17 env-gated suites invisible locally](project_survivorpulse_env_gated_suites_are_invisible_locally.md).
 - [vitest exclude beats explicit CLI filename](project_survivorpulse_vitest_exclude_beats_explicit_cli_filename.md) — silently vanishes.
 - [vi.mock TDZ pattern + typescript@7 has no compiler API](project_survivorpulse_vimock_tdz_pattern_and_typescript7_no_compiler_api.md) — babel traverse gotchas, deferred list.
+- [New pool route trips two guard suites](project_survivorpulse_new_pool_route_trips_two_guard_suites.md) — SST-1549 tripwire + SST-959 TC-4 belt go red in CI; run them before the first push.
 
 ## Engine and domain behaviour
 
