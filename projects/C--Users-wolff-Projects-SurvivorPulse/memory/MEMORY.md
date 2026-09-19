@@ -11,62 +11,23 @@
 - [Hand-typed Notion page id posts to the wrong ticket](feedback_survivorpulse_hardcoded_notion_page_id_typo_posts_to_wrong_ticket.md) — resolve by SST number, read the title back; 200 proves nothing.
 - [Multi-approver defer ≠ stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route to the other approver.
 - [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me, fall back to demo signin.
-- [Tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md).
-- [Prefer Notion OAuth connector](feedback_prefer_notion_oauth_connector.md).
+- Publishing prefs: [tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) · [prefer the Notion OAuth connector](feedback_prefer_notion_oauth_connector.md).
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md).
 - [Await vs fire-and-forget](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only if write IS the payload.
 - ["Completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a filing.
 - [Link sign-offs to the site](feedback_survivorpulse_signoff_links_to_site.md) — HTML sends only.
-- [Load-bearing tests](feedback_proving_a_test_is_load_bearing.md) — RED-proof, diff filter both miss MOVES.
-- [Mutation cleanup needs a backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) — checkout on un-backed file wipes work.
-- [Edit tool writes back stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) — mixing with sed/python reverts edits.
-- [Mutation harness edits first match](feedback_mutation_harness_edits_the_first_match_not_yours.md) — not necessarily yours.
-- [A mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) — check WHICH assertion failed.
-- [A guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) — confirmed narrower than copy claimed.
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
-- [Guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) — 0/109 killed; SST-1644: 0/963, test hand-rolled the wire instead of driving it.
-- [Shared function callers can disagree on field convention](feedback_shared_function_callers_can_disagree_on_field_convention.md) — SST-1644: two callers already pre-inverted, a third didn't.
-- [Injected fixtures bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md) — move catch into orchestrator.
-- [Paired assertions both vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md).
-- [Enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md).
-- [Check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md).
-- [Sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md).
-- [Local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md).
-- [Derive test expectations from the DB](feedback_derive_test_expectations_from_the_db_not_the_fixture.md), not the fixture.
-- [Source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md).
-- [A test named for a spec item claims it](feedback_a_test_named_for_a_spec_item_claims_it.md) — green + cited AC can still violate it.
-- [A groomed AC can assert a false fact](feedback_a_groomed_ac_can_assert_a_false_codebase_fact.md) — re-run embedded greps.
-- [Findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) — wrong instrument, stop hardening.
-- [Defer a guard needing its own design](feedback_defer_a_guard_that_needs_its_own_design.md) — founder ruling.
-- [A green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md).
-- [One sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md).
-- [Grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md).
-- [Proving a flake fix without reproducing](feedback_proving_a_flake_fix_without_reproducing_it.md) — measure the precursor.
-- [A swinging TOTAL count isn't a flake](feedback_a_swinging_total_test_count_is_not_a_flake.md) — checksum the files.
-- [Relocating an entry point](feedback_relocating_an_entry_point_changes_its_threat_model.md) changes its threat model.
-- [Verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md).
-- [Collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md).
-- [Semantic dups guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md).
-- [Concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) — stage by path.
-- [Parallel triage agents share the worktree](feedback_parallel_triage_agents_share_the_dispatching_sessions_worktree.md) — chain atomically, re-verify HEAD.
-- [Shared-resource outages misattributed](feedback_shared_resource_outages_are_misattributed.md).
-- [Prefix-mounted guards blind past mount](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md).
-- [Rely on self-learning, not monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md).
-- [A doc saying code was deleted isn't evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md).
-- [Staged ticket headers rot into instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md).
-- [Derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md).
-- [Bug ticket's resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md).
-- [Tests that win an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md).
-- [Assert after the effect, not before](feedback_assert_after_the_effect_not_before_it.md).
-- [A premise at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md).
-- [New error code activates dead UI](feedback_a_new_error_code_activates_old_dead_ui_code.md).
-- [Two correct fixes collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md).
-- [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md).
-- [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) — use explicit src:dst refspec.
-- [Check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) — backfills look like corruption.
-- [Null archetype ≠ manual edit signal](feedback_null_archetype_is_not_a_manual_edit_signal.md) — broke 20 tests protecting cross-device staleness.
-- [Verify field-wide % via full-field sum](feedback_survivorpulse_verify_field_wide_percentages_via_full_field_sum.md) — one pick/week, not one pick/game; per-matchup sums are meaningless.
-- [Disabled gated on a narrow window](feedback_disabled_gated_on_a_narrow_window_stays_enabled_outside_it.md) — check the button's state OUTSIDE the fix's target window too.
+- Shared-worktree and edit hygiene: [concurrent-session git discipline](feedback_survivorpulse_shared_worktree_staging_discipline.md) (stage by path) · [parallel triage agents share the worktree](feedback_parallel_triage_agents_share_the_dispatching_sessions_worktree.md) · [worktree add + push.default=upstream lands on 2026-v1](feedback_worktree_add_plus_push_default_upstream_lands_on_2026v1.md) (explicit src:dst refspec) · [Edit tool writes back a stale cache](feedback_edit_tool_writes_back_a_stale_cached_copy.md) · [Python round-trip edits flip files to CRLF](feedback_python_roundtrip_edits_flip_files_to_crlf.md).
+- Mutation-run hygiene: [backup per file](feedback_mutation_test_cleanup_needs_a_backup_per_file.md) (checkout on an un-backed file wipes work) · [harness edits the first match, not yours](feedback_mutation_harness_edits_the_first_match_not_yours.md) · [a mutant can die for the wrong reason](feedback_a_mutant_can_die_for_the_wrong_reason.md) (check WHICH assertion failed).
+- Guards and wires: [load-bearing tests](feedback_proving_a_test_is_load_bearing.md) (RED-proof, diff filter both miss MOVES) · [guard the wire, not the helper](feedback_guard_the_wire_not_just_the_helper.md) (0/109; SST-1644: 0/963) · [a guard can reproduce its own defect](feedback_a_guard_can_reproduce_the_defect_it_guards.md) · [source-text guards fooled by text](feedback_survivorpulse_source_text_guards_fooled_by_text.md) · [a test named for a spec item claims it](feedback_a_test_named_for_a_spec_item_claims_it.md) · [injected fixtures bypass the catch under fix](feedback_injected_fixtures_can_bypass_the_catch_block_under_fix.md).
+- Assertions that prove nothing: [paired assertions both vacuous](feedback_paired_assertions_both_vacuous_when_op_never_ran.md) · [a green test certifies stale comments](feedback_a_green_test_certifies_its_stale_comments.md) · [tests that win an animation race](feedback_tests_that_pass_by_winning_an_animation_race.md) · [assert after the effect, not before](feedback_assert_after_the_effect_not_before_it.md) · [derive test expectations from the DB, not the fixture](feedback_derive_test_expectations_from_the_db_not_the_fixture.md).
+- Measure before asserting: [check distribution before inferring convention](feedback_check_distribution_before_inferring_convention.md) · [derive from the quantity the reader validates](feedback_derive_from_the_quantity_the_reader_validates.md) · [a premise measured at a boundary inherits it](feedback_a_premise_measured_at_a_boundary_inherits_it.md) · [verify field-wide % via full-field sum](feedback_survivorpulse_verify_field_wide_percentages_via_full_field_sum.md) (one pick/week, not one pick/game) · [a doc saying code was deleted isn't evidence](feedback_a_doc_saying_code_was_deleted_is_not_evidence.md).
+- Sweep and enumerate: [sweep for the class, not the change](feedback_sweep_for_the_class_not_the_change.md) · [enumerate a typed return's fields](feedback_enumerate_a_typed_returns_fields_before_signing_off.md) · [grep callers before changing a resolver](feedback_grep_callers_before_changing_a_shared_resolver.md) · [shared function callers can disagree on field convention](feedback_shared_function_callers_can_disagree_on_field_convention.md) (SST-1644) · [disabled gated on a narrow window stays enabled outside it](feedback_disabled_gated_on_a_narrow_window_stays_enabled_outside_it.md).
+- Flakes and CI truth: [local run differs from CI](feedback_local_run_differs_from_ci_by_construction.md) · [proving a flake fix without reproducing it](feedback_proving_a_flake_fix_without_reproducing_it.md) (measure the precursor) · [a swinging TOTAL test count isn't a flake](feedback_a_swinging_total_test_count_is_not_a_flake.md) (checksum the files).
+- Scope and rulings: [findings inside a just-closed class](feedback_findings_inside_just_closed_classes_mean_wrong_instrument.md) (wrong instrument, stop hardening) · [defer a guard needing its own design](feedback_defer_a_guard_that_needs_its_own_design.md) (founder ruling) · [collapse stale backlogs](feedback_survivorpulse_collapse_stale_backlogs.md) · [verify a deferral reason](feedback_survivorpulse_verify_a_deferral_reason.md).
+- Tickets and specs: [a groomed AC can assert a false codebase fact](feedback_a_groomed_ac_can_assert_a_false_codebase_fact.md) · [staged ticket headers rot into instructions](feedback_staged_ticket_headers_rot_into_harmful_instructions.md) · [a bug ticket's proposed resolution can carry the defect](feedback_a_bug_tickets_proposed_resolution_can_carry_the_defect.md) · [relocating an entry point changes its threat model](feedback_relocating_an_entry_point_changes_its_threat_model.md).
+- Surprises and anomalies: [one sampled error, many root causes](feedback_survivorpulse_one_sampled_error_many_root_causes.md) · [shared-resource outages are misattributed](feedback_shared_resource_outages_are_misattributed.md) · [check recent Done bugs before flagging a batch anomaly](feedback_check_recent_done_bugs_before_flagging_batch_anomaly.md) (backfills look like corruption) · [null archetype ≠ manual edit signal](feedback_null_archetype_is_not_a_manual_edit_signal.md).
+- Design traps: [two correct fixes collide on one field](feedback_two_correct_fixes_can_collide_on_one_field.md) · [a new error code activates old dead UI code](feedback_a_new_error_code_activates_old_dead_ui_code.md) · [prefix-mounted guards are blind past the mount](feedback_prefix_mounted_guards_have_prefix_bounded_coverage.md) · [semantic duplicates guardrails git can't see](feedback_survivorpulse_semantic_duplicate_guardrails_git_cant_see.md) · [rely on self-learning, not manual monitoring](feedback_survivorpulse_rely_on_self_learning_not_manual_monitoring.md).
 
 ## Shipping, environments, and infra
 
