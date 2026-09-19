@@ -1,7 +1,7 @@
 {
   "version": 1,
   "config": {
-    "stopReviewGate": true
+    "stopReviewGate": false
   },
   "jobs": [
     {
