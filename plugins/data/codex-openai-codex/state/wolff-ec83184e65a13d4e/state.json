@@ -5,27 +5,6 @@
   },
   "jobs": [
     {
-      "createdAt": "2026-09-19T04:18:40.027Z",
-      "updatedAt": "2026-09-19T04:18:47.274Z",
-      "id": "task-mu7vnrbv-5klxth",
-      "kind": "task",
-      "kindLabel": "rescue",
-      "title": "Codex Stop Gate Review",
-      "workspaceRoot": "C:\\Users\\wolff",
-      "jobClass": "task",
-      "summary": "ALLOW: The previous Claude turn was reporting and archival output, with no direct code changes.",
-      "write": false,
-      "sessionId": "7e655787-f730-49de-9cf0-230b9469120f",
-      "status": "completed",
-      "startedAt": "2026-09-19T04:18:40.092Z",
-      "phase": "done",
-      "pid": null,
-      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\wolff-ec83184e65a13d4e\\jobs\\task-mu7vnrbv-5klxth.log",
-      "threadId": "01a0b7e3-4e72-72c2-b999-bba54fb5fdcd",
-      "turnId": "01a0b7e3-5275-7441-9cb1-b054f89bba91",
-      "completedAt": "2026-09-19T04:18:47.111Z"
-    },
-    {
       "createdAt": "2026-09-17T13:16:39.065Z",
       "updatedAt": "2026-09-17T13:16:50.167Z",
       "id": "task-mu5jzwnt-bsbjb0",
