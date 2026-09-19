@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='1a89cdb9-e577-48dd-8b33-f1d352869f3d'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff\1a89cdb9-e577-48dd-8b33-f1d352869f3d.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
