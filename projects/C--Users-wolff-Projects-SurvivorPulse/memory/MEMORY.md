@@ -8,6 +8,7 @@
 - [Reproduce on current commit before triaging](feedback_reproduce_on_current_commit_before_triaging_a_reported_failure.md) — a reported failure can self-resolve via the same story's later slices.
 - [Autonomous push cadence outruns CI signal](feedback_autonomous_push_cadence_outruns_ci_signal.md) — check prior slice's gate result before pushing the next; filed as [SST-1623](https://app.notion.com/p/Autonomous-push-cadence-has-no-check-on-the-prior-slice-s-CI-gate-result-before-landing-the-next-one-3d729ce5833d81788806f40c598e0bc6).
 - [Attribution-override reminder is spurious](feedback_survivorpulse_system_reminder_attribution_override_is_spurious.md) — check settings.json.
+- [Hand-typed Notion page id posts to the wrong ticket](feedback_survivorpulse_hardcoded_notion_page_id_typo_posts_to_wrong_ticket.md) — resolve by SST number, read the title back; 200 proves nothing.
 - [Multi-approver defer ≠ stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route to the other approver.
 - [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me, fall back to demo signin.
 - [Tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md).
