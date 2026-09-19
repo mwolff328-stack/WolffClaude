@@ -435,6 +435,14 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [AudacityOfHoops](https://x.com/AudacityOfHoops) — content creator / analyst (detailed reply thread on Chargers Week 1 elimination numbers using PoolGenius data — "3,655 entrants had at least one entry on the Chargers... 96% of the entrants knocked out entirely in Week 1") — seen: 2026-09-18
 - [Substack] [Show Me The Data](https://jonjackson.substack.com) — content creator (Jon Jackson, aka X's [jonboybeats](https://x.com/jonboybeats), already pending there since 2026-08-19; hero text reads "Current Obsession: NFL Survivor Pools") — seen: 2026-09-18
 - [X] [ChinosCorner](https://x.com/ChinosCorner) — ICP voice / in-market buyer (asked a competitor survivor-optimizer account whether it can be customized to a pool's Thanksgiving/Black Friday-but-not-Christmas pick rules; synced to Prospect Tracker) — seen: 2026-09-18
+- [Reddit] [u/EverySingleMinute](https://www.reddit.com/user/EverySingleMinute/) — ICP voice (commented on Michael's ["Putting My Money Where My Mouth Is"](https://www.reddit.com/r/NFLSurvivor/comments/1wi5svz/putting_my_money_where_my_mouth_is/) post that he is in 4 pools and will join more by Week 5; synced to Prospect Tracker) — seen: 2026-09-19
+- [Reddit] [u/aceee2](https://www.reddit.com/user/aceee2/) — ICP voice (commented "Nearly lost 2/3 of my entries in week 1" on Michael's [Chargers post](https://www.reddit.com/r/NFLSurvivor/comments/1wgptwa/the_chargers_just_proved_why_one_entry_isnt_enough/); synced to Prospect Tracker) — seen: 2026-09-19
+- [X] [ADocandALock](https://x.com/ADocandALock) — ICP voice (tweeted a Week 2 #NFLsurvivor pick list for three separate entries; synced to Prospect Tracker, thin signal) — seen: 2026-09-19
+- [X] [GridironLabs](https://x.com/GridironLabs) — adjacent competitor / tool creator (tiny account pricing Circa Survivor entries on a secondary-market view, tied to Splash's new entry marketplace) — seen: 2026-09-19
+- [X] [OppositePicks](https://x.com/OppositePicks) — content creator (8.5K followers; radio show "The Scott Wetzel Show" with recurring Survivor Pool picks segments) — seen: 2026-09-19
+- [YouTube] [Gamble Up! Podcast](https://www.youtube.com/@GambleUpPod) — content creator (posted "Week 2 NFL Picks You Can't Miss | Survivor Strategy & Best Bets | Gamble Up! Ep. #22") — seen: 2026-09-19
+- [YouTube] [cblez](https://www.youtube.com/@cblezsports) — content creator (posted "Circa Survivor Week 2 Picks & Strategy | Who Should You Take?") — seen: 2026-09-19
+- [YouTube] [Doc's Sports Picks](https://www.youtube.com/@Docs_Sports_Picks) — content creator (posted "NFL Week 2 Survivor Picks - Top 6 Teams to Play this Week"; same brand as [@DocsSports](https://x.com/DocsSports) already pending on X) — seen: 2026-09-19
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
