@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-19T12:21:58.408Z",
+      "updatedAt": "2026-09-19T12:22:03.650Z",
+      "id": "task-mu8cxamg-gv2dt7",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/AppData/Local/Temp/codextest",
+      "jobClass": "task",
+      "summary": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:35 AM.",
+      "write": false,
+      "sessionId": "46d12890-ae5d-4b83-b95d-3b67c36faad6",
+      "status": "failed",
+      "startedAt": "2026-09-19T12:21:58.484Z",
+      "phase": "failed",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\codextest-d666641e65eec9d0\\jobs\\task-mu8cxamg-gv2dt7.log",
+      "threadId": "01a0b99d-c926-75f2-9781-18c6135740d6",
+      "turnId": "01a0b99d-cd5b-7d12-8d12-e34a533d165f",
+      "completedAt": "2026-09-19T12:22:03.514Z"
+    }
+  ]
+}
