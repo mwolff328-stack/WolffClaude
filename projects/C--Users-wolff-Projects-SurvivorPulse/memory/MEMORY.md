@@ -2,6 +2,8 @@
 
 ## Working practice
 
+- [Limiter slots held by single-flight waiters](feedback_limiter_slots_held_by_single_flight_waiters_starve_other_requests.md) — SST-1672: green tests, 2.4x slower live; run a leader first.
+- [Local run of mocked route tests](project_survivorpulse_local_run_of_mocked_route_tests_needs_localhost_database_url.md) — localhost DATABASE_URL trick; supertest is lazy.
 - [Content ref hierarchy](feedback_content_reference_hierarchy_across_channels.md) — r/SurvivorPulse canonical → Discord/X → r/NFLSurvivor.
 - [Reproduce on current commit before triaging](feedback_reproduce_on_current_commit_before_triaging_a_reported_failure.md) — a reported failure can self-resolve via the same story's later slices.
 - [Autonomous push cadence outruns CI signal](feedback_autonomous_push_cadence_outruns_ci_signal.md) — check prior slice's gate result before pushing the next; filed as [SST-1623](https://app.notion.com/p/Autonomous-push-cadence-has-no-check-on-the-prior-slice-s-CI-gate-result-before-landing-the-next-one-3d729ce5833d81788806f40c598e0bc6).
