@@ -54,6 +54,7 @@
 - [SST-1564 Beta Testers backfill gap](project_survivorpulse_sst1564_beta_testers_backfill_gap.md) — 2026-09-07's 13-row batch is real, not test data.
 - [Stale node_modules per environment](project_survivorpulse_stale_node_modules_per_environment.md) — ERR_MODULE_NOT_FOUND for a listed dep means run npm install there, not a code bug.
 - [Notion Comments API missing_version defect](project_survivorpulse_notion_comments_api_missing_version_defect.md) — 2026-09-09, pages still worked.
+- [vite build under NODE_ENV≠production hard-fails on invalid CSS](project_survivorpulse_vite_build_nonprod_node_env_skips_tailwind_optimize.md) — SST-1703: Tailwind skips optimize(); check `$NODE_ENV` before blaming the last edit.
 
 ## Verifying UI for real
 
