@@ -600,6 +600,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/EverySingleMinute](https://www.reddit.com/user/EverySingleMinute/) — flagged 2026-09-19
 - [Reddit] [u/aceee2](https://www.reddit.com/user/aceee2/) — flagged 2026-09-19
 - [X] [ADocandALock](https://x.com/ADocandALock) — flagged 2026-09-19
+- [X] [LGsportsbetting](https://x.com/LGsportsbetting) — flagged 2026-09-20
+- [X] [MattLubawski](https://x.com/MattLubawski) — flagged 2026-09-20
+- [X] [anthonypizzarie](https://x.com/anthonypizzarie) — flagged 2026-09-20
 ```
 
 Each run, do this:
