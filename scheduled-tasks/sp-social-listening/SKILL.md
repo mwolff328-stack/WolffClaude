@@ -443,6 +443,18 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [YouTube] [Gamble Up! Podcast](https://www.youtube.com/@GambleUpPod) — content creator (posted "Week 2 NFL Picks You Can't Miss | Survivor Strategy & Best Bets | Gamble Up! Ep. #22") — seen: 2026-09-19
 - [YouTube] [cblez](https://www.youtube.com/@cblezsports) — content creator (posted "Circa Survivor Week 2 Picks & Strategy | Who Should You Take?") — seen: 2026-09-19
 - [YouTube] [Doc's Sports Picks](https://www.youtube.com/@Docs_Sports_Picks) — content creator (posted "NFL Week 2 Survivor Picks - Top 6 Teams to Play this Week"; same brand as [@DocsSports](https://x.com/DocsSports) already pending on X) — seen: 2026-09-19
+- [X] [LGsportsbetting](https://x.com/LGsportsbetting) — ICP voice / multi-entry player ("Chargers eliminated 2 of my 5 entries last week but goin back to the well" — posted Week 2 survivor tiers; synced to Prospect Tracker) — seen: 2026-09-20
+- [X] [MattLubawski](https://x.com/MattLubawski) — ICP voice / multi-entry player (10 entries in a ~1,400-entry pool, split 6 SF / 4 LAC for Week 2; synced to Prospect Tracker) — seen: 2026-09-19
+- [X] [anthonypizzarie](https://x.com/anthonypizzarie) — ICP voice (work pool plus two knockout pools, Chargers knocked him out of two; synced to Prospect Tracker) — seen: 2026-09-19
+- [X] [BetSharpMoney](https://x.com/BetSharpMoney) — adjacent competitor (SharpMoney official account, "Don't forget to lock in your survivor pool picks"; SharpMoney has an NFL Survivor Tab per [@chriscpicks](https://x.com/chriscpicks) already pending) — seen: 2026-09-20
+- [X] [sportsvestment](https://x.com/sportsvestment) — commissioner / operator (runs "SV Survivor," posted a Week 2 board of every account, entry and team with 70 entries remaining) — seen: 2026-09-20
+- [X] [MikePerry28](https://x.com/MikePerry28) — ICP voice (repeatedly asking [@PoolGenius](https://x.com/PoolGenius) how future EV shifts for the Niners as team projections change) — seen: 2026-09-20
+- [X] [heathchartier](https://x.com/heathchartier) — adjacent tool / content (posts a weekly "Survivor Pick of the Week" ranked from the Vegas line under #SpreadLab) — seen: 2026-09-19
+- [Reddit] [u/TheFullnessofTime81](https://www.reddit.com/user/TheFullnessofTime81/) — ICP voice (posted ["How long can you go fading Miami?"](https://www.reddit.com/r/NFLSurvivor/comments/1wl6oui/how_long_can_you_go_fading_miami/) in r/NFLSurvivor, 6 comments, asking when a fade-Miami path breaks) — seen: 2026-09-20
+- [YouTube] [BFSN](https://www.youtube.com/@BufordSportsNet) — content creator (posted "Elimination-- If You ONLY Have 1 Pick... Do THIS in NFL Week 2! (Survivor Strategy)") — seen: 2026-09-19
+- [YouTube] [19 Media Group](https://www.youtube.com/@19mediagroup) — content creator (posted "NFL Week 2 Survivor: Win Or Die & Mike Stephs' Pick(s) of the Week") — seen: 2026-09-19
+- [YouTube] [Talent Alone Podcast](https://www.youtube.com/@TalentAlonePodcast) — content creator (posted "The Best MVP Race EVER? | NFL Week 2 Survivor Pool Picks") — seen: 2026-09-19
+- [Substack] [MLB Data Warehouse](https://www.mlbdatawarehouse.com) — content creator (posted ["Survive & Advance - Week 2"](https://www.mlbdatawarehouse.com/p/survive-and-advance-week-2); same author as [@huntermarvel15](https://x.com/huntermarvel15) already pending on X) — seen: 2026-09-19
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
