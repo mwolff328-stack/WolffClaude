@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 05ccac44-e27d-4fd9-9c82-33667d4544ae
-  modified: 2026-09-22T15:04:19.430Z
+  modified: 2026-09-22T15:04:25.891Z
 ---
 
 Story grooming workflow for the SurvivorPulse Notion backlog (SP Stories & Tasks database).
@@ -37,7 +37,8 @@ Story grooming workflow for the SurvivorPulse Notion backlog (SP Stories & Tasks
 - **Stan** — provides research/calculation specs and reference models for any story with a research, algorithm, or calculation component (required before review)
 - **Rita** — provides integration specs for any story with an integration component (required before review)
 - **Sky** — provides copy specs for any story with a UI component involving user-facing copy (required before review)
-- **Pam, Deb, Felix** — all three must review and approve every story before work can start
+- **Cass** — runs an independent adversarial review of the spec (Description/AC/Test Cases) via the Codex plugin, trying to break it rather than confirm it; required on every story
+- **Pam, Deb, Felix, Cass** — all four must review and approve every story before work can start
 
 ## Comment Requirements
 
