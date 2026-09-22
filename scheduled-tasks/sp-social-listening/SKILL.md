@@ -459,6 +459,12 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [MattAFalk](https://x.com/MattAFalk) — ICP voice / multi-pool player (replied that he's in pools with double picks and buybacks and runs a deliberately low-owned Niners pick; synced to Prospect Tracker) — seen: 2026-09-21
 - [Reddit] [u/DeliciousBuilder0489](https://www.reddit.com/user/DeliciousBuilder0489/) — ICP voice / multi-entry player (commented "Rams, Bucs, 49ers, Pats, Eagles in my 5 entries... Balt too. Forgot I had 6 lol" on the [Taking the Bucs thread](https://www.reddit.com/r/NFLSurvivor/comments/1wlg99t/taking_the_bucs_today_who_ya_got/); synced to Prospect Tracker) — seen: 2026-09-21
 - [Reddit] [u/urq](https://www.reddit.com/user/urq/) — ICP voice / multi-pool player (commented "Bucs, 49ers, Eagles in my winner pools; Lions and Colts in my loser pools" on the same thread; synced to Prospect Tracker) — seen: 2026-09-21
+- [X] [thespinzone](https://x.com/thespinzone) — ICP voice (quotable hot take: "What world are we living in that a Survivor pool is considered by anyone to be an investment?" — 2,017 views, 8 likes) — seen: 2026-09-22
+- [X] [sweetlou025](https://x.com/sweetlou025) — ICP voice (pain-point quote: "A survivor pool is essentially an 18-20 leg parlay... certainly isn't fun losing in week 1 though") — seen: 2026-09-22
+- [X] [potatokmish](https://x.com/potatokmish) — ICP voice / content (Jaxson Dart injury commentary on Circa Survivor pool players scratching the Giants; 61 likes, 10 replies, 10.5K views — best-engaged genuine survivor tweet of the window) — seen: 2026-09-22
+- [X] [SeanQuinlan19](https://x.com/SeanQuinlan19) — ICP voice / in-market (NY resident pain point: can't buy shares in survivor entries or join post-Week-1 Splash contests; synced to Prospect Tracker) — seen: 2026-09-22
+- [X] [ALawRadio](https://x.com/ALawRadio) — content creator / ICP voice (two tweets on his mom joining his survivor pool for the first time, 1,469 and 1,797 views) — seen: 2026-09-22
+- [Reddit] [u/Adept_Improvement893](https://www.reddit.com/user/Adept_Improvement893/) — ICP voice (posted ["Week 3 pick"](https://www.reddit.com/r/NFLSurvivor/comments/1wmfyk1/week_3_pick/) in r/NFLSurvivor asking for input, drew 19 comments) — seen: 2026-09-22
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
