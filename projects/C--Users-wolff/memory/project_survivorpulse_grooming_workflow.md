@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 05ccac44-e27d-4fd9-9c82-33667d4544ae
-  modified: 2026-09-22T15:04:25.891Z
+  modified: 2026-09-22T15:04:38.605Z
 ---
 
 Story grooming workflow for the SurvivorPulse Notion backlog (SP Stories & Tasks database).
@@ -62,7 +62,7 @@ Every story must have all required fields before entering review:
 
 ## Review & Approval Gate
 
-- All three of Pam, Deb, and Felix must approve a story before development work can start
+- All four of Pam, Deb, Felix, and Cass must approve a story before development work can start. Pam/Deb/Felix sign off on product/design/architecture fit; Cass's is a distinct adversarial pass (trying to break the spec, not confirm it looks right)
 - Each reviewer adds a comment with their review verdict and approval
 - If changes are needed: reviewer adds a comment explaining what needs to change, and the story is kicked back to Ann (for Description/AC), Vlad (for Test Cases), or the relevant spec owner (Stan/Rita/Sky); story stays in **Grooming**
 - Stories without at least one Feature, at least one Epic, and a Size cannot enter the approval gate — any missing field kicks back to Pam
@@ -70,7 +70,19 @@ Every story must have all required fields before entering review:
 - Stories with research/calc components cannot enter review until Stan has attached his specs
 - Stories with integration components cannot enter review until Rita has attached her specs
 - Stories with UI copy components cannot enter review until Sky has attached her copy specs
-- On approval: all three approvers have commented, story moves from **Grooming → Ready**
+- **Pre-vote field check:** before any approver votes, verify Description/AC/Test Cases are in property fields (not page body) AND that each carries its 🗣️ plain-English line (see Human-Readable Grooming below) — missing either is a grooming defect that fails the gate
+- On approval: all four approvers have commented, story moves from **Grooming → Ready**
+
+## Human-Readable Grooming (added 2026-09-22)
+
+Agent-level Description/AC/Test Cases/Comments stayed exactly as-is (agents need the precision), but every one now also gets a 🗣️ plain-English companion line, using the `explain-simply` skill's principles (plain before jargon, one short sentence, no forced analogy for something this small):
+
+- **Description** — one 🗣️ line at the very top of the field, summarizing the whole story, then the existing detailed Description below it
+- **Acceptance Criteria / Test Cases** — both are numbered lists inside one property field; every individual numbered item gets its own 🗣️ line directly above it, not one summary for the whole field
+- **Comments** — every comment (grooming, verdict, block/unblock, Done transition, etc.) opens with a 🗣️ line before its technical content
+- 🗣️ is the fixed marker — a human scanning a ticket reads only the 🗣️ lines
+- **Author:** Ann (Description/AC) and Vlad (Test Cases) write both layers; whoever posts a comment writes its 🗣️ line
+- **Backfill scope (founder ruling 2026-09-22):** tickets in Ready/In Progress/In Review get Description/AC/Test Cases retrofitted; Backlog/Grooming tickets pick it up naturally through normal grooming; Done/Cancelled are not backfilled
 
 ## Assigned To Agent Field
 
