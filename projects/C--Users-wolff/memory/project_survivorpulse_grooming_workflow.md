@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 05ccac44-e27d-4fd9-9c82-33667d4544ae
-  modified: 2026-07-21T13:15:15.687Z
+  modified: 2026-09-22T15:04:19.430Z
 ---
 
 Story grooming workflow for the SurvivorPulse Notion backlog (SP Stories & Tasks database).
@@ -19,7 +19,7 @@ Story grooming workflow for the SurvivorPulse Notion backlog (SP Stories & Tasks
 **Backlog → Grooming → Ready**
 
 - **Backlog** — discovery and initial scoping only. Pam creates the story here and then immediately moves it to Grooming.
-- **Grooming** — all active grooming work happens here. Ann writes Description + AC, Vlad writes Test Cases, conditional spec owners (Deb/Stan/Rita/Sky) add their specs, and the approval gate (Pam + Deb + Felix) runs here. Stories stay in Grooming until the approval gate passes.
+- **Grooming** — all active grooming work happens here. Ann writes Description + AC, Vlad writes Test Cases, conditional spec owners (Deb/Stan/Rita/Sky) add their specs, Cass runs an adversarial spec review, and the approval gate (Pam + Deb + Felix + Cass) runs here. Stories stay in Grooming until the approval gate passes. (Cass — Adversarial Reviewer, added 2026-09-05 — is a 12th persona; see [[project_survivorpulse_operating_model_cass_and_deb_additions]] if that memory exists, or the Notion page directly, for full detail.)
 - **Ready** — groomed and approved; at least one Feature and one Epic assigned; queued for build.
 
 ## Grooming Entry Requirement
