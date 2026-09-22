@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-22T19:47:35.421Z",
+      "updatedAt": "2026-09-22T19:48:03.869Z",
+      "id": "task-mud35x18-mfn8ms",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/xenodochial-chatterjee-681685",
+      "jobClass": "task",
+      "summary": "1. [S2/S3/S5] [UNTESTABLE-AC] Rounding order lacks an oracle: half of the rounded beta weekly price ($2.50) is $1.25, while rounding the undiscounted weekly add-on first ($2.495 → $2.50), then applying beta eligibility, yields $1.25 versus $1.24 if both discounts precede rounding. Specify the calculation sequence for every cadence.",
+      "write": false,
+      "sessionId": "6f1a2f14-3b07-4e42-bc27-c95bea80ebba",
+      "status": "completed",
+      "startedAt": "2026-09-22T19:47:35.489Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\xenodochial-chatterjee-681685-04f90680be1654d7\\jobs\\task-mud35x18-mfn8ms.log",
+      "threadId": "01a0caa8-dcf4-7ad1-8ebe-bd21ebc74579",
+      "turnId": "01a0caa8-e376-71b1-a0c9-4527687206a5",
+      "completedAt": "2026-09-22T19:48:03.727Z"
+    }
+  ]
+}
