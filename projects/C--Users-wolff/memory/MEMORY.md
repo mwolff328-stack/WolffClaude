@@ -30,7 +30,7 @@
 - [SurvivorPulse Operating Model](reference_survivorpulse_operating_model.md) — canonical Notion home for product/dev operating model; supreme over the global pipeline
 - [SurvivorPulse Design System](project_survivorpulse_design_system.md) — DS branch never merged (21 ahead/416 behind) — salvage fresh onto 2026-v1, don't rebase
 - [SurvivorPulse Repo Path](project_survivorpulse_repo_path.md) — canonical repo `C:\Users\wolff\Projects\SurvivorPulse`; the `\survivorpulse` stray clone is NEVER canonical
-- [SurvivorPulse Grooming Workflow](project_survivorpulse_grooming_workflow.md) — Ann=Desc/AC, Vlad=Test Cases, Deb=UI specs, Stan=research, Rita=integration, Sky=copy
+- [SurvivorPulse Grooming Workflow](project_survivorpulse_grooming_workflow.md) — Ann=Desc/AC, Vlad=Test Cases, Cass=adversarial spec review; every Desc/AC/TC/Comment now pairs a 🗣️ plain-English line with the agent detail
 - [SurvivorPulse Dev Workflow](feedback_survivorpulse_dev_workflow.md) — skip bootstrap; groomed Notion stories ARE the PRD/use-cases/QA; straight to slices
 - [SurvivorPulse Schema Drift / helium](project_survivorpulse_schema_drift_helium.md) — a schema.ts column without the matching SQL on helium 500s every full-row pool endpoint
 - [SurvivorPulse DB & Deployment](project_survivorpulse_db_deployment.md) — DB changes DEV first, PROD only on publish; verify `DATABASE_URL` before every `db:push`
