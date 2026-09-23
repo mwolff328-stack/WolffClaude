@@ -13,7 +13,7 @@
 - [Hand-typed Notion page id posts to the wrong ticket](feedback_survivorpulse_hardcoded_notion_page_id_typo_posts_to_wrong_ticket.md) — resolve by SST number, read the title back; 200 proves nothing.
 - [Multi-approver defer ≠ stall](feedback_multi_approver_signoff_defer_is_not_a_stall.md) — route to the other approver.
 - [Dev auto-login can be stale](feedback_survivorpulse_dev_autologin_can_be_stale.md) — check GET /api/me, fall back to demo signin.
-- Publishing prefs: [tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) · [prefer the Notion OAuth connector](feedback_prefer_notion_oauth_connector.md).
+- Publishing prefs: [tone-of-voice check before publishing](feedback_run_tone_of_voice_before_publishing_social.md) · [prefer the Notion OAuth connector](feedback_prefer_notion_oauth_connector.md) · [public replies skip sign-off, DMs get one](feedback_public_reply_no_signoff_dm_gets_signoff.md).
 - [Static dupe beaten by live DB proof](feedback_static_dupe_theory_beaten_by_live_db_proof.md).
 - [Await vs fire-and-forget](project_survivorpulse_usage_event_await_vs_fire_and_forget.md) — await only if write IS the payload.
 - ["Completed" agent can resume](feedback_resumed_background_agent_can_duplicate_orchestrator_actions.md) — duplicated a filing.
