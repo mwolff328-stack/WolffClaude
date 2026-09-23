@@ -52,6 +52,7 @@
 - [CA1 self-contained](project_survivorpulse_ca1_is_self_contained.md) — no regen.
 - [Bystander rule broke 2 distinctness tests](project_survivorpulse_bystander_rule_broke_two_distinctness_tests.md).
 - [Discord CI webhook dead since 2026-09-05](project_survivorpulse_discord_ci_webhook_dead_sst1571.md) — SST-1571, blocked on secret rotation.
+- [Discord connector is read-only](project_survivorpulse_discord_connector_is_read_only.md) — no send tool; skills asking to "post to #channel" need the text handed to the founder instead.
 - [GH Actions permissions:{} breaks checkout](project_survivorpulse_gh_actions_permissions_checkout_trap.md) — SST-1569, verify by live-dispatching.
 - [curl status-check needs set +e wrapper](project_survivorpulse_curl_status_check_needs_set_e_wrapper.md) — SST-1572, bash -e hides the diagnostic.
 - [SST-1564 Beta Testers backfill gap](project_survivorpulse_sst1564_beta_testers_backfill_gap.md) — 2026-09-07's 13-row batch is real, not test data.
