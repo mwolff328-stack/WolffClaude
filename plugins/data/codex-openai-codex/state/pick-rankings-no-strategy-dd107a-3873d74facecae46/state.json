@@ -5,6 +5,27 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-23T03:30:02.166Z",
+      "updatedAt": "2026-09-23T03:32:05.215Z",
+      "id": "task-mudjomk6-2p4rfd",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pick-rankings-no-strategy-dd107a",
+      "jobClass": "task",
+      "summary": "- **Finding: TC4 states false requester behavior and misses the distinguishing fixture.** It calls `requestingUserId ?? userId` equivalent to the existing resolution. `generateFuturePlanning` actually uses `requestingUserId === undefined ? userId : requestingUserId` (optimizerService.ts:3146): explicit `null` means market-only, and `loadUserOverridesForWeeks` returns no overrides for it (455). TC4's string-user A/B fixture cannot distinguish these expressions. Require explicit-null and omitted-argument cases with nonempty owner overrides; otherwise a guard can incorrectly approve reuse of owner-shaped popularity for a market-only request.",
+      "write": true,
+      "sessionId": "dedfca8e-b67e-44c6-bdf5-3a7cbc2b39bf",
+      "status": "completed",
+      "startedAt": "2026-09-23T03:30:02.259Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pick-rankings-no-strategy-dd107a-3873d74facecae46\\jobs\\task-mudjomk6-2p4rfd.log",
+      "threadId": "01a0cc50-3daf-70e2-90a2-5cbfc52e04d4",
+      "turnId": "01a0cc50-448e-74c2-97a0-7bfe996d84ad",
+      "completedAt": "2026-09-23T03:32:05.072Z"
+    },
+    {
       "createdAt": "2026-09-19T04:21:21.718Z",
       "updatedAt": "2026-09-19T04:22:23.994Z",
       "id": "task-mu7vr83a-tkiyh9",
