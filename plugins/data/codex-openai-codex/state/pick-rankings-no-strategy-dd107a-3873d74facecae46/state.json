@@ -6,23 +6,24 @@
   "jobs": [
     {
       "createdAt": "2026-09-23T03:53:50.753Z",
-      "updatedAt": "2026-09-23T03:55:07.539Z",
+      "updatedAt": "2026-09-23T03:55:23.494Z",
       "id": "task-mudkj8v5-qs89to",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pick-rankings-no-strategy-dd107a",
       "jobClass": "task",
-      "summary": "<task>RE-CHECK round 4 of SST-1673's grooming gate, TC4 only, in the worktree at C:\\Users\\wol...",
+      "summary": "Round-3 finding 1: RESOLVED. optimizerService.ts:3114 -> getTeamsUsedSeasonWideForPlanner (:1508-1517) -> readTeamsUsedFromPicks (:1608-1639) -> usedTeamsAccessor.ts:getUsedTeamsForEntry (:180-209) -> getPicksGroupedForTrack (:42-50) reaches storage.getEntryPicksGrouped with track='actual', startingWeek=1, no viewingWeek and no picksSource. TC4's unconditional fixed {} mock therefore pins initial eligibility for ALL seven cases and every REF, including userId='A'/'B' in cases 4/5; even the regular_playoffs union reads this same mocked method twice, while subsequent per-plan exclusions are derived from selections rather than identity-dependent history.",
       "write": true,
       "sessionId": "dedfca8e-b67e-44c6-bdf5-3a7cbc2b39bf",
-      "status": "running",
+      "status": "completed",
       "startedAt": "2026-09-23T03:53:50.875Z",
-      "phase": "verifying",
-      "pid": 70740,
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pick-rankings-no-strategy-dd107a-3873d74facecae46\\jobs\\task-mudkj8v5-qs89to.log",
       "threadId": "01a0cc66-0a26-7213-a0a4-02e671b980fb",
-      "turnId": "01a0cc66-101f-7cd2-b302-5a99d171cfb2"
+      "turnId": "01a0cc66-101f-7cd2-b302-5a99d171cfb2",
+      "completedAt": "2026-09-23T03:55:23.274Z"
     },
     {
       "createdAt": "2026-09-23T03:44:24.838Z",
