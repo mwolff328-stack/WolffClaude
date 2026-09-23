@@ -465,6 +465,16 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [SeanQuinlan19](https://x.com/SeanQuinlan19) — ICP voice / in-market (NY resident pain point: can't buy shares in survivor entries or join post-Week-1 Splash contests; synced to Prospect Tracker) — seen: 2026-09-22
 - [X] [ALawRadio](https://x.com/ALawRadio) — content creator / ICP voice (two tweets on his mom joining his survivor pool for the first time, 1,469 and 1,797 views) — seen: 2026-09-22
 - [Reddit] [u/Adept_Improvement893](https://www.reddit.com/user/Adept_Improvement893/) — ICP voice (posted ["Week 3 pick"](https://www.reddit.com/r/NFLSurvivor/comments/1wmfyk1/week_3_pick/) in r/NFLSurvivor asking for input, drew 19 comments) — seen: 2026-09-22
+- [X] [ooo_xen689](https://x.com/ooo_xen689) — ICP voice / analyst (future-value analysis on how the Dart injury shifts survivor pool edges, tagging @SurvivorAtlas @PoolGenius @LastMenPod; synced to Prospect Tracker) — seen: 2026-09-22
+- [X] [DamnXavier82](https://x.com/DamnXavier82) — ICP voice / in-market buyer (asked @DKSports about more 2nd Chance NFL Survivor Pools after last week's results; synced to Prospect Tracker) — seen: 2026-09-22
+- [X] [parlaeio](https://x.com/parlaeio) — commissioner / operator (runs "The Parlae Survivor Pool," posts weekly elimination recaps; synced to Prospect Tracker) — seen: 2026-09-22
+- [X] [newaccount12443](https://x.com/newaccount12443) — ICP voice (pain point: lost $70k in a survivor pool to a Week 18 chalk pick while the field split onto Minnesota; synced to Prospect Tracker) — seen: 2026-09-23
+- [X] [BadassCapitalHQ](https://x.com/BadassCapitalHQ) — ICP voice / multi-entry player ("Glad to not see any of our 4 entries on this list" reply to @PoolGenius; synced to Prospect Tracker) — seen: 2026-09-23
+- [X] [ThePhillyZoo](https://x.com/ThePhillyZoo) — ICP voice (regret post over risking a survivor entry on Baker Mayfield/Bucs instead of Dolphins; synced to Prospect Tracker) — seen: 2026-09-23
+- [X] [TheProphecyFF](https://x.com/TheProphecyFF) — content/tool account ("Survivor season just got an edge. Top Survivor Pool Picks — now live" posted twice this window) — seen: 2026-09-22, 2026-09-23
+- [X] [XSportsbook](https://x.com/XSportsbook) — competitor operator (Circa's official account promoting the NFL 2nd Chance Survivor Contest reopening; distinct from the already-standing r/XSportsbook subreddit) — seen: 2026-09-22
+- [Reddit] [u/SubstantialRock1455](https://www.reddit.com/user/SubstantialRock1455/) — adjacent competitor / tool creator (posted ["Circa players: I built a planner for the full 20-leg path"](https://www.reddit.com/r/NFLSurvivor/comments/1wnrdrk/circa_players_i_built_a_planner_for_the_full/) in r/NFLSurvivor, pitching survivorsheets.com) — seen: 2026-09-23
+- [YouTube] [Mayo Media Network](https://www.youtube.com/@MayoMediaNetwork) — content creator (posted "2026 NFL Week 3 Spread Picks, SUPERLOCKS, Survivor Picks") — seen: 2026-09-23
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
