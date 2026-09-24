@@ -179,7 +179,7 @@ These actually went out under Michael's name but he did NOT write them. They are
 
 11. AI-drafted Discord #general teaser, rejected with "This doesn't sound like me":
 > "Week 2 recap just went up in #pool-updates. Spoiler: it wasn't pretty. Down two pools, but bought back into one and my most spread-out pool is exactly why I'm not sitting at zero everywhere."
-   The tells: "Spoiler:" as a cute hook opener, and "exactly why I'm not sitting at zero everywhere" is an image-dressed phrase standing in for a plain fact, both moves this voice doesn't make. His real version (Pool Diary register, example 14 below) states each fact as its own short sentence and leads with the result (9-4), not the setback.
+   The tells: "Spoiler:" as a cute hook opener, and "exactly why I'm not sitting at zero everywhere" is an image-dressed phrase standing in for a plain fact, both moves this voice doesn't make. His real version (Pool Diary register, example 14 above) states each fact as its own short sentence and leads with the result (9-4), not the setback.
 
 ## Quality Check
 Before every output, silently verify:
