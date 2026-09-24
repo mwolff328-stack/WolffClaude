@@ -169,6 +169,18 @@ These actually went out under Michael's name but he did NOT write them. They are
 > "🌅 Morning Brief — Saturday, June 6, 2026. Readable in under 5 minutes. 📬 1. Gmail Inbox Highlights..."
    The tells: **emoji section headers**, numbered report sections, tables, em dashes throughout. This is a generated report, not a person writing. It is fine as a tool output, but it is never Michael's voice and should never be the model for one.
 
+9. AI-drafted r/SurvivorPulse title, rejected outright:
+> "Week 2 update. One pool I bragged about already dead. Another one bleeding out."
+   His real title: "My Week 2 Recap: Weathering a Challenging Week." The tell: dressing up a plain status update (a pool got eliminated) as a dramatic hook. His real diary titles report the update, they don't tease it.
+
+10. AI-drafted r/SurvivorPulse body opening, rejected and replaced in full:
+> "I'm not going to spin it. I told you I was in it, I told you what I was doing, and now I'm out of it. That's the deal with playing publicly. Sometimes you get to tell people you're right. Sometimes you get to tell people you're dead."
+   Replaced with his own plain, numbers-first paragraph (Pool Diary register, example 11 below). The tell: manufactured drama around a fact that needed no dressing up, plus a "Sometimes X. Sometimes Y." rhetorical parallel, the same banned pattern as "Not X. Not Y. But Z." just restated with "Sometimes."
+
+11. AI-drafted Discord #general teaser, rejected with "This doesn't sound like me":
+> "Week 2 recap just went up in #pool-updates. Spoiler: it wasn't pretty. Down two pools, but bought back into one and my most spread-out pool is exactly why I'm not sitting at zero everywhere."
+   The tells: "Spoiler:" as a cute hook opener, and "exactly why I'm not sitting at zero everywhere" is an image-dressed phrase standing in for a plain fact, both moves this voice doesn't make. His real version (Pool Diary register, example 14 below) states each fact as its own short sentence and leads with the result (9-4), not the setback.
+
 ## Quality Check
 Before every output, silently verify:
 1. Does this sound like Michael talking to a room, not reading an essay?
