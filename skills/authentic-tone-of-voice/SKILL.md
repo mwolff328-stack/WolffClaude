@@ -117,6 +117,30 @@ Why this works in the same voice as the personal register, even though the subje
 
 **Caveat, unlike every other example in this file: this one is a moving target, not a settled reference.** An earlier version of this exact post was drafted, reviewed, and briefly treated as final with a different explanation for the large-pool result ("the Blend picked the exact same teams as Chalk") — that explanation turned out to be factually wrong once actually checked against the real data, and was corrected to what's quoted above. As of this writing the post is still being finalized (a comprehensive 5-strategy comparison was still pending). Match the VOICE and STRUCTURE from this example freely, but do not treat any specific number, comparison, or claim quoted here as settled fact for a future SurvivorPulse post without checking the current state of `docs/research/methodology/methodology-executive-summary.md` and the live Notion content log first. This example exists to teach tone, not to be a source of truth on what the research found.
 
+### Pool Diary register (personal, public status updates)
+(Michael's own weekly SurvivorPulse "diary" posts to Reddit/X/Discord, reporting his real pool results under his own name. Distinct from both registers above: warmer and more first-person than the SurvivorPulse research register, but plainer and less story-driven than the personal-email register. It reads like a status update from someone who actually plays, not a narrator building a scene. Confirmed from Michael's own direct edits during the Week 2 post, 2026-09-23/24 — these replaced AI drafts he rejected as sounding "not like me.")
+
+11. Michael's own diary-post opening (given verbatim as his own content, not an edit of a draft):
+> "There is no sugar coating it. Last week was tough. Three of the top 6 highest win probability teams lost (Ravens, Bucs, and Chargers). And the Bears for good measure. Tampa was particularly brutal with 33% field exposure. The 2nd week in a row that the highest field exposure team was taken out.
+>
+> Despite the carnage, I managed to go 9-4 on my picks with 2 of my picks in buyback pools (yes, I will be taking advantage of those buybacks) so I still have 11 entries alive out of the original 15, and I'm alive in 6 out of the original 9 pools I entered."
+
+12. His closing engagement question, after trimming an AI draft that added a flourish clause ("...or are you the type who lets a bad pick just ride?"):
+> "Curious how other people fared in Week 2 and the season overall. Anyone else leaning on a buyback this week?"
+
+13. His own rewrite of a personal X quote-repost, replacing an AI draft in full:
+> "Week 2 was a little humbling, but I was still able to grind out a 9-4 record in my survivor pools using SurvivorPulse (https://survivorpulse.com). I'll be taking advantage of two buybacks this week so I still have 11 entries alive over 6 of my original 9 pools. I couldn't manage all of my entries without the help of SurvivorPulse. I built it for this exact reason. It's free if you want to give it a shot."
+
+14. His own short channel-announcement line, after rejecting an AI draft as "doesn't sound like me":
+> "Week 2 recap is up in #pool-updates. Went 9-4 despite challenging week. Bought back into one pool. Still alive in 6 of my 9 pools. Full recap: #pool-updates"
+
+What this register actually does, evidenced across all four examples:
+- **States the number once, plainly, inside the sentence that needs it.** "Went 9-4 on my picks," "still have 11 entries alive out of the original 15," never a dramatized lead-up to the number.
+- **Parenthetical asides carry the casual, in-the-moment voice**, not adjectives: "(yes, I will be taking advantage of those buybacks)" is doing the work a warmer sentence would do elsewhere in this file, here it's compressed into an aside.
+- **For a short status line specifically** (a channel teaser, a quick update), go more clipped than anywhere else in this voice, closer to telegraphic. Short standalone sentences, one fact each, and articles get dropped when they don't change the meaning: "Went 9-4 despite challenging week," not "despite a challenging week." Don't smooth a status line into one flowing sentence.
+- **The closing engagement question is two sentences and no more:** state the genuine curiosity, then ask the direct question. No added qualifying clause dressing up why you're asking.
+- **Title convention, confirmed across two weeks:** "My Week [N] Recap: [plain gerund phrase]," e.g. "My Week 2 Recap: Weathering a Challenging Week." Self-descriptive, not a hook or a tease.
+
 ## Examples of Bad Output
 (Same ideas, written the way Michael would hate. Do not do this.)
 
