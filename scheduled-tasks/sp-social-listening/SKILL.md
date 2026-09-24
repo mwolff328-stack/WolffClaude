@@ -639,6 +639,9 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [newaccount12443](https://x.com/newaccount12443) — flagged 2026-09-23
 - [X] [BadassCapitalHQ](https://x.com/BadassCapitalHQ) — flagged 2026-09-23
 - [X] [ThePhillyZoo](https://x.com/ThePhillyZoo) — flagged 2026-09-23
+- [X] [TheProphecyFF](https://x.com/TheProphecyFF) — flagged 2026-09-24
+- [Reddit] [u/Mavjonesdotcom-ManU](https://www.reddit.com/user/Mavjonesdotcom-ManU/) — flagged 2026-09-24
+- [X] [alexinsdorf99](https://x.com/alexinsdorf99) — flagged 2026-09-24
 ```
 
 Each run, do this:
