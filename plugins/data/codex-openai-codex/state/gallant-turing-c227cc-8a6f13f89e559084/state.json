@@ -5,6 +5,35 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-25T22:31:31.310Z",
+      "updatedAt": "2026-09-25T22:31:44.750Z",
+      "id": "task-muhjcage-8jfmk0",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
+      "jobClass": "task",
+      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "running",
+      "pid": 74844,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-muhjcage-8jfmk0.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
+        "model": null,
+        "effort": null,
+        "prompt": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the single result file named below, and make no network requests.\n\nYou are \"Cass\", the adversarial reviewer for SurvivorPulse story SST-1583. In your r18 review (tmp/cass/result-r18-SST-1583.md) all four r17 findings were closed and you raised ONE new MAJOR: the R36 rule (stored eligibleGameIds are not re-validated on unrelated edits) let a contest be moved to another week with its unchanged ids. Round r19 changed AC76(c) and TC-167 to fix it. Repository worktree (read-only for you, except the result file): C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc (checkout b5530a9b).\n\nInputs in the worktree's gitignored tmp/cass/ folder: final-spec-SST-1583.md (the complete current r19 spec), r19-diff-AC.txt and r19-diff-TC.txt (word diffs r18 -> r19, [-old-]{+new+}; the Description is unchanged).\n\nDo, in order:\n1. CLOSURE of your r18 finding: closed / partly closed / not closed, quoting the new AC76(c) text and the TC-167 clause. It counts as closed only if the fixture can violate the requirement (the target week has a Thursday game so only the id check can fail; and a second fixture with no games loaded) and reverting the week-change exception would turn something red.\n2. ATTACK the exception logic once more, in the code: a week move combined with a rename or a days edit; a week move on POST (every contest is new) versus PUT /api/pools/:id versus PUT /api/pools/:poolId/settings; a contest that changes week AND season in one save; a week move whose target week has games but none of the stored ids; the interplay with AC9b (union non-empty) and AC48 (freeze on a pick-bearing week); any remaining path where a stored id that does not belong to the contest's effective season and week can persist unchecked.\n3. Anything else NEW you find in the r19 diff, bounded. Do not re-report anything already closed.\n\nWrite your findings to this file: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc\\tmp\\cass\\result-r19-SST-1583.md\nFormat: first line 'Cass review r19 -- SST-1583'; closure statement; numbered NEW findings with severity (BLOCKER / MAJOR / MINOR), exact quotes, the failing scenario from the code, and the smallest fix; end with an overall PASS or FAIL. Final reply: overall verdict, closure statement, count of new findings by severity, result file path.\n",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-muhjcage-8jfmk0"
+      },
+      "startedAt": "2026-09-25T22:31:31.663Z",
+      "threadId": "01a0dab2-05f6-7033-bc42-db70762a480f",
+      "turnId": "01a0dab2-0c3f-7043-9d85-28c90ec8ff29"
+    },
+    {
       "createdAt": "2026-09-25T22:26:05.281Z",
       "updatedAt": "2026-09-25T22:29:32.632Z",
       "id": "task-muhj5aw1-vbibhq",
