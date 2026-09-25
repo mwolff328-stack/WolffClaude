@@ -479,6 +479,8 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [X] [XSportsbook](https://x.com/XSportsbook) — competitor operator (Circa's official account promoting the NFL 2nd Chance Survivor Contest reopening; distinct from the already-standing r/XSportsbook subreddit) — seen: 2026-09-22
 - [Reddit] [u/SubstantialRock1455](https://www.reddit.com/user/SubstantialRock1455/) — adjacent competitor / tool creator (posted ["Circa players: I built a planner for the full 20-leg path"](https://www.reddit.com/r/NFLSurvivor/comments/1wnrdrk/circa_players_i_built_a_planner_for_the_full/) in r/NFLSurvivor, pitching survivorsheets.com) — seen: 2026-09-23
 - [YouTube] [Mayo Media Network](https://www.youtube.com/@MayoMediaNetwork) — content creator (posted "2026 NFL Week 3 Spread Picks, SUPERLOCKS, Survivor Picks") — seen: 2026-09-23
+- [YouTube] [PoolGenius](https://www.youtube.com/@PoolGenius) — competitor (their own channel; posted "Splash Survivor World Championship Week 3 Picks", "Circa Survivor Week 3 Picks & Analysis", "Week 3 NFL Upset Picks" all 2026-09-24; already tracked on X) — seen: 2026-09-25
+- [YouTube] [WagerTalk TV](https://www.youtube.com/@Wagertalk) — content creator (posted "Best Betting Show Ever | Falcons vs Packers, NFL Survivor, MLB Picks..." 6.2K views) — seen: 2026-09-25
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
