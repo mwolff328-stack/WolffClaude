@@ -23,6 +23,8 @@
 - [Search memory before a tool failure is fatal](feedback_search_memory_before_accepting_a_tool_failure_as_fatal.md) — fix existed days earlier.
 - [Lessons index: testing, review, git hygiene, design traps (~50 notes)](reference_survivorpulse_lessons_index.md) — shared-worktree hygiene, mutation runs, guards and wires, vacuous assertions, measure-before-asserting, sweeps, flakes and CI truth, scope rulings, ticket/spec traps, anomalies, design traps.
 
+- [Notion grooming property write limits + safe recovery](project_survivorpulse_notion_grooming_property_write_limits_and_safe_recovery.md) — update_properties REPLACES; REST caps 100 items x 2000; agents edit local files, orchestrator does ONE guarded atomic write; SST-1583 destroyed twice.
+
 ## Shipping, environments, and infra
 
 - [Replit publish never runs migrations](project_survivorpulse_replit_publish_does_not_run_migrations.md) — build/start only.
