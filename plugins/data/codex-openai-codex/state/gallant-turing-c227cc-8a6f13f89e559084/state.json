@@ -6,19 +6,19 @@
   "jobs": [
     {
       "createdAt": "2026-09-25T22:26:05.281Z",
-      "updatedAt": "2026-09-25T22:26:19.695Z",
+      "updatedAt": "2026-09-25T22:29:32.632Z",
       "id": "task-muhj5aw1-vbibhq",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
       "jobClass": "task",
-      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "summary": "**FAIL.** All four r17 findings are closed.",
       "write": true,
       "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
-      "status": "running",
-      "phase": "running",
-      "pid": 9492,
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-muhj5aw1-vbibhq.log",
       "request": {
         "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
@@ -31,7 +31,8 @@
       },
       "startedAt": "2026-09-25T22:26:05.795Z",
       "threadId": "01a0daad-1026-70b1-8b71-53a4fcd9e023",
-      "turnId": "01a0daad-16c0-7573-80f4-04d76422a125"
+      "turnId": "01a0daad-16c0-7573-80f4-04d76422a125",
+      "completedAt": "2026-09-25T22:29:32.378Z"
     },
     {
       "createdAt": "2026-09-25T22:03:06.181Z",
