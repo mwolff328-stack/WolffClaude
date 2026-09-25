@@ -141,6 +141,54 @@ What this register actually does, evidenced across all four examples:
 - **The closing engagement question is two sentences and no more:** state the genuine curiosity, then ask the direct question. No added qualifying clause dressing up why you're asking.
 - **Title convention, confirmed across two weeks:** "My Week [N] Recap: [plain gerund phrase]," e.g. "My Week 2 Recap: Weathering a Challenging Week." Self-descriptive, not a hook or a tease.
 
+### Cold DM register (outreach to prospects on X, Reddit, Discord)
+(A first message to someone who doesn't know Michael, asking about their real situation and offering SurvivorPulse. Distinct from the research and Pool Diary registers: a person talking to a person, shorter and warmer than either, never sounding like marketing. Confirmed from Michael's own edits to the Week 2 DM to @Psychoward586 on 2026-09-25 and from the Cold DMs in the Notion Outreach Log.)
+
+15. Michael's DM to @Psychoward586, sent as written (short pitch, because the opener and check-in question already carried the message):
+> "Hey Billy, saw your Week 1 tweet about having 8 survivor entries and none on the Chargers. Nice work!
+>
+> How did you do in Week 2? Rough one for chalk.
+>
+> BTW, that's a lot of entries to manage. How are you tracking which team goes where across all of them? Spreadsheet, or something else?
+>
+> I built SurvivorPulse for exactly this. It helps players with multiple pools and entries coordinate their picks, spread out risk, and avoid a wipeout week.
+>
+> It's free right now if you want to take a look: https://survivorpulse.com
+>
+> Would love your feedback.
+>
+> Cheers!
+> @mrwolff369"
+
+16. Michael's DM to @Joncole23, sent as written (standard long pitch, question after it):
+> "Hey, saw your post about going all in again this year, 5 entries all on Rams -3.5 for week 1, after taking 20 of 9,000 entries deep last year at Stations. That's some serious volume.
+>
+> I built SurvivorPulse (https://survivorpulse.com) for people who play multiple pools and entries and want a better way to manage, coordinate, and game plan out picks across all of them to maximize overall survival probability, minimize correlated risk exposure, and better avoid wipeout weeks.
+>
+> Curious, with all 5 entries on the same team out of the gate, are you planning to split them up as the season goes, or riding it out together as long as it works?
+>
+> Cheers!
+> survivorpulse.com
+> @mrwolff369"
+
+Structure, in order:
+1. A specific observation from their own post, plus a short compliment if it's earned ("Nice work!", "That's some serious volume.").
+2. A real question about their situation. Ask, never assume an outcome (do not claim to know how their Week 2 went).
+3. The pitch. The standard is the long sentence in example 16, which is Michael's own wording. The short version in example 15 is the variant when the DM already has a check-in question or two and the long sentence would overload it. Use one, not both.
+4. One link, free access, a soft ask for feedback ("Would love your feedback.").
+5. The sign-off: "Cheers!", then "survivorpulse.com", then the handle. Drop "survivorpulse.com" when the link is already in the body.
+
+What this register does:
+- **Plainer word over the stiff one.** "Manage," not "keep straight." "How did you do," not "how did your 8 come through."
+- **One casual connector.** "BTW," carries the shift from small talk to the point.
+- **Short warm lines that stand alone.** "Nice work!" and "Would love your feedback."
+- **Exact date references.** "Your Week 1 tweet," not "last week," when the post is two weeks old.
+- **One link only.** A second link makes a first DM read like promotion.
+- **Never call a competitor lacking.** The prospect may play in that competitor's league, and the claim goes unproven. Let their answer to the tracking question bring it up.
+- **Pitch states purpose, not promised results.** "To maximize overall survival probability" is a statement of what the tool is for. Never promise an outcome.
+- **Question placement varies.** Before the pitch (example 15) or after it (example 16). Either works if it is a real question about their entries or pools.
+- **Longer DMs are the exception.** Extended replies that answer something the person said publicly (backtesting numbers, research links) are one-offs, not the template.
+
 ## Examples of Bad Output
 (Same ideas, written the way Michael would hate. Do not do this.)
 
