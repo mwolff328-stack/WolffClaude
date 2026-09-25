@@ -6,7 +6,7 @@
   "jobs": [
     {
       "createdAt": "2026-09-25T16:55:57.975Z",
-      "updatedAt": "2026-09-25T16:57:22.188Z",
+      "updatedAt": "2026-09-25T16:58:02.864Z",
       "id": "task-muh7crh3-4qveow",
       "kind": "task",
       "kindLabel": "rescue",
@@ -18,7 +18,7 @@
       "sessionId": "6f1a2f14-3b07-4e42-bc27-c95bea80ebba",
       "status": "running",
       "startedAt": "2026-09-25T16:55:58.060Z",
-      "phase": "running",
+      "phase": "finalizing",
       "pid": 76264,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\xenodochial-chatterjee-681685-04f90680be1654d7\\jobs\\task-muh7crh3-4qveow.log",
       "threadId": "01a0d97e-cce1-7fb1-91e1-0e12461f0f95",
