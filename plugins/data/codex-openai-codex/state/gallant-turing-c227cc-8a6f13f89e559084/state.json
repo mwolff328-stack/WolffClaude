@@ -5,6 +5,35 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-25T22:26:05.281Z",
+      "updatedAt": "2026-09-25T22:26:19.695Z",
+      "id": "task-muhj5aw1-vbibhq",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
+      "jobClass": "task",
+      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "running",
+      "pid": 9492,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-muhj5aw1-vbibhq.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
+        "model": null,
+        "effort": null,
+        "prompt": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the single result file named below, and make no network requests.\n\nYou are \"Cass\", the adversarial reviewer for SurvivorPulse story SST-1583 (extra contests with individual-game eligibility). You reviewed round r17 and failed it (0 BLOCKER, 3 MAJOR, 1 MINOR). Round r18 applied fixes. Re-check them against the exact final text and try to break the r18 delta. Repository worktree (read-only for you, except the result file): C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc (checkout b5530a9b).\n\nInputs, all inside the worktree's gitignored tmp/cass/ folder:\n- final-spec-SST-1583.md = the complete CURRENT (r18) spec, verbatim.\n- r18-diff-AC.txt, r18-diff-TC.txt, r18-diff-Description.txt = word diffs r17 -> r18 ([-old-]{+new+}). Read them fully.\n- result-r17-SST-1583.md = YOUR r17 findings. ROUND18-BRIEF.md = the rulings applied (R31 to R38). rulings-r17-felix.md and deb-verdict-2026-09-25-r17.txt = the other reviewers' r17 findings and exact fixes.\n\nDo, in order:\n1. CLOSURE: for each of your four r17 findings (1 opaque games.id vs semantic id; 2 season change preserving invalid individual-game ids; 3 emit-time absorption mutating a frozen contest after a kickoff move; 4 ascending-storage invariant vs the raw-array control), say closed / partly closed / not closed, quoting the new text and the TC that guards it. A fix counts as closed only if the TC fixture can violate the requirement and reverting the fix would turn something red.\n2. ATTACK the r18 delta in the code: the new season-change rule (reject 422, CONTEST_SCHEDULE_CONFLICT field season, through AC75's step on both PUT routes including a season-only save; interplay with AC60's changed-only trigger and AC48's freeze order); the R36 rule (stored ids are not re-validated on unrelated edits, except a season change) for a hole (a stale or foreign id that stays stored forever; an id smuggled in unchanged; a rename that also changes days); opaque-id membership versus any place the spec still parses or recomputes an id; the effective-kickoff pin (overrideKickoffAt else gameTime, getEffectiveKickoff in pickLockService) versus the routes and helpers the spec names; the AC30 provenance cuts (confirm nothing but revision-history text was removed: compare r17 versus r18 for AC30 and AC9b); the TC cuts for space (confirm no fixture, assertion, expected value, tag, AC reference or file name was lost).\n3. Anything else NEW you find, bounded. Do not re-report a finding the text already closes, and do not re-raise the earlier minor r15-substitute items you already recorded as unamended unless r18 made them worse.\n\nWrite your findings to this file: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc\\tmp\\cass\\result-r18-SST-1583.md\nFormat: first line 'Cass review r18 -- SST-1583'; then a closure list for the four findings; then numbered NEW findings, each with severity (BLOCKER / MAJOR / MINOR), IDs and exact quotes, the failing scenario derived from the code (file and symbol), and the smallest fix. Finish with an overall PASS or FAIL. Final reply: overall verdict, closure summary, count of new findings by severity, and the result file path.\n",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-muhj5aw1-vbibhq"
+      },
+      "startedAt": "2026-09-25T22:26:05.795Z",
+      "threadId": "01a0daad-1026-70b1-8b71-53a4fcd9e023",
+      "turnId": "01a0daad-16c0-7573-80f4-04d76422a125"
+    },
+    {
       "createdAt": "2026-09-25T22:03:06.181Z",
       "updatedAt": "2026-09-25T22:13:16.582Z",
       "id": "task-muhibqrp-tnlsoe",
