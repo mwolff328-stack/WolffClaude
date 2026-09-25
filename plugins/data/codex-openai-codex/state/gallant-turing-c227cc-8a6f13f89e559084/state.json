@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-25T16:19:33.325Z",
+      "updatedAt": "2026-09-25T16:20:33.840Z",
+      "id": "task-muh61xsd-9hcvs1",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
+      "jobClass": "task",
+      "summary": "<task> This is a REVIEW: do not modify any repository file. The ONLY file you may create or w...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "startedAt": "2026-09-25T16:19:33.439Z",
+      "phase": "verifying",
+      "pid": 75944,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-muh61xsd-9hcvs1.log",
+      "threadId": "01a0d95d-7e50-7783-8dfa-7a4b4aa7b5c7",
+      "turnId": "01a0d95d-8696-7191-b74e-7b45af78ceac"
+    }
+  ]
+}
