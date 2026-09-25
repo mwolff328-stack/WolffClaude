@@ -2,6 +2,7 @@
 
 ## Working practice
 
+- [Ship verdicts go to the Releases database, not SST-1491](feedback_survivorpulse_ship_verdicts_go_to_releases_database_not_sst1491.md) — founder ruling 9/25; ids, schema, and release-notes voice rules inside.
 - [Limiter slots held by single-flight waiters](feedback_limiter_slots_held_by_single_flight_waiters_starve_other_requests.md) — SST-1672: green tests, 2.4x slower live; run a leader first.
 - [Check write-path reachability before assuming read logic is broken](feedback_check_write_path_reachability_before_assuming_read_logic_is_broken.md) — SST-1714: a route existed but was never called from any UI; grep for callers, not just the handler.
 - [hardDeleteUser FK gaps recur](feedback_harddeleteuser_fk_gaps_recur_audit_full_fk_list.md) — 2nd incident (SST-940, then beta_access_codes/founding_member_feedback); audit the full `users.id` FK list, don't patch one table at a time.
