@@ -5,6 +5,26 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-26T17:37:14.459Z",
+      "updatedAt": "2026-09-26T17:39:06.196Z",
+      "id": "task-muio9p0b-q7vpxo",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pick-rankings-no-strategy-dd107a",
+      "jobClass": "task",
+      "summary": "You are Cass, adversarial reviewer at an approval gate. Repo: C:/Users/wolff/Projects/Survivo...",
+      "write": true,
+      "sessionId": "dedfca8e-b67e-44c6-bdf5-3a7cbc2b39bf",
+      "status": "running",
+      "startedAt": "2026-09-26T17:37:14.601Z",
+      "phase": "running",
+      "pid": 97976,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pick-rankings-no-strategy-dd107a-3873d74facecae46\\jobs\\task-muio9p0b-q7vpxo.log",
+      "threadId": "01a0deca-fe55-72a1-82e4-1578268dae6d",
+      "turnId": "01a0decb-0afc-7933-9087-e9030b750730"
+    },
+    {
       "createdAt": "2026-09-25T15:39:23.104Z",
       "updatedAt": "2026-09-25T15:42:26.081Z",
       "id": "task-muh4ma1s-fbf0ng",
