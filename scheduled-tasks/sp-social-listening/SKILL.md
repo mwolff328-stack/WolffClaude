@@ -652,6 +652,11 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [Reddit] [u/Mavjonesdotcom-ManU](https://www.reddit.com/user/Mavjonesdotcom-ManU/) — flagged 2026-09-24
 - [X] [alexinsdorf99](https://x.com/alexinsdorf99) — flagged 2026-09-24
 - [Substack] Show Me The Data (Jon Jackson, jonjackson.substack.com) — flagged 2026-09-26
+- [X] [SlimSportsHQ](https://x.com/SlimSportsHQ) — flagged 2026-09-27
+- [X] [Ranger79452268](https://x.com/Ranger79452268) — flagged 2026-09-27
+- [X] [milehighwing](https://x.com/milehighwing) — flagged 2026-09-27
+- [X] [DarrellBuratti7](https://x.com/DarrellBuratti7) — flagged 2026-09-27
+- [X] [HEREFORNEWS85](https://x.com/HEREFORNEWS85) — flagged 2026-09-27
 ```
 
 Each run, do this:
