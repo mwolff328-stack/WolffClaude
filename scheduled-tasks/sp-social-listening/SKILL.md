@@ -488,6 +488,11 @@ Founder-approved rule (2026-07-23): a candidate source gets added to standing mo
 - [YouTube] [Mayo Media Network](https://www.youtube.com/@MayoMediaNetwork) — content creator (posted "2026 NFL Week 3 Spread Picks, SUPERLOCKS, Survivor Picks") — seen: 2026-09-23
 - [YouTube] [PoolGenius](https://www.youtube.com/@PoolGenius) — competitor (their own channel; posted "Splash Survivor World Championship Week 3 Picks", "Circa Survivor Week 3 Picks & Analysis", "Week 3 NFL Upset Picks" all 2026-09-24; already tracked on X) — seen: 2026-09-25
 - [YouTube] [WagerTalk TV](https://www.youtube.com/@Wagertalk) — content creator (posted "Best Betting Show Ever | Falcons vs Packers, NFL Survivor, MLB Picks..." 6.2K views) — seen: 2026-09-25
+- [Reddit] [u/Theblueportal](https://www.reddit.com/user/Theblueportal/) — ICP voice / multi-entry player (commented "4 of my 5 are gone. 2690/8200 are left in the league" on Michael's [Who's still alive thread](https://www.reddit.com/r/NFLSurvivor/comments/1wr79wg/whos_still_alive_after_two_weeks/); synced to Prospect Tracker) — seen: 2026-09-28
+- [Reddit] [u/big_nate410](https://www.reddit.com/user/big_nate410/) — ICP voice / multi-pool player (commented "Only 6 of us left out of 51 in one" across 3 leagues on the same thread; synced to Prospect Tracker) — seen: 2026-09-28
+- [X] [Deerman1700](https://x.com/Deerman1700) — ICP voice (tweeted "Survived another week in the survivor pool with the #Chiefs but god dang there are land mines everywhere"; thin single-line signal) — seen: 2026-09-28
+- [X] [RobertStart3](https://x.com/RobertStart3) — ICP voice (tweeted "My yearly knockout in my survivor pool is always the Bungles"; thin single-line signal) — seen: 2026-09-28
+- [YouTube] [Survivor Sweat](https://www.youtube.com/@Survivor_Sweat) — competitor / affiliate channel (posted "Saturday Night Sweat - Week 3"; same brand as [@SurvivorSweat](https://x.com/SurvivorSweat) already standing on X) — seen: 2026-09-28
 ```
 
 **STANDING WATCH LISTS (promoted candidates land here; Step 2 reads these)**
