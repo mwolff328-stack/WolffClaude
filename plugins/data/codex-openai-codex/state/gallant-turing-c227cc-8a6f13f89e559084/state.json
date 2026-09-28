@@ -5,6 +5,35 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-28T15:13:05.339Z",
+      "updatedAt": "2026-09-28T15:13:23.293Z",
+      "id": "task-mule00mz-2mqecv",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
+      "jobClass": "task",
+      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "running",
+      "pid": 120320,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-mule00mz-2mqecv.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
+        "model": null,
+        "effort": null,
+        "prompt": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the single result file named below, and make no network requests.\n\nYou are \"Cass\", the adversarial reviewer for SurvivorPulse story SST-1583 (extra contests). You reviewed round r20 and failed it (6 MAJOR, 2 MINOR; your result is tmp/cass/result-r20-SST-1583.md). Round r21 applied fixes. Re-check them against the exact final text and try to break the r21 delta. Repository worktree (read-only for you, except the result file): C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc (checkout b5530a9b).\n\nInputs, all inside the worktree's gitignored tmp/cass/ folder: final-spec-SST-1583.md (the complete CURRENT r21 spec: Description, Acceptance Criteria, Test Cases); r21-diff-AC.txt, r21-diff-TC.txt, r21-diff-Description.txt (word diffs r20 -> r21, [-old-]{+new+}; the Description's Traceability at its end changed too); ROUND21-BRIEF.md (rulings R60-R65 that resolve your findings and other reviewers' findings); rulings-r20b-felix.md and deb-verdict-2026-09-28-r20.txt (the other reviewers' r20 findings and exact fixes); result-r20-SST-1583.md (your findings).\n\nDo, in order:\n1. CLOSURE of your eight r20 findings (R20-01 Apply forced Actual pick into an empty Proposed slot; R20-02 confirmation identifies a slot not the pick; R20-03 duplicate-move key across weeks; R20-04 tie-rule + move in ONE transaction; R20-05 AC79 feasibility vs base count B; R20-06 TC-177/178 mutation-proof design; R20-07 TC-176 both-null mutation; R20-08 started picks listing): for each say closed / partly closed / not closed, quoting the new text and the TC that guards it. A fix counts as closed only if the TC fixture can violate the requirement and reverting the fix would turn something red. Note R20-08: the orchestrator's review prompt wrongly said started picks are \"listed as staying\"; the ruling (R63) is that they are NOT listed and never moved: judge the text against R63.\n2. ATTACK the r21 delta in the code: AC80's final wording (409 body, pickMoves elements with teamId, malformed = 400, source/destination duplicate keys, conditional source delete inside the transaction, pool row first and pool resolved through the transaction, combined tie-rule composition through applyPoolUpdateWithPickMoves and savePoolWithTieRuleReevaluation, a target filled inside the transaction, post-commit recompute outside the rollback, audit event); the shared dialog spec (two real hosts PoolSettingsTab.executeSave and the pool-form edit mutation, second 409, cancel/escape, disabled states, success extension, query invalidation); TC-184 (component) and its fixtures; AC77(a)'s new \"N games left\" cue and TC-172; AC64(c) and TC-125; AC79's B threshold; anything the TC space cuts (Deb's 15, the stale line-number strips across ~25 TCs, ~20 rationale phrases) may have lost (compare r20 vs r21 in the TC diff: fixture, assertion, expected value, tag, AC reference, symbol or file name).\n3. Anything else NEW you find, bounded. Do not re-report anything already closed, and do not re-raise the AC79 base-count-raise corner (R64, accepted).\n\nWrite your findings to this file: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc\\tmp\\cass\\result-r21-SST-1583.md\nFormat: first line 'Cass review r21 -- SST-1583'; a closure list for R20-01..R20-08; numbered NEW findings with severity (BLOCKER / MAJOR / MINOR), IDs and exact quotes, the failing scenario from the code (file and symbol), and the smallest fix; end with an overall PASS or FAIL. Final reply: overall verdict, closure summary, count of new findings by severity, and the result file path.\n",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mule00mz-2mqecv"
+      },
+      "startedAt": "2026-09-28T15:13:06.505Z",
+      "threadId": "01a0e893-c2e7-7940-a3bc-1377215c6374",
+      "turnId": "01a0e893-cbcd-7362-bd81-c3dda8c6d7d9"
+    },
+    {
       "createdAt": "2026-09-28T14:33:57.640Z",
       "updatedAt": "2026-09-28T14:43:47.769Z",
       "id": "task-mulclp54-cvagce",
