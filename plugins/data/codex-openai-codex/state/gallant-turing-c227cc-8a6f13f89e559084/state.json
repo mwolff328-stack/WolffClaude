@@ -5,6 +5,35 @@
   },
   "jobs": [
     {
+      "createdAt": "2026-09-28T14:33:57.640Z",
+      "updatedAt": "2026-09-28T14:34:13.107Z",
+      "id": "task-mulclp54-cvagce",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
+      "jobClass": "task",
+      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "write": true,
+      "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
+      "status": "running",
+      "phase": "starting",
+      "pid": 38636,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-mulclp54-cvagce.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
+        "model": null,
+        "effort": null,
+        "prompt": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the single result file named below, and make no network requests.\n\nYou are \"Cass\", the adversarial reviewer for SurvivorPulse story SST-1583 (extra contests). You passed the r19 text. The founder then added rulings and Ann/Vlad rewrote the spec as round r20. Attack the r20 text against the real code. Repository worktree (read-only for you, except the result file): C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc (checkout b5530a9b).\n\nInputs, all inside the worktree's gitignored tmp/cass/ folder:\n- final-spec-SST-1583.md = the complete CURRENT r20 spec (Description, Acceptance Criteria, Test Cases), verbatim.\n- r20-diff-AC.txt, r20-diff-TC.txt, r20-diff-Description.txt = word diffs r19 -> r20 ([-old-]{+new+}) that EXCLUDE the verbatim moves. NOTE: three non-requirement blocks were MOVED unchanged: the AC revision-history blocks, the TC location/environment/golden notes, and the AC-to-TC Traceability table now sit at the END of the Description (moved-from-AC.txt and moved-from-TC.txt are the verbatim moved text; confirm the Description end matches them and that nothing in AC or TC still points at a moved block).\n- DESIGN-r20.md = the founder's rulings F3-F6 and the orchestrator design D1-D5; rulings-r20-felix.md = the builder's design pass (44 OLD -> NEW pairs already applied) ; ROUND20-BRIEF.md = rulings R50-R54.\n- result-r19-SST-1583.md and the earlier result files = your earlier findings (all closed as of r19).\n\nWhat changed in r20: (D1) \"All games that week\" is gone, a contest is always a subset (at least one of eligibleDays/eligibleGameIds, helper throws on both-null); (D2) a week's contests display BEFORE the week (Season columns, Week chips, Picks Per Week cells), slot numbers unchanged; (D3) games a week's contests claim are REMOVED from that week's main (base) pick: new AC78 (shared helpers getContestClaimedTeamIds/getMainSlotEligibleTeamIds, write-path check MAIN_PICK_TEAM_IN_CONTEST with an unchanged-slot rule, pickers, engine base arrays, recommendation endpoints incl. reset-to-auto and getEntryCandidatesForWeek, Week-view slate, missed-pick evaluator) and new AC79 (config-time: a save whose contests leave no game for the main pick is rejected CONTEST_SCHEDULE_CONFLICT field week); existing picks are never invalidated retroactively; (D4) Picks Per Week shows each contest as its own fixed-1 cell before its week under Multi-pick; (D5) adding a contest is never blocked by existing picks: new AC80 (409 MAIN_PICKS_IN_CONTEST with a conflict list, request field pickMoves[], atomic move with the config save in one transaction, Save and move / Save without moving / Cancel dialog; Actual picks only; admin may move members' picks with an audit event; started games are listed as staying, not moved).\n\nDo, in order:\n1. ATTACK the r20 delta in the code: every pick-write path the spec names (batchUpsertPicks route, replaceEntryPeriodPicks route, the Proposed PUT, reset-to-auto, Apply) and whether one validator really covers them; the unchanged-slot rule (AC71 resends every base slot; Apply writing a forced Actual base pick into a slot with no stored row); the error precedence (MAIN_PICK_TEAM_IN_CONTEST vs CONTEST_TEAM_INELIGIBLE vs DUPLICATE_TEAM_IN_WEEK vs TEAM_ALREADY_USED) and TC fixtures that used to assert DUPLICATE_TEAM_IN_WEEK with a contest team in a base slot; AC79 (an EMPTY main slate is rejected, but a multi-pick week with B >= 2 can keep fewer main teams than base picks); AC80's transaction (storage.applyPoolUpdateWithPickMoves, the slot-write primitive under the caller's tx, tie-rule re-evaluation composition savePoolWithTieRuleReevaluation, a target slot found filled, races between the prompt and the save, recomputeEntryStatus after commit), the entry with two conflicting picks and one contest slot, overlapping contests and one pick, and the started-game listing filter (the code has no write-time kickoff lock, SST-1618); the engine slotEligibility base arrays and forced-pick composition; the missed-pick evaluator when a move empties a base slot; the Picks Per Week cell model (RegularPicksBlock does not receive contests today); display-order feasibility (SeasonGridSection weeksToRender, WeekViewSection focus state).\n2. CLOSURE/REGRESSION: confirm nothing from r17-r19 (union eligibility, opaque games.id, season-change rejection, effective kickoff, no emit-time pruning, week-move re-check, ascending-order policy) was broken by the D1 sweeps; find any surviving text that still treats a contest as unrestricted or says \"after\" for display; find Test Cases whose fixture cannot violate its requirement or whose revert would not go red; find TCs trimmed for space that lost a fixture/assertion/expected value/tag/AC reference/file name (compare r19 vs r20 in the TC diff).\n3. Anything else NEW you find, bounded. Do not re-report anything already closed.\n\nWrite your findings to this file: C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc\\tmp\\cass\\result-r20-SST-1583.md\nFormat: first line 'Cass review r20 -- SST-1583'; numbered findings with severity (BLOCKER / MAJOR / MINOR), IDs and exact quotes, the failing scenario derived from the code (file and symbol), and the smallest fix; end with an overall PASS or FAIL. Final reply: overall verdict, count of findings by severity, the result file path.\n",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mulclp54-cvagce"
+      },
+      "startedAt": "2026-09-28T14:33:58.576Z",
+      "threadId": "01a0e86f-f431-72c2-9f94-aef5a11a535a",
+      "turnId": "01a0e870-000f-7250-9da3-791094fbaf15"
+    },
+    {
       "createdAt": "2026-09-25T22:31:31.310Z",
       "updatedAt": "2026-09-25T22:33:36.330Z",
       "id": "task-muhjcage-8jfmk0",
