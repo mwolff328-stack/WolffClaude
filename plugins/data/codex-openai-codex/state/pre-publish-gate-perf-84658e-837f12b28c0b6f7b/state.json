@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-28T03:15:49.441Z",
+      "updatedAt": "2026-09-28T03:16:55.705Z",
+      "id": "task-mukodlxd-wqhg7t",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pre-publish-gate-perf-84658e",
+      "jobClass": "task",
+      "summary": "1. FIXED — AC-10; EXPECTED-TRACK RULE; TC-3/6/14/17 now derive expectations per scenario and user.",
+      "write": true,
+      "sessionId": "cf2f26c2-3447-459c-a17e-8aa530d07a00",
+      "status": "completed",
+      "startedAt": "2026-09-28T03:15:49.624Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pre-publish-gate-perf-84658e-837f12b28c0b6f7b\\jobs\\task-mukodlxd-wqhg7t.log",
+      "threadId": "01a0e603-057f-7891-aa60-6498b9f3b9f5",
+      "turnId": "01a0e603-0aba-76d3-a819-02726e45f83e",
+      "completedAt": "2026-09-28T03:16:55.479Z"
+    },
+    {
+      "createdAt": "2026-09-28T03:10:48.389Z",
+      "updatedAt": "2026-09-28T03:12:32.366Z",
+      "id": "task-muko75mt-qsqt7z",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pre-publish-gate-perf-84658e",
+      "jobClass": "task",
+      "summary": "Part 1 — Round 1 findings",
+      "write": true,
+      "sessionId": "cf2f26c2-3447-459c-a17e-8aa530d07a00",
+      "status": "completed",
+      "startedAt": "2026-09-28T03:10:48.631Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pre-publish-gate-perf-84658e-837f12b28c0b6f7b\\jobs\\task-muko75mt-qsqt7z.log",
+      "threadId": "01a0e5fe-754c-7a11-a143-b59691ce581a",
+      "turnId": "01a0e5fe-7af4-7653-b421-943bd3b61bbc",
+      "completedAt": "2026-09-28T03:12:31.738Z"
+    },
+    {
+      "createdAt": "2026-09-28T03:02:14.198Z",
+      "updatedAt": "2026-09-28T03:05:44.458Z",
+      "id": "task-muknw4vp-r3fiy1",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/pre-publish-gate-perf-84658e",
+      "jobClass": "task",
+      "summary": "**1. False codebase facts**",
+      "write": true,
+      "sessionId": "cf2f26c2-3447-459c-a17e-8aa530d07a00",
+      "status": "completed",
+      "startedAt": "2026-09-28T03:02:14.562Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\pre-publish-gate-perf-84658e-837f12b28c0b6f7b\\jobs\\task-muknw4vp-r3fiy1.log",
+      "threadId": "01a0e5f6-b345-7a82-a1da-0f80e0c24498",
+      "turnId": "01a0e5f6-c49d-75a1-8408-1c3326ba1c47",
+      "completedAt": "2026-09-28T03:05:44.190Z"
+    }
+  ]
+}
