@@ -6,19 +6,19 @@
   "jobs": [
     {
       "createdAt": "2026-09-28T15:13:05.339Z",
-      "updatedAt": "2026-09-28T15:20:05.321Z",
+      "updatedAt": "2026-09-28T15:20:15.138Z",
       "id": "task-mule00mz-2mqecv",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/gallant-turing-c227cc",
       "jobClass": "task",
-      "summary": "This is a write-capable Codex task, but it is a REVIEW: do not modify any file except the sin...",
+      "summary": "**FAIL.** R20 closure: 6 closed; R20-01 and R20-06 partly closed.",
       "write": true,
       "sessionId": "fa6cc5d2-cfff-45ad-8b3c-dee81cdfeb44",
-      "status": "running",
-      "phase": "running",
-      "pid": 120320,
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\gallant-turing-c227cc-8a6f13f89e559084\\jobs\\task-mule00mz-2mqecv.log",
       "request": {
         "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\gallant-turing-c227cc",
@@ -31,7 +31,8 @@
       },
       "startedAt": "2026-09-28T15:13:06.505Z",
       "threadId": "01a0e893-c2e7-7940-a3bc-1377215c6374",
-      "turnId": "01a0e893-cbcd-7362-bd81-c3dda8c6d7d9"
+      "turnId": "01a0e893-cbcd-7362-bd81-c3dda8c6d7d9",
+      "completedAt": "2026-09-28T15:20:14.815Z"
     },
     {
       "createdAt": "2026-09-28T14:33:57.640Z",
