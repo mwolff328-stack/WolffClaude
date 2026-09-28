@@ -664,6 +664,8 @@ CURRENT_DISCORD_SERVERS: [{"name": "PoolGenius", "guildId": "1368948078664482937
 - [X] [HEREFORNEWS85](https://x.com/HEREFORNEWS85) — flagged 2026-09-27
 - [Reddit] [u/Theblueportal](https://www.reddit.com/user/Theblueportal/) — flagged 2026-09-28
 - [Reddit] [u/big_nate410](https://www.reddit.com/user/big_nate410/) — flagged 2026-09-28
+- [Discord] Derek Fenwick (PoolGenius server, #nfl-survivor) — flagged 2026-09-28
+- [Discord] danecollins2000 (PoolGenius server, #general-chat) — flagged 2026-09-28
 ```
 
 Each run, do this:
