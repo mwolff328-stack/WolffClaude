@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-09-28T15:10:43.471Z",
+      "updatedAt": "2026-09-28T15:11:16.375Z",
+      "id": "task-muldwz66-y4cqtd",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/nervous-bun-021641",
+      "jobClass": "task",
+      "summary": "Use --write mode for the Codex job (the read-only sandbox denies all reads on this Windows ma...",
+      "write": true,
+      "sessionId": "9993d1e9-832b-4c4b-8899-555d49920869",
+      "status": "running",
+      "startedAt": "2026-09-28T15:10:44.256Z",
+      "phase": "running",
+      "pid": 8328,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\nervous-bun-021641-5d46055f7eea9977\\jobs\\task-muldwz66-y4cqtd.log",
+      "threadId": "01a0e891-c010-7560-a525-f17cd9dc3463",
+      "turnId": "01a0e891-d0cb-7830-b398-27f7b822ddfa"
+    }
+  ]
+}
