@@ -1,29 +1,41 @@
-GitHub App Authorized but a Specific Repo Still 404s
+Two Different Claude GitHub Apps, and the Repo-Access Fix Only Works on One of Them
 
-Extracted: 2026-10-02
+Extracted: 2026-10-02, corrected 2026-10-05
 
-Context: Weekly brief (Jul 31 and Oct 2) and multiple Morning Briefs flagged the connected GitHub app unable to read mwolff328-stack/SurvivorPulse, even while CI-failure emails for that exact repo were landing in the inbox the same morning, and while the same GitHub app reads WolffClaude and the other public repos fine.
+Context: The Oct 2 version of this file said a SurvivorPulse 404 was a per-repo access-list gap, fixable by adding the repo under Settings, Applications, Installed GitHub Apps. That advice sent the next troubleshooting session to fix the wrong app's settings, which did nothing, because there are two separate GitHub Apps involved and the fix only applies to one of them.
 
 Problem
 
-GitHub being connected is not the same as this GitHub App being able to see this repo. A GitHub App installation grants access to a chosen list of repos, not the whole account by default. When a new repo like SurvivorPulse is created or transferred, it does not automatically join that list.
+GitHub has two different apps tied to Claude on this account, and they look similar enough to mix up under pressure.
 
-The failure mode is easy to misread. The tool does not say unauthorized, it says the repo is not found. That reads like an absence of activity or a typo, not a permissions gap, so it is easy to shrug off in a scheduled run. This has now recurred across at least two weekly briefs without being fixed, so CI failures and PRs on SurvivorPulse keep getting caught by scanning notification emails by hand instead of surfacing automatically.
+"Claude" is the Claude Code GitHub Action app, used for running Claude Code from PRs and Issues in CI. This is the one with visible Permissions and a Repository access radio button, All repositories versus Only select repositories, under Settings, Applications, Installed GitHub Apps. Setting this to All repositories does nothing for the MCP connector.
 
-Solution
+"Claude GitHub MCP Connector" is the one that actually backs the GitHub tools used in Cowork and other Claude surfaces, reached through Settings, Customize, Connectors, GitHub in Claude, pointed at api.githubcopilot.com/mcp. Its GitHub authorization page, at github.com/settings/connections/applications/ followed by its client ID, has no repository access picker at all. Instead it lists three identity-level permissions, verify identity, know what resources you can access, act on your behalf, and a line that reads has not been installed on any accounts you have access to.
 
-Treat a not found on a repo you know exists, from a GitHub integration you know is authorized elsewhere, as a per-repo permission gap, not a dead end.
+That line is the actual tell. A repo you know exists, owned by the account, that the connector 404s on while reading public repos fine, paired with that not installed on any accounts line on the MCP Connector's own authorization page, is a different failure mode than the classic per-repo access list gap, even though the symptom looks identical from the GitHub-tools side.
 
-Step one, confirm the app is authorized in general by checking that other repos resolve fine, before concluding anything about this specific repo.
+What was tried and did not fix it
 
-Step two, go to GitHub Settings, then Applications, then Installed GitHub Apps, open the app's configuration, and check its repository access list. All repositories versus Only select repositories is the setting that matters.
+All of the following were tried, in this order, across one live troubleshooting session, and none of them changed the has not been installed on any accounts line or fixed the 404.
 
-Step three, add the missing repo to that list. This is an interactive, human step, the same constraint the two-GitHubs lesson in this folder describes. A scheduled run can detect and report the gap but cannot grant itself access.
+Setting Claude, the Code Action app, the wrong one, to All repositories.
 
-Step four, verify in a fresh session by asking for that repo's recent commits or open PRs before assuming it is fixed.
+Removing the GitHub connector in Claude's Connectors settings and re-adding it as a custom connector.
 
-Step five, in the meantime, have scheduled briefs say explicitly that the repo was not found and that it is likely a permissions gap rather than an absence of activity, so the gap stays visible instead of reading as quiet.
+Switching the custom connector's OAuth client setting from Use your own OAuth client to Use Claude's published identity, which is the correct setting for this server but still did not surface a repo picker.
+
+Deleting unrelated personal access tokens, classic and fine-grained, found on the account. These were a different, unrelated auth path and had no effect either way.
+
+Revoking access directly on GitHub's authorization page for Claude GitHub MCP Connector, then reconnecting fresh from Claude. Still showed zero installs afterward.
+
+Checking the Discover tab in Claude's connector list for an alternate, non-custom GitHub connector. There isn't one, the custom connector pointed at api.githubcopilot.com/mcp is the only path.
+
+Checking the repo's own per-repo GitHub Apps list, repo Settings, Integrations, GitHub Apps. Claude GitHub MCP Connector does not appear there either, consistent with it never having an installation anywhere on the account.
+
+Status: unresolved as of 2026-10-05
+
+This is not a self-service settings problem as far as this session could tell. Every lever GitHub's UI exposes was tried and the authorization page still reports no installation. Next step is an Anthropic support ticket, not more clicking through GitHub settings. If a future session resolves this, replace this section with the actual fix and keep the two-apps distinction above, since that part is durable regardless of how the install gap itself gets fixed.
 
 When to Use
 
-Activate when a GitHub-reading task returns not found for a repo you know exists, when a repo is newly created or transferred into an account that already has a GitHub App installed, or when a scheduled brief's GitHub section goes quiet for one specific repo while other repos and other signals, such as email or local git state, show real activity on it.
+Activate when a GitHub-reading task 404s on a specific private repo while other repos work fine, before assuming it is the classic per-repo access-list gap. Check which of the two Claude GitHub Apps is actually involved first. If it is Claude GitHub MCP Connector and its authorization page says not installed on any accounts, the Installed GitHub Apps repository access picker will not help, and the fix, if one exists yet, needs to be found fresh rather than assumed from an older version of this file.
