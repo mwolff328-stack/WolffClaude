@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-10-01T12:20:11.068Z",
+      "updatedAt": "2026-10-01T12:23:23.553Z",
+      "id": "task-mupi57ss-9kfjbl",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/agent-a75cd8146f9034b14",
+      "jobClass": "task",
+      "summary": "**Cass verdict: return to grooming.** The navigation and loading requirements need correction before build. Read-only review; no files changed or tests run.",
+      "write": true,
+      "sessionId": "75df78e2-1a36-42de-88f3-c1c0854eb44a",
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\agent-a75cd8146f9034b14-0928421c1eaeb0f8\\jobs\\task-mupi57ss-9kfjbl.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\agent-a75cd8146f9034b14",
+        "model": null,
+        "effort": null,
+        "prompt": "<task>\nYou are Cass, the adversarial reviewer in SurvivorPulse grooming approval gate (sp-autonomous skill, Operating Model section 4.2). Find real defects in a groomed ticket plan BEFORE a large build starts. This is a Size-L architectural refactor, so a flawed plan here is expensive to discover mid-build. This is a REVIEW task: read and analyze, do not modify any file.\n\nRepo (your working directory): C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\sp-bt-dedicated-page\n\nRead the full groomed spec at tmp/cass/sst1778-spec.json (Description, Acceptance Criteria, additional AC-6 through AC-10 plus scope notes in Notes, and Test Cases TC1-TC10). These are Notion rich_text property values, JSON-escaped, some split across array entries that concatenate in order.\n\nTHE ASK, from the founder, verbatim: Instead of showing the live back testing tool directly on the Back Tester hub page, I want to show a card with a short description on the hub page that takes the user to a dedicated live back testing tool page. Make sure the breadcrumb works properly on the dedicated live back testing tool page so user can easily navigate back to the hub page.\n\nThen read the ACTUAL current source this plan is about, end to end, so you can judge whether the plan claims about the current architecture are accurate and whether its proposed changes are sound:\n- client/src/backtester/components/BTAppShell.tsx (the state-computation logic: canUseLiveTool dominance, isActive||isAdmin, subLoading, sessionAccess, poolConfig prefetch; this is what the ticket proposes extracting into a shared hook)\n- client/src/backtester/components/BackTesterHubPage.tsx (the hub page, props it receives)\n- client/src/backtester/components/BTToolSection.tsx (the 4-state card, specifically the full branch the ticket wants to change into a teaser)\n- client/src/backtester/components/replay/SeasonReplayView.tsx (the actual tool; note its size; also note the SST-1777 Back to Setup button near the top of its return statement that currently navigates to /tools/backtester, which this ticket AC-7 says must change)\n- client/src/backtester/components/BacktesterShell.tsx (thin wrapper, confirm it is the only consumer of SeasonReplayView and BTToolSection is the only consumer of BacktesterShell)\n- client/src/router-v1.tsx (the /tools/backtester route registration, AdminOnlyToolRoute, LegacyBackTesterRedirect; the ticket proposes adding a sibling route here)\n- client/src/components/shell/AppBreadcrumb.tsx (the existing route-map breadcrumb mechanism the ticket wants to extend; note the backTesterResearchMap pattern already there from SST-1772, and the toplevelMap entry for /tools/backtester itself)\n- client/src/backtester/components/__tests__/BTAppShellGating.sst1772.test.tsx (the existing route-wiring proof test the ticket TC5 says needs rewriting; read its full header comment and the positive control / TC7 tests specifically)\n- e2e/back-tester-hub-access-admin.spec.ts (SST-1776 admin control e2e, which the ticket TC7 says needs updating)\n\nYour review checklist. Find REAL problems, the kind that would cost hours mid-build, not style nitpicks:\n\n1. Does the Description account of the CURRENT architecture match what the code actually does? Any claim that is subtly wrong (e.g. about prop flow, about which component owns which state, about isBackTesterToolEnabled dominance ordering)?\n\n2. AC-5 and TC5/TC6 propose extracting the access-tier computation into a shared hook/function consumed by both the hub and the new page, and moving BTAppShellGating.sst1772.test.tsx mount-the-real-unmodified-call-site proof to wherever that new call site is. Is this architecturally sound, or is there a simpler/safer design the ticket is missing? Specifically: is there a risk that extracting this logic into a hook makes it EASIER to accidentally diverge the two call sites later (one passing a stale prop, one recomputing), and if so, does the ticket TC6 (revert-the-wiring-not-the-hook proof) actually catch that, or is it also vulnerable to the same extraction-moves-coverage-rather-than-creating-it trap the project own testing-integrity rules warn about?\n\n3. AC-7 (Back to Setup should navigate to the new page own Setup view instead of the hub): read SeasonReplayView.tsx actual isResultsView logic and the Back to Setup button exact current destination. Is there any OTHER code path (not just this one setLocation call) that assumes /tools/backtester is where the tool Setup view lives, e.g. does the optimization-results flow or any other setLocation(/tools/backtester?run=1) call inside SeasonReplayView.tsx need the SAME update, which the ticket AC-7/TC8 only mention as the one setLocation call this requires? Search for every setLocation call in that file.\n\n4. AC-8 (poolConfig prefetch moves to the new page): is this actually safe given usePoolConfig current call-site assumptions in BTAppShell.tsx (the subLoading-gated, canUseLiveTool-gated conditional call)? Does moving it change WHEN it fires relative to the new route own mount/auth-resolution timing in a way that could reintroduce the exact prefetch-for-someone-who-should-not-get-it bug BTAppShellGating.sst1772.test.tsx prefetch tests already guard against?\n\n5. AC-6 (breadcrumb via AppBreadcrumb existing map): check the toplevelMap entry for /tools/backtester itself (line approximately 64). Does adding a new nested route under /tools/backtester/* require ALSO touching anything about how toplevelMap vs the nested-route maps are checked in buildNodes order, or is a plain new map entry (matching the backTesterResearchMap pattern) sufficient? Is there a risk the new route path gets caught by some EARLIER regex/map check in buildNodes before reaching a new entry you would add, producing a wrong or missing breadcrumb?\n\n6. Is there a genuine ambiguity in the founder request that the ticket resolved via a guess rather than something safe to default on, e.g. should the new page be reachable AT ALL to a signed-in standard (non-admin) user who is NOT full-eligible via direct URL entry, given SST-1776 already opened /tools/backtester itself to everyone? The ticket AC-4 says redirect-to-hub for a non-qualifying direct visit. Is that definitely right, or could a bookmarked/shared link produce a confusing redirect loop or a worse experience than today gate?\n\n7. Test coupling: search for any OTHER test (not already named in the ticket) that asserts BacktesterShell/SeasonReplayView renders as a child of BackTesterHubPage/BTAppShell/BTToolSection specifically, or that asserts something about /tools/backtester rendered DOM that would silently break once the tool moves off that route.\n</task>\n\n<grounding_rules>\nEvery finding must cite the specific file and the specific code you read (quote the exact line, prop name, or call) that supports it. Do not assert a defect from the spec text alone; confirm it against the actual current source before reporting it. If you cannot verify a claim because a file is missing or unreadable, say so explicitly rather than guessing.\n</grounding_rules>\n\n<action_safety>\nThis is a read-only review. Do not create, edit, move, or delete any file in the repository, and do not run any command that changes repository history or working-tree state. Only read files and run non-mutating inspection or search commands needed to verify the claims above.\n</action_safety>\n\n<structured_output_contract>\nReport findings as a numbered list (1-7, matching the checklist above). For each: what is wrong (or confirmed correct), why it matters, and a concrete suggested fix. If a finding confirms the ticket got something right, say so briefly rather than padding the list. Keep the full report under 900 words.\n</structured_output_contract>\n",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mupi57ss-9kfjbl"
+      },
+      "startedAt": "2026-10-01T12:20:11.874Z",
+      "threadId": "01a0f768-779a-7e61-9c90-3efa9cc2915a",
+      "turnId": "01a0f768-7bc0-7b03-a817-2ba9d4ae2e2c",
+      "completedAt": "2026-10-01T12:23:23.421Z"
+    },
+    {
+      "createdAt": "2026-10-01T12:14:19.396Z",
+      "updatedAt": "2026-10-01T12:14:28.338Z",
+      "id": "task-muphxog4-iicz3r",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/agent-a75cd8146f9034b14",
+      "jobClass": "task",
+      "summary": "What would you like help with? If you meant a command’s `--help` output, send the command name, such as `git --help`.",
+      "write": false,
+      "sessionId": "75df78e2-1a36-42de-88f3-c1c0854eb44a",
+      "status": "completed",
+      "startedAt": "2026-10-01T12:14:19.464Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\agent-a75cd8146f9034b14-0928421c1eaeb0f8\\jobs\\task-muphxog4-iicz3r.log",
+      "threadId": "01a0f763-1938-7a82-bd81-24f7b7f95832",
+      "turnId": "01a0f763-1cfe-7260-b04a-1c4a3fbb070b",
+      "completedAt": "2026-10-01T12:14:28.200Z"
+    }
+  ]
+}

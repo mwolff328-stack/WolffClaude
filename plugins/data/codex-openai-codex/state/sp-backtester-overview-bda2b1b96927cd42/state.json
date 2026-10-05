@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-10-01T16:42:39.763Z",
+      "updatedAt": "2026-10-01T16:46:56.611Z",
+      "id": "task-muprirki-uyakpo",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/sp-backtester-overview",
+      "jobClass": "task",
+      "summary": "## 1. Claims in the spec that do not hold up against the real code",
+      "write": true,
+      "sessionId": "75df78e2-1a36-42de-88f3-c1c0854eb44a",
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\sp-backtester-overview-bda2b1b96927cd42\\jobs\\task-muprirki-uyakpo.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\sp-backtester-overview",
+        "model": null,
+        "effort": null,
+        "prompt": "<task>\nYou are Cass, the adversarial pre-build reviewer for the SurvivorPulse project at C:\\Users\\wolff\\Projects\\SurvivorPulse. Ticket SST-1780 has been fully groomed. Read the full spec at C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\sp-backtester-overview\\tmp\\cass\\sst1780-spec.md first -- it contains the Description, AC, Test Cases, Notes, and references to prior Cass reviews (SST-1772, SST-1776, SST-1778, SST-1779) that set the bar for thoroughness.\n\nTicket summary: add a new PUBLIC (no login required), always visible (every environment) page at /back-tester-overview that reuses the existing BackTesterHubPage component with hideToolSection={true} permanently set, so it shows only the Analysis cards and Backtesting Basics Series content, never the Live Tool section. A new dual-render shell component (mirroring the existing BackTesterLiteShell.tsx pattern -- AppShell when authenticated, public Layout when not) wraps it. A new homepage CTA (new copy in landingCopy.ts, new line in landing.tsx) links to it, placed directly below the existing WEEK1_PREVIEW (\"See Weekly Rankings\") line, shown unconditionally (not gated by isBackTesterLiteEnabled like the existing, currently Dev only, BACK_TESTER_LITE_PREVIEW CTA that sits in that same visual slot when visible). The route needs registering in shared/publicRouteTable.ts and server/publicPageMeta.ts.\n\nThis is a REVIEW ONLY pass. You have write tool access enabled only because the read-only sandbox denies file reads entirely on this Windows host -- your actual job is strictly to read and analyze. Do NOT create, edit, or delete any file in the repository. Do not run git commit. Produce findings only.\n\nActually verify every claim in the spec against the real code before trusting it -- do not just restate what the spec says. Specifically inspect:\n1. client/src/backtester/components/BackTesterHubPage.tsx -- confirm hideToolSection truly omits everything tool related and that nothing else in that component secretly depends on auth state or pool data when hideToolSection is true.\n2. client/src/components/BackTesterLiteShell.tsx and client/src/components/SeriesShell.tsx -- confirm the dual-render pattern claim (AppShell when authenticated, public Layout when not) and confirm mirroring BackTesterLiteShell, rather than reusing SeriesShell, is actually the right call for this new page.\n3. client/src/content/landingCopy.ts and client/src/pages/landing.tsx -- specifically the BACK_TESTER_LITE_PREVIEW and WEEK1_PREVIEW sections -- confirm the planned CTA placement and wiring described in the spec is accurate against the real file contents.\n4. shared/publicRouteTable.ts and server/publicPageMeta.ts -- confirm the registration pattern claimed in the spec matches how other public routes are actually registered there.\n5. tests/publicRouteTable.tripwire.test.ts -- confirm it would actually catch a missing route entry for /back-tester-overview. This exact bug (a route missing from this table) shipped once before in this project as SST-1778, so get this check right.\n</task>\n\n<review_focus>\nLook specifically for, and organize your findings under, these five headings:\n1. Claims in the spec that do not hold up against the real code (cite exact file path and line numbers for both the spec claim and the contradicting code).\n2. Any missing AC or Test Case that a careful reviewer would flag given what the real code does.\n3. Any risk of the new CTA or page being confused with the existing Back Tester Lite page or the authenticated Back Tester hub (naming, copy, visual placement, URL similarity).\n4. Any auth or security gap -- for example whether this new public page needs rate limiting, CSRF handling, or any other protection comparable to other public pages in this codebase, and whether the spec addresses it.\n5. Whether the RED-proof plan for each Test Case is actually sound -- for each one, would reverting the fix actually make that specific test fail, or does the test as planned pass even against broken code.\n</review_focus>\n\n<grounding_rules>\nEvery finding must cite the exact file path and, where practical, a line number or quoted snippet from the real file you read. Never assert a code behavior without having actually opened and read that file in this session. If the spec file could not be found or a referenced source file does not exist at the given path, say so explicitly rather than guessing. If you are not fully certain about a claim, say it is a hypothesis and state what would confirm it.\n</grounding_rules>\n\n<structured_output_contract>\nProduce a single structured report with exactly five sections matching the five numbered headings in review_focus, each containing a bulleted list of concrete findings (file path plus line/snippet plus the problem). End with a short Verdict section: overall is the spec ready to build from as-is, or does it need another grooming pass first, and if so the smallest list of changes that would make it ready.\n</structured_output_contract>\n\n<action_safety>\nThis is a read-and-report task only. Do not write, edit, move, or delete any file anywhere in the repository or worktree. Do not run any git command that changes repository state.\n</action_safety>",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-muprirki-uyakpo"
+      },
+      "startedAt": "2026-10-01T16:42:40.022Z",
+      "threadId": "01a0f858-c676-7a20-8f4b-0005c5edf7df",
+      "turnId": "01a0f858-cbbe-7240-b348-1b68d0a30ec2",
+      "completedAt": "2026-10-01T16:46:56.462Z"
+    }
+  ]
+}

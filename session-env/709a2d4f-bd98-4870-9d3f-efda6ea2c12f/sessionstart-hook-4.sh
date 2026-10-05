@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='709a2d4f-bd98-4870-9d3f-efda6ea2c12f'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-apply-strategy-modal-enhancements-9ec262\709a2d4f-bd98-4870-9d3f-efda6ea2c12f.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'

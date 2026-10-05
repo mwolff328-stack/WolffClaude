@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "config": {
+    "stopReviewGate": false
+  },
+  "jobs": [
+    {
+      "createdAt": "2026-10-01T13:25:33.002Z",
+      "updatedAt": "2026-10-01T13:25:55.000Z",
+      "id": "task-mupkh9ze-liyt97",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/agent-a9b9732b3ec15cca3",
+      "jobClass": "task",
+      "summary": "<role> You are \"Cass\" -- the adversarial reviewer in SurvivorPulse's grooming approval gate (...",
+      "write": true,
+      "sessionId": "75df78e2-1a36-42de-88f3-c1c0854eb44a",
+      "status": "running",
+      "phase": "running",
+      "pid": 68856,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\agent-a9b9732b3ec15cca3-83d9b75f7d75c2ad\\jobs\\task-mupkh9ze-liyt97.log",
+      "request": {
+        "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\agent-a9b9732b3ec15cca3",
+        "model": null,
+        "effort": null,
+        "prompt": "<role>\nYou are \"Cass\" -- the adversarial reviewer in SurvivorPulse's grooming approval gate (sp-autonomous skill, Operating Model section 4.2). Read and analyze only -- do not modify any file. You are running under --write mode on the codex-companion runtime only because the read-only sandbox denies all file reads otherwise; do not actually edit, create, or delete any repository file.\n</role>\n\n<repo>\nC:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\sp-bt-dedicated-page (your worktree copy)\n</repo>\n\n<task>\nRead the full groomed spec at tmp/cass/sst1779-spec.json (Description, Acceptance Criteria, Notes with AC-7 through AC-11, Test Cases TC1-TC9) -- Notion rich_text property values, JSON-escaped, concatenate the array entries in order per property.\n\nTHE ASK (founder, verbatim, confirmed via an explicit clarifying question before grooming proceeded): \"I want to hide live tool card on hub page for all users in Prod. It should be available to all users in Dev for testing purposes. Also, change 'Back Tester (Under Development)' label in side nav bar to 'Back Tester'. Turn on 'Back Tester' label/link for all users in Prod.\" Confirmed interpretation: isBackTesterToolEnabled becomes a PURE environment check (Dev=true for everyone any role, Prod=false for everyone any role including admin) -- a deliberate reversal of its current admin-only-in-every-environment rule.\n\nThen read the ACTUAL current source this plan is about:\n- client/src/lib/backTesterVisibility.ts (both isBackTesterEnabled and isBackTesterToolEnabled, and their full header comments -- this file explicitly says \"import.meta.env must never come back into this module\", written for a DIFFERENT earlier policy, which this ticket deliberately reverses for ONE of the two functions only)\n- tests/backTesterAdminGuard.guardrail.test.ts (the guardrail enforcing that ban today -- read its exact assertion, not just its name)\n- client/src/lib/__tests__/backTesterVisibility.test.ts (both describe blocks)\n- tests/backTesterToolPredicateNotAliased.sst1772.tripwire.test.ts (the spec claims this needs ZERO changes -- verify)\n- client/src/backtester/hooks/useBTAccessState.ts (the shared hook both BTAppShell and BTToolPage call -- confirm how isBackTesterToolEnabled's new return value flows through phase computation, and whether isActive really is unconditionally true today -- check shared/accessMode.ts's OPEN_ACCESS_MODE and how useSubscription/the isActive-or-isAdmin branch actually resolves, since the spec's AC-3 claims \"zero new branching needed\" because of this)\n- client/src/backtester/components/BackTesterHubPage.tsx and BTAppShell.tsx (the existing hideToolSection / hideToolForPreview mechanism the spec wants to repurpose for AC-2 -- confirm it actually omits the whole section, not just hides it visually)\n- client/src/backtester/components/__tests__/BTAppShellGating.sst1772.test.tsx and BTToolPage.gating.sst1778.test.tsx (both built in the immediately prior ticket this session, both currently fixture admin-vs-non-admin as decisive -- the spec says these need to shift to Dev-vs-Prod fixtures)\n- client/src/components/shell/sidebar-nav-config.ts (the label to change, and confirm the ROI Analyzer entry is untouched)\n- router-v1.tsx's comments near /tools/backtester and /tools/backtester/tool (stale-prose claims in AC-11)\n</task>\n\n<review_checklist>\nFind REAL problems, not style nitpicks.\n\n1. Is AC-2's reuse of hideToolSection actually sound -- does BackTesterHubPage really omit the ENTIRE section (eyebrow included) when hideToolSection is true, or does something about how it's currently wired (e.g. the dev-only ?hideTool=1 flag's own gating) make a straight \"import.meta.env.PROD\" OR not work as cleanly as the spec assumes?\n\n2. Is AC-3's claim that Dev automatically produces 'full' for everyone (zero new branching) actually true given the REAL useSubscription/isActive logic -- or is there a loading state, a real (non-mocked) subscription check, or something about OPEN_ACCESS_MODE that could leave a non-admin stuck on a spinner or a wrong tier in Dev even after isBackTesterToolEnabled flips?\n\n3. Is there a test file or call site NOT named in AC-10/Notes that also fixtures isBackTesterToolEnabled as admin-only and would silently keep certifying the OLD policy after this ships? Search beyond the files already listed.\n\n4. AC-7's guardrail rewrite: is \"scope the check to isBackTesterEnabled's body specifically\" the right fix, or is there a cleaner mechanism already established elsewhere in this codebase for \"this specific identifier must stay env-independent while a sibling in the same file may not\" that the ticket should use instead?\n\n5. Is the TC5 RED-proof plan (revert isBackTesterToolEnabled's body, check TC2/TC3 fail) sufficient, or -- given this is now an environment-stubbed test, not a role-stubbed one -- is there a risk the test environment's OWN default for import.meta.env.DEV/PROD during a vitest run makes one half of the matrix untestable or always-true/false regardless of stubbing, silently making half this ticket's tests vacuous? Check how existing env-stubbed tests in this codebase (e.g. anything already testing import.meta.env.DEV) actually stub it.\n\n6. Any genuine remaining ambiguity in the founder's request that the clarifying question did NOT resolve -- e.g., does \"hide for all users in Prod\" also mean the LEGACY /backtester redirect and the dedicated tool page route itself should behave differently in Prod (right now both still resolve via the same shared hook, consistent with the spec, but double-check no OTHER prod-specific special-casing is implied by the founder's wording that the spec missed).\n\n7. AC-6 says the nav LINK's visibility needs no code change since isBackTesterEnabled already returns true everywhere -- verify this directly against the current source rather than trusting the spec's own claim.\n</review_checklist>\n\n<grounding_rules>\nEvery finding must cite the specific file and the specific line or snippet of real source or test code you read that supports it. Do not assert behavior you have not actually read in this repo. If you cannot verify a claim in the spec, say explicitly that it is unverified and why, rather than guessing.\n</grounding_rules>\n\n<structured_output_contract>\nReport findings as a numbered list (1-7, matching the checklist items above): what's wrong, why it matters, concrete suggested fix. If a finding confirms the spec got something right, say so briefly instead of inventing a problem. Keep the report under 900 words.\n</structured_output_contract>\n\n<action_safety>\nThis is a read/analysis task. Do not edit, create, or delete any file in the repository, including the spec file or test files. --write mode is enabled only to work around a sandbox read restriction.\n</action_safety>",
+        "write": true,
+        "resumeLast": false,
+        "jobId": "task-mupkh9ze-liyt97"
+      },
+      "startedAt": "2026-10-01T13:25:33.730Z",
+      "threadId": "01a0f7a4-5da9-7f10-83c2-57ecd7505706",
+      "turnId": "01a0f7a4-63b1-7db3-a366-b53754d38181"
+    },
+    {
+      "createdAt": "2026-10-01T13:25:04.968Z",
+      "updatedAt": "2026-10-01T13:25:19.715Z",
+      "id": "task-mupkgoco-o6rdij",
+      "kind": "task",
+      "kindLabel": "rescue",
+      "title": "Codex Task",
+      "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/agent-a9b9732b3ec15cca3",
+      "jobClass": "task",
+      "summary": "Tell me what you’d like done in plain language. For example:",
+      "write": false,
+      "sessionId": "75df78e2-1a36-42de-88f3-c1c0854eb44a",
+      "status": "completed",
+      "startedAt": "2026-10-01T13:25:05.093Z",
+      "phase": "done",
+      "pid": null,
+      "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\agent-a9b9732b3ec15cca3-83d9b75f7d75c2ad\\jobs\\task-mupkgoco-o6rdij.log",
+      "threadId": "01a0f7a3-e88b-70a3-a7be-65d49cda9105",
+      "turnId": "01a0f7a3-efc5-7352-a9fd-955ae4bde7f1",
+      "completedAt": "2026-10-01T13:25:19.467Z"
+    }
+  ]
+}

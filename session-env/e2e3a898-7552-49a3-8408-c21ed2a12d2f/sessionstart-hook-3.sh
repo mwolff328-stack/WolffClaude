@@ -16,3 +16,6 @@ export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-code
 export CODEX_COMPANION_SESSION_ID='e2e3a898-7552-49a3-8408-c21ed2a12d2f'
 export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-inspiring-dijkstra-a0d13b\e2e3a898-7552-49a3-8408-c21ed2a12d2f.jsonl'
 export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'
+export CODEX_COMPANION_SESSION_ID='e2e3a898-7552-49a3-8408-c21ed2a12d2f'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-inspiring-herschel-7b16c9\e2e3a898-7552-49a3-8408-c21ed2a12d2f.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'

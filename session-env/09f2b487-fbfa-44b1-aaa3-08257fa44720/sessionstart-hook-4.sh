@@ -1,0 +1,3 @@
+export CODEX_COMPANION_SESSION_ID='09f2b487-fbfa-44b1-aaa3-08257fa44720'
+export CODEX_COMPANION_TRANSCRIPT_PATH='C:\Users\wolff\.claude\projects\C--Users-wolff-Projects-SurvivorPulse--claude-worktrees-actual-picks-buyback-detection-d83323\09f2b487-fbfa-44b1-aaa3-08257fa44720.jsonl'
+export CLAUDE_PLUGIN_DATA='C:/Users/wolff/.claude/plugins/data/codex-openai-codex'

@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 3e2be073-728c-4e6a-ba0c-09d57451f6a7
-  modified: 2026-08-07T15:27:41.164Z
+  modified: 2026-10-01T23:56:01.089Z
 ---
 
 **Canonical source, as of 2026-08-07: `.replit`'s `[userenv.development]` block, key `DEV_BASE_URL`.**
@@ -43,3 +43,9 @@ This is the Replit *workspace* dev preview the founder tests against day to day 
 ⚠️ **The deployed dev app runs whatever last synced to `2026-v1`.** Before concluding your change is or isn't live, confirm the `Replit Sync` run for YOUR exact commit. Reading a stale bundle and calling it a code result is its own trap ([[project_survivorpulse_stale_spa_bundle_after_publish]]).
 
 This surface supports **writes**, not just reads — `PUT /api/entries/:id/regular/:season/proposed-picks/:week` (note: bare week number, `week:5` is rejected) and `POST /api/me/gameplan/apply` both work, which is how a full plant-then-re-Apply behavioural proof was run against the founder's real pools. Dev only; never do this against production.
+
+---
+
+**2026-10-01, later same day — the 502 cleared but dev auto-login is now returning 401 instead of silently authenticating.** `curl /api/me` now returns 401 (app is up, not 502), but navigating in via the built-in Browser pane (`mcp__Claude_Browser__*`, not Chrome) also got a hard 401 on `/api/me` with no silent auto-login, and the app hung on its loading spinner indefinitely before eventually redirecting to `/login`. Per this file's own §"Exact working sequence, 2026-08-19", `mcp__claude-in-chrome__*` carrying the founder's real session is the reliable path, not the built-in pane — did not attempt the Chrome path for this specific session since the bug under investigation (SST-1786 follow-up, mobile/tablet season-week selector gap) was a pure static-CSS breakpoint question fully provable from source + Tailwind theme config, so there was no need to chase a working authenticated session further. If a future session needs real interactive live-verify here today, try Chrome first rather than assuming the built-in pane's 401 means the whole dev app is broken.
+
+**2026-10-01, earlier — the cached/`.replit` URL returned a persistent 502, both via `mcp__claude-in-chrome__*` navigation and a plain `curl /api/me`.** Confirmed this was the URL specifically, not a broader connectivity problem: `survivorpulse.com` (production) returned 200 from the same sandbox at the same time, and the SSH-based `Replit Sync` GitHub Actions workflow succeeded minutes earlier against the same Repl (confirmed "HEAD is now at &lt;sha&gt;" in its own log) — so the underlying container exists and is reachable via SSH/git, just not serving HTTP on this preview host. Retried once after a 10s wait (ruling out a simple cold-start) — still 502, with faster not slower latency the second time, which doesn't match a boot-in-progress pattern. Did not chase a replacement URL per this file's own instruction ("don't guess a new one, ask the founder"). Treated as a live-verify blocker for that specific session (SST-1780) rather than spending more cycles on it — fell back to CI's own automated e2e run (playwright-ci.yml, which boots its own ephemeral server) as the primary runtime proof instead. **If you hit this again: don't assume the cached value above is still correct — re-check `.replit`'s `DEV_BASE_URL` (it may already have been updated since this note was written) and ask the founder for a fresh URL if it's still 502ing.**
