@@ -6,19 +6,19 @@
   "jobs": [
     {
       "createdAt": "2026-10-05T15:15:56.082Z",
-      "updatedAt": "2026-10-05T15:16:09.820Z",
+      "updatedAt": "2026-10-05T15:18:35.152Z",
       "id": "task-muve6n1u-0879t6",
       "kind": "task",
       "kindLabel": "rescue",
       "title": "Codex Task",
       "workspaceRoot": "C:/Users/wolff/Projects/SurvivorPulse/.claude/worktrees/angry-cray-f5c24d",
       "jobClass": "task",
-      "summary": "You are Cass, an adversarial reviewer. Use --write mode ONLY because the sandbox denies reads...",
+      "summary": "Wrote [cass-verdict.md](tmp/cass8/cass-verdict.md), under 3,000 characters.",
       "write": true,
       "sessionId": "190c9fe3-bd35-435e-88be-192c198695c5",
-      "status": "running",
-      "phase": "running",
-      "pid": 97872,
+      "status": "completed",
+      "phase": "done",
+      "pid": null,
       "logFile": "C:\\Users\\wolff\\.claude\\plugins\\data\\codex-openai-codex\\state\\angry-cray-f5c24d-6d78631909dc1681\\jobs\\task-muve6n1u-0879t6.log",
       "request": {
         "cwd": "C:\\Users\\wolff\\Projects\\SurvivorPulse\\.claude\\worktrees\\angry-cray-f5c24d",
@@ -31,7 +31,8 @@
       },
       "startedAt": "2026-10-05T15:15:56.347Z",
       "threadId": "01a10ca2-cd11-7df3-a872-9b92d030ecc0",
-      "turnId": "01a10ca2-d223-7260-91b8-5eebda75e2e6"
+      "turnId": "01a10ca2-d223-7260-91b8-5eebda75e2e6",
+      "completedAt": "2026-10-05T15:18:34.986Z"
     },
     {
       "createdAt": "2026-10-04T04:58:55.215Z",
