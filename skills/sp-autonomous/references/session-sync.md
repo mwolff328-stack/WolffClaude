@@ -133,6 +133,8 @@ worktree on `2026-v1`:
 Otherwise the main worktree is fine. Explicit-path staging is what keeps you honest there, not
 isolation.
 
+> **Already in a worktree?** If this session's cwd is already a `.claude/worktrees/*` worktree, that worktree is your isolation. Don't create a second one. A PreToolUse hook blocks Write/Edit into any other worktree path, so the nested one fails on its first write. Only create a worktree when starting from the main checkout.
+
 ```bash
 cd "C:/Users/wolff/Projects/SurvivorPulse"
 git fetch origin
@@ -185,6 +187,8 @@ git rebase origin/2026-v1
 NODE_ENV=test TEST_DISABLE_NETWORK=1 TEST_FAST_OPTIMIZER=1 npx vitest run --config vitest.config.ts
 git push origin HEAD:refs/heads/2026-v1
 ```
+
+> **Dependency check before pushing.** If the diff adds or changes a dependency in `package.json`, hold the push. Replit Sync only runs `git reset --hard` (see `.github/workflows/replit-sync.yml`), with no `npm install`, so the dev app crashes at boot with `ERR_MODULE_NOT_FOUND` until the package is installed. Ask the founder to run `npm install <pkg>@<version> --no-save` in the Replit shell, and push only after they confirm. Check with: `git diff origin/2026-v1...HEAD -- package.json`
 
 Pushing from the worktree straight to `2026-v1` means you never check out or disturb the main
 worktree, where another session may be working. Because you rebased, it is a fast-forward.
