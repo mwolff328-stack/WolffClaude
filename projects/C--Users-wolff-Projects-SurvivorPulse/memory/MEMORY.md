@@ -152,3 +152,4 @@
 - [Cass Codex needs --write + quota budget](feedback_cass_codex_needs_write_mode_and_quota_budget.md) — read-only sandbox denies all reads on Windows.
 - [Codex sandbox blocks outbound Notion fetch](feedback_codex_sandbox_blocks_outbound_network_to_notion.md) — dump the spec first.
 - [Subagent /tmp not shared with orchestrator](feedback_subagent_tmp_path_not_shared_with_orchestrator.md) — write handoffs into the worktree.
+- [SST-1800 Story B resume plan](project_survivorpulse_sst1800_story_b_resume_plan.md) — 10/5: spec final in Notion, build in pieces S6-S11 under the founder weekly-token limit; locked design decisions + process traps (Bash eats backslashes, run full unit shards before pushing).
