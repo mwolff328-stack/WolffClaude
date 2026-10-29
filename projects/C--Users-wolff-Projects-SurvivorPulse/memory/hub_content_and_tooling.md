@@ -5,13 +5,13 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 217b9057-b0ab-47dc-ae27-8107610fe341
-  modified: 2026-10-29T18:24:44.089Z
+  modified: 2026-10-29T18:27:05.378Z
 ---
 
 ## Content
 - [ref hierarchy](feedback_content_reference_hierarchy_across_channels.md) · [Weekly Rankings post workflow](project_survivorpulse_weekly_rankings_post_workflow.md) · [tone-of-voice check](feedback_run_tone_of_voice_before_publishing_social.md) · [public replies skip sign-off](feedback_public_reply_no_signoff_dm_gets_signoff.md) · [sign-offs link to site](feedback_survivorpulse_signoff_links_to_site.md)
 
-- [Social content flow: Sky drafts, Meg reviews replies, founder approves](feedback_survivorpulse_social_drafts_go_through_sky_the_scribe.md) — Reddit/X/Discord/LinkedIn; founder rule 2026-10-28. Runbook: skill `sp-social-reply-flow` (user-level)
+- [Social content flow: Sky drafts, Meg reviews replies, founder approves](feedback_survivorpulse_social_drafts_go_through_sky_the_scribe.md) — Reddit/X/Discord/LinkedIn; founder rule 2026-10-28. Widened 2026-10-29 to ALL written content (emails, articles, white papers, help guides too; reviewer per type). Runbook: skill `sp-content-flow` (user-level)
 - [Oscar sets up the weekly broadcast in prod Admin Hub](feedback_survivorpulse_oscar_sets_up_the_weekly_broadcast_in_prod_admin_hub.md) — draft only; founder sends; founder rule 2026-10-29
 - [Weekly broadcast template + team names](feedback_weekly_broadcast_template_and_team_names.md) — Week 6 docx is the template; teams by name
 

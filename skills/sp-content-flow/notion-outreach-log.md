@@ -1,4 +1,4 @@
-# Notion Outreach Log (step 9)
+# Notion Outreach Log (after the founder posts a social reply or DM)
 
 Data source: `collection://498922d6-8e0d-4ec1-8ec0-95808ef761a2`
 

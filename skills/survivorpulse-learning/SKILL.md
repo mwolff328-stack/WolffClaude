@@ -127,6 +127,22 @@ Check before creating a new one.
 - `replit-bashrc-permission-denied.md` — shell alias workaround for Replit
 - `vitest-fake-timers-hook-testing.md` — testing time-based React hooks
 
+## Backtest quick-check convention (ad-hoc stat citations)
+
+**Founder decision, 2026-10-09 (SST-1870):** this skill is the canonical home for the lightweight "quick-check" convention — not `docs/research/methodology/README.md`. If a divergent description of this rule is ever found there, this section wins; fix the other location to point here instead of restating it.
+
+**The problem this solves:** a 30-second ad-hoc SQL query gets run to answer a one-line backtest question, the number gets typed into a ticket/Discord/content, and the query is never saved — the number becomes unverifiable folklore (confirmed 3 times; see [[feedback_survivorpulse_ephemeral_backtest_scripts_not_persisted]] in project memory). This sits next to the existing HEAVYWEIGHT convention (`scripts/research/*.ts` + `docs/research/backtesting/*.md`, indexed in `docs/research/methodology/research-inventory.md`'s verdict table) — use the heavyweight tier for a real SST-numbered study; use this lightweight tier for everything else. Never modify, restructure, or rename anything in the heavyweight tier to accommodate this.
+
+**The rule, every time you run an ad-hoc backtest/stat query:**
+
+1. **Save the query.** Even 10 lines. Goes in `scripts/research/quick/` (create the folder and its own short README the first time it's used, so it's self-explanatory without this skill).
+2. **Write a 5-field stub** next to it (header comment or sibling file): (a) date run, (b) the exact question, (c) table(s)/column(s) queried, (d) result + sample size (n), (e) who ran it. Plus a **staleness clause**: the result is only known-accurate as of (a) — if the underlying data is later corrected, the row in step 3 must be reset to `UNVERIFIED`.
+3. **Add one row** to the EXISTING `docs/research/methodology/research-inventory.md` verdict table (its UNVERIFIED section) — never a new table. Status `UNVERIFIED` until a person or session OTHER than the original runner independently re-runs it against the same table/columns and gets a result that matches exactly (same n, same value at the originally-reported rounding precision) — only then flip to `VALID-CURRENT`. A non-matching re-run moves it to `CONTRADICTED`, never silently back to `UNVERIFIED` unexplained.
+4. **Link every citation back to its file.** Any number quoted in a Notion ticket, Discord, or published content must link to its `scripts/research/quick/` file, and that file's stated result must actually be the one quoted (a linked-but-mismatched file is exactly as non-compliant as no file). You may post the number before the file exists, but the file AND a link back into the citation must both land before the end of that SAME calendar day (your local time) — after that, an unbacked citation is a violation.
+5. **Spot-check, not CI.** There's no automated gate for a human typing a stat into chat. This convention's own enforcement is a periodic manual spot-check (fold it into Luigi's weekly synthesis above): grep recent Notion/Discord/published content for a `%`, `n=`, or "backtest" pattern and confirm each has a matching file + inventory row. A flagged violation requires an actual corrective comment or follow-up ticket — flagging without following up doesn't close the loop.
+
+Full grooming history, the two Cass-rejected rounds, and the detailed Acceptance Criteria/Test Cases are on [SST-1870](https://app.notion.com/3f429ce5833d81df85a4c9b0bac11aac) if you need the exact edge-case rules (same-day midnight rollover, question-mismatch-despite-matching-numbers, etc.) — this section is the operative summary.
+
 ## Channel formatting (Discord #learning) — SUSPENDED, see notice at top of file
 
 - Bullet lists only (no markdown tables)
