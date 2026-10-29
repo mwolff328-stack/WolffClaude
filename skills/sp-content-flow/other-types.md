@@ -7,7 +7,7 @@
 
 ## Articles and white papers (reviewers: Vlad, plus Marie Curie and Paige as needed)
 - Vlad checks every claim and number against the real data, and says which are confirmed, derived, or unconfirmed.
-- Research-heavy (backtests, strategy claims): also `boa-marie-curie` for analytical credibility. Claims about accuracy or edge need a named source in the repo or docs.
+- Research-heavy (backtests, strategy claims): also `stan-the-scout`, who checks that facts, figures, and findings are communicated clearly and accurately against his research (brief him with the source study or data, not just the draft). Also `boa-marie-curie` for analytical credibility. Claims about accuracy or edge need a named source in the repo or docs.
 - Anything for the public site or search: also `paige-the-page` for SEO, structure, and conversion fit.
 - Founder publishes, or Arlo schedules after approval.
 

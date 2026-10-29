@@ -24,7 +24,7 @@ Founder rule (2026-10-28, widened to all written content). See memory `feedback_
 | Social reply | `sky-the-scribe` | `meg-the-megaphone`, against the whole thread | Founder posts |
 | Social original post | Sky | None by default. `META_REVIEW_ORIGINAL_POSTS = false`; flip to `true` only when the founder says so, then Meg | Founder posts, or Arlo schedules |
 | Email | Sky | `cara-the-communicator`, against the whole email thread and send context | Founder sends |
-| Article / white paper | Sky | `vlad-the-verifier` checks every claim and number against real data. Research-heavy: also `boa-marie-curie` for analytical credibility. Public site or search: also `paige-the-page` | Founder publishes, or Arlo |
+| Article / white paper | Sky | `vlad-the-verifier` checks every claim and number against real data. Research-heavy: also `stan-the-scout` (facts, figures, and findings communicated clearly and accurately against his research) and `boa-marie-curie` for analytical credibility. Public site or search: also `paige-the-page` | Founder publishes, or Arlo |
 | Help guide | Sky | `vlad-the-verifier` checks each step against the live product | `oscar-the-operator` loads it as a DRAFT only; founder publishes |
 | Distribution | | `arlo-the-amplifier` publishes or schedules only AFTER founder approval | |
 
