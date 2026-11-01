@@ -157,6 +157,13 @@ Pending items:
 
 *(none currently — the list below is the resolved history. Add new items here as stories introduce prod schema changes.)*
 
+**Standing publish-time item (seen 2026-11-01) — not a pending migration, a recurring Replit false positive:** the publish's "Generated migrations to apply to production database" step proposes `DROP INDEX "uq_resource_help_articles_slug_lower";` and the dialog will not let you skip one statement. Replit cannot read the `lower(slug)` expression index declared at `shared/schema.ts:2746`, so it treats the production index as unaccounted for. The DROP is **not intended**. Approving is acceptable ONLY with the restore step right after the publish, in the **PROD** SQL console:
+1. `CREATE UNIQUE INDEX IF NOT EXISTS "uq_resource_help_articles_slug_lower" ON "resource_help_articles" (lower("slug"));`
+2. Read back: `SELECT indexdef FROM pg_indexes WHERE indexname = 'uq_resource_help_articles_slug_lower';` must end `USING btree (lower((slug)::text))`.
+3. Re-run `docs/pools-dashboard-redesign/migrations/verify-prod-schema.sql` and confirm `uq_resource_tips_slug_lower` (same shape) still shows `OK`.
+
+Any OTHER statement in that generated migration is not covered here: treat it by the abort rule in `docs/DB_OPERATIONS.md` → "Publishing and Prod Schema Changes". Full write-up there under "Standing publish-time item". This is a post-publish step: report it as outstanding in the verdict, and never mark it done without the founder's read-back (signal 3 is human-gated).
+
 **Resolved 2026-07-28 — do not re-add** (both applied to production by the founder at the 2026-07-28 publish; prod verified reachable and serving afterwards, which it would not be under schema drift):
 - **SST-1079 — `user_preferences` table.** Per-user store for the two pick-distinctness preferences (`within_pool_distinct`, `spread_across_pools`). File: `docs/pools-dashboard-redesign/migrations/SST-1079-user-preferences.sql`.
 - **SST-1037 — `pools.pool_classification` column.** Admin-only Real/Test marker. File: `docs/pools-dashboard-redesign/migrations/SST-1037-pool-classification.sql`.
